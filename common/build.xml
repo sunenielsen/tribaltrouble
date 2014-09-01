@@ -1,0 +1,5 @@
+<project name="common" basedir="." default="compile">
+	<import file="common.xml"/>
+
+	<property name="classpath" value="${lib}/javasvn.jar:${lib}/lwjgl.jar:${lib}/lwjgl_util.jar:${lib}/jorbis.jar:${lib}/commons-pool-1.2.jar:${lib}/commons-dbcp-1.2.1.jar:${lib}/commons-collections-3.1.jar"/>
+</project>

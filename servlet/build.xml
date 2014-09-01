@@ -1,0 +1,57 @@
+<project name="servlet" basedir="." default="compile">
+	<property name="java_source_version" value="1.5"/>
+	<import file="../common/common.xml"/>
+	<property name="classpath" value="../common/build/classes:${lib}/servlet-api.jar"/>
+	<property name="tomcat.home" location="/usr/share/tomcat5.5"/>
+
+	<target name="compiledeps" depends="compile-common">
+	</target>
+
+	<target name="deploy">
+		<taskdef name="reload" classpath="${tomcat.home}/server/lib/catalina-ant.jar" classname="org.apache.catalina.ant.ReloadTask"/>
+		<unwar src="build/${servlet}.war" dest="${tomcat.home}/webapps/${servlet}" overwrite="true"/>
+		<reload url="http://localhost:8180/manager" path="/matchservlet" username="tomcat" password="tomcat"/>
+	</target>
+
+	<!--	<target name="deploy">
+		<taskdef name="deploy" classpath="${tomcat.home}/server/lib/catalina-ant.jar" classname="org.apache.catalina.ant.DeployTask"/>
+		<deploy url="http://localhost:8180/manager" path="/login" username="tomcat" password="tomcat" war="build/${servlet}.war"/>
+	</target>
+
+	<target name="remove">
+		<taskdef name="remove" classpath="${tomcat.home}/server/lib/catalina-ant.jar" classname="org.apache.catalina.ant.RemoveTask"/>
+
+		<remove url="http://localhost:8180/manager" path="/login" username="tomcat" password="tomcat"/>
+	</target>
+	-->
+	<target name="matchservlet" depends="compile">
+		<war destfile="${build}/matchservlet.war" webxml="descriptors/matchservlet/web.xml">
+			<classes dir="${build}/classes" includes="com/oddlabs/matchservlet/**/*class"/>
+			<classes dir="../common/build/classes" includes="com/oddlabs/util/CryptUtils.class"/>
+			<classes dir="../common/build/classes" includes="com/oddlabs/registration/RegistrationKey.class"/>
+			<classes dir="../common/build/classes" includes="com/oddlabs/registration/RegistrationKeyFormatException.class"/>
+			<classes dir="../common/build/classes" includes="com/oddlabs/util/CryptUtils.class"/>
+			<metainf dir="descriptors/matchservlet" includes="context.xml"/>
+		</war>
+	</target>
+
+	<target name="regservlet" depends="compile">
+		<war destfile="${build}/oddlabs.war" webxml="regservlet/web.xml">
+			<classes dir="../common/build/classes" includes="com/oddlabs/net/**/*class"/>
+			<classes dir="../common/build/classes" includes="com/oddlabs/util/**/*class"/>
+			<classes dir="../common/build/classes" includes="com/oddlabs/registration/**/*class"/>
+			<classes dir="${build}/classes" includes="com/oddlabs/regservlet/**/*class"/>
+			<metainf dir="regservlet" includes="context.xml"/>
+			<classes dir="${commonstatic}" includes="private_reg_key"/>
+		</war>
+	</target>
+
+	<target name="graphservlet" depends="compile">
+		<war destfile="${build}/graph.war" webxml="graphservlet/web.xml">
+			<classes dir="${build}/classes" includes="com/oddlabs/graphservlet/**/*class"/>
+			<metainf dir="graphservlet" includes="context.xml"/>
+		</war>
+	</target>
+
+
+</project>

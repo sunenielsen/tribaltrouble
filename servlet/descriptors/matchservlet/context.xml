@@ -1,0 +1,39 @@
+<Context path="/matchservlet" docBase=""
+	debug="5" reloadable="true" crossContext="false">
+
+	<!-- maxActive: Maximum number of dB connections in pool. Make sure you
+	configure your mysqld max_connections large enough to handle
+	all of your db connections. Set to 0 for no limit.
+	-->
+
+	<!-- maxIdle: Maximum number of idle dB connections to retain in pool.
+	Set to -1 for no limit.  See also the DBCP documentation on this
+	and the minEvictableIdleTimeMillis configuration parameter.
+	-->
+
+	<!-- maxWait: Maximum time to wait for a dB connection to become available
+	in ms, in this example 10 seconds. An Exception is thrown if
+	this timeout is exceeded.  Set to -1 to wait indefinitely.
+	-->
+
+	<!-- username and password: MySQL dB username and password for dB connections  -->
+
+	<!-- driverClassName: Class name for the old mm.mysql JDBC driver is
+	org.gjt.mm.mysql.Driver - we recommend using Connector/J though.
+	Class name for the official MySQL Connector/J driver is com.mysql.jdbc.Driver.
+	-->
+
+	<!-- url: The JDBC connection url for connecting to your MySQL dB.
+	The autoReconnect=true argument to the url makes sure that the
+	mm.mysql JDBC Driver will automatically reconnect if mysqld closed the
+	connection.  mysqld by default closes idle connections after 8 hours.
+	-->
+
+	<Resource name="jdbc/matchDB" auth="Container" type="javax.sql.DataSource"
+		maxActive="100" maxIdle="30" maxWait="10000"
+		username="matchservlet" password="match"
+		url="jdbc:mysql://localhost/oddlabs" driverClassName="com.mysql.jdbc.Driver"
+		removeAbandoned="true" removeAbandonedTimeout="60"
+		/>
+
+</Context>

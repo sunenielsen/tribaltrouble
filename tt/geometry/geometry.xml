@@ -1,0 +1,640 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+
+<!DOCTYPE geometry [
+	<!ELEMENT geometry  (group+)>
+	<!ELEMENT group	 (sprite*, lowdetail*)*>
+	<!ELEMENT sprite	(skeleton?, model+, animation*)>
+	<!ELEMENT lowdetail (model)>
+	<!ELEMENT animation (#PCDATA)>
+	<!ELEMENT model	 (#PCDATA | texture)*>
+	<!ELEMENT skeleton  (#PCDATA)>
+	<!ELEMENT texture  EMPTY>
+
+	<!ATTLIST sprite name CDATA #REQUIRED>
+	<!ATTLIST sprite scale CDATA #IMPLIED>
+	<!ATTLIST group name CDATA #REQUIRED>
+	<!ATTLIST model r CDATA #REQUIRED>
+	<!ATTLIST model g CDATA #REQUIRED>
+	<!ATTLIST model b CDATA #REQUIRED>
+	<!ATTLIST lowdetail name CDATA #REQUIRED>
+	<!ATTLIST animation wpc CDATA #REQUIRED>
+	<!ATTLIST animation type CDATA #REQUIRED>
+	<!ATTLIST texture name CDATA #REQUIRED>
+	<!ATTLIST texture team CDATA #IMPLIED>
+]>
+
+<geometry>
+	<group name="vikings">
+		<sprite name="warrior">
+			<skeleton>vikings/warrior/warrior_skeleton.xml</skeleton>
+			<model r="90" g="60" b="30">
+				vikings/warrior/warrior_mesh.xml
+				<texture name="viking_warrior_rock" team="viking_warrior_rock_team"/>
+				<texture name="viking_warrior_iron" team="viking_warrior_iron_team"/>
+				<texture name="viking_warrior_rubber" team="viking_warrior_rubber_team"/>
+			</model>
+			<model r="90" g="60" b="30">
+				vikings/warrior/warrior_low_poly_mesh.xml
+				<texture name="viking_warrior_rock" team="viking_warrior_rock_team"/>
+				<texture name="viking_warrior_iron" team="viking_warrior_iron_team"/>
+				<texture name="viking_warrior_rubber" team="viking_warrior_rubber_team"/>
+			</model>
+			<animation wpc="1" type="loop">vikings/warrior/warrior_idle.xml</animation>
+			<animation wpc="5" type="loop">vikings/warrior/warrior_run.xml</animation>
+			<animation wpc="1" type="plain">vikings/warrior/warrior_attack.xml</animation>
+			<animation wpc="1" type="plain">vikings/warrior/warrior_die.xml</animation>
+		</sprite>
+		<sprite name="chieftain">
+			<skeleton>vikings/chieftain/viking_chieftain_skeleton.xml</skeleton>
+			<model r="90" g="60" b="30">
+				vikings/chieftain/viking_chief.xml
+				<texture name="viking_chieftain" team="viking_chieftain_team"/>
+			</model>
+			<model r="90" g="60" b="30">
+				vikings/chieftain/viking_chief_lo.xml
+				<texture name="viking_chieftain" team="viking_chieftain_team"/>
+			</model>
+			<animation wpc="1" type="loop">vikings/chieftain/viking_chieftain_idle.xml</animation>
+			<animation wpc="6.4" type="loop">vikings/chieftain/viking_chieftain_run.xml</animation>
+			<animation wpc="1" type="plain">vikings/chieftain/viking_chieftain_attack.xml</animation>
+			<animation wpc="1" type="plain">vikings/chieftain/viking_chieftain_die.xml</animation>
+			<animation wpc="1" type="plain">vikings/chieftain/viking_chieftain_magic.xml</animation>
+			<animation wpc="1" type="loop">vikings/chieftain/thor.xml</animation>
+		</sprite>
+		<sprite name="peon">
+			<skeleton>vikings/peon/peon_skeleton.xml</skeleton>
+			<model r="90" g="60" b="30">
+				vikings/peon/peon_mesh.xml
+				<texture name="viking_peon" team="viking_peon_team"/>
+			</model>
+			<model r="90" g="60" b="30">
+				vikings/peon/peon_low_poly_mesh.xml
+				<texture name="viking_peon" team="viking_peon_team"/>
+			</model>
+			<animation wpc="1" type="loop">vikings/peon/peon_idle.xml</animation>
+			<animation wpc="3.85" type="loop">vikings/peon/peon_run.xml</animation>
+			<animation wpc="1" type="plain">vikings/peon/peon_attack.xml</animation>
+			<animation wpc="1" type="plain">vikings/peon/peon_die.xml</animation>
+		</sprite>
+		<sprite name="rock_resource">
+			<skeleton>vikings/peon/peon_skeleton.xml</skeleton>
+			<model r="90" g="60" b="30">
+				misc/rock_fragment_viking.xml
+				<texture name="Generator:com.oddlabs.tt.procedural.GeneratorRock"/>
+				<texture name="Generator:com.oddlabs.tt.procedural.GeneratorIron"/>
+			</model>
+			<animation wpc="1" type="loop">vikings/peon/peon_idle.xml</animation>
+			<animation wpc="3.85" type="loop">vikings/peon/peon_run.xml</animation>
+			<animation wpc="1" type="plain">vikings/peon/peon_attack.xml</animation>
+			<animation wpc="1" type="plain">vikings/peon/peon_die.xml</animation>
+		</sprite>
+		<sprite name="wood_resource">
+			<skeleton>vikings/peon/peon_skeleton.xml</skeleton>
+			<model r="90" g="60" b="30">
+				misc/wood_fragment_viking.xml
+				<texture name="wood_fragments"/>
+			</model>
+			<animation wpc="1" type="loop">vikings/peon/peon_idle.xml</animation>
+			<animation wpc="3.85" type="loop">vikings/peon/peon_run.xml</animation>
+			<animation wpc="1" type="plain">vikings/peon/peon_attack.xml</animation>
+			<animation wpc="1" type="plain">vikings/peon/peon_die.xml</animation>
+		</sprite>
+		<sprite name="rubber_resource">
+			<skeleton>vikings/peon/peon_skeleton.xml</skeleton>
+			<model r="90" g="60" b="30">
+				misc/rubber_fragment_viking.xml
+				<texture name="chicken"/>
+			</model>
+			<animation wpc="1" type="loop">vikings/peon/peon_idle.xml</animation>
+			<animation wpc="3.85" type="loop">vikings/peon/peon_run.xml</animation>
+			<animation wpc="1" type="plain">vikings/peon/peon_attack.xml</animation>
+			<animation wpc="1" type="plain">vikings/peon/peon_die.xml</animation>
+		</sprite>
+		<sprite name="axe">
+			<model r="90" g="60" b="30">
+				vikings/warrior/warrior_axe.xml
+				<texture name="viking_warrior_rock"/>
+				<texture name="viking_warrior_iron"/>
+				<texture name="viking_warrior_rubber"/>
+			</model>
+		</sprite>
+		<sprite name="quarters">
+			<model r="90" g="60" b="30">
+				vikings/quarters/viking_main_built.xml
+				<texture name="viking_buildings_hi" team="viking_buildings_hi_team"/>
+			</model>
+			<model r="90" g="60" b="30">
+				vikings/quarters/viking_main_built_lo.xml
+				<texture name="viking_buildings_lo" team="viking_buildings_lo_team"/>
+			</model>
+		</sprite>
+		<sprite name="quarters_halfbuilt">
+			<model r="90" g="60" b="30">
+				vikings/quarters/viking_main_build.xml
+				<texture name="viking_buildings_hi" team="viking_buildings_hi_team"/>
+			</model>
+			<model r="90" g="60" b="30">
+				vikings/quarters/viking_main_build_lo.xml
+				<texture name="viking_buildings_lo2" team="viking_buildings_lo2_team"/>
+			</model>
+		</sprite>
+		<sprite name="quarters_start">
+			<model r="90" g="60" b="30">
+				vikings/quarters/viking_main_start.xml
+				<texture name="viking_buildings_hi" team="viking_buildings_hi_team"/>
+			</model>
+			<model r="90" g="60" b="30">
+				vikings/quarters/viking_main_start_lo.xml
+				<texture name="viking_buildings_hi" team="viking_buildings_hi_team"/>
+			</model>
+		</sprite>
+		<sprite name="armory">
+			<model r="90" g="60" b="30">
+				vikings/armory/viking_armoury_built.xml
+				<texture name="viking_buildings_hi" team="viking_buildings_hi_team"/>
+			</model>
+			<model r="90" g="60" b="30">
+				vikings/armory/viking_armoury_built_lo.xml
+				<texture name="viking_buildings_lo2" team="viking_buildings_lo2_team"/>
+			</model>
+		</sprite>
+		<sprite name="armory_halfbuilt">
+			<model r="90" g="60" b="30">
+				vikings/armory/viking_armoury_build.xml
+				<texture name="viking_buildings_hi" team="viking_buildings_hi_team"/>
+			</model>
+			<model r="90" g="60" b="30">
+				vikings/armory/viking_armoury_build_lo.xml
+				<texture name="viking_buildings_lo" team="viking_buildings_lo_team"/>
+			</model>
+		</sprite>
+		<sprite name="armory_start">
+			<model r="90" g="60" b="30">
+				vikings/armory/viking_armoury_start.xml
+				<texture name="viking_buildings_hi" team="viking_buildings_hi_team"/>
+			</model>
+			<model r="90" g="60" b="30">
+				vikings/armory/viking_armoury_start_lo.xml
+				<texture name="viking_buildings_hi" team="viking_buildings_hi_team"/>
+			</model>
+		</sprite>
+		<sprite name="tower">
+			<model r="90" g="60" b="30">
+				vikings/tower/viking_tower_built.xml
+				<texture name="viking_building_lookout" team="viking_building_lookout_team"/>
+			</model>
+			<model r="90" g="60" b="30">
+				vikings/tower/viking_tower_built_low.xml
+				<texture name="viking_building_lookout" team="viking_building_lookout_team"/>
+			</model>
+		</sprite>
+		<sprite name="tower_halfbuilt">
+			<model r="90" g="60" b="30">
+				vikings/tower/viking_tower_halfbuilt.xml
+				<texture name="viking_building_lookout" team="viking_building_lookout_team"/>
+			</model>
+			<model r="90" g="60" b="30">
+				vikings/tower/viking_tower_halfbuilt_low.xml
+				<texture name="viking_building_lookout" team="viking_building_lookout_team"/>
+			</model>
+		</sprite>
+		<sprite name="tower_start">
+			<model r="90" g="60" b="30">
+				vikings/tower/viking_tower_start.xml
+				<texture name="viking_building_lookout" team="viking_building_lookout_team"/>
+			</model>
+			<model r="90" g="60" b="30">
+				vikings/tower/viking_tower_start_low.xml
+				<texture name="viking_building_lookout" team="viking_building_lookout_team"/>
+			</model>
+		</sprite>
+		<sprite name="rally_point">
+			<model r="90" g="60" b="30">
+				vikings/misc/vikings_rally_point.xml
+				<texture name="viking_buildings_lo" team="viking_buildings_lo_team"/>
+			</model>
+		</sprite>
+	</group>
+	<group name="natives">
+		<sprite name="chieftain">
+			<skeleton>natives/chieftain/native_chieftain_skeleton.xml</skeleton>
+			<model r="90" g="60" b="30">
+				natives/chieftain/native_chieftain_mesh.xml
+				<texture name="native_chieftain" team="native_chieftain_team"/>
+			</model>
+			<model r="90" g="60" b="30">
+				natives/chieftain/native_chieftain_low_poly_mesh.xml
+				<texture name="native_chieftain" team="native_chieftain_team"/>
+			</model>
+			<animation wpc="1" type="loop">natives/chieftain/native_chieftain_idle.xml</animation>
+			<animation wpc="4" type="loop">natives/chieftain/native_chieftain_run.xml</animation>
+			<animation wpc="1" type="plain">natives/chieftain/native_chieftain_attack.xml</animation>
+			<animation wpc="1" type="plain">natives/chieftain/native_chieftain_die.xml</animation>
+			<animation wpc="1" type="plain">natives/chieftain/native_chieftain_magic.xml</animation>
+		</sprite>
+		<sprite name="peon">
+			<skeleton>natives/peon/peon_skeleton.xml</skeleton>
+			<model r="90" g="60" b="30">
+				natives/peon/native_peon_mesh.xml
+				<texture name="native_peon" team="native_peon_team"/>
+			</model>
+			<model r="90" g="60" b="30">
+				natives/peon/native_peon_low_poly_mesh.xml
+				<texture name="native_peon" team="native_peon_team"/>
+			</model>
+			<animation wpc="1" type="loop">natives/peon/peon_idle.xml</animation>
+			<animation wpc="3.625" type="loop">natives/peon/peon_run.xml</animation>
+			<animation wpc="1" type="plain">natives/peon/peon_attack.xml</animation>
+			<animation wpc="1" type="plain">natives/peon/peon_die.xml</animation>
+		</sprite>
+		<sprite name="warrior">
+			<skeleton>natives/warrior/native_warrior_skeleton.xml</skeleton>
+			<model r="90" g="60" b="30">
+				natives/warrior/native_warrior_mesh.xml
+				<texture name="native_warrior_rock" team="native_warrior_rock_team"/>
+				<texture name="native_warrior_iron" team="native_warrior_iron_team"/>
+				<texture name="native_warrior_rubber" team="native_warrior_rubber_team"/>
+			</model>
+			<model r="90" g="60" b="30">
+				natives/warrior/native_warrior_low_poly_mesh.xml
+				<texture name="native_warrior_rock" team="native_warrior_rock_team"/>
+				<texture name="native_warrior_iron" team="native_warrior_iron_team"/>
+				<texture name="native_warrior_rubber" team="native_warrior_rubber_team"/>
+			</model>
+			<animation wpc="1" type="loop">natives/warrior/native_warrior_idle.xml</animation>
+			<animation wpc="3.2" type="loop">natives/warrior/native_warrior_run.xml</animation>
+			<animation wpc="1" type="plain">natives/warrior/native_warrior_attack.xml</animation>
+			<animation wpc="1" type="plain">natives/warrior/native_warrior_die.xml</animation>
+		</sprite>
+		<sprite name="rock_resource">
+			<skeleton>natives/peon/peon_skeleton.xml</skeleton>
+			<model r="90" g="60" b="30">
+				misc/rock_fragment_native.xml
+				<texture name="Generator:com.oddlabs.tt.procedural.GeneratorRock"/>
+				<texture name="Generator:com.oddlabs.tt.procedural.GeneratorIron"/>
+			</model>
+			<animation wpc="1" type="loop">natives/peon/peon_idle.xml</animation>
+			<animation wpc="3.625" type="loop">natives/peon/peon_run.xml</animation>
+			<animation wpc="1" type="plain">natives/peon/peon_attack.xml</animation>
+			<animation wpc="1" type="plain">natives/peon/peon_die.xml</animation>
+		</sprite>
+		<sprite name="wood_resource">
+			<skeleton>natives/peon/peon_skeleton.xml</skeleton>
+			<model r="90" g="60" b="30">
+				misc/wood_fragment_native.xml
+				<texture name="wood_fragments"/>
+			</model>
+			<animation wpc="1" type="loop">natives/peon/peon_idle.xml</animation>
+			<animation wpc="3.625" type="loop">natives/peon/peon_run.xml</animation>
+			<animation wpc="1" type="plain">natives/peon/peon_attack.xml</animation>
+			<animation wpc="1" type="plain">natives/peon/peon_die.xml</animation>
+		</sprite>
+		<sprite name="rubber_resource">
+			<skeleton>natives/peon/peon_skeleton.xml</skeleton>
+			<model r="90" g="60" b="30">
+				misc/rubber_fragment_native.xml
+				<texture name="chicken"/>
+			</model>
+			<animation wpc="1" type="loop">natives/peon/peon_idle.xml</animation>
+			<animation wpc="3.625" type="loop">natives/peon/peon_run.xml</animation>
+			<animation wpc="1" type="plain">natives/peon/peon_attack.xml</animation>
+			<animation wpc="1" type="plain">natives/peon/peon_die.xml</animation>
+		</sprite>
+		<sprite name="quarters">
+			<model r="90" g="60" b="30">
+				natives/quarters/native_built_hi.xml
+				<texture name="native_building_hi" team="native_building_hi_team"/>
+			</model>
+			<model r="90" g="60" b="30">
+				natives/quarters/native_built_lo.xml
+				<texture name="native_building_lo" team="native_building_lo_team"/>
+			</model>
+		</sprite>
+		<sprite name="quarters_halfbuilt">
+			<model r="90" g="60" b="30">
+				natives/quarters/native_build_hi.xml
+				<texture name="native_building_hi" team="native_building_hi_team"/>
+			</model>
+			<model r="90" g="60" b="30">
+				natives/quarters/native_build_lo-new.xml
+				<texture name="native_building_lo" team="native_building_lo_team"/>
+			</model>
+		</sprite>
+		<sprite name="quarters_start">
+			<model r="90" g="60" b="30">
+				natives/quarters/native_start_hi.xml
+				<texture name="native_building_hi" team="native_building_hi_team"/>
+			</model>
+			<model r="90" g="60" b="30">
+				natives/quarters/native_start_lo.xml
+				<texture name="native_building_hi" team="native_building_hi_team"/>
+			</model>
+		</sprite>
+		<sprite name="armory">
+			<model r="90" g="60" b="30">
+				natives/armory/build_armoury_built_hi.xml
+				<texture name="native_building_hi" team="native_building_hi_team"/>
+			</model>
+			<model r="90" g="60" b="30">
+				natives/armory/build_armoury_built_lo.xml
+				<texture name="native_armoury_lo" team="native_armoury_lo_team"/>
+			</model>
+		</sprite>
+		<sprite name="armory_halfbuilt">
+			<model r="90" g="60" b="30">
+				natives/armory/build_armoury_build_hi.xml
+				<texture name="native_building_hi" team="native_building_hi_team"/>
+			</model>
+			<model r="90" g="60" b="30">
+				natives/armory/build_armoury_build_lo.xml
+				<texture name="native_armoury_lo" team="native_armoury_lo_team"/>
+			</model>
+		</sprite>
+		<sprite name="armory_start">
+			<model r="90" g="60" b="30">
+				natives/armory/build_armoury_start_hi.xml
+				<texture name="native_building_hi" team="native_building_hi_team"/>
+			</model>
+			<model r="90" g="60" b="30">
+				natives/armory/build_armoury_start_lo.xml
+				<texture name="native_building_hi" team="native_building_hi_team"/>
+			</model>
+		</sprite>
+		<sprite name="tower">
+			<model r="90" g="60" b="30">
+				natives/tower/native_tower_built_hi.xml
+				<texture name="native_tower" team="native_tower_team"/>
+			</model>
+			<model r="90" g="60" b="30">
+				natives/tower/native_tower_built_lo.xml
+				<texture name="native_tower" team="native_tower_team"/>
+			</model>
+		</sprite>
+		<sprite name="tower_halfbuilt">
+			<model r="90" g="60" b="30">
+				natives/tower/native_tower_build_hi.xml
+				<texture name="native_tower" team="native_tower_team"/>
+			</model>
+			<model r="90" g="60" b="30">
+				natives/tower/native_tower_build_lo.xml
+				<texture name="native_tower" team="native_tower_team"/>
+			</model>
+		</sprite>
+		<sprite name="tower_start">
+			<model r="90" g="60" b="30">
+				natives/tower/native_tower_start_hi.xml
+				<texture name="native_tower" team="native_tower_team"/>
+			</model>
+			<model r="90" g="60" b="30">
+				natives/tower/native_tower_start_lo.xml
+				<texture name="native_tower" team="native_tower_team"/>
+			</model>
+		</sprite>
+		<sprite name="rally_point">
+			<model r="90" g="60" b="30">
+				natives/misc/native_rallypoint.xml
+				<texture name="native_building_hi" team="native_building_hi_team"/>
+			</model>
+		</sprite>
+		<sprite name="spear">
+			<model r="90" g="60" b="30">
+				natives/warrior/native_warrior_spear.xml
+				<texture name="native_warrior_rock"/>
+				<texture name="native_warrior_iron"/>
+				<texture name="native_warrior_rubber"/>
+			</model>
+		</sprite>
+	</group>
+	<group name="misc">
+		<sprite name="jungle_tree_crown">
+			<model r="32" g="64" b="0">
+				misc/tree_flat.xml
+				<texture name="trees"/>
+			</model>
+		</sprite>
+		<sprite name="jungle_tree_trunk">
+			<model r="32" g="64" b="0">
+				misc/tree_mesh.xml
+				<texture name="trees"/>
+			</model>
+		</sprite>
+		<lowdetail name="tree_low">
+			<model r="32" g="64" b="0">
+				misc/tree_billboard.xml
+			</model>
+		</lowdetail>
+		<sprite name="palm_crown">
+			<model r="32" g="64" b="0">
+				misc/palm_flat.xml
+				<texture name="trees"/>
+			</model>
+		</sprite>
+		<sprite name="palm_trunk">
+			<model r="32" g="64" b="0">
+				misc/palm_mesh.xml
+				<texture name="trees"/>
+			</model>
+		</sprite>
+		<lowdetail name="palm_low">
+			<model r="32" g="64" b="0">
+				misc/palm_billboard.xml
+			</model>
+		</lowdetail>
+
+		<sprite name="oak_tree_crown">
+			<model r="0" g="0" b="0">
+				misc/oak_flat.xml
+				<texture name="viking_trees"/>
+			</model>
+		</sprite>
+		<sprite name="oak_tree_trunk">
+			<model r="0" g="0" b="0">
+				misc/oak_mesh.xml
+				<texture name="viking_trees"/>
+			</model>
+		</sprite>
+		<lowdetail name="oak_tree_low">
+			<model r="32" g="64" b="0">
+				misc/oak_billboard.xml
+			</model>
+		</lowdetail>
+		<sprite name="pine_tree_crown">
+			<model r="0" g="0" b="0">
+				misc/pine_flat.xml
+				<texture name="viking_trees"/>
+			</model>
+		</sprite>
+		<sprite name="pine_tree_trunk">
+			<model r="0" g="0" b="0">
+				misc/pine_mesh.xml
+				<texture name="viking_trees"/>
+			</model>
+		</sprite>
+		<lowdetail name="pine_tree_low">
+			<model r="32" g="64" b="0">
+				misc/pine_billboard.xml
+			</model>
+		</lowdetail>
+		
+		<sprite name="wood_2">
+			<model r="90" g="60" b="30">
+				misc/wood_fragment_2.xml
+				<texture name="wood_fragments"/>
+			</model>
+		</sprite>
+		<sprite name="wood_3">
+			<model r="90" g="60" b="30">
+				misc/wood_fragment_3.xml
+				<texture name="wood_fragments"/>
+			</model>
+		</sprite>
+		<sprite name="wood_4">
+			<model r="90" g="60" b="30">
+				misc/wood_fragment_4.xml
+				<texture name="wood_fragments"/>
+			</model>
+		</sprite>
+		<sprite name="wood_5">
+			<model r="90" g="60" b="30">
+				misc/wood_fragment_5.xml
+				<texture name="wood_fragments"/>
+			</model>
+		</sprite>
+
+		<sprite name="icon" scale="4">
+			<model r="90" g="60" b="30">
+				misc/icon.xml
+				<texture name="treasure"/>
+			</model>
+		</sprite>
+		<sprite name="treasure_1" scale="3">
+			<model r="90" g="60" b="30">
+				misc/treasure_1.xml
+				<texture name="treasure"/>
+			</model>
+		</sprite>
+		<sprite name="treasure_2" scale="3">
+			<model r="90" g="60" b="30">
+				misc/treasure_2.xml
+				<texture name="treasure"/>
+			</model>
+		</sprite>
+		<sprite name="treasure_3" scale="3">
+			<model r="90" g="60" b="30">
+				misc/treasure_3.xml
+				<texture name="treasure"/>
+			</model>
+		</sprite>
+		<sprite name="treasure_4" scale="3">
+			<model r="90" g="60" b="30">
+				misc/treasure_4.xml
+				<texture name="treasure"/>
+			</model>
+		</sprite>
+		<sprite name="treasure_5" scale="3">
+			<model r="90" g="60" b="30">
+				misc/treasure_5.xml
+				<texture name="treasure"/>
+			</model>
+		</sprite>
+
+		<sprite name="rock_1" scale="5">
+			<model r="90" g="60" b="30">
+				misc/rock_fragment_1.xml
+				<texture name="Generator:com.oddlabs.tt.procedural.GeneratorRock"/>
+				<texture name="Generator:com.oddlabs.tt.procedural.GeneratorIron"/>
+			</model>
+		</sprite>
+		<sprite name="rock_2" scale="5">
+			<model r="90" g="60" b="30">
+				misc/rock_fragment_02.xml
+				<texture name="Generator:com.oddlabs.tt.procedural.GeneratorRock"/>
+				<texture name="Generator:com.oddlabs.tt.procedural.GeneratorIron"/>
+			</model>
+		</sprite>
+		<sprite name="rock_3" scale="5">
+			<model r="90" g="60" b="30">
+				misc/rock_fragment_03.xml
+				<texture name="Generator:com.oddlabs.tt.procedural.GeneratorRock"/>
+				<texture name="Generator:com.oddlabs.tt.procedural.GeneratorIron"/>
+			</model>
+		</sprite>
+		<sprite name="rock_4" scale="5">
+			<model r="90" g="60" b="30">
+				misc/rock_fragment_04.xml
+				<texture name="Generator:com.oddlabs.tt.procedural.GeneratorRock"/>
+				<texture name="Generator:com.oddlabs.tt.procedural.GeneratorIron"/>
+			</model>
+		</sprite>
+		<sprite name="rock_5" scale="5">
+			<model r="90" g="60" b="30">
+				misc/rock_fragment_05.xml
+				<texture name="Generator:com.oddlabs.tt.procedural.GeneratorRock"/>
+				<texture name="Generator:com.oddlabs.tt.procedural.GeneratorIron"/>
+			</model>
+		</sprite>
+		
+		<sprite name="plant_1" scale="1.25">
+			<model r="90" g="60" b="30">
+				misc/plant_1.xml
+				<texture name="plants"/>
+			</model>
+		</sprite>
+		<sprite name="plant_2" scale="1.25">
+			<model r="90" g="60" b="30">
+				misc/plant_2.xml
+				<texture name="plants"/>
+			</model>
+		</sprite>
+		<sprite name="plant_3" scale="1.25">
+			<model r="90" g="60" b="30">
+				misc/plant_3.xml
+				<texture name="plants"/>
+			</model>
+		</sprite>
+		<sprite name="plant_4" scale="1.25">
+			<model r="90" g="60" b="30">
+				misc/plant_4.xml
+				<texture name="plants"/>
+			</model>
+		</sprite>
+
+		<sprite name="viking_plant_1" scale="1.25">
+			<model r="90" g="60" b="30">
+				misc/viking_plant_1.xml
+				<texture name="viking_plants"/>
+			</model>
+		</sprite>
+		<sprite name="viking_plant_2" scale="1.25">
+			<model r="90" g="60" b="30">
+				misc/viking_plant_2.xml
+				<texture name="viking_plants"/>
+			</model>
+		</sprite>
+		<sprite name="viking_plant_3" scale="1.25">
+			<model r="90" g="60" b="30">
+				misc/viking_plant_3.xml
+				<texture name="viking_plants"/>
+			</model>
+		</sprite>
+		<sprite name="viking_plant_4" scale="1.25">
+			<model r="90" g="60" b="30">
+				misc/viking_plant_4.xml
+				<texture name="viking_plants"/>
+			</model>
+		</sprite>
+
+		<sprite name="chicken">
+			<skeleton>misc/chicken/chicken_skeleton.xml</skeleton>
+			<model r="90" g="60" b="30">
+				misc/chicken/chicken_mesh.xml
+				<texture name="chicken"/>
+			</model>
+			<animation wpc="1" type="loop">misc/chicken/chicken_idle.xml</animation>
+			<animation wpc="1" type="plain">misc/chicken/chicken_peck.xml</animation>
+			<animation wpc="1" type="plain">misc/chicken/chicken_die.xml</animation>
+			<animation wpc="4" type="loop">misc/chicken/chicken_run.xml</animation>
+			<animation wpc="8" type="loop">misc/chicken/chicken_fly.xml</animation>
+		</sprite>
+	</group>
+</geometry>

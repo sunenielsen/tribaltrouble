@@ -1,0 +1,8 @@
+#!/bin/bash
+
+SENDMAIL=/usr/sbin/sendmail
+SENDTO=all@oddlabs.com
+ERRORMAIL=./error_mail
+
+until java -Djava.security.manager -Djava.security.policy=bugreporter.policy -server -ea -cp bugreport.jar com.oddlabs.bugreportserver.BugReportServer; do echo "Service crashed, sending report";
+cat $ERRORMAIL | $SENDMAIL -oi $SENDTO; done

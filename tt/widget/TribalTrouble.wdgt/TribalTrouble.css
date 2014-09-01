@@ -1,0 +1,51 @@
+body {
+	margin: 0;
+}
+
+a {
+	color: #000080;
+	text-decoration: none;
+}
+
+.oddlabs {
+	position: absolute;
+	top: 0px;
+	left: 9px;
+}
+
+.download {
+	position: absolute;
+	top: 30px;
+	left: 141px;
+}
+
+.online {
+	position: absolute;
+	top: 30px;
+	left: 219px;
+}
+
+.forum {
+	position: absolute;
+	top: 30px;
+	left: 315px;
+}
+
+.stats {
+	font: 12px "Lucida Grande";
+	font-weight: lighter;
+	color: #000000;
+	position: absolute;
+	top: 243px;
+	left: 29px;
+}
+
+.highscore {
+	z-index: 100;
+	font: 10px "Lucida Grande";
+	font-weight: lighter;
+	color: #000000;
+	position: absolute;
+	top: 100px;
+	left: 174px;
+}

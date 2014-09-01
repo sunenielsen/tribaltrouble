@@ -1,0 +1,11 @@
+/* AUTOMATICALLY GENERATED ON Wed Dec 01 16:44:32 CET 2004*/
+/* DO NOT EDIT */
+
+grant {
+  permission java.util.logging.LoggingPermission "control";
+  permission java.io.FilePermission "logs/-", "read,write,delete";
+  permission java.util.PropertyPermission "playback", "read";
+  permission java.net.SocketPermission "*", "accept,resolve,listen";
+  permission java.net.SocketPermission "localhost:3306", "connect,resolve";
+};
+

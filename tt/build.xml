@@ -1,0 +1,405 @@
+<project name="tt" basedir="." default="compile">
+	<import file="../common/common.xml"/>
+	<property name="jre" value="jre1.5.0_04"/>
+	<property name="main_class" value="com.oddlabs.tt.Main"/>
+	<property name="classpath" value="../common/build/classes:${lib}/javasvn.jar:${lib}/lwjgl.jar:${lib}/lwjgl_util.jar:${lib}/jorbis.jar:${lib}/jsquish.jar"/>
+	<property name="res_classpath" value="${build}:static:i18n:${commonstatic}"/>
+
+	<property name="revision_number_file" location="${build}/revision_number"/>
+	<property name="geometry_file" value="geometry.xml"/>
+	<property name="srcdirgeometry" location="geometry"/>
+	<property name="buildgeometry" location="${build}/geometry"/>
+	<property name="srcdirtextures" location="textures"/>
+	<property name="buildtextures" location="${build}/textures"/>
+
+	<property name="installers" location="installer"/>
+	<property name="installers.build" location="${build}/installers"/>
+	<property name="installers.assembly" location="${installers.build}/assembly"/>
+	<property name="installers.tmproot" location="${installers.build}/tmp"/>
+	<property name="installers.tmp" location="${installers.tmproot}/build"/>
+	<property name="bundleresources" location="${installers.tmp}/Tribal Trouble.app/Contents/Resources/Java"/>
+	<!--<property name="gamedata-svnurl" value="http://127.0.0.1/public_svnroot/games/tt"/>-->
+	<property name="gamedata-svnurl" value="http://update.oddlabs.com/public_svnroot/games/tt"/>
+	<property name="jar.compress" value="true"/>
+	<property name="dist" location="${build}/dist"/>
+	<property name="svndist" location="svndist"/>
+	
+	<!--	<property name="webstartdist" location="webstartdist"/>-->
+
+	<target name="compiledeps" depends="compile-common">
+	</target>
+
+	<target name="rundeps" depends="textures, geometry, revision">
+	</target>
+
+	<target name="geometry">
+		<ant inheritAll="false" dir="../tools" target="geometry">
+			<property name="geometry_file" value="${geometry_file}"/>
+			<property name="ressrc" location="${srcdirgeometry}"/>
+			<property name="resbuild" location="${buildgeometry}"/>
+		</ant>
+	</target>
+
+	<target name="createfonts">
+		<ant inheritAll="false" dir="../tools" target="createfont">
+			<property name="fontname" value="Tahoma"/>
+			<property name="fontsize" value="13"/>
+			<property name="numchars" value="32000"/>
+			<property name="fontinfodir" location="static/font"/>
+			<property name="fonttexdir" location="textures/font"/>
+			<property name="fonttexclasspath" value="/textures/font"/>
+		</ant>
+		<ant inheritAll="false" dir="../tools" target="createfont">
+			<property name="fontname" value="Impact"/>
+			<property name="fontsize" value="24"/>
+			<property name="numchars" value="384"/>
+			<property name="fontinfodir" location="static/font"/>
+			<property name="fonttexdir" location="textures/font"/>
+			<property name="fonttexclasspath" value="/textures/font"/>
+		</ant>
+	</target>
+
+	<target name="textures">
+		<mkdir dir="${buildtextures}/gui"/>
+		<mkdir dir="${buildtextures}/effects"/>
+		<mkdir dir="${buildtextures}/font"/>
+		<mkdir dir="${buildtextures}/models"/>
+		<property name="convert_args_2d" value="-flip"/>
+		<fileset id="pixelperfect_textures" dir="${srcdirtextures}">
+			<include name="pixelperfect/*.png"/>
+		</fileset>
+		<property name="convert_args_2d" value="-flip"/>
+		<ant inheritAll="false" dir="../tools" target="convert">
+			<reference refid="pixelperfect_textures" torefid="image_files"/>
+			<property name="convert_args" value="${convert_args_2d}"/>
+			<property name="image_ext" value="image"/>
+			<property name="dstdir" location="${buildtextures}/gui"/>
+		</ant>
+		<fileset id="gui_textures" dir="${srcdirtextures}">
+			<include name="gui/*.png"/>
+		</fileset>
+		<property name="convert_args_2d" value="-flip"/>
+		<ant inheritAll="false" dir="../tools" target="convert">
+			<reference refid="gui_textures" torefid="image_files"/>
+			<property name="convert_args" value="${convert_args_2d}"/>
+			<property name="image_ext" value="dxtn"/>
+			<property name="dstdir" location="${buildtextures}/gui"/>
+		</ant>
+		<fileset id="pointer_textures" dir="${srcdirtextures}">
+			<include name="pointer/*.png"/>
+		</fileset>
+		<ant inheritAll="false" dir="../tools" target="convert">
+			<reference refid="pointer_textures" torefid="image_files"/>
+			<property name="convert_args" value="${convert_args_2d}"/>
+			<property name="image_ext" value="image"/>
+			<property name="dstdir" location="${buildtextures}/gui"/>
+		</ant>
+		<fileset id="effect_textures" dir="${srcdirtextures}">
+			<include name="effects/*.png"/>
+		</fileset>
+		<ant inheritAll="false" dir="../tools" target="convert">
+			<reference refid="effect_textures" torefid="image_files"/>
+			<property name="convert_args" value="${convert_args_2d} -mipmaps"/>
+			<property name="image_ext" value="dxtn"/>
+			<property name="dstdir" location="${buildtextures}/effects"/>
+		</ant>
+		<fileset id="font_textures" dir="${srcdirtextures}">
+			<include name="font/*.png"/>
+		</fileset>
+		<ant inheritAll="false" dir="../tools" target="convert">
+			<reference refid="font_textures" torefid="image_files"/>
+			<property name="convert_args" value="${convert_args_2d}"/>
+			<property name="image_ext" value="dxtn"/>
+			<property name="dstdir" location="${buildtextures}/font"/>
+		</ant>
+		<!--		<ant inheritAll="false" dir="../tools" target="textures">
+			<property name="ressrc" location="${srcdirtextures}"/>
+			<property name="resbuild" location="${buildtextures}"/>
+		</ant>-->
+		<property name="texture.src" value="${srcdirtextures}/models"/>
+		<property name="team.src" value="${srcdirtextures}/teamdecals"/>
+		<property name="texture.dst" value="${buildtextures}/models"/>
+		<!-- 1/2.2 ~ 0.45454545454545453 -->
+		<fileset id="textures" dir="${texture.src}">
+			<include name="**/*.png"/>
+		</fileset>
+		<fileset id="team_textures" dir="${team.src}">
+			<include name="**/*.png"/>
+		</fileset>
+		<ant inheritAll="false" dir="../tools" target="convert">
+			<reference refid="textures" torefid="image_files"/>
+			<property name="convert_args" value="-flip -gamma 0.45454545454545453 -mipmaps -gamma 2.2"/>
+			<property name="image_ext" value="dxtn"/>
+			<property name="dstdir" location="${texture.dst}"/>
+		</ant>
+		<ant inheritAll="false" dir="../tools" target="convert">
+			<reference refid="team_textures" torefid="image_files"/>
+			<property name="convert_args" value="-half -flip -mipmaps"/>
+			<property name="image_ext" value="dxtn"/>
+			<property name="dstdir" location="${texture.dst}"/>
+		</ant>
+	</target>
+
+	<target name="revision">
+		<exec executable="hg" output="${revision_number_file}">
+			<arg value="tip"/>
+			<arg value="--template"/>
+			<arg value="{rev}"/>
+		</exec>
+	</target>
+
+	<target name="proceduraltest" depends="compile">
+		<java fork="yes" classpath="../common/build/classes:${build}/classes" classname="com.oddlabs.tt.procedural.Main">
+			<jvmarg value="-ea"/>
+			<jvmarg value="-Xmx200000000"/>
+		</java>
+	</target>
+
+	<target name="generatetextures" depends="compile">
+		<java failonerror="true" fork="yes" classpath="${lib}/lwjgl.jar:${lib}/lwjgl_util.jar:${build}:${build}/classes:../common/build/classes" classname="com.oddlabs.texturegenerator.TextureGenerator">
+			<jvmarg value="-ea"/>
+			<jvmarg value="-Djava.library.path=${nativelib}"/>
+			<arg value="${srcdirtextures}"/>
+		</java>
+	</target>
+
+	<!-- installer stuff -->
+	<target name="dist" depends="mrproper, copydist" description="generate the distribution"/>
+
+	<target name="cleaninstallers">
+		<delete dir="${installers.assembly}"/>
+	</target>
+
+	<target name="loader" depends="compile-common">
+		<ant inheritAll="false" dir="../loader" target="loader"/>
+	</target>
+
+	<target name="makedist" depends="compile,rundeps,loader" description="generate the distribution">
+		<!-- Create the distribution directory -->
+		<mkdir dir="${dist}/common"/>
+		<mkdir dir="${dist}/linux-x86"/>
+		<mkdir dir="${dist}/windows-x86"/>
+		<mkdir dir="${dist}/macosx-ppc"/>
+		<jar compress="false" destfile="${dist}/common/tt-code.jar">
+			<fileset dir="${build}/classes">
+				<include name="com/oddlabs/tt/**/*class"/>
+			</fileset>
+			<fileset dir="../common/build/classes">
+				<include name="com/oddlabs/net/**/*class"/>
+				<include name="com/oddlabs/geometry/**/*class"/>
+				<include name="com/oddlabs/util/**/*class"/>
+				<include name="com/oddlabs/procedural/**/*class"/>
+				<include name="com/oddlabs/regclient/**/*class"/>
+				<include name="com/oddlabs/registration/**/*class"/>
+				<include name="com/oddlabs/matchmaking/**/*class"/>
+				<include name="com/oddlabs/bugreport/**/*class"/>
+				<include name="com/oddlabs/updater/**/*class"/>
+				<include name="com/oddlabs/event/**/*class"/>
+				<include name="com/oddlabs/http/**/*class"/>
+				<include name="com/oddlabs/router/**/*class"/>
+			</fileset>
+			<fileset dir="../loader/build/classes">
+				<include name="com/oddlabs/loader/**/*class"/>
+			</fileset>
+			<fileset dir="static">
+				<include name="scripts/*.xml"/>
+			</fileset>
+		</jar>
+		<jar compress="false" destfile="${dist}/common/tt-i18n.jar">
+			<fileset dir="i18n">
+				<include name="com/oddlabs/tt/**/*properties"/>
+			</fileset>
+		</jar>
+		<copy todir="${dist}/common">
+			<fileset dir="${build}">
+				<!--			<include name="com/oddlabs/tt/**/*class"/>
+				<include name="com/oddlabs/net/**/*class"/>
+				<include name="com/oddlabs/util/**/*class"/>
+				<include name="com/oddlabs/registration/**/*class"/>
+				<include name="com/oddlabs/matchmaking/**/*class"/>
+				<include name="com/oddlabs/bugreport/**/*class"/>
+				<include name="com/oddlabs/updater/**/*class"/>
+				<include name="com/oddlabs/loader/**/*class"/>
+				-->
+				<include name="textures/gui/*image"/>
+				<include name="textures/gui/*dxtn"/>
+				<include name="textures/models/*dxtn"/>
+				<include name="geometry/**/*binsprite"/>
+				<include name="geometry/**/*binlowdetail"/>
+
+				<include name="textures/effects/*image"/>
+				<include name="textures/effects/*dxtn"/>
+				<include name="textures/font/*image"/>
+				<include name="textures/font/*dxtn"/>
+			</fileset>
+			<fileset file="${revision_number_file}"/>
+			<fileset dir="../common/static">
+				<include name="public_reg_key"/>
+			</fileset>
+			<fileset dir="static">
+				<include name="gui/*.xml"/>
+				<include name="sfx/*.ogg"/>
+				<include name="sfx/*.wav"/>
+				<include name="music/*.ogg"/>
+				<include name="font/*font"/>
+				<!--				<include name="textures/models/*png"/>
+				<include name="textures/models/*jpg"/>-->
+			</fileset>
+			<fileset dir="${lib}">
+				<include name="javasvn.jar"/>
+				<include name="lwjgl.jar"/>
+				<include name="lwjgl_util.jar"/>
+				<include name="jorbis.jar"/>
+				<include name="jsquish.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="${dist}/windows-x86">
+			<fileset dir="${nativelib}">
+				<include name="lwjgl.dll"/>
+				<include name="OpenAL32.dll"/>
+			</fileset>
+		</copy>
+		<copy todir="${dist}/macosx-ppc">
+			<fileset dir="${nativelib}">
+				<include name="liblwjgl.jnilib"/>
+				<include name="liblwjgl-legacy.jnilib"/>
+				<include name="openal.dylib"/>
+			</fileset>
+		</copy>
+		<copy todir="${dist}/linux-x86">
+			<fileset dir="${nativelib}">
+				<include name="liblwjgl.so"/>
+				<include name="libopenal.so"/>
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="-checkoutgamedata">
+		<mkdir dir="${svn.dest}"/>
+		<java failonerror="true" classname="org.tmatesoft.svn.cli.SVN"
+			fork="true">
+			<arg value="checkout"/>
+			<arg value="${gamedata-svnurl}/${svn.src}"/>
+			<arg path="${svn.dest}/${svn.localname}"/>
+			<classpath>
+				<pathelement location="${lib}/javasvn.jar" />
+				<pathelement location="${lib}/javasvn-cli.jar" />
+			</classpath>
+		</java>
+		<delete>
+			<fileset dir="${svn.dest}/">
+				<exclude name="**/.svn"/>
+			</fileset>
+		</delete>
+	</target>
+
+	<target name="copybuynowfile">
+		<copy todir="${installers.tmp}" >
+			<fileset dir="${installers}" defaultexcludes="false">
+				<include name="BuyNow.html"/>
+			</fileset>
+		</copy>
+		<replace file="${installers.tmp}/BuyNow.html" token="@BUYNOW_URL@" value="${buynow_url}"/>
+	</target>
+	
+	<target name="assembleplatforms">
+		<!-- linux -->
+		<mkdir dir="${installers.assembly}/linux-x86/gamedata"/>
+		<antcall target="-checkoutgamedata">
+			<param name="svn.dest" location="${installers.assembly}/linux-x86/gamedata/data-1"/>
+			<param name="svn.src" value="linux-x86"/>
+			<param name="svn.localname" value="native"/>
+		</antcall>
+		<copy todir="${installers.assembly}/linux-x86">
+			<fileset dir="${installers}/linux/data" includes="*"/>
+		</copy>
+		<chmod file="${installers.assembly}/linux-x86/tribaltrouble" perm="755"/>
+
+		<!-- mac os x -->
+		<mkdir dir="${installers.assembly}/macosx-ppc/gamedata"/>
+		<antcall target="-checkoutgamedata">
+			<param name="svn.dest" location="${installers.assembly}/macosx-ppc/gamedata/data-1"/>
+			<param name="svn.src" value="macosx-ppc"/>
+			<param name="svn.localname" value="native"/>
+		</antcall>
+		<!-- windows -->
+		<mkdir dir="${installers.assembly}/windows-x86/gamedata"/>
+		<antcall target="-checkoutgamedata">
+			<param name="svn.dest" location="${installers.assembly}/windows-x86/gamedata/data-1"/>
+			<param name="svn.src" value="windows-x86"/>
+			<param name="svn.localname" value="native"/>
+		</antcall>
+	</target>
+
+	<target name="assemblejre">
+		<mkdir dir="${jre.dst}"/>
+		<exec failonerror="true" executable="cp">
+			<arg value="-R"/>
+			<arg value="${jre.src}"/>
+			<arg path="${jre.dst}"/>
+		</exec>
+		<!-- Clean .svn dirs -->
+		<delete includeEmptyDirs="true">
+			<fileset dir="${jre.dst}" defaultexcludes="no">
+				<include name="**/.svn/**"/>
+			</fileset>
+		</delete>
+	</target>
+
+	<target name="assemblesupport">
+		<mkdir dir="${installers.assembly}/support"/>
+		<copy todir="${installers.assembly}/support">
+			<fileset dir="${installers}">
+				<include name="ReadMe.html"/>
+				<include name="Manual.html"/>
+				<include name="license.txt"/>
+				<include name="oddlabs_license.txt"/>
+			</fileset>
+		</copy>
+	</target>
+	
+	<target name="assemblecommon" depends="loader">
+		<mkdir dir="${installers.assembly}/common"/>
+		<mkdir dir="${installers.assembly}/common/gamedata"/>
+		<copy todir="${installers.assembly}/common">
+			<fileset dir="../loader/build">
+				<include name="loader.jar"/>
+			</fileset>
+		</copy>
+		<antcall target="-checkoutgamedata">
+			<param name="svn.dest" location="${installers.assembly}/common/gamedata/data-1"/>
+			<param name="svn.src" value="common"/>
+			<param name="svn.localname" value="common"/>
+		</antcall>
+	</target>
+
+	<target name="assembleinstaller" depends="cleaninstallers">
+		<antcall target="assemblecommon"/>
+		<antcall target="assemblesupport"/>
+		<antcall target="assembleplatforms"/>
+		<antcall target="assemblejres"/>
+	</target>
+
+	<target name="assemblejres">
+		<!-- linux -->
+		<antcall target="assemblejre">
+			<param name="jre.src" location="${installers}/linux/jre/${jre}"/>
+			<param name="jre.dst" location="${installers.assembly}/linuxjre"/>
+		</antcall>
+	</target>
+
+	<!--<target name="initinstalltmp" depends="cleaninstallertmp, copybuynowfile"/>-->
+	<target name="initinstalltmp" depends="assembleinstaller, cleaninstallertmp, copybuynowfile"/>
+
+	<target name="cleaninstallertmp">
+		<delete dir="${installers.tmproot}"/>
+	</target>
+
+	<target name="copydist" depends="makedist">
+		<ant inheritAll="false" dir="../tools" target="copydist">
+			<property name="svnsrc" location="${dist}"/>
+			<property name="svndst" location="${svndist}"/>
+		</ant>
+	</target>
+
+</project>

@@ -1,0 +1,9 @@
+<project name="truetype" basedir=".">
+	<import file="../common/common.xml"/>
+	<property name="classpath" value="../common/build/classes:${lib}/lwjgl.jar"/>
+	<property name="res_classpath" value="static:${commonstatic}"/>
+	<property name="main_class" value="com.oddlabs.truetype.Test"/>
+
+	<target name="compiledeps" depends="compile-common">
+	</target>
+</project>

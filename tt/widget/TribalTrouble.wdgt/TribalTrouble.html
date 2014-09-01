@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/tr/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<style>
+			@import "TribalTrouble.css";
+		</style>
+		<script type="text/javascript">
+			var timerInterval = null;
+			var req;
+
+			function init() {
+				if (window.widget) {
+					widget.onhide = onhide;
+					widget.onshow = onshow;
+				}
+				update();
+			}
+
+			function onshow() {
+				if (timerInterval == null) {
+					timerInterval = setInterval("update();", 10000); //update every 10 sec
+				}
+				update();
+			}
+
+			function onhide() {
+				if (timerInterval != null) {
+					clearInterval(timerInterval);
+					timerInterval = null;
+				}
+			} 
+			
+			function loadXMLDoc() {
+				req = new XMLHttpRequest();
+				req.onreadystatechange = processReqChange;
+				var url = "http://oddlabs.com/onlinewidget.php?dummy=" + (new Date).getTime();
+				req.open("GET", url, true);
+				req.send(null);
+			}
+
+			function processReqChange() {
+				if (req.readyState == 4) {
+					//alert("req.status = " + req.status);
+					if (req.status == 200) {
+						//alert("req = " + req)
+						updateHTML();
+						req = null;
+					} else {
+						alert("There was a problem retrieving the XML data:\n" + req.statusText);
+					}
+				}
+			}
+
+			function update() {
+				try {
+					loadXMLDoc();
+				}
+				catch(e) {
+					alert("Unable to get XML data.\n");
+					return;
+				}
+			}
+
+			function openURL(url) {
+				widget.openURL(url);
+			}
+
+			function getValue(item, name) {
+				return item.getElementsByTagName(name)[0].firstChild.nodeValue;
+			}
+
+			function updateHTML() {
+				//alert("running updateHTML");
+
+				// Idle/Active stats
+				var stats = req.responseXML.getElementsByTagName("stats")[0];
+				var idle = getValue(stats, "idle");
+				var active = getValue(stats, "active");
+				var content_stats = "<table style=\"width: 122px\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\"><tr><td style=\"paddig-right: 10px\">Idle players:</td><td align=\"right\"><strong>" + idle + "</strong></td></tr><tr><td style=\"paddig-right: 10px\">Active players:</td><td align=\"right\"><strong>" + active + "</strong></td></tr></table>";
+				document.getElementById("div_stats").innerHTML = content_stats;
+				
+				// Highscore
+				var highscores = req.responseXML.getElementsByTagName("highscore");
+				var content_highscore = "<table style=\"width: 190px\" border=\"0\" cellspacing=\"0\" cellpadding=\"2\"><tr style=\"font-weight: bold\"><td>&nbsp;Player&nbsp;name</td><td align=\"right\">Rating&nbsp;</td></tr>";
+				for (var i = 0; i < highscores.length; i++) {
+					var nick = getValue(highscores[i], "nick");
+					var profile_url = "http://oddlabs.com/players.php?nick=" + nick;
+					var profile = "<a href=\"javascript:openURL('" + profile_url + "')\">" + nick + "</a>";
+					var rating = getValue(highscores[i], "rating");
+					content_highscore = content_highscore + "<tr><td>&nbsp;" + profile + "</td><td align=\"right\">" + rating + "&nbsp;</td></tr>";
+				}
+				content_highscore = content_highscore + "</table>";
+				//alert(content_highscore);
+				document.getElementById("div_highscore").innerHTML = content_highscore;
+			}
+
+		</script>
+	</head>
+	<body onload="init()">
+		<img src="Default.png">
+		
+		<span class="oddlabs"><a href="javascript:openURL('http://oddlabs.com/')"><img src="Transparent.png" width="115" height="57" alt="Oddlabs" border="0" /></a></span>
+		
+		<span class="download"><a href="javascript:openURL('http://oddlabs.com/download.php?os=macosx')"><img src="Transparent.png" width="61" height="22" alt="Download Tribal Trouble" border="0" /></a></span>
+		
+		<span class="online"><a href="javascript:openURL('http://oddlabs.com/players.php')"><img src="Transparent.png" width="79" height="22" alt="See online players" border="0" /></a></span>
+		
+		<span class="forum"><a href="javascript:openURL('http://oddlabs.com/forum/')"><img src="Transparent.png" width="42" height="22" alt="Oddlabs forum" border="0" /></a></span>
+		
+		<span class="stats">
+			<div id="div_stats">
+			</div>
+		</span>
+		
+		<span class="highscore">
+			<div id="div_highscore">
+			</div>
+		</span>
+
+	</body>
+<html>

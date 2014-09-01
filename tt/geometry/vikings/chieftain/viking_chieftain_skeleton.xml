@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+
+<!DOCTYPE skeleton [
+	<!ELEMENT skeleton   (bones, init_pose)>
+
+	<!ELEMENT bones      (bone+)>
+
+	<!ELEMENT init_pose  (transform+)>
+
+	<!ELEMENT bone        EMPTY>
+
+	<!ELEMENT transform   EMPTY>
+	<!ATTLIST transform name CDATA #REQUIRED>
+	<!ATTLIST transform m00 CDATA #REQUIRED>
+	<!ATTLIST transform m01 CDATA #REQUIRED>
+	<!ATTLIST transform m02 CDATA #REQUIRED>
+	<!ATTLIST transform m03 CDATA #REQUIRED>
+	<!ATTLIST transform m10 CDATA #REQUIRED>
+	<!ATTLIST transform m11 CDATA #REQUIRED>
+	<!ATTLIST transform m12 CDATA #REQUIRED>
+	<!ATTLIST transform m13 CDATA #REQUIRED>
+	<!ATTLIST transform m20 CDATA #REQUIRED>
+	<!ATTLIST transform m21 CDATA #REQUIRED>
+	<!ATTLIST transform m22 CDATA #REQUIRED>
+	<!ATTLIST transform m23 CDATA #REQUIRED>
+	<!ATTLIST transform m30 CDATA #REQUIRED>
+	<!ATTLIST transform m31 CDATA #REQUIRED>
+	<!ATTLIST transform m32 CDATA #REQUIRED>
+	<!ATTLIST transform m33 CDATA #REQUIRED>
+	<!ATTLIST bone name CDATA #REQUIRED>
+	<!ATTLIST bone parent CDATA #REQUIRED>
+]>
+
+<skeleton>
+	<bones>
+		<bone name="Bip01 Spine" parent="Bip01 Pelvis"/>
+		<bone name="Bip01 Pelvis" parent="Bip01"/>
+		<bone name="Bip01 Head" parent="Bip01 Neck"/>
+		<bone name="Bip01 Neck" parent="Bip01 Spine1"/>
+		<bone name="Bip01 Spine1" parent="Bip01 Spine"/>
+		<bone name="Bip01 Tail" parent="Bip01 Spine"/>
+		<bone name="Bip01 Tail2" parent="Bip01 Tail1"/>
+		<bone name="Bip01 L Thigh" parent="Bip01 Spine"/>
+		<bone name="Bip01 R Thigh" parent="Bip01 Spine"/>
+		<bone name="Bip01 Tail1" parent="Bip01 Tail"/>
+		<bone name="Bip01 L Clavicle" parent="Bip01 Neck"/>
+		<bone name="Bip01 L UpperArm" parent="Bip01 L Clavicle"/>
+		<bone name="Bip01 L Forearm" parent="Bip01 L UpperArm"/>
+		<bone name="Bip01 L Hand" parent="Bip01 L Forearm"/>
+		<bone name="Bip01 L Finger1" parent="Bip01 L Hand"/>
+		<bone name="Bip01 L Finger0" parent="Bip01 L Hand"/>
+		<bone name="Bip01 L Finger01" parent="Bip01 L Finger0"/>
+		<bone name="Bip01 L Finger11" parent="Bip01 L Finger1"/>
+		<bone name="Bip01 R Clavicle" parent="Bip01 Neck"/>
+		<bone name="Bip01 R UpperArm" parent="Bip01 R Clavicle"/>
+		<bone name="Bip01 R Forearm" parent="Bip01 R UpperArm"/>
+		<bone name="Bip01 R Hand" parent="Bip01 R Forearm"/>
+		<bone name="Bip01 R Finger1" parent="Bip01 R Hand"/>
+		<bone name="Bip01 R Finger0" parent="Bip01 R Hand"/>
+		<bone name="Bip01 R Finger01" parent="Bip01 R Finger0"/>
+		<bone name="Bip01 R Finger11" parent="Bip01 R Finger1"/>
+		<bone name="Bip01 R Calf" parent="Bip01 R Thigh"/>
+		<bone name="Bip01 R Foot" parent="Bip01 R Calf"/>
+		<bone name="Bip01 R Toe0" parent="Bip01 R Foot"/>
+		<bone name="Bip01 L Foot" parent="Bip01 L Calf"/>
+		<bone name="Bip01 L Calf" parent="Bip01 L Thigh"/>
+		<bone name="Bip01 L Toe0" parent="Bip01 L Foot"/>
+		<bone name="Bip01 Ponytail1" parent="Bip01 Head"/>
+		<bone name="Bip01 Ponytail2" parent="Bip01 Head"/>
+		<bone name="Bip01 Ponytail21" parent="Bip01 Ponytail2"/>
+		<bone name="Bip01 Prop1" parent="Bip01 L Hand"/>
+		<bone name="Bip01 Prop2" parent="Bip01 Prop1"/>
+		<bone name="Bip01 Prop3" parent="Bip01 Prop1"/>
+	</bones>
+	<init_pose>
+		<transform name="Bip01 Spine"
+			m00="0.000796274" m10="1.0" m20="7.73599e-007" m30="-0.0633535"
+			m01="0.0" m11="-7.73566e-007" m21="1.0" m31="-2.5452e-007"
+			m02="1.0" m12="-0.000796274" m22="0.0" m32="1.32068"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="Bip01 Pelvis"
+			m00="0.0" m10="1.0" m20="-3.3868e-006" m30="0.035042"
+			m01="-1.3868e-006" m11="3.3868e-006" m21="1.0" m31="0.0"
+			m02="1.0" m12="0.0" m22="1.3868e-006" m32="0.637575"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="Bip01 Head"
+			m00="-1.3868e-006" m10="1.0" m20="7.736e-007" m30="-0.016004"
+			m01="0.0" m11="-7.736e-007" m21="1.0" m31="-1.95587e-007"
+			m02="1.0" m12="1.3868e-006" m22="0.0" m32="2.13892"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="Bip01 Neck"
+			m00="0.397911" m10="0.917424" m20="5.44568e-007" m30="-0.0631576"
+			m01="7.55719e-007" m11="-9.21359e-007" m21="1.0" m31="-2.85142e-007"
+			m02="0.917424" m12="-0.397911" m22="-1.05993e-006" m32="2.0302"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="Bip01 Spine1"
+			m00="0.000796274" m10="1.0" m20="7.73599e-007" m30="-0.0633535"
+			m01="0.0" m11="-7.73566e-007" m21="1.0" m31="-2.70026e-007"
+			m02="1.0" m12="-0.000796274" m22="0.0" m32="1.67542"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="Bip01 Tail"
+			m00="-0.216111" m10="-0.976369" m20="-4.70806e-006" m30="-0.342434"
+			m01="-3.89543e-007" m11="-4.73578e-006" m21="1.0" m31="-8.41146e-007"
+			m02="-0.976369" m12="0.216111" m22="6.43116e-007" m32="1.9719"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="Bip01 Tail2"
+			m00="-0.0218894" m10="-0.99976" m20="-4.77294e-006" m30="-0.503386"
+			m01="0.0" m11="-4.77408e-006" m21="1.0" m31="-1.12489e-006"
+			m02="-0.99976" m12="0.0218894" m22="0.0" m32="1.09884"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="Bip01 L Thigh"
+			m00="0.12465" m10="0.992201" m20="2.08742e-006" m30="0.0350412"
+			m01="3.03568e-007" m11="2.06569e-006" m21="-1.0" m31="0.384008"
+			m02="-0.992201" m12="0.12465" m22="0.0" m32="0.637575"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="Bip01 R Thigh"
+			m00="0.12465" m10="0.992201" m20="2.08742e-006" m30="0.0350428"
+			m01="3.03568e-007" m11="2.06569e-006" m21="-1.0" m31="-0.384008"
+			m02="-0.992201" m12="0.12465" m22="0.0" m32="0.637575"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="Bip01 Tail1"
+			m00="-0.147826" m10="-0.989013" m20="-4.74313e-006" m30="-0.438077"
+			m01="-2.52422e-007" m11="-4.75809e-006" m21="1.0" m31="-1.01347e-006"
+			m02="-0.989013" m12="0.147826" m22="4.53723e-007" m32="1.53816"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="Bip01 L Clavicle"
+			m00="-2e-006" m10="-1.0" m20="0.0" m30="-0.0936393"
+			m01="1.0" m11="-2e-006" m21="0.0" m31="0.144617"
+			m02="0.0" m12="0.0" m22="1.0" m32="2.03016"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="Bip01 L UpperArm"
+			m00="0.00695209" m10="-0.999022" m20="0.0436625" m30="-0.09364"
+			m01="0.9999" m11="0.00640756" m21="-0.0125988" m31="0.506994"
+			m02="0.0123067" m12="0.0437457" m22="0.998967" m32="2.03016"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="Bip01 L Forearm"
+			m00="0.0181233" m10="-0.998882" m20="0.0436625" m30="-0.0900999"
+			m01="0.999766" m11="0.0175886" m21="-0.0125988" m31="1.01617"
+			m02="0.0118167" m12="0.0438806" m22="0.998967" m32="2.03643"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="Bip01 L Hand"
+			m00="0.0177822" m10="0.00852283" m20="-0.999806" m30="-0.0818518"
+			m01="0.998602" m11="0.0496373" m21="0.0181839" m31="1.47117"
+			m02="0.0497826" m12="-0.998731" m22="-0.00762825" m32="2.04181"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="Bip01 L Finger1"
+			m00="0.0198971" m10="0.00267508" m20="-0.999798" m30="-0.0738401"
+			m01="0.955351" m11="-0.294912" m21="0.0182234" m31="1.92108"
+			m02="-0.294803" m12="-0.955521" m22="-0.00842351" m32="2.06424"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="Bip01 L Finger0"
+			m00="0.862631" m10="-0.486827" m20="0.137359" m30="0.25648"
+			m01="0.390089" m11="0.81312" m21="0.432049" m31="1.65819"
+			m02="-0.322022" m12="-0.319116" m22="0.891328" m32="1.99547"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="Bip01 L Finger01"
+			m00="0.763812" m10="-0.630654" m20="0.137359" m30="0.519502"
+			m01="0.526728" m11="0.732046" m21="0.432049" m31="1.77713"
+			m02="-0.373025" m12="-0.257654" m22="0.891328" m32="1.89728"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="Bip01 L Finger11"
+			m00="0.0191634" m10="-0.0059844" m20="-0.999798" m30="-0.0678725"
+			m01="0.741207" m11="-0.671029" m21="0.0182234" m31="2.20762"
+			m02="-0.671003" m12="-0.741407" m22="-0.00842351" m32="1.97582"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="Bip01 R Clavicle"
+			m00="2e-006" m10="-1.0" m20="0.0" m30="-0.0936387"
+			m01="-1.0" m11="-2e-006" m21="0.0" m31="-0.144617"
+			m02="0.0" m12="0.0" m22="-1.0" m32="2.03016"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="Bip01 R UpperArm"
+			m00="0.00695626" m10="-0.999022" m20="-0.0436624" m30="-0.093638"
+			m01="-0.9999" m11="-0.00641174" m21="-0.0125989" m31="-0.506994"
+			m02="0.0123066" m12="0.0437457" m22="-0.998967" m32="2.03016"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="Bip01 R Forearm"
+			m00="0.0181274" m10="-0.998882" m20="-0.0436624" m30="-0.0900957"
+			m01="-0.999766" m11="-0.0175928" m21="-0.0125989" m31="-1.01617"
+			m02="0.0118166" m12="0.0438806" m22="-0.998967" m32="2.03643"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="Bip01 R Hand"
+			m00="0.0177863" m10="0.00852303" m20="0.999805" m30="-0.0818457"
+			m01="-0.998602" m11="-0.0496371" m21="0.0181881" m31="-1.47117"
+			m02="0.0497825" m12="-0.998731" m22="0.00762825" m32="2.04181"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="Bip01 R Finger1"
+			m00="0.019901" m10="0.00267385" m20="0.999798" m30="-0.0738322"
+			m01="-0.955351" m11="0.294912" m21="0.0182276" m31="-1.92108"
+			m02="-0.294804" m12="-0.955521" m22="0.00842351" m32="2.06424"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="Bip01 R Finger0"
+			m00="0.862633" m10="-0.486824" m20="-0.137361" m30="0.256487"
+			m01="-0.390085" m11="-0.813122" m21="0.432048" m31="-1.65819"
+			m02="-0.322022" m12="-0.319117" m22="-0.891328" m32="1.99547"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="Bip01 R Finger01"
+			m00="0.763815" m10="-0.63065" m20="-0.137361" m30="0.51951"
+			m01="-0.526725" m11="-0.732049" m21="0.432048" m31="-1.77713"
+			m02="-0.373025" m12="-0.257654" m22="-0.891328" m32="1.89728"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="Bip01 R Finger11"
+			m00="0.0191665" m10="-0.0059872" m20="0.999798" m30="-0.0678633"
+			m01="-0.741207" m11="0.671029" m21="0.0182276" m31="-2.20762"
+			m02="-0.671003" m12="-0.741407" m22="0.00842351" m32="1.97582"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="Bip01 R Calf"
+			m00="-0.153784" m10="0.988105" m20="2.08742e-006" m30="0.0684609"
+			m01="-2.7782e-007" m11="2.06931e-006" m21="-1.0" m31="-0.384008"
+			m02="-0.988105" m12="-0.153784" m22="0.0" m32="0.371571"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="Bip01 R Foot"
+			m00="0.0" m10="1.0" m20="2e-006" m30="0.044001"
+			m01="0.0" m11="2e-006" m21="-1.0" m31="-0.384008"
+			m02="-1.0" m12="0.0" m22="0.0" m32="0.214409"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="Bip01 R Toe0"
+			m00="1.0" m10="0.0" m20="2e-006" m30="0.548678"
+			m01="2e-006" m11="0.0" m21="-1.0" m31="-0.384007"
+			m02="0.0" m12="1.0" m22="0.0" m32="0.000750925"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="Bip01 L Foot"
+			m00="0.0" m10="1.0" m20="2e-006" m30="0.0439994"
+			m01="0.0" m11="2e-006" m21="-1.0" m31="0.384008"
+			m02="-1.0" m12="0.0" m22="0.0" m32="0.214409"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="Bip01 L Calf"
+			m00="-0.153784" m10="0.988105" m20="2.08742e-006" m30="0.0684594"
+			m01="-2.7782e-007" m11="2.06931e-006" m21="-1.0" m31="0.384008"
+			m02="-0.988105" m12="-0.153784" m22="0.0" m32="0.371571"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="Bip01 L Toe0"
+			m00="1.0" m10="0.0" m20="2e-006" m30="0.548676"
+			m01="2e-006" m11="0.0" m21="-1.0" m31="0.384009"
+			m02="0.0" m12="1.0" m22="0.0" m32="0.000750959"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="Bip01 Ponytail1"
+			m00="0.998527" m10="-0.0542658" m20="-2.15051e-006" m30="0.28948"
+			m01="1.99943e-006" m11="-2.83848e-006" m21="1.0" m31="-6.0456e-007"
+			m02="-0.0542658" m12="-0.998527" m22="-2.7258e-006" m32="2.59511"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="Bip01 Ponytail2"
+			m00="0.658966" m10="-0.752173" m20="-4.08623e-006" m30="0.361783"
+			m01="1.35081e-006" m11="-4.24914e-006" m21="1.0" m31="-4.44679e-007"
+			m02="-0.752173" m12="-0.658966" m22="-1.784e-006" m32="2.24568"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="Bip01 Ponytail21"
+			m00="0.626413" m10="-0.779491" m20="-4.162e-006" m30="0.567062"
+			m01="1.2869e-006" m11="-4.3052e-006" m21="1.0" m31="0.0"
+			m02="-0.779491" m12="-0.626413" m22="-1.69371e-006" m32="2.01175"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="Bip01 Prop1"
+			m00="0.10292" m10="-0.211871" m20="0.971863" m30="-1.14756"
+			m01="-0.0213271" m11="0.976357" m21="0.215109" m31="1.53712"
+			m02="-0.994461" m12="-0.0428661" m22="0.0959682" m32="1.70179"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="Bip01 Prop2"
+			m00="-0.72862" m10="-0.546434" m20="0.412944" m30="0.403928"
+			m01="-0.663759" m11="0.712042" m21="-0.228953" m31="2.62904"
+			m02="-0.168926" m12="-0.440915" m22="-0.881509" m32="2.53122"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="Bip01 Prop3"
+			m00="0.676123" m10="0.614567" m20="0.406405" m30="1.57747"
+			m01="0.722028" m11="-0.662524" m21="-0.199345" m31="3.8833"
+			m02="0.146742" m12="0.428217" m22="-0.891682" m32="2.77643"
+			m03="0" m13="0" m23="0" m33="1"/>
+	</init_pose>
+</skeleton>

@@ -1,0 +1,110 @@
+
+MOUSE:
+Mouse button 1 - selecting
+Mouse button 2 - default action for selection
+Mouse button 3 - first person view
+Wheel - zoom in/out
+
+
+CAMERA:
+Up/Down/Left/Right - scroll view
+
+Home/Num8 - kig op
+End/Num2 - kig ned
+Insert/Num6 - rotate left
+Delete/Num4 - roteta right
+Pressing f - first person view
+
+PageDown/Num3 - zoom in
+PageUp/Num9 - zoom out
+Pressing z - zooming in and out by moving mouse up and down
+
+Space/Num5 - mapmode
+Tab - jump to latest notifier
+
+Esc - go to game menu
+
+
+GROUPING:
+Ctrl+1-9 - create a group of the selected units
+1-9 - select group
+double press 1-9 - jump to group
+
+
+UNIT:
+m - move
+a - attack
+g - gather or repair
+q - build quater
+r - build armory
+t - build tower
+s - chieftain magic1
+c - chieftain magic2
+
+
+QUARTERS:
+[Ctrl|Shift] p - exit peons
+c - train chieftain
+r - place rally point
+
+
+ARMORY:
+g - gather resources menu
+w - produce weapons menu
+a - deploy army menu
+t - transport resources menu
+r - place rally point
+
+	RESOURCES MENU:
+	[Ctrl|Shift] t - assign peons to gather tree
+	[Ctrl|Shift] r - assign peons to gather rock
+	[Ctrl|Shift] i - assign peons to gather iron
+	[Ctrl|Shift] c - assign peons to gather tropical chickens
+	Esc - back to armory menu
+
+	WEAPONS MENU:
+	[Ctrl|Shift] r - order rock weapons
+	[Ctrl|Shift] i - order iron weapons
+	[Ctrl|Shift] c - order chicken weapons
+	Esc - back to armory menu
+
+	ARMY MENU:
+	[Ctrl|Shift] p - exit peons
+	[Ctrl|Shift] r - exit rock warriors
+	[Ctrl|Shift] i - exit iron warriors
+	[Ctrl|Shift] c - exit chicken warriors
+	Esc - back to armory menu
+	
+	TRANSPORT MENU:
+	[Ctrl|Shift] t - exit peons with tree
+	[Ctrl|Shift] r - exit peons with rock
+	[Ctrl|Shift] i - exit peons with iron
+	[Ctrl|Shift] c - exit peons with chicken
+	Esc - back to armory menu
+	
+
+TOWER:
+a - attack
+x - exit tower
+
+
+MULTIPLAYER:
+Enter - opens chat window
+Shift+Enter - opens chat window with "Send to team" as default
+Ctrl+b - create a beacon
+
+
+CHAT COMMANDS:
+/msg nick message - send message to nick
+/info nick - show info about nick
+/ignore nick - ignores nick
+/unignore nick - unignores nick
+/ignorelist - show list of nicks ignored
+
+
+OPTIONS:
++ - increase game speed
+- - decrease game speed
+Ctrl+a - toggle aggressive units
+Ctrl+h - toggle native cursor
+Ctrl+s - take a screenshot

@@ -1,0 +1,751 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+
+<!DOCTYPE icons [
+<!ELEMENT icons		(tree_status_icon,
+					 rock_status_icon,
+					 iron_status_icon,
+					 rubber_status_icon,
+					 cheat_icon,
+					 harvest_icon,
+					 tree_icon,
+					 rock_icon,
+					 iron_icon,
+					 rubber_icon,
+					 vikings_unit_status_icon,
+					 vikings_weapon_rock_status_icon,
+					 vikings_weapon_iron_status_icon,
+					 vikings_weapon_rubber_status_icon,
+					 vikings_build_weapons_icon,
+					 vikings_build_weapon_rock_icon,
+					 vikings_build_weapon_iron_icon,
+					 vikings_build_weapon_rubber_icon,
+					 vikings_army_icon,
+					 vikings_warrior_rock_icon,
+					 vikings_warrior_iron_icon,
+					 vikings_warrior_rubber_icon,
+					 vikings_peon_icon,
+					 vikings_chieftain_icon,
+					 vikings_transport_icon,
+					 vikings_attack_icon,
+					 vikings_move_icon,
+					 vikings_gather_repair_icon,
+					 vikings_quarters_icon,
+					 vikings_armory_icon,
+					 vikings_tower_icon,
+					 vikings_tower_exit_icon,
+					 vikings_rally_point_icon,
+					 vikings_magic1_icon,
+					 vikings_magic2_icon,
+					 natives_unit_status_icon,
+					 natives_weapon_rock_status_icon,
+					 natives_weapon_iron_status_icon,
+					 natives_weapon_rubber_status_icon,
+					 natives_build_weapons_icon,
+					 natives_build_weapon_rock_icon,
+					 natives_build_weapon_iron_icon,
+					 natives_build_weapon_rubber_icon,
+					 natives_army_icon,
+					 natives_warrior_rock_icon,
+					 natives_warrior_iron_icon,
+					 natives_warrior_rubber_icon,
+					 natives_peon_icon,
+					 natives_chieftain_icon,
+					 natives_transport_icon,
+					 natives_attack_icon,
+					 natives_move_icon,
+					 natives_gather_repair_icon,
+					 natives_quarters_icon,
+					 natives_armory_icon,
+					 natives_tower_icon,
+					 natives_tower_exit_icon,
+					 natives_rally_point_icon,
+					 natives_magic1_icon,
+					 natives_magic2_icon,
+					 watch,
+					 infinite,
+					 notify_arrow
+					 )>
+	<!ATTLIST icons texture CDATA #REQUIRED>
+	<!ELEMENT normal	(quad)>
+	<!ELEMENT active	(quad)>
+	<!ELEMENT disabled	(quad)>
+	<!ELEMENT quad	   EMPTY>
+	<!ATTLIST quad left CDATA #REQUIRED>
+	<!ATTLIST quad top CDATA #REQUIRED>
+	<!ATTLIST quad right CDATA #REQUIRED>
+	<!ATTLIST quad bottom CDATA #REQUIRED>
+
+	<!ELEMENT tree_status_icon			(quad)>
+	<!ELEMENT rock_status_icon			(quad)>
+	<!ELEMENT iron_status_icon			(quad)>
+	<!ELEMENT rubber_status_icon		(quad)>
+	<!ELEMENT cheat_icon				(quad)>
+	<!ELEMENT harvest_icon				(normal, active, disabled)>
+	<!ELEMENT tree_icon					(normal, active, disabled)>
+	<!ELEMENT rock_icon					(normal, active, disabled)>
+	<!ELEMENT iron_icon					(normal, active, disabled)>
+	<!ELEMENT rubber_icon				(normal, active, disabled)>
+
+	<!ELEMENT vikings_unit_status_icon			(quad)>
+	<!ELEMENT vikings_weapon_rock_status_icon	(quad)>
+	<!ELEMENT vikings_weapon_iron_status_icon	(quad)>
+	<!ELEMENT vikings_weapon_rubber_status_icon	(quad)>
+	<!ELEMENT vikings_build_weapons_icon		(normal, active, disabled)>
+	<!ELEMENT vikings_build_weapon_rock_icon	(normal, active, disabled)>
+	<!ELEMENT vikings_build_weapon_iron_icon	(normal, active, disabled)>
+	<!ELEMENT vikings_build_weapon_rubber_icon	(normal, active, disabled)>
+	<!ELEMENT vikings_army_icon					(normal, active, disabled)>
+	<!ELEMENT vikings_warrior_rock_icon			(normal, active, disabled)>
+	<!ELEMENT vikings_warrior_iron_icon			(normal, active, disabled)>
+	<!ELEMENT vikings_warrior_rubber_icon		(normal, active, disabled)>
+	<!ELEMENT vikings_peon_icon					(normal, active, disabled)>
+	<!ELEMENT vikings_chieftain_icon			(normal, active, disabled)>
+	<!ELEMENT vikings_transport_icon			(normal, active, disabled)>
+	<!ELEMENT vikings_attack_icon				(normal, active, disabled)>
+	<!ELEMENT vikings_move_icon					(normal, active, disabled)>
+	<!ELEMENT vikings_gather_repair_icon		(normal, active, disabled)>
+	<!ELEMENT vikings_quarters_icon				(normal, active, disabled)>
+	<!ELEMENT vikings_armory_icon				(normal, active, disabled)>
+	<!ELEMENT vikings_tower_icon				(normal, active, disabled)>
+	<!ELEMENT vikings_tower_exit_icon			(normal, active, disabled)>
+	<!ELEMENT vikings_rally_point_icon			(normal, active, disabled)>
+	<!ELEMENT vikings_magic1_icon				(normal, active, disabled)>
+	<!ELEMENT vikings_magic2_icon				(normal, active, disabled)>
+
+	<!ELEMENT natives_unit_status_icon			(quad)>
+	<!ELEMENT natives_weapon_rock_status_icon	(quad)>
+	<!ELEMENT natives_weapon_iron_status_icon	(quad)>
+	<!ELEMENT natives_weapon_rubber_status_icon	(quad)>
+	<!ELEMENT natives_build_weapons_icon		(normal, active, disabled)>
+	<!ELEMENT natives_build_weapon_rock_icon	(normal, active, disabled)>
+	<!ELEMENT natives_build_weapon_iron_icon	(normal, active, disabled)>
+	<!ELEMENT natives_build_weapon_rubber_icon	(normal, active, disabled)>
+	<!ELEMENT natives_army_icon					(normal, active, disabled)>
+	<!ELEMENT natives_warrior_rock_icon			(normal, active, disabled)>
+	<!ELEMENT natives_warrior_iron_icon			(normal, active, disabled)>
+	<!ELEMENT natives_warrior_rubber_icon		(normal, active, disabled)>
+	<!ELEMENT natives_peon_icon					(normal, active, disabled)>
+	<!ELEMENT natives_chieftain_icon			(normal, active, disabled)>
+	<!ELEMENT natives_transport_icon			(normal, active, disabled)>
+	<!ELEMENT natives_attack_icon				(normal, active, disabled)>
+	<!ELEMENT natives_move_icon					(normal, active, disabled)>
+	<!ELEMENT natives_gather_repair_icon		(normal, active, disabled)>
+	<!ELEMENT natives_quarters_icon				(normal, active, disabled)>
+	<!ELEMENT natives_armory_icon				(normal, active, disabled)>
+	<!ELEMENT natives_tower_icon				(normal, active, disabled)>
+	<!ELEMENT natives_tower_exit_icon			(normal, active, disabled)>
+	<!ELEMENT natives_rally_point_icon			(normal, active, disabled)>
+	<!ELEMENT natives_magic1_icon				(normal, active, disabled)>
+	<!ELEMENT natives_magic2_icon				(normal, active, disabled)>
+
+	<!ELEMENT watch								(quad+)>
+
+	<!ELEMENT infinite							(quad)>
+	<!ELEMENT notify_arrow				(quad)>
+	<!ATTLIST notify_arrow head_x CDATA #REQUIRED>
+	<!ATTLIST notify_arrow head_y CDATA #REQUIRED>
+	<!ATTLIST notify_arrow end_x CDATA #REQUIRED>
+	<!ATTLIST notify_arrow end_y CDATA #REQUIRED>
+]>
+
+<icons texture="/textures/gui/icons">
+	<!-- Common icons -->
+	<tree_status_icon>
+		<quad left="32" top="448" right="64" bottom="480"/>
+	</tree_status_icon>
+	<rock_status_icon>
+		<quad left="64" top="448" right="96" bottom="480"/>
+	</rock_status_icon>
+	<iron_status_icon>
+		<quad left="96" top="448" right="128" bottom="480"/>
+	</iron_status_icon>
+	<rubber_status_icon>
+		<quad left="128" top="448" right="160" bottom="480"/>
+	</rubber_status_icon>
+	<cheat_icon>
+		<quad left="0" top="480" right="32" bottom="512"/>
+	</cheat_icon>
+	<harvest_icon>
+		<normal>
+			<quad left="256" top="0" right="320" bottom="64"/>
+		</normal>
+		<active>
+			<quad left="256" top="64" right="320" bottom="128"/>
+		</active>
+		<disabled>
+			<quad left="256" top="128" right="320" bottom="192"/>
+		</disabled>
+	</harvest_icon>
+	<tree_icon>
+		<normal>
+			<quad left="704" top="0" right="768" bottom="64"/>
+		</normal>
+		<active>
+			<quad left="704" top="64" right="768" bottom="128"/>
+		</active>
+		<disabled>
+			<quad left="704" top="128" right="768" bottom="192"/>
+		</disabled>
+	</tree_icon>
+	<rock_icon>
+		<normal>
+			<quad left="768" top="0" right="832" bottom="64"/>
+		</normal>
+		<active>
+			<quad left="768" top="64" right="832" bottom="128"/>
+		</active>
+		<disabled>
+			<quad left="768" top="128" right="832" bottom="192"/>
+		</disabled>
+	</rock_icon>
+	<iron_icon>
+		<normal>
+			<quad left="832" top="0" right="896" bottom="64"/>
+		</normal>
+		<active>
+			<quad left="832" top="64" right="896" bottom="128"/>
+		</active>
+		<disabled>
+			<quad left="832" top="128" right="896" bottom="192"/>
+		</disabled>
+	</iron_icon>
+	<rubber_icon>
+		<normal>
+			<quad left="896" top="0" right="960" bottom="64"/>
+		</normal>
+		<active>
+			<quad left="896" top="64" right="960" bottom="128"/>
+		</active>
+		<disabled>
+			<quad left="896" top="128" right="960" bottom="192"/>
+		</disabled>
+	</rubber_icon>
+
+	<!-- VIKINGS -->
+	<vikings_unit_status_icon>
+		<quad left="0" top="448" right="32" bottom="480"/>
+	</vikings_unit_status_icon>
+	<vikings_weapon_rock_status_icon>
+		<quad left="160" top="448" right="192" bottom="480"/>
+	</vikings_weapon_rock_status_icon>
+	<vikings_weapon_iron_status_icon>
+		<quad left="192" top="448" right="224" bottom="480"/>
+	</vikings_weapon_iron_status_icon>
+	<vikings_weapon_rubber_status_icon>
+		<quad left="224" top="448" right="256" bottom="480"/>
+	</vikings_weapon_rubber_status_icon>
+	<vikings_build_weapons_icon>
+		<normal>
+			<quad left="320" top="0" right="384" bottom="64"/>
+		</normal>
+		<active>
+			<quad left="320" top="64" right="384" bottom="128"/>
+		</active>
+		<disabled>
+			<quad left="320" top="128" right="384" bottom="192"/>
+		</disabled>
+	</vikings_build_weapons_icon>
+	<vikings_build_weapon_rock_icon>
+		<normal>
+			<quad left="0" top="256" right="64" bottom="320"/>
+		</normal>
+		<active>
+			<quad left="0" top="320" right="64" bottom="384"/>
+		</active>
+		<disabled>
+			<quad left="0" top="384" right="64" bottom="448"/>
+		</disabled>
+	</vikings_build_weapon_rock_icon>
+	<vikings_build_weapon_iron_icon>
+		<normal>
+			<quad left="64" top="256" right="128" bottom="320"/>
+		</normal>
+		<active>
+			<quad left="64" top="320" right="128" bottom="384"/>
+		</active>
+		<disabled>
+			<quad left="64" top="384" right="128" bottom="448"/>
+		</disabled>
+	</vikings_build_weapon_iron_icon>
+	<vikings_build_weapon_rubber_icon>
+		<normal>
+			<quad left="128" top="256" right="192" bottom="320"/>
+		</normal>
+		<active>
+			<quad left="128" top="320" right="192" bottom="384"/>
+		</active>
+		<disabled>
+			<quad left="128" top="384" right="192" bottom="448"/>
+		</disabled>
+	</vikings_build_weapon_rubber_icon>
+	<vikings_army_icon>
+		<normal>
+			<quad left="448" top="0" right="512" bottom="64"/>
+		</normal>
+		<active>
+			<quad left="448" top="64" right="512" bottom="128"/>
+		</active>
+		<disabled>
+			<quad left="448" top="128" right="512" bottom="192"/>
+		</disabled>
+	</vikings_army_icon>
+	<vikings_warrior_rock_icon>
+		<normal>
+			<quad left="448" top="256" right="512" bottom="320"/>
+		</normal>
+		<active>
+			<quad left="448" top="320" right="512" bottom="384"/>
+		</active>
+		<disabled>
+			<quad left="448" top="384" right="512" bottom="448"/>
+		</disabled>
+	</vikings_warrior_rock_icon>
+	<vikings_warrior_iron_icon>
+		<normal>
+			<quad left="512" top="256" right="576" bottom="320"/>
+		</normal>
+		<active>
+			<quad left="512" top="320" right="576" bottom="384"/>
+		</active>
+		<disabled>
+			<quad left="512" top="384" right="576" bottom="448"/>
+		</disabled>
+	</vikings_warrior_iron_icon>
+	<vikings_warrior_rubber_icon>
+		<normal>
+			<quad left="576" top="256" right="640" bottom="320"/>
+		</normal>
+		<active>
+			<quad left="576" top="320" right="640" bottom="384"/>
+		</active>
+		<disabled>
+			<quad left="576" top="384" right="640" bottom="448"/>
+		</disabled>
+	</vikings_warrior_rubber_icon>
+	<vikings_peon_icon>
+		<normal>
+			<quad left="384" top="256" right="448" bottom="320"/>
+		</normal>
+		<active>
+			<quad left="384" top="320" right="448" bottom="384"/>
+		</active>
+		<disabled>
+			<quad left="384" top="384" right="448" bottom="448"/>
+		</disabled>
+	</vikings_peon_icon>
+	<vikings_chieftain_icon>
+		<normal>
+			<quad left="256" top="512" right="320" bottom="576"/>
+		</normal>
+		<active>
+			<quad left="256" top="576" right="320" bottom="640"/>
+		</active>
+		<disabled>
+			<quad left="256" top="640" right="320" bottom="704"/>
+		</disabled>
+	</vikings_chieftain_icon>
+	<vikings_transport_icon>
+		<normal>
+			<quad left="576" top="0" right="640" bottom="64"/>
+		</normal>
+		<active>
+			<quad left="576" top="64" right="640" bottom="128"/>
+		</active>
+		<disabled>
+			<quad left="576" top="128" right="640" bottom="192"/>
+		</disabled>
+	</vikings_transport_icon>
+	<vikings_attack_icon>
+		<normal>
+			<quad left="0" top="192" right="64" bottom="256"/>
+		</normal>
+		<active>
+			<quad left="64" top="192" right="128" bottom="256"/>
+		</active>
+		<disabled>
+			<quad left="128" top="192" right="192" bottom="256"/>
+		</disabled>
+	</vikings_attack_icon>
+	<vikings_move_icon>
+		<normal>
+			<quad left="256" top="448" right="320" bottom="512"/>
+		</normal>
+		<active>
+			<quad left="320" top="448" right="384" bottom="512"/>
+		</active>
+		<disabled>
+			<quad left="384" top="448" right="448" bottom="512"/>
+		</disabled>
+	</vikings_move_icon>
+	<vikings_gather_repair_icon>
+		<normal>
+			<quad left="384" top="192" right="448" bottom="256"/>
+		</normal>
+		<active>
+			<quad left="448" top="192" right="512" bottom="256"/>
+		</active>
+		<disabled>
+			<quad left="512" top="192" right="576" bottom="256"/>
+		</disabled>
+	</vikings_gather_repair_icon>
+	<vikings_quarters_icon>
+		<normal>
+			<quad left="0" top="0" right="64" bottom="64"/>
+		</normal>
+		<active>
+			<quad left="0" top="64" right="64" bottom="128"/>
+		</active>
+		<disabled>
+			<quad left="0" top="128" right="64" bottom="192"/>
+		</disabled>
+	</vikings_quarters_icon>
+	<vikings_armory_icon>
+		<normal>
+			<quad left="0" top="512" right="64" bottom="576"/>
+		</normal>
+		<active>
+			<quad left="0" top="576" right="64" bottom="640"/>
+		</active>
+		<disabled>
+			<quad left="0" top="640" right="64" bottom="704"/>
+		</disabled>
+	</vikings_armory_icon>
+	<vikings_tower_icon>
+		<normal>
+			<quad left="128" top="0" right="192" bottom="64"/>
+		</normal>
+		<active>
+			<quad left="128" top="64" right="192" bottom="128"/>
+		</active>
+		<disabled>
+			<quad left="128" top="128" right="192" bottom="192"/>
+		</disabled>
+	</vikings_tower_icon>
+	<vikings_tower_exit_icon>
+		<normal>
+			<quad left="896" top="256" right="960" bottom="320"/>
+		</normal>
+		<active>
+			<quad left="896" top="320" right="960" bottom="384"/>
+		</active>
+		<disabled>
+			<quad left="896" top="384" right="960" bottom="448"/>
+		</disabled>
+	</vikings_tower_exit_icon>
+	<vikings_rally_point_icon>
+		<normal>
+			<quad left="128" top="512" right="192" bottom="576"/>
+		</normal>
+		<active>
+			<quad left="128" top="576" right="192" bottom="640"/>
+		</active>
+		<disabled>
+			<quad left="128" top="640" right="192" bottom="704"/>
+		</disabled>
+	</vikings_rally_point_icon>
+	<vikings_magic1_icon>
+		<normal>
+			<quad left="384" top="512" right="448" bottom="576"/>
+		</normal>
+		<active>
+			<quad left="384" top="576" right="448" bottom="640"/>
+		</active>
+		<disabled>
+			<quad left="384" top="640" right="448" bottom="704"/>
+		</disabled>
+	</vikings_magic1_icon>
+	<vikings_magic2_icon>
+		<normal>
+			<quad left="448" top="512" right="512" bottom="576"/>
+		</normal>
+		<active>
+			<quad left="448" top="576" right="512" bottom="640"/>
+		</active>
+		<disabled>
+			<quad left="448" top="640" right="512" bottom="704"/>
+		</disabled>
+	</vikings_magic2_icon>
+
+	<!-- NATIVES -->
+	<natives_unit_status_icon>
+		<quad left="0" top="448" right="32" bottom="480"/>
+	</natives_unit_status_icon>
+	<natives_weapon_rock_status_icon>
+		<quad left="160" top="480" right="192" bottom="512"/>
+	</natives_weapon_rock_status_icon>
+	<natives_weapon_iron_status_icon>
+		<quad left="192" top="480" right="224" bottom="512"/>
+	</natives_weapon_iron_status_icon>
+	<natives_weapon_rubber_status_icon>
+		<quad left="224" top="480" right="256" bottom="512"/>
+	</natives_weapon_rubber_status_icon>
+	<natives_build_weapons_icon>
+		<normal>
+			<quad left="384" top="0" right="448" bottom="64"/>
+		</normal>
+		<active>
+			<quad left="384" top="64" right="448" bottom="128"/>
+		</active>
+		<disabled>
+			<quad left="384" top="128" right="448" bottom="192"/>
+		</disabled>
+	</natives_build_weapons_icon>
+	<natives_build_weapon_rock_icon>
+		<normal>
+			<quad left="192" top="256" right="256" bottom="320"/>
+		</normal>
+		<active>
+			<quad left="192" top="320" right="256" bottom="384"/>
+		</active>
+		<disabled>
+			<quad left="192" top="384" right="256" bottom="448"/>
+		</disabled>
+	</natives_build_weapon_rock_icon>
+	<natives_build_weapon_iron_icon>
+		<normal>
+			<quad left="256" top="256" right="320" bottom="320"/>
+		</normal>
+		<active>
+			<quad left="256" top="320" right="320" bottom="384"/>
+		</active>
+		<disabled>
+			<quad left="256" top="384" right="320" bottom="448"/>
+		</disabled>
+	</natives_build_weapon_iron_icon>
+	<natives_build_weapon_rubber_icon>
+		<normal>
+			<quad left="320" top="256" right="384" bottom="320"/>
+		</normal>
+		<active>
+			<quad left="320" top="320" right="384" bottom="384"/>
+		</active>
+		<disabled>
+			<quad left="320" top="384" right="384" bottom="448"/>
+		</disabled>
+	</natives_build_weapon_rubber_icon>
+	<natives_army_icon>
+		<normal>
+			<quad left="512" top="0" right="576" bottom="64"/>
+		</normal>
+		<active>
+			<quad left="512" top="64" right="576" bottom="128"/>
+		</active>
+		<disabled>
+			<quad left="512" top="128" right="576" bottom="192"/>
+		</disabled>
+	</natives_army_icon>
+	<natives_warrior_rock_icon>
+		<normal>
+			<quad left="704" top="256" right="768" bottom="320"/>
+		</normal>
+		<active>
+			<quad left="704" top="320" right="768" bottom="384"/>
+		</active>
+		<disabled>
+			<quad left="704" top="384" right="768" bottom="448"/>
+		</disabled>
+	</natives_warrior_rock_icon>
+	<natives_warrior_iron_icon>
+		<normal>
+			<quad left="768" top="256" right="832" bottom="320"/>
+		</normal>
+		<active>
+			<quad left="768" top="320" right="832" bottom="384"/>
+		</active>
+		<disabled>
+			<quad left="768" top="384" right="832" bottom="448"/>
+		</disabled>
+	</natives_warrior_iron_icon>
+	<natives_warrior_rubber_icon>
+		<normal>
+			<quad left="832" top="256" right="896" bottom="320"/>
+		</normal>
+		<active>
+			<quad left="832" top="320" right="896" bottom="384"/>
+		</active>
+		<disabled>
+			<quad left="832" top="384" right="896" bottom="448"/>
+		</disabled>
+	</natives_warrior_rubber_icon>
+	<natives_peon_icon>
+		<normal>
+			<quad left="640" top="256" right="704" bottom="320"/>
+		</normal>
+		<active>
+			<quad left="640" top="320" right="704" bottom="384"/>
+		</active>
+		<disabled>
+			<quad left="640" top="384" right="704" bottom="448"/>
+		</disabled>
+	</natives_peon_icon>
+	<natives_chieftain_icon>
+		<normal>
+			<quad left="320" top="512" right="384" bottom="576"/>
+		</normal>
+		<active>
+			<quad left="320" top="576" right="384" bottom="640"/>
+		</active>
+		<disabled>
+			<quad left="320" top="640" right="384" bottom="704"/>
+		</disabled>
+	</natives_chieftain_icon>
+	<natives_transport_icon>
+		<normal>
+			<quad left="640" top="0" right="704" bottom="64"/>
+		</normal>
+		<active>
+			<quad left="640" top="64" right="704" bottom="128"/>
+		</active>
+		<disabled>
+			<quad left="640" top="128" right="704" bottom="192"/>
+		</disabled>
+	</natives_transport_icon>
+	<natives_attack_icon>
+		<normal>
+			<quad left="192" top="192" right="256" bottom="256"/>
+		</normal>
+		<active>
+			<quad left="256" top="192" right="320" bottom="256"/>
+		</active>
+		<disabled>
+			<quad left="320" top="192" right="384" bottom="256"/>
+		</disabled>
+	</natives_attack_icon>
+	<natives_move_icon>
+		<normal>
+			<quad left="448" top="448" right="512" bottom="512"/>
+		</normal>
+		<active>
+			<quad left="512" top="448" right="576" bottom="512"/>
+		</active>
+		<disabled>
+			<quad left="576" top="448" right="640" bottom="512"/>
+		</disabled>
+	</natives_move_icon>
+	<natives_gather_repair_icon>
+		<normal>
+			<quad left="576" top="192" right="640" bottom="256"/>
+		</normal>
+		<active>
+			<quad left="640" top="192" right="704" bottom="256"/>
+		</active>
+		<disabled>
+			<quad left="704" top="192" right="768" bottom="256"/>
+		</disabled>
+	</natives_gather_repair_icon>
+	<natives_quarters_icon>
+		<normal>
+			<quad left="64" top="0" right="128" bottom="64"/>
+		</normal>
+		<active>
+			<quad left="64" top="64" right="128" bottom="128"/>
+		</active>
+		<disabled>
+			<quad left="64" top="128" right="128" bottom="192"/>
+		</disabled>
+	</natives_quarters_icon>
+	<natives_armory_icon>
+		<normal>
+			<quad left="64" top="512" right="128" bottom="576"/>
+		</normal>
+		<active>
+			<quad left="64" top="576" right="128" bottom="640"/>
+		</active>
+		<disabled>
+			<quad left="64" top="640" right="128" bottom="704"/>
+		</disabled>
+	</natives_armory_icon>
+	<natives_tower_icon>
+		<normal>
+			<quad left="192" top="0" right="256" bottom="64"/>
+		</normal>
+		<active>
+			<quad left="192" top="64" right="256" bottom="128"/>
+		</active>
+		<disabled>
+			<quad left="192" top="128" right="256" bottom="192"/>
+		</disabled>
+	</natives_tower_icon>
+	<natives_tower_exit_icon>
+		<normal>
+			<quad left="960" top="256" right="1024" bottom="320"/>
+		</normal>
+		<active>
+			<quad left="960" top="320" right="1024" bottom="384"/>
+		</active>
+		<disabled>
+			<quad left="960" top="384" right="1024" bottom="448"/>
+		</disabled>
+	</natives_tower_exit_icon>
+	<natives_rally_point_icon>
+		<normal>
+			<quad left="192" top="512" right="256" bottom="576"/>
+		</normal>
+		<active>
+			<quad left="192" top="576" right="256" bottom="640"/>
+		</active>
+		<disabled>
+			<quad left="192" top="640" right="256" bottom="704"/>
+		</disabled>
+	</natives_rally_point_icon>
+	<natives_magic1_icon>
+		<normal>
+			<quad left="576" top="512" right="640" bottom="576"/>
+		</normal>
+		<active>
+			<quad left="576" top="576" right="640" bottom="640"/>
+		</active>
+		<disabled>
+			<quad left="576" top="640" right="640" bottom="704"/>
+		</disabled>
+	</natives_magic1_icon>
+	<natives_magic2_icon>
+		<normal>
+			<quad left="512" top="512" right="576" bottom="576"/>
+		</normal>
+		<active>
+			<quad left="512" top="576" right="576" bottom="640"/>
+		</active>
+		<disabled>
+			<quad left="512" top="640" right="576" bottom="704"/>
+		</disabled>
+	</natives_magic2_icon>
+
+	<!-- Watch icons -->
+	<watch>
+		<quad left="0" top="959" right="22" bottom="981"/>
+		<quad left="32" top="959" right="54" bottom="981"/>
+		<quad left="64" top="959" right="86" bottom="981"/>
+		<quad left="96" top="959" right="118" bottom="981"/>
+		<quad left="128" top="959" right="150" bottom="981"/>
+		<quad left="160" top="959" right="182" bottom="981"/>
+		<quad left="192" top="959" right="214" bottom="981"/>
+		<quad left="224" top="959" right="246" bottom="981"/>
+		<quad left="256" top="959" right="278" bottom="981"/>
+		<quad left="288" top="959" right="310" bottom="981"/>
+		<quad left="320" top="959" right="342" bottom="981"/>
+		<quad left="352" top="959" right="374" bottom="981"/>
+		<quad left="384" top="959" right="406" bottom="981"/>
+		<quad left="0" top="991" right="22" bottom="1013"/>
+		<quad left="32" top="991" right="54" bottom="1013"/>
+		<quad left="64" top="991" right="86" bottom="1013"/>
+		<quad left="96" top="991" right="118" bottom="1013"/>
+		<quad left="128" top="991" right="150" bottom="1013"/>
+		<quad left="160" top="991" right="182" bottom="1013"/>
+		<quad left="192" top="991" right="214" bottom="1013"/>
+		<quad left="224" top="991" right="246" bottom="1013"/>
+		<quad left="256" top="991" right="278" bottom="1013"/>
+		<quad left="288" top="991" right="310" bottom="1013"/>
+		<quad left="320" top="991" right="342" bottom="1013"/>
+		<quad left="352" top="991" right="374" bottom="1013"/>
+	</watch>
+
+	<!-- Infinite char -->
+	<infinite>
+		<quad left="768" top="192" right="832" bottom="256"/>
+	</infinite>
+	
+	<notify_arrow head_x="64" head_y="32" end_x="0" end_y="32">
+		<quad left="832" top="192" right="896" bottom="256"/>
+	</notify_arrow>
+</icons>

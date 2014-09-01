@@ -1,0 +1,11 @@
+#!/bin/bash
+
+SENDMAIL=/usr/sbin/sendmail
+SENDTO=all@oddlabs.com
+ERRORMAIL=./error_mail
+
+if ! java -Djava.security.manager -Djava.security.policy=regservice.policy -server -ea -cp regservice.jar:mysql.jar:commons-pool-1.2.jar:commons-dbcp-1.2.1.jar:commons-collections-3.1.jar com.oddlabs.regservice.RegService; then
+echo "Service crashed, sending report";
+cat $ERRORMAIL | $SENDMAIL -oi $SENDTO;
+fi
+

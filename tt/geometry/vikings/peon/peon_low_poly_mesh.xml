@@ -1,0 +1,1762 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+
+<!DOCTYPE mesh [
+	<!ELEMENT mesh       (polygons)>
+	<!ELEMENT polygons   (polygon+)>
+	<!ELEMENT polygon    (vertex+)>
+	<!ELEMENT vertex     (skin+)>
+
+	<!ELEMENT skin        EMPTY>
+
+	<!ATTLIST mesh texture CDATA #REQUIRED>
+	<!ATTLIST vertex x CDATA #REQUIRED>
+	<!ATTLIST vertex y CDATA #REQUIRED>
+	<!ATTLIST vertex z CDATA #REQUIRED>
+	<!ATTLIST vertex r CDATA #REQUIRED>
+	<!ATTLIST vertex g CDATA #REQUIRED>
+	<!ATTLIST vertex b CDATA #REQUIRED>
+	<!ATTLIST vertex a CDATA #REQUIRED>
+	<!ATTLIST vertex nx CDATA #REQUIRED>
+	<!ATTLIST vertex ny CDATA #REQUIRED>
+	<!ATTLIST vertex nz CDATA #REQUIRED>
+	<!ATTLIST vertex u CDATA #REQUIRED>
+	<!ATTLIST vertex v CDATA #REQUIRED>
+	<!ATTLIST skin bone CDATA #REQUIRED>
+	<!ATTLIST skin weight CDATA #REQUIRED>
+]>
+
+<mesh texture="viking_peon">
+	<polygons>
+		<polygon>
+			<vertex x="-0.124107" y="0.297657" z="1.15966"
+				r="1" g="1" b="1" a="1"
+				nx="-0.585308" ny="0.81073" nz="-0.0114237"
+				u="0.93525" v="0.527851">
+					<skin bone="peon bip Spine1" weight="1.0"/>
+			</vertex>
+			<vertex x="0.230095" y="0.297648" z="1.15966"
+				r="1" g="1" b="1" a="1"
+				nx="0.555144" ny="0.831512" nz="0.0200522"
+				u="0.875184" v="0.527852">
+					<skin bone="peon bip Spine1" weight="1.0"/>
+			</vertex>
+			<vertex x="0.185294" y="0.340061" z="0.641195"
+				r="1" g="1" b="1" a="1"
+				nx="0.600357" ny="0.52191" nz="-0.605955"
+				u="0.882782" v="0.439636">
+					<skin bone="peon bip Spine1" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.0902302" y="0.0466051" z="1.15083"
+				r="1" g="1" b="1" a="1"
+				nx="-0.958584" ny="-0.284683" nz="0.00848403"
+				u="0.668325" v="0.8741">
+					<skin bone="peon bip Spine1" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.232537" y="-0.014813" z="0.434644"
+				r="1" g="1" b="1" a="1"
+				nx="-0.934379" ny="0.0309617" nz="-0.354934"
+				u="0.645223" v="0.739779">
+					<skin bone="peon bip Spine" weight="1.0"/>
+			</vertex>
+			<vertex x="-1.50303e-005" y="-0.0709811" z="1.1369"
+				r="1" g="1" b="1" a="1"
+				nx="-0.0001084" ny="-0.983954" nz="0.178425"
+				u="0.693137" v="0.869626">
+					<skin bone="peon bip Spine2" weight="0.5"/>
+					<skin bone="peon bip Head" weight="0.5"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-1.50303e-005" y="-0.0709811" z="1.1369"
+				r="1" g="1" b="1" a="1"
+				nx="-0.0001084" ny="-0.983954" nz="0.178425"
+				u="0.693137" v="0.869626">
+					<skin bone="peon bip Spine2" weight="0.5"/>
+					<skin bone="peon bip Head" weight="0.5"/>
+			</vertex>
+			<vertex x="0.232537" y="-0.014813" z="0.434644"
+				r="1" g="1" b="1" a="1"
+				nx="0.920571" ny="-0.0371098" nz="-0.388809"
+				u="0.740623" v="0.739584">
+					<skin bone="peon bip Spine" weight="1.0"/>
+			</vertex>
+			<vertex x="0.0902303" y="0.0466051" z="1.15083"
+				r="1" g="1" b="1" a="1"
+				nx="0.890981" ny="-0.443595" nz="0.0968354"
+				u="0.717966" v="0.874025">
+					<skin bone="peon bip Spine1" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-1.50303e-005" y="-0.0709811" z="1.1369"
+				r="1" g="1" b="1" a="1"
+				nx="-0.0001084" ny="-0.983954" nz="0.178425"
+				u="0.693137" v="0.869626">
+					<skin bone="peon bip Spine2" weight="0.5"/>
+					<skin bone="peon bip Head" weight="0.5"/>
+			</vertex>
+			<vertex x="0.0902303" y="0.0466051" z="1.15083"
+				r="1" g="1" b="1" a="1"
+				nx="0.890981" ny="-0.443595" nz="0.0968354"
+				u="0.717966" v="0.874025">
+					<skin bone="peon bip Spine1" weight="1.0"/>
+			</vertex>
+			<vertex x="0.0" y="-0.0429286" z="1.77786"
+				r="1" g="1" b="1" a="1"
+				nx="8.60289e-006" ny="-0.0796608" nz="0.996822"
+				u="0.693228" v="0.985004">
+					<skin bone="peon bip Head" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-1.50303e-005" y="-0.0709811" z="1.1369"
+				r="1" g="1" b="1" a="1"
+				nx="-0.0001084" ny="-0.983954" nz="0.178425"
+				u="0.693137" v="0.869626">
+					<skin bone="peon bip Spine2" weight="0.5"/>
+					<skin bone="peon bip Head" weight="0.5"/>
+			</vertex>
+			<vertex x="-0.232537" y="-0.014813" z="0.434644"
+				r="1" g="1" b="1" a="1"
+				nx="-0.934379" ny="0.0309617" nz="-0.354934"
+				u="0.645223" v="0.739779">
+					<skin bone="peon bip Spine" weight="1.0"/>
+			</vertex>
+			<vertex x="0.00187058" y="-0.181178" z="0.391448"
+				r="1" g="1" b="1" a="1"
+				nx="0.00407268" ny="-0.847884" nz="-0.530165"
+				u="0.693092" v="0.740752">
+					<skin bone="peon bip Pelvis" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.232537" y="-0.014813" z="0.434644"
+				r="1" g="1" b="1" a="1"
+				nx="-0.934379" ny="0.0309617" nz="-0.354934"
+				u="0.645223" v="0.739779">
+					<skin bone="peon bip Spine" weight="1.0"/>
+			</vertex>
+			<vertex x="0.0" y="0.108668" z="0.343908"
+				r="1" g="1" b="1" a="1"
+				nx="-0.0449488" ny="0.665186" nz="-0.745324"
+				u="0.693141" v="0.691033">
+					<skin bone="peon bip Pelvis" weight="1.0"/>
+			</vertex>
+			<vertex x="0.00187058" y="-0.181178" z="0.391448"
+				r="1" g="1" b="1" a="1"
+				nx="0.00407268" ny="-0.847884" nz="-0.530165"
+				u="0.693092" v="0.740752">
+					<skin bone="peon bip Pelvis" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.463093" y="-0.0604949" z="1.66558"
+				r="1" g="1" b="1" a="1"
+				nx="-0.0285286" ny="-0.999582" nz="-0.00474288"
+				u="0.0161681" v="0.913475">
+					<skin bone="peon bip Prop1" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.860655" y="-0.0491483" z="1.66558"
+				r="1" g="1" b="1" a="1"
+				nx="-0.0285286" ny="-0.999582" nz="-0.00474288"
+				u="0.0161679" v="0.846029">
+					<skin bone="peon bip Prop1" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.605859" y="-0.0514758" z="0.6235"
+				r="1" g="1" b="1" a="1"
+				nx="-0.0285286" ny="-0.999582" nz="-0.00474288"
+				u="0.192888" v="0.889231">
+					<skin bone="peon bip Prop1" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.463093" y="-0.0604949" z="1.66558"
+				r="1" g="1" b="1" a="1"
+				nx="0.0285286" ny="0.999582" nz="0.00474288"
+				u="0.0161681" v="0.913475">
+					<skin bone="peon bip Prop1" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.605859" y="-0.0514758" z="0.6235"
+				r="1" g="1" b="1" a="1"
+				nx="0.0285286" ny="0.999582" nz="0.00474288"
+				u="0.192888" v="0.889231">
+					<skin bone="peon bip Prop1" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.860655" y="-0.0491483" z="1.66558"
+				r="1" g="1" b="1" a="1"
+				nx="0.0285286" ny="0.999582" nz="0.00474288"
+				u="0.0161679" v="0.846029">
+					<skin bone="peon bip Prop1" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.0" y="-0.0429286" z="1.77786"
+				r="1" g="1" b="1" a="1"
+				nx="8.60289e-006" ny="-0.0796608" nz="0.996822"
+				u="0.783821" v="0.972645">
+					<skin bone="peon bip Head" weight="1.0"/>
+			</vertex>
+			<vertex x="0.0902303" y="0.0466051" z="1.15083"
+				r="1" g="1" b="1" a="1"
+				nx="0.890981" ny="-0.443595" nz="0.0968354"
+				u="0.761319" v="0.861225">
+					<skin bone="peon bip Spine1" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.0902302" y="0.0466051" z="1.15083"
+				r="1" g="1" b="1" a="1"
+				nx="-0.958584" ny="-0.284683" nz="0.00848403"
+				u="0.806384" v="0.860828">
+					<skin bone="peon bip Spine1" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.0" y="-0.0429286" z="1.77786"
+				r="1" g="1" b="1" a="1"
+				nx="8.60289e-006" ny="-0.0796608" nz="0.996822"
+				u="0.693228" v="0.985004">
+					<skin bone="peon bip Head" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.0902302" y="0.0466051" z="1.15083"
+				r="1" g="1" b="1" a="1"
+				nx="-0.958584" ny="-0.284683" nz="0.00848403"
+				u="0.668325" v="0.8741">
+					<skin bone="peon bip Spine1" weight="1.0"/>
+			</vertex>
+			<vertex x="-1.50303e-005" y="-0.0709811" z="1.1369"
+				r="1" g="1" b="1" a="1"
+				nx="-0.0001084" ny="-0.983954" nz="0.178425"
+				u="0.693137" v="0.869626">
+					<skin bone="peon bip Spine2" weight="0.5"/>
+					<skin bone="peon bip Head" weight="0.5"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.0902303" y="0.0466051" z="1.15083"
+				r="1" g="1" b="1" a="1"
+				nx="0.890981" ny="-0.443595" nz="0.0968354"
+				u="0.761319" v="0.861225">
+					<skin bone="peon bip Spine1" weight="1.0"/>
+			</vertex>
+			<vertex x="0.232537" y="-0.014813" z="0.434644"
+				r="1" g="1" b="1" a="1"
+				nx="0.920571" ny="-0.0371098" nz="-0.388809"
+				u="0.740659" v="0.739621">
+					<skin bone="peon bip Spine" weight="1.0"/>
+			</vertex>
+			<vertex x="0.0723216" y="0.12625" z="0.628591"
+				r="1" g="1" b="1" a="1"
+				nx="0.274456" ny="0.795714" nz="-0.539919"
+				u="0.775103" v="0.774346">
+					<skin bone="peon bip Spine" weight="0.5"/>
+					<skin bone="peon bip Spine1" weight="0.5"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.332679" y="-0.0430902" z="1.30445"
+				r="1" g="1" b="1" a="1"
+				nx="-1.34374e-007" ny="-1.0" nz="0.000367497"
+				u="0.0129684" v="0.630901">
+					<skin bone="peon bip Head" weight="1.0"/>
+			</vertex>
+			<vertex x="0.332679" y="-0.0430903" z="1.30445"
+				r="1" g="1" b="1" a="1"
+				nx="-1.34374e-007" ny="-1.0" nz="0.000367497"
+				u="0.125801" v="0.630901">
+					<skin bone="peon bip Head" weight="1.0"/>
+			</vertex>
+			<vertex x="0.0" y="-0.042812" z="2.06158"
+				r="1" g="1" b="1" a="1"
+				nx="-1.34374e-007" ny="-1.0" nz="0.000367497"
+				u="0.0693847" v="0.759295">
+					<skin bone="peon bip Head" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.332679" y="-0.0430903" z="1.30445"
+				r="1" g="1" b="1" a="1"
+				nx="1.34374e-007" ny="1.0" nz="-0.000367497"
+				u="0.0129684" v="0.630901">
+					<skin bone="peon bip Head" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.332679" y="-0.0430902" z="1.30445"
+				r="1" g="1" b="1" a="1"
+				nx="1.34374e-007" ny="1.0" nz="-0.000367497"
+				u="0.125801" v="0.630901">
+					<skin bone="peon bip Head" weight="1.0"/>
+			</vertex>
+			<vertex x="0.0" y="-0.042812" z="2.06158"
+				r="1" g="1" b="1" a="1"
+				nx="1.34374e-007" ny="1.0" nz="-0.000367497"
+				u="0.0693847" v="0.759295">
+					<skin bone="peon bip Head" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.259381" y="-0.0397453" z="1.11835"
+				r="1" g="1" b="1" a="1"
+				nx="0.296608" ny="-0.953228" nz="-0.0581329"
+				u="0.919247" v="0.902424">
+					<skin bone="peon bip R Forearm" weight="0.5"/>
+					<skin bone="peon bip R UpperArm" weight="0.5"/>
+			</vertex>
+			<vertex x="-0.730196" y="0.0176797" z="0.967147"
+				r="1" g="1" b="1" a="1"
+				nx="-0.508339" ny="0.1642" nz="-0.845358"
+				u="0.84717" v="0.86217">
+					<skin bone="peon bip R Hand" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.267906" y="0.0214841" z="1.06676"
+				r="1" g="1" b="1" a="1"
+				nx="0.241892" ny="0.366237" nz="-0.898531"
+				u="0.920766" v="0.888852">
+					<skin bone="peon bip R Forearm" weight="0.333333"/>
+					<skin bone="peon bip R UpperArm" weight="0.666667"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.032043" y="0.00299143" z="1.13291"
+				r="1" g="1" b="1" a="1"
+				nx="0.99824" ny="0.00612431" nz="0.0589923"
+				u="0.95896" v="0.899537">
+					<skin bone="peon bip R Clavicle" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.267906" y="0.0214841" z="1.06676"
+				r="1" g="1" b="1" a="1"
+				nx="0.241892" ny="0.366237" nz="-0.898531"
+				u="0.931026" v="0.930443">
+					<skin bone="peon bip R Forearm" weight="0.333333"/>
+					<skin bone="peon bip R UpperArm" weight="0.666667"/>
+			</vertex>
+			<vertex x="-0.267906" y="0.0214841" z="1.16994"
+				r="1" g="1" b="1" a="1"
+				nx="0.278783" ny="0.417963" nz="0.864631"
+				u="0.921683" v="0.915647">
+					<skin bone="peon bip R Forearm" weight="0.333333"/>
+					<skin bone="peon bip R UpperArm" weight="0.666667"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.032043" y="0.00299143" z="1.13291"
+				r="1" g="1" b="1" a="1"
+				nx="0.99824" ny="0.00612431" nz="0.0589923"
+				u="0.95896" v="0.899537">
+					<skin bone="peon bip R Clavicle" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.276789" y="-0.0397453" z="1.11835"
+				r="1" g="1" b="1" a="1"
+				nx="0.173255" ny="-0.984626" nz="-0.0222331"
+				u="0.919247" v="0.902424">
+					<skin bone="peon bip R UpperArm" weight="0.666667"/>
+					<skin bone="peon bip R Forearm" weight="0.333333"/>
+			</vertex>
+			<vertex x="-0.267906" y="0.0214841" z="1.06676"
+				r="1" g="1" b="1" a="1"
+				nx="0.241892" ny="0.366237" nz="-0.898531"
+				u="0.920766" v="0.888852">
+					<skin bone="peon bip R Forearm" weight="0.333333"/>
+					<skin bone="peon bip R UpperArm" weight="0.666667"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.032043" y="0.00299143" z="1.13291"
+				r="1" g="1" b="1" a="1"
+				nx="0.99824" ny="0.00612431" nz="0.0589923"
+				u="0.95896" v="0.899537">
+					<skin bone="peon bip R Clavicle" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.267906" y="0.0214841" z="1.16994"
+				r="1" g="1" b="1" a="1"
+				nx="0.278783" ny="0.417963" nz="0.864631"
+				u="0.921683" v="0.915647">
+					<skin bone="peon bip R Forearm" weight="0.333333"/>
+					<skin bone="peon bip R UpperArm" weight="0.666667"/>
+			</vertex>
+			<vertex x="-0.276789" y="-0.0397453" z="1.11835"
+				r="1" g="1" b="1" a="1"
+				nx="0.173255" ny="-0.984626" nz="-0.0222331"
+				u="0.919247" v="0.902424">
+					<skin bone="peon bip R UpperArm" weight="0.666667"/>
+					<skin bone="peon bip R Forearm" weight="0.333333"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.701985" y="0.0339893" z="1.27404"
+				r="1" g="1" b="1" a="1"
+				nx="-0.353141" ny="0.635344" nz="0.686752"
+				u="0.811403" v="0.900377">
+					<skin bone="peon bip R Hand" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.730196" y="0.0176797" z="0.967147"
+				r="1" g="1" b="1" a="1"
+				nx="-0.508339" ny="0.1642" nz="-0.845358"
+				u="0.84717" v="0.86217">
+					<skin bone="peon bip R Hand" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.756019" y="-0.121974" z="1.26942"
+				r="1" g="1" b="1" a="1"
+				nx="-0.592586" ny="-0.645281" nz="0.482135"
+				u="0.833787" v="0.917202">
+					<skin bone="peon bip R Hand" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.259381" y="-0.0397453" z="1.11835"
+				r="1" g="1" b="1" a="1"
+				nx="0.296608" ny="-0.953228" nz="-0.0581329"
+				u="0.919247" v="0.902424">
+					<skin bone="peon bip R Forearm" weight="0.5"/>
+					<skin bone="peon bip R UpperArm" weight="0.5"/>
+			</vertex>
+			<vertex x="-0.756019" y="-0.121974" z="1.26942"
+				r="1" g="1" b="1" a="1"
+				nx="-0.592586" ny="-0.645281" nz="0.482135"
+				u="0.833787" v="0.917202">
+					<skin bone="peon bip R Hand" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.730196" y="0.0176797" z="0.967147"
+				r="1" g="1" b="1" a="1"
+				nx="-0.508339" ny="0.1642" nz="-0.845358"
+				u="0.84717" v="0.86217">
+					<skin bone="peon bip R Hand" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.701985" y="0.0339893" z="1.27404"
+				r="1" g="1" b="1" a="1"
+				nx="-0.353141" ny="0.635344" nz="0.686752"
+				u="0.84999" v="0.940039">
+					<skin bone="peon bip R Hand" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.756019" y="-0.121974" z="1.26942"
+				r="1" g="1" b="1" a="1"
+				nx="-0.592586" ny="-0.645281" nz="0.482135"
+				u="0.833787" v="0.917202">
+					<skin bone="peon bip R Hand" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.267906" y="0.0214841" z="1.16994"
+				r="1" g="1" b="1" a="1"
+				nx="0.278783" ny="0.417963" nz="0.864631"
+				u="0.921683" v="0.915647">
+					<skin bone="peon bip R Forearm" weight="0.333333"/>
+					<skin bone="peon bip R UpperArm" weight="0.666667"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.267906" y="0.0214841" z="1.16994"
+				r="1" g="1" b="1" a="1"
+				nx="0.278783" ny="0.417963" nz="0.864631"
+				u="0.921683" v="0.915647">
+					<skin bone="peon bip R Forearm" weight="0.333333"/>
+					<skin bone="peon bip R UpperArm" weight="0.666667"/>
+			</vertex>
+			<vertex x="-0.756019" y="-0.121974" z="1.26942"
+				r="1" g="1" b="1" a="1"
+				nx="-0.592586" ny="-0.645281" nz="0.482135"
+				u="0.833787" v="0.917202">
+					<skin bone="peon bip R Hand" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.259381" y="-0.0397453" z="1.11835"
+				r="1" g="1" b="1" a="1"
+				nx="0.296608" ny="-0.953228" nz="-0.0581329"
+				u="0.919247" v="0.902424">
+					<skin bone="peon bip R Forearm" weight="0.5"/>
+					<skin bone="peon bip R UpperArm" weight="0.5"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.701985" y="0.0339893" z="1.27404"
+				r="1" g="1" b="1" a="1"
+				nx="-0.353141" ny="0.635344" nz="0.686752"
+				u="0.84999" v="0.940039">
+					<skin bone="peon bip R Hand" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.267906" y="0.0214841" z="1.16994"
+				r="1" g="1" b="1" a="1"
+				nx="0.278783" ny="0.417963" nz="0.864631"
+				u="0.921683" v="0.915647">
+					<skin bone="peon bip R Forearm" weight="0.333333"/>
+					<skin bone="peon bip R UpperArm" weight="0.666667"/>
+			</vertex>
+			<vertex x="-0.267906" y="0.0214841" z="1.06676"
+				r="1" g="1" b="1" a="1"
+				nx="0.241892" ny="0.366237" nz="-0.898531"
+				u="0.931026" v="0.930443">
+					<skin bone="peon bip R Forearm" weight="0.333333"/>
+					<skin bone="peon bip R UpperArm" weight="0.666667"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.701985" y="0.0339893" z="1.27404"
+				r="1" g="1" b="1" a="1"
+				nx="-0.353141" ny="0.635344" nz="0.686752"
+				u="0.84999" v="0.940039">
+					<skin bone="peon bip R Hand" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.267906" y="0.0214841" z="1.06676"
+				r="1" g="1" b="1" a="1"
+				nx="0.241892" ny="0.366237" nz="-0.898531"
+				u="0.931026" v="0.930443">
+					<skin bone="peon bip R Forearm" weight="0.333333"/>
+					<skin bone="peon bip R UpperArm" weight="0.666667"/>
+			</vertex>
+			<vertex x="-0.730196" y="0.0176797" z="0.967147"
+				r="1" g="1" b="1" a="1"
+				nx="-0.508339" ny="0.1642" nz="-0.845358"
+				u="0.8738" v="0.986555">
+					<skin bone="peon bip R Hand" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.0889719" y="-0.042657" z="0.445569"
+				r="1" g="1" b="1" a="1"
+				nx="0.692284" ny="-0.721566" nz="0.00922151"
+				u="0.59187" v="0.314267">
+					<skin bone="peon bip R Thigh" weight="0.5"/>
+					<skin bone="peon bip Pelvis" weight="0.5"/>
+			</vertex>
+			<vertex x="-0.204973" y="-0.042657" z="0.445333"
+				r="1" g="1" b="1" a="1"
+				nx="-0.755003" ny="-0.651855" nz="-0.0711012"
+				u="0.572199" v="0.314223">
+					<skin bone="peon bip R Thigh" weight="0.5"/>
+					<skin bone="peon bip Pelvis" weight="0.5"/>
+			</vertex>
+			<vertex x="-0.0870296" y="-0.0433566" z="0.245015"
+				r="1" g="1" b="1" a="1"
+				nx="0.896096" ny="-0.415437" nz="-0.156282"
+				u="0.592151" v="0.280338">
+					<skin bone="peon bip R Thigh" weight="0.333333"/>
+					<skin bone="peon bip R Calf" weight="0.666667"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.0870296" y="-0.0433566" z="0.245015"
+				r="1" g="1" b="1" a="1"
+				nx="0.896096" ny="-0.415437" nz="-0.156282"
+				u="0.592151" v="0.280338">
+					<skin bone="peon bip R Thigh" weight="0.333333"/>
+					<skin bone="peon bip R Calf" weight="0.666667"/>
+			</vertex>
+			<vertex x="-0.138139" y="0.0331597" z="0.231019"
+				r="1" g="1" b="1" a="1"
+				nx="-0.0389943" ny="0.988159" nz="-0.148393"
+				u="0.60758" v="0.27756">
+					<skin bone="peon bip R Thigh" weight="0.666667"/>
+					<skin bone="peon bip R Calf" weight="0.333333"/>
+			</vertex>
+			<vertex x="-0.131001" y="0.0585738" z="0.398377"
+				r="1" g="1" b="1" a="1"
+				nx="0.107381" ny="0.989367" nz="-0.098089"
+				u="0.610345" v="0.306028">
+					<skin bone="peon bip R Thigh" weight="0.5"/>
+					<skin bone="peon bip Pelvis" weight="0.5"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.185506" y="-0.0433566" z="0.245015"
+				r="1" g="1" b="1" a="1"
+				nx="-0.900536" ny="-0.372728" nz="-0.223852"
+				u="0.575409" v="0.28034">
+					<skin bone="peon bip R Thigh" weight="0.333333"/>
+					<skin bone="peon bip R Calf" weight="0.666667"/>
+			</vertex>
+			<vertex x="-0.131001" y="0.0585738" z="0.398377"
+				r="1" g="1" b="1" a="1"
+				nx="0.107381" ny="0.989367" nz="-0.098089"
+				u="0.552616" v="0.302788">
+					<skin bone="peon bip R Thigh" weight="0.5"/>
+					<skin bone="peon bip Pelvis" weight="0.5"/>
+			</vertex>
+			<vertex x="-0.138139" y="0.0331597" z="0.231019"
+				r="1" g="1" b="1" a="1"
+				nx="-0.0389943" ny="0.988159" nz="-0.148393"
+				u="0.562189" v="0.274934">
+					<skin bone="peon bip R Thigh" weight="0.666667"/>
+					<skin bone="peon bip R Calf" weight="0.333333"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.0889719" y="-0.042657" z="0.445569"
+				r="1" g="1" b="1" a="1"
+				nx="0.692284" ny="-0.721566" nz="0.00922151"
+				u="0.59187" v="0.314267">
+					<skin bone="peon bip R Thigh" weight="0.5"/>
+					<skin bone="peon bip Pelvis" weight="0.5"/>
+			</vertex>
+			<vertex x="-0.0870296" y="-0.0433566" z="0.245015"
+				r="1" g="1" b="1" a="1"
+				nx="0.896096" ny="-0.415437" nz="-0.156282"
+				u="0.592151" v="0.280338">
+					<skin bone="peon bip R Thigh" weight="0.333333"/>
+					<skin bone="peon bip R Calf" weight="0.666667"/>
+			</vertex>
+			<vertex x="-0.131001" y="0.0585738" z="0.398377"
+				r="1" g="1" b="1" a="1"
+				nx="0.107381" ny="0.989367" nz="-0.098089"
+				u="0.610345" v="0.306028">
+					<skin bone="peon bip R Thigh" weight="0.5"/>
+					<skin bone="peon bip Pelvis" weight="0.5"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.185506" y="-0.0433566" z="0.245015"
+				r="1" g="1" b="1" a="1"
+				nx="-0.900536" ny="-0.372728" nz="-0.223852"
+				u="0.575409" v="0.28034">
+					<skin bone="peon bip R Thigh" weight="0.333333"/>
+					<skin bone="peon bip R Calf" weight="0.666667"/>
+			</vertex>
+			<vertex x="-0.204973" y="-0.042657" z="0.445333"
+				r="1" g="1" b="1" a="1"
+				nx="-0.755003" ny="-0.651855" nz="-0.0711012"
+				u="0.572199" v="0.314223">
+					<skin bone="peon bip R Thigh" weight="0.5"/>
+					<skin bone="peon bip Pelvis" weight="0.5"/>
+			</vertex>
+			<vertex x="-0.131001" y="0.0585738" z="0.398377"
+				r="1" g="1" b="1" a="1"
+				nx="0.107381" ny="0.989367" nz="-0.098089"
+				u="0.552616" v="0.302788">
+					<skin bone="peon bip R Thigh" weight="0.5"/>
+					<skin bone="peon bip Pelvis" weight="0.5"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.0870296" y="-0.0433566" z="0.245015"
+				r="1" g="1" b="1" a="1"
+				nx="0.896096" ny="-0.415437" nz="-0.156282"
+				u="0.592151" v="0.280338">
+					<skin bone="peon bip R Thigh" weight="0.333333"/>
+					<skin bone="peon bip R Calf" weight="0.666667"/>
+			</vertex>
+			<vertex x="-0.204973" y="-0.042657" z="0.445333"
+				r="1" g="1" b="1" a="1"
+				nx="-0.755003" ny="-0.651855" nz="-0.0711012"
+				u="0.572199" v="0.314223">
+					<skin bone="peon bip R Thigh" weight="0.5"/>
+					<skin bone="peon bip Pelvis" weight="0.5"/>
+			</vertex>
+			<vertex x="-0.185506" y="-0.0433566" z="0.245015"
+				r="1" g="1" b="1" a="1"
+				nx="-0.900536" ny="-0.372728" nz="-0.223852"
+				u="0.575409" v="0.28034">
+					<skin bone="peon bip R Thigh" weight="0.333333"/>
+					<skin bone="peon bip R Calf" weight="0.666667"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.0870296" y="-0.0433566" z="0.245015"
+				r="1" g="1" b="1" a="1"
+				nx="0.896096" ny="-0.415437" nz="-0.156282"
+				u="0.592151" v="0.280338">
+					<skin bone="peon bip R Thigh" weight="0.333333"/>
+					<skin bone="peon bip R Calf" weight="0.666667"/>
+			</vertex>
+			<vertex x="-0.112901" y="0.0274897" z="0.0458841"
+				r="1" g="1" b="1" a="1"
+				nx="0.107876" ny="0.215302" nz="-0.970571"
+				u="0.587812" v="0.244704">
+					<skin bone="peon bip R Foot" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.138139" y="0.0331597" z="0.273234"
+				r="1" g="1" b="1" a="1"
+				nx="-0.0562646" ny="0.99793" nz="-0.0311339"
+				u="0.60758" v="0.27756">
+					<skin bone="peon bip R Calf" weight="0.666667"/>
+					<skin bone="peon bip R Thigh" weight="0.333333"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.185506" y="-0.0433566" z="0.245015"
+				r="1" g="1" b="1" a="1"
+				nx="-0.900536" ny="-0.372728" nz="-0.223852"
+				u="0.575409" v="0.28034">
+					<skin bone="peon bip R Thigh" weight="0.333333"/>
+					<skin bone="peon bip R Calf" weight="0.666667"/>
+			</vertex>
+			<vertex x="-0.138139" y="0.0331597" z="0.273234"
+				r="1" g="1" b="1" a="1"
+				nx="-0.0562646" ny="0.99793" nz="-0.0311339"
+				u="0.562189" v="0.274934">
+					<skin bone="peon bip R Calf" weight="0.666667"/>
+					<skin bone="peon bip R Thigh" weight="0.333333"/>
+			</vertex>
+			<vertex x="-0.112901" y="0.0274897" z="0.0458841"
+				r="1" g="1" b="1" a="1"
+				nx="0.107876" ny="0.215302" nz="-0.970571"
+				u="0.587812" v="0.244704">
+					<skin bone="peon bip R Foot" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.112901" y="0.0274897" z="0.0458841"
+				r="1" g="1" b="1" a="1"
+				nx="0.107876" ny="0.215302" nz="-0.970571"
+				u="0.587812" v="0.244704">
+					<skin bone="peon bip R Foot" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.0870296" y="-0.0433566" z="0.245015"
+				r="1" g="1" b="1" a="1"
+				nx="0.896096" ny="-0.415437" nz="-0.156282"
+				u="0.592151" v="0.280338">
+					<skin bone="peon bip R Thigh" weight="0.333333"/>
+					<skin bone="peon bip R Calf" weight="0.666667"/>
+			</vertex>
+			<vertex x="-0.185506" y="-0.0433566" z="0.245015"
+				r="1" g="1" b="1" a="1"
+				nx="-0.900536" ny="-0.372728" nz="-0.223852"
+				u="0.575409" v="0.28034">
+					<skin bone="peon bip R Thigh" weight="0.333333"/>
+					<skin bone="peon bip R Calf" weight="0.666667"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.140761" y="0.0153436" z="0.136527"
+				r="1" g="1" b="1" a="1"
+				nx="-0.0121225" ny="0.218417" nz="0.97578"
+				u="0.538529" v="0.269673">
+					<skin bone="peon bip R Foot" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.298708" y="-0.181887" z="4.00464e-006"
+				r="1" g="1" b="1" a="1"
+				nx="-0.432944" ny="-0.252308" nz="0.86539"
+				u="0.570543" v="0.229374">
+					<skin bone="peon bip R Foot" weight="0.666667"/>
+					<skin bone="peon bip R Toe0" weight="0.333333"/>
+			</vertex>
+			<vertex x="-0.128385" y="-0.256815" z="4.0451e-006"
+				r="1" g="1" b="1" a="1"
+				nx="0.0362544" ny="-0.446766" nz="0.893916"
+				u="0.5415" v="0.216652">
+					<skin bone="peon bip R Foot" weight="0.666667"/>
+					<skin bone="peon bip R Toe0" weight="0.333333"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.0209768" y="-0.184311" z="4.05005e-006"
+				r="1" g="1" b="1" a="1"
+				nx="0.467243" ny="-0.290638" nz="0.834993"
+				u="0.522084" v="0.226915">
+					<skin bone="peon bip R Foot" weight="0.666667"/>
+					<skin bone="peon bip R Toe0" weight="0.333333"/>
+			</vertex>
+			<vertex x="-0.0520742" y="0.119779" z="1.05107e-006"
+				r="1" g="1" b="1" a="1"
+				nx="0.471916" ny="0.525087" nz="0.708222"
+				u="0.520331" v="0.290883">
+					<skin bone="peon bip R Foot" weight="0.666667"/>
+					<skin bone="peon bip R Toe0" weight="0.333333"/>
+			</vertex>
+			<vertex x="-0.140761" y="0.0153436" z="0.136527"
+				r="1" g="1" b="1" a="1"
+				nx="-0.0121225" ny="0.218417" nz="0.97578"
+				u="0.538529" v="0.269673">
+					<skin bone="peon bip R Foot" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.00867754" y="-0.309919" z="4.03569e-006"
+				r="1" g="1" b="1" a="1"
+				nx="-1.74004e-006" ny="-4.18422e-006" nz="-1.0"
+				u="0.52035" v="0.170693">
+					<skin bone="peon bip R Foot" weight="0.666667"/>
+					<skin bone="peon bip R Toe0" weight="0.333333"/>
+			</vertex>
+			<vertex x="-0.298708" y="-0.181887" z="4.00464e-006"
+				r="1" g="1" b="1" a="1"
+				nx="-1.74004e-006" ny="-4.18422e-006" nz="-1.0"
+				u="0.471088" v="0.192352">
+					<skin bone="peon bip R Foot" weight="0.666667"/>
+					<skin bone="peon bip R Toe0" weight="0.333333"/>
+			</vertex>
+			<vertex x="-0.082" y="0.423444" z="1.09472e-006"
+				r="1" g="1" b="1" a="1"
+				nx="-1.74004e-006" ny="-4.18422e-006" nz="-1.0"
+				u="0.50748" v="0.295109">
+					<skin bone="peon bip R Foot" weight="0.666667"/>
+					<skin bone="peon bip R Toe0" weight="0.333333"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.298708" y="-0.181887" z="4.00464e-006"
+				r="1" g="1" b="1" a="1"
+				nx="-0.432944" ny="-0.252308" nz="0.86539"
+				u="0.570543" v="0.229374">
+					<skin bone="peon bip R Foot" weight="0.666667"/>
+					<skin bone="peon bip R Toe0" weight="0.333333"/>
+			</vertex>
+			<vertex x="-0.140761" y="0.0153436" z="0.136527"
+				r="1" g="1" b="1" a="1"
+				nx="-0.0121225" ny="0.218417" nz="0.97578"
+				u="0.538529" v="0.269673">
+					<skin bone="peon bip R Foot" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.190737" y="0.121198" z="2.54118e-006"
+				r="1" g="1" b="1" a="1"
+				nx="-0.417207" ny="0.637897" nz="0.647321"
+				u="0.548695" v="0.291263">
+					<skin bone="peon bip R Foot" weight="0.666667"/>
+					<skin bone="peon bip R Toe0" weight="0.333333"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.140761" y="0.0153436" z="0.136527"
+				r="1" g="1" b="1" a="1"
+				nx="-0.0121225" ny="0.218417" nz="0.97578"
+				u="0.538529" v="0.269673">
+					<skin bone="peon bip R Foot" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.128385" y="-0.256815" z="4.0451e-006"
+				r="1" g="1" b="1" a="1"
+				nx="0.0362544" ny="-0.446766" nz="0.893916"
+				u="0.5415" v="0.216652">
+					<skin bone="peon bip R Foot" weight="0.666667"/>
+					<skin bone="peon bip R Toe0" weight="0.333333"/>
+			</vertex>
+			<vertex x="-0.0209768" y="-0.184311" z="4.05005e-006"
+				r="1" g="1" b="1" a="1"
+				nx="0.467243" ny="-0.290638" nz="0.834993"
+				u="0.522084" v="0.226915">
+					<skin bone="peon bip R Foot" weight="0.666667"/>
+					<skin bone="peon bip R Toe0" weight="0.333333"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.190737" y="0.121198" z="2.54118e-006"
+				r="1" g="1" b="1" a="1"
+				nx="-0.417207" ny="0.637897" nz="0.647321"
+				u="0.548695" v="0.291263">
+					<skin bone="peon bip R Foot" weight="0.666667"/>
+					<skin bone="peon bip R Toe0" weight="0.333333"/>
+			</vertex>
+			<vertex x="-0.140761" y="0.0153436" z="0.136527"
+				r="1" g="1" b="1" a="1"
+				nx="-0.0121225" ny="0.218417" nz="0.97578"
+				u="0.538529" v="0.269673">
+					<skin bone="peon bip R Foot" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.0520742" y="0.119779" z="1.05107e-006"
+				r="1" g="1" b="1" a="1"
+				nx="0.471916" ny="0.525087" nz="0.708222"
+				u="0.520331" v="0.290883">
+					<skin bone="peon bip R Foot" weight="0.666667"/>
+					<skin bone="peon bip R Toe0" weight="0.333333"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.0885487" y="-0.042657" z="0.445569"
+				r="1" g="1" b="1" a="1"
+				nx="-0.670166" ny="-0.741277" nz="-0.03722"
+				u="0.59187" v="0.314267">
+					<skin bone="peon bip L Thigh" weight="0.5"/>
+					<skin bone="peon bip Pelvis" weight="0.5"/>
+			</vertex>
+			<vertex x="0.0872167" y="-0.0314275" z="0.245904"
+				r="1" g="1" b="1" a="1"
+				nx="-0.927699" ny="-0.319324" nz="-0.193408"
+				u="0.592151" v="0.280338">
+					<skin bone="peon bip L Thigh" weight="0.333333"/>
+					<skin bone="peon bip L Calf" weight="0.666667"/>
+			</vertex>
+			<vertex x="0.20455" y="-0.042657" z="0.445333"
+				r="1" g="1" b="1" a="1"
+				nx="0.731339" ny="-0.673775" nz="-0.105695"
+				u="0.572199" v="0.314223">
+					<skin bone="peon bip L Thigh" weight="0.5"/>
+					<skin bone="peon bip Pelvis" weight="0.5"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.0872167" y="-0.0314275" z="0.245904"
+				r="1" g="1" b="1" a="1"
+				nx="-0.927699" ny="-0.319324" nz="-0.193408"
+				u="0.592151" v="0.280338">
+					<skin bone="peon bip L Thigh" weight="0.333333"/>
+					<skin bone="peon bip L Calf" weight="0.666667"/>
+			</vertex>
+			<vertex x="0.0885487" y="-0.042657" z="0.445569"
+				r="1" g="1" b="1" a="1"
+				nx="-0.670166" ny="-0.741277" nz="-0.03722"
+				u="0.59187" v="0.314267">
+					<skin bone="peon bip L Thigh" weight="0.5"/>
+					<skin bone="peon bip Pelvis" weight="0.5"/>
+			</vertex>
+			<vertex x="0.130578" y="0.0585738" z="0.398377"
+				r="1" g="1" b="1" a="1"
+				nx="-0.111965" ny="0.990836" nz="-0.075545"
+				u="0.610345" v="0.306028">
+					<skin bone="peon bip L Thigh" weight="0.5"/>
+					<skin bone="peon bip Pelvis" weight="0.5"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.186061" y="-0.0314275" z="0.245904"
+				r="1" g="1" b="1" a="1"
+				nx="0.92507" ny="-0.275235" nz="-0.261708"
+				u="0.575409" v="0.28034">
+					<skin bone="peon bip L Thigh" weight="0.333333"/>
+					<skin bone="peon bip L Calf" weight="0.666667"/>
+			</vertex>
+			<vertex x="0.138517" y="0.0212307" z="0.235407"
+				r="1" g="1" b="1" a="1"
+				nx="0.0418212" ny="0.974327" nz="-0.22122"
+				u="0.562189" v="0.274934">
+					<skin bone="peon bip L Thigh" weight="0.333333"/>
+					<skin bone="peon bip L Calf" weight="0.666667"/>
+			</vertex>
+			<vertex x="0.130578" y="0.0585738" z="0.398377"
+				r="1" g="1" b="1" a="1"
+				nx="-0.111965" ny="0.990836" nz="-0.075545"
+				u="0.552616" v="0.302788">
+					<skin bone="peon bip L Thigh" weight="0.5"/>
+					<skin bone="peon bip Pelvis" weight="0.5"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.0872167" y="-0.0314275" z="0.245904"
+				r="1" g="1" b="1" a="1"
+				nx="-0.927699" ny="-0.319324" nz="-0.193408"
+				u="0.592151" v="0.280338">
+					<skin bone="peon bip L Thigh" weight="0.333333"/>
+					<skin bone="peon bip L Calf" weight="0.666667"/>
+			</vertex>
+			<vertex x="0.130578" y="0.0585738" z="0.398377"
+				r="1" g="1" b="1" a="1"
+				nx="-0.111965" ny="0.990836" nz="-0.075545"
+				u="0.610345" v="0.306028">
+					<skin bone="peon bip L Thigh" weight="0.5"/>
+					<skin bone="peon bip Pelvis" weight="0.5"/>
+			</vertex>
+			<vertex x="0.138517" y="0.0212307" z="0.235407"
+				r="1" g="1" b="1" a="1"
+				nx="0.0418212" ny="0.974327" nz="-0.22122"
+				u="0.60758" v="0.27756">
+					<skin bone="peon bip L Thigh" weight="0.333333"/>
+					<skin bone="peon bip L Calf" weight="0.666667"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.186061" y="-0.0314275" z="0.245904"
+				r="1" g="1" b="1" a="1"
+				nx="0.92507" ny="-0.275235" nz="-0.261708"
+				u="0.575409" v="0.28034">
+					<skin bone="peon bip L Thigh" weight="0.333333"/>
+					<skin bone="peon bip L Calf" weight="0.666667"/>
+			</vertex>
+			<vertex x="0.130578" y="0.0585738" z="0.398377"
+				r="1" g="1" b="1" a="1"
+				nx="-0.111965" ny="0.990836" nz="-0.075545"
+				u="0.552616" v="0.302788">
+					<skin bone="peon bip L Thigh" weight="0.5"/>
+					<skin bone="peon bip Pelvis" weight="0.5"/>
+			</vertex>
+			<vertex x="0.20455" y="-0.042657" z="0.445333"
+				r="1" g="1" b="1" a="1"
+				nx="0.731339" ny="-0.673775" nz="-0.105695"
+				u="0.572199" v="0.314223">
+					<skin bone="peon bip L Thigh" weight="0.5"/>
+					<skin bone="peon bip Pelvis" weight="0.5"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.0872167" y="-0.0314275" z="0.245904"
+				r="1" g="1" b="1" a="1"
+				nx="-0.927699" ny="-0.319324" nz="-0.193408"
+				u="0.592151" v="0.280338">
+					<skin bone="peon bip L Thigh" weight="0.333333"/>
+					<skin bone="peon bip L Calf" weight="0.666667"/>
+			</vertex>
+			<vertex x="0.186061" y="-0.0314275" z="0.245904"
+				r="1" g="1" b="1" a="1"
+				nx="0.92507" ny="-0.275235" nz="-0.261708"
+				u="0.575409" v="0.28034">
+					<skin bone="peon bip L Thigh" weight="0.333333"/>
+					<skin bone="peon bip L Calf" weight="0.666667"/>
+			</vertex>
+			<vertex x="0.20455" y="-0.042657" z="0.445333"
+				r="1" g="1" b="1" a="1"
+				nx="0.731339" ny="-0.673775" nz="-0.105695"
+				u="0.572199" v="0.314223">
+					<skin bone="peon bip L Thigh" weight="0.5"/>
+					<skin bone="peon bip Pelvis" weight="0.5"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.0872167" y="-0.0314275" z="0.245904"
+				r="1" g="1" b="1" a="1"
+				nx="-0.927699" ny="-0.319324" nz="-0.193408"
+				u="0.592151" v="0.280338">
+					<skin bone="peon bip L Thigh" weight="0.333333"/>
+					<skin bone="peon bip L Calf" weight="0.666667"/>
+			</vertex>
+			<vertex x="0.138517" y="0.0212307" z="0.267068"
+				r="1" g="1" b="1" a="1"
+				nx="0.0575205" ny="0.998113" nz="0.0214727"
+				u="0.60758" v="0.27756">
+					<skin bone="peon bip L Thigh" weight="0.666667"/>
+					<skin bone="peon bip L Calf" weight="0.333333"/>
+			</vertex>
+			<vertex x="0.112478" y="0.0274897" z="0.0458841"
+				r="1" g="1" b="1" a="1"
+				nx="-0.112482" ny="0.197089" nz="-0.973911"
+				u="0.587812" v="0.244704">
+					<skin bone="peon bip L Foot" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.186061" y="-0.0314275" z="0.245904"
+				r="1" g="1" b="1" a="1"
+				nx="0.92507" ny="-0.275235" nz="-0.261708"
+				u="0.575409" v="0.28034">
+					<skin bone="peon bip L Thigh" weight="0.333333"/>
+					<skin bone="peon bip L Calf" weight="0.666667"/>
+			</vertex>
+			<vertex x="0.112478" y="0.0274897" z="0.0458841"
+				r="1" g="1" b="1" a="1"
+				nx="-0.112482" ny="0.197089" nz="-0.973911"
+				u="0.587812" v="0.244704">
+					<skin bone="peon bip L Foot" weight="1.0"/>
+			</vertex>
+			<vertex x="0.138517" y="0.0212307" z="0.267068"
+				r="1" g="1" b="1" a="1"
+				nx="0.0575205" ny="0.998113" nz="0.0214727"
+				u="0.562189" v="0.274934">
+					<skin bone="peon bip L Thigh" weight="0.666667"/>
+					<skin bone="peon bip L Calf" weight="0.333333"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.112478" y="0.0274897" z="0.0458841"
+				r="1" g="1" b="1" a="1"
+				nx="-0.112482" ny="0.197089" nz="-0.973911"
+				u="0.587812" v="0.244704">
+					<skin bone="peon bip L Foot" weight="1.0"/>
+			</vertex>
+			<vertex x="0.186061" y="-0.0314275" z="0.245904"
+				r="1" g="1" b="1" a="1"
+				nx="0.92507" ny="-0.275235" nz="-0.261708"
+				u="0.575409" v="0.28034">
+					<skin bone="peon bip L Thigh" weight="0.333333"/>
+					<skin bone="peon bip L Calf" weight="0.666667"/>
+			</vertex>
+			<vertex x="0.0872167" y="-0.0314275" z="0.245904"
+				r="1" g="1" b="1" a="1"
+				nx="-0.927699" ny="-0.319324" nz="-0.193408"
+				u="0.592151" v="0.280338">
+					<skin bone="peon bip L Thigh" weight="0.333333"/>
+					<skin bone="peon bip L Calf" weight="0.666667"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.140337" y="0.0153436" z="0.136527"
+				r="1" g="1" b="1" a="1"
+				nx="0.0119218" ny="0.218344" nz="0.975799"
+				u="0.538529" v="0.269673">
+					<skin bone="peon bip L Foot" weight="1.0"/>
+			</vertex>
+			<vertex x="0.127961" y="-0.256815" z="4.05492e-006"
+				r="1" g="1" b="1" a="1"
+				nx="-0.0364183" ny="-0.446757" nz="0.893914"
+				u="0.5415" v="0.216652">
+					<skin bone="peon bip L Foot" weight="0.666667"/>
+					<skin bone="peon bip L Toe0" weight="0.333333"/>
+			</vertex>
+			<vertex x="0.298285" y="-0.181887" z="4.05102e-006"
+				r="1" g="1" b="1" a="1"
+				nx="0.432944" ny="-0.252308" nz="0.86539"
+				u="0.570543" v="0.229374">
+					<skin bone="peon bip L Foot" weight="0.666667"/>
+					<skin bone="peon bip L Toe0" weight="0.333333"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.0207673" y="-0.184311" z="4.04889e-006"
+				r="1" g="1" b="1" a="1"
+				nx="-0.467556" ny="-0.290794" nz="0.834764"
+				u="0.522084" v="0.226915">
+					<skin bone="peon bip L Foot" weight="0.666667"/>
+					<skin bone="peon bip L Toe0" weight="0.333333"/>
+			</vertex>
+			<vertex x="0.140337" y="0.0153436" z="0.136527"
+				r="1" g="1" b="1" a="1"
+				nx="0.0119218" ny="0.218344" nz="0.975799"
+				u="0.538529" v="0.269673">
+					<skin bone="peon bip L Foot" weight="1.0"/>
+			</vertex>
+			<vertex x="0.0516509" y="0.119779" z="1.05657e-006"
+				r="1" g="1" b="1" a="1"
+				nx="-0.472061" ny="0.52496" nz="0.70822"
+				u="0.520331" v="0.290883">
+					<skin bone="peon bip L Foot" weight="0.666667"/>
+					<skin bone="peon bip L Toe0" weight="0.333333"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.00846812" y="-0.309919" z="4.05028e-006"
+				r="1" g="1" b="1" a="1"
+				nx="1.3981e-006" ny="-3.15892e-006" nz="-1.0"
+				u="0.52035" v="0.170693">
+					<skin bone="peon bip L Foot" weight="0.666667"/>
+					<skin bone="peon bip L Toe0" weight="0.333333"/>
+			</vertex>
+			<vertex x="0.0822522" y="0.42342" z="1.83687e-006"
+				r="1" g="1" b="1" a="1"
+				nx="1.3981e-006" ny="-3.15892e-006" nz="-1.0"
+				u="0.50748" v="0.295109">
+					<skin bone="peon bip L Foot" weight="0.666667"/>
+					<skin bone="peon bip L Toe0" weight="0.333333"/>
+			</vertex>
+			<vertex x="0.298285" y="-0.181887" z="4.05102e-006"
+				r="1" g="1" b="1" a="1"
+				nx="1.3981e-006" ny="-3.15892e-006" nz="-1.0"
+				u="0.471088" v="0.192352">
+					<skin bone="peon bip L Foot" weight="0.666667"/>
+					<skin bone="peon bip L Toe0" weight="0.333333"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.298285" y="-0.181887" z="4.05102e-006"
+				r="1" g="1" b="1" a="1"
+				nx="0.432944" ny="-0.252308" nz="0.86539"
+				u="0.570543" v="0.229374">
+					<skin bone="peon bip L Foot" weight="0.666667"/>
+					<skin bone="peon bip L Toe0" weight="0.333333"/>
+			</vertex>
+			<vertex x="0.190314" y="0.121198" z="2.54834e-006"
+				r="1" g="1" b="1" a="1"
+				nx="0.417208" ny="0.637897" nz="0.647321"
+				u="0.548695" v="0.291263">
+					<skin bone="peon bip L Foot" weight="0.666667"/>
+					<skin bone="peon bip L Toe0" weight="0.333333"/>
+			</vertex>
+			<vertex x="0.140337" y="0.0153436" z="0.136527"
+				r="1" g="1" b="1" a="1"
+				nx="0.0119218" ny="0.218344" nz="0.975799"
+				u="0.538529" v="0.269673">
+					<skin bone="peon bip L Foot" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.140337" y="0.0153436" z="0.136527"
+				r="1" g="1" b="1" a="1"
+				nx="0.0119218" ny="0.218344" nz="0.975799"
+				u="0.538529" v="0.269673">
+					<skin bone="peon bip L Foot" weight="1.0"/>
+			</vertex>
+			<vertex x="0.0207673" y="-0.184311" z="4.04889e-006"
+				r="1" g="1" b="1" a="1"
+				nx="-0.467556" ny="-0.290794" nz="0.834764"
+				u="0.522084" v="0.226915">
+					<skin bone="peon bip L Foot" weight="0.666667"/>
+					<skin bone="peon bip L Toe0" weight="0.333333"/>
+			</vertex>
+			<vertex x="0.127961" y="-0.256815" z="4.05492e-006"
+				r="1" g="1" b="1" a="1"
+				nx="-0.0364183" ny="-0.446757" nz="0.893914"
+				u="0.5415" v="0.216652">
+					<skin bone="peon bip L Foot" weight="0.666667"/>
+					<skin bone="peon bip L Toe0" weight="0.333333"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.190314" y="0.121198" z="2.54834e-006"
+				r="1" g="1" b="1" a="1"
+				nx="0.417208" ny="0.637897" nz="0.647321"
+				u="0.548695" v="0.291263">
+					<skin bone="peon bip L Foot" weight="0.666667"/>
+					<skin bone="peon bip L Toe0" weight="0.333333"/>
+			</vertex>
+			<vertex x="0.0516509" y="0.119779" z="1.05657e-006"
+				r="1" g="1" b="1" a="1"
+				nx="-0.472061" ny="0.52496" nz="0.70822"
+				u="0.520331" v="0.290883">
+					<skin bone="peon bip L Foot" weight="0.666667"/>
+					<skin bone="peon bip L Toe0" weight="0.333333"/>
+			</vertex>
+			<vertex x="0.140337" y="0.0153436" z="0.136527"
+				r="1" g="1" b="1" a="1"
+				nx="0.0119218" ny="0.218344" nz="0.975799"
+				u="0.538529" v="0.269673">
+					<skin bone="peon bip L Foot" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.259381" y="-0.0397453" z="1.11835"
+				r="1" g="1" b="1" a="1"
+				nx="-0.349422" ny="-0.936941" nz="-0.00675832"
+				u="0.882737" v="0.797317">
+					<skin bone="peon bip L Forearm" weight="0.666667"/>
+					<skin bone="peon bip L UpperArm" weight="0.333333"/>
+			</vertex>
+			<vertex x="0.267906" y="0.0214841" z="1.06676"
+				r="1" g="1" b="1" a="1"
+				nx="-0.297757" ny="0.373695" nz="-0.87846"
+				u="0.882298" v="0.783695">
+					<skin bone="peon bip L UpperArm" weight="0.666667"/>
+					<skin bone="peon bip L Forearm" weight="0.333333"/>
+			</vertex>
+			<vertex x="0.819464" y="-0.0930833" z="0.967151"
+				r="1" g="1" b="1" a="1"
+				nx="0.647345" ny="-0.206105" nz="-0.733801"
+				u="0.980779" v="0.78213">
+					<skin bone="peon bip L Forearm" weight="0.0"/>
+					<skin bone="peon bip L Hand" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.0320431" y="0.00299143" z="1.13291"
+				r="1" g="1" b="1" a="1"
+				nx="-0.99824" ny="0.00612199" nz="0.0589911"
+				u="0.842856" v="0.79453">
+					<skin bone="peon bip L Clavicle" weight="1.0"/>
+			</vertex>
+			<vertex x="0.267906" y="0.0214841" z="1.16994"
+				r="1" g="1" b="1" a="1"
+				nx="-0.262033" ny="0.39208" nz="0.881823"
+				u="0.880138" v="0.810632">
+					<skin bone="peon bip L UpperArm" weight="0.666667"/>
+					<skin bone="peon bip L Forearm" weight="0.333333"/>
+			</vertex>
+			<vertex x="0.267906" y="0.0214841" z="1.06676"
+				r="1" g="1" b="1" a="1"
+				nx="-0.297757" ny="0.373695" nz="-0.87846"
+				u="0.870785" v="0.825445">
+					<skin bone="peon bip L UpperArm" weight="0.666667"/>
+					<skin bone="peon bip L Forearm" weight="0.333333"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.0320431" y="0.00299143" z="1.13291"
+				r="1" g="1" b="1" a="1"
+				nx="-0.99824" ny="0.00612199" nz="0.0589911"
+				u="0.842856" v="0.79453">
+					<skin bone="peon bip L Clavicle" weight="1.0"/>
+			</vertex>
+			<vertex x="0.267906" y="0.0214841" z="1.06676"
+				r="1" g="1" b="1" a="1"
+				nx="-0.297757" ny="0.373695" nz="-0.87846"
+				u="0.882298" v="0.783695">
+					<skin bone="peon bip L UpperArm" weight="0.666667"/>
+					<skin bone="peon bip L Forearm" weight="0.333333"/>
+			</vertex>
+			<vertex x="0.276789" y="-0.0397453" z="1.11835"
+				r="1" g="1" b="1" a="1"
+				nx="-0.173254" ny="-0.984626" nz="-0.0222331"
+				u="0.882737" v="0.797317">
+					<skin bone="peon bip L UpperArm" weight="0.666667"/>
+					<skin bone="peon bip L Forearm" weight="0.333333"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.0320431" y="0.00299143" z="1.13291"
+				r="1" g="1" b="1" a="1"
+				nx="-0.99824" ny="0.00612199" nz="0.0589911"
+				u="0.842856" v="0.79453">
+					<skin bone="peon bip L Clavicle" weight="1.0"/>
+			</vertex>
+			<vertex x="0.276789" y="-0.0397453" z="1.11835"
+				r="1" g="1" b="1" a="1"
+				nx="-0.173254" ny="-0.984626" nz="-0.0222331"
+				u="0.882737" v="0.797317">
+					<skin bone="peon bip L UpperArm" weight="0.666667"/>
+					<skin bone="peon bip L Forearm" weight="0.333333"/>
+			</vertex>
+			<vertex x="0.267906" y="0.0214841" z="1.16994"
+				r="1" g="1" b="1" a="1"
+				nx="-0.262033" ny="0.39208" nz="0.881823"
+				u="0.880138" v="0.810632">
+					<skin bone="peon bip L UpperArm" weight="0.666667"/>
+					<skin bone="peon bip L Forearm" weight="0.333333"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.628641" y="0.0598305" z="1.1297"
+				r="1" g="1" b="1" a="1"
+				nx="0.18444" ny="0.979274" nz="0.0836909"
+				u="0.930951" v="0.841751">
+					<skin bone="peon bip L Forearm" weight="0.0"/>
+					<skin bone="peon bip L Hand" weight="1.0"/>
+			</vertex>
+			<vertex x="0.845286" y="-0.121971" z="1.26941"
+				r="1" g="1" b="1" a="1"
+				nx="0.698249" ny="-0.311868" nz="0.64435"
+				u="0.979906" v="0.834287">
+					<skin bone="peon bip L Forearm" weight="0.0"/>
+					<skin bone="peon bip L Hand" weight="1.0"/>
+			</vertex>
+			<vertex x="0.819464" y="-0.0930833" z="0.967151"
+				r="1" g="1" b="1" a="1"
+				nx="0.647345" ny="-0.206105" nz="-0.733801"
+				u="0.962952" v="0.887626">
+					<skin bone="peon bip L Forearm" weight="0.0"/>
+					<skin bone="peon bip L Hand" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.259381" y="-0.0397453" z="1.11835"
+				r="1" g="1" b="1" a="1"
+				nx="-0.349422" ny="-0.936941" nz="-0.00675832"
+				u="0.882737" v="0.797317">
+					<skin bone="peon bip L Forearm" weight="0.666667"/>
+					<skin bone="peon bip L UpperArm" weight="0.333333"/>
+			</vertex>
+			<vertex x="0.819464" y="-0.0930833" z="0.967151"
+				r="1" g="1" b="1" a="1"
+				nx="0.647345" ny="-0.206105" nz="-0.733801"
+				u="0.980779" v="0.78213">
+					<skin bone="peon bip L Forearm" weight="0.0"/>
+					<skin bone="peon bip L Hand" weight="1.0"/>
+			</vertex>
+			<vertex x="0.845286" y="-0.121971" z="1.26941"
+				r="1" g="1" b="1" a="1"
+				nx="0.698249" ny="-0.311868" nz="0.64435"
+				u="0.979906" v="0.834287">
+					<skin bone="peon bip L Forearm" weight="0.0"/>
+					<skin bone="peon bip L Hand" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.628641" y="0.0598305" z="1.1297"
+				r="1" g="1" b="1" a="1"
+				nx="0.18444" ny="0.979274" nz="0.0836909"
+				u="0.930951" v="0.841751">
+					<skin bone="peon bip L Forearm" weight="0.0"/>
+					<skin bone="peon bip L Hand" weight="1.0"/>
+			</vertex>
+			<vertex x="0.267906" y="0.0214841" z="1.16994"
+				r="1" g="1" b="1" a="1"
+				nx="-0.262033" ny="0.39208" nz="0.881823"
+				u="0.880138" v="0.810632">
+					<skin bone="peon bip L UpperArm" weight="0.666667"/>
+					<skin bone="peon bip L Forearm" weight="0.333333"/>
+			</vertex>
+			<vertex x="0.845286" y="-0.121971" z="1.26941"
+				r="1" g="1" b="1" a="1"
+				nx="0.698249" ny="-0.311868" nz="0.64435"
+				u="0.979906" v="0.834287">
+					<skin bone="peon bip L Forearm" weight="0.0"/>
+					<skin bone="peon bip L Hand" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.267906" y="0.0214841" z="1.16994"
+				r="1" g="1" b="1" a="1"
+				nx="-0.262033" ny="0.39208" nz="0.881823"
+				u="0.880138" v="0.810632">
+					<skin bone="peon bip L UpperArm" weight="0.666667"/>
+					<skin bone="peon bip L Forearm" weight="0.333333"/>
+			</vertex>
+			<vertex x="0.259381" y="-0.0397453" z="1.11835"
+				r="1" g="1" b="1" a="1"
+				nx="-0.349422" ny="-0.936941" nz="-0.00675832"
+				u="0.882737" v="0.797317">
+					<skin bone="peon bip L Forearm" weight="0.666667"/>
+					<skin bone="peon bip L UpperArm" weight="0.333333"/>
+			</vertex>
+			<vertex x="0.845286" y="-0.121971" z="1.26941"
+				r="1" g="1" b="1" a="1"
+				nx="0.698249" ny="-0.311868" nz="0.64435"
+				u="0.979906" v="0.834287">
+					<skin bone="peon bip L Forearm" weight="0.0"/>
+					<skin bone="peon bip L Hand" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.628641" y="0.0598305" z="1.1297"
+				r="1" g="1" b="1" a="1"
+				nx="0.18444" ny="0.979274" nz="0.0836909"
+				u="0.930951" v="0.841751">
+					<skin bone="peon bip L Forearm" weight="0.0"/>
+					<skin bone="peon bip L Hand" weight="1.0"/>
+			</vertex>
+			<vertex x="0.267906" y="0.0214841" z="1.06676"
+				r="1" g="1" b="1" a="1"
+				nx="-0.297757" ny="0.373695" nz="-0.87846"
+				u="0.870785" v="0.825445">
+					<skin bone="peon bip L UpperArm" weight="0.666667"/>
+					<skin bone="peon bip L Forearm" weight="0.333333"/>
+			</vertex>
+			<vertex x="0.267906" y="0.0214841" z="1.16994"
+				r="1" g="1" b="1" a="1"
+				nx="-0.262033" ny="0.39208" nz="0.881823"
+				u="0.880138" v="0.810632">
+					<skin bone="peon bip L UpperArm" weight="0.666667"/>
+					<skin bone="peon bip L Forearm" weight="0.333333"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.628641" y="0.0598305" z="1.1297"
+				r="1" g="1" b="1" a="1"
+				nx="0.18444" ny="0.979274" nz="0.0836909"
+				u="0.930951" v="0.841751">
+					<skin bone="peon bip L Forearm" weight="0.0"/>
+					<skin bone="peon bip L Hand" weight="1.0"/>
+			</vertex>
+			<vertex x="0.819464" y="-0.0930833" z="0.967151"
+				r="1" g="1" b="1" a="1"
+				nx="0.647345" ny="-0.206105" nz="-0.733801"
+				u="0.962952" v="0.887626">
+					<skin bone="peon bip L Forearm" weight="0.0"/>
+					<skin bone="peon bip L Hand" weight="1.0"/>
+			</vertex>
+			<vertex x="0.267906" y="0.0214841" z="1.06676"
+				r="1" g="1" b="1" a="1"
+				nx="-0.297757" ny="0.373695" nz="-0.87846"
+				u="0.870785" v="0.825445">
+					<skin bone="peon bip L UpperArm" weight="0.666667"/>
+					<skin bone="peon bip L Forearm" weight="0.333333"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.232537" y="-0.014813" z="0.434644"
+				r="1" g="1" b="1" a="1"
+				nx="-0.934379" ny="0.0309617" nz="-0.354934"
+				u="0.830889" v="0.739493">
+					<skin bone="peon bip Spine" weight="1.0"/>
+			</vertex>
+			<vertex x="0.0723216" y="0.12625" z="0.628591"
+				r="1" g="1" b="1" a="1"
+				nx="0.274456" ny="0.795714" nz="-0.539919"
+				u="0.775103" v="0.774346">
+					<skin bone="peon bip Spine" weight="0.5"/>
+					<skin bone="peon bip Spine1" weight="0.5"/>
+			</vertex>
+			<vertex x="0.0" y="0.108668" z="0.343908"
+				r="1" g="1" b="1" a="1"
+				nx="-0.0449488" ny="0.665186" nz="-0.745324"
+				u="0.785754" v="0.725596">
+					<skin bone="peon bip Pelvis" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.0902302" y="0.0466051" z="1.15083"
+				r="1" g="1" b="1" a="1"
+				nx="-0.958584" ny="-0.284683" nz="0.00848403"
+				u="0.806384" v="0.860828">
+					<skin bone="peon bip Spine1" weight="1.0"/>
+			</vertex>
+			<vertex x="0.0723216" y="0.12625" z="0.628591"
+				r="1" g="1" b="1" a="1"
+				nx="0.274456" ny="0.795714" nz="-0.539919"
+				u="0.775103" v="0.774346">
+					<skin bone="peon bip Spine" weight="0.5"/>
+					<skin bone="peon bip Spine1" weight="0.5"/>
+			</vertex>
+			<vertex x="-0.232537" y="-0.014813" z="0.434644"
+				r="1" g="1" b="1" a="1"
+				nx="-0.934379" ny="0.0309617" nz="-0.354934"
+				u="0.830889" v="0.739493">
+					<skin bone="peon bip Spine" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-1.50303e-005" y="-0.0709811" z="1.1369"
+				r="1" g="1" b="1" a="1"
+				nx="-0.0001084" ny="-0.983954" nz="0.178425"
+				u="0.693137" v="0.869626">
+					<skin bone="peon bip Spine2" weight="0.5"/>
+					<skin bone="peon bip Head" weight="0.5"/>
+			</vertex>
+			<vertex x="0.00187058" y="-0.181178" z="0.391448"
+				r="1" g="1" b="1" a="1"
+				nx="0.00407268" ny="-0.847884" nz="-0.530165"
+				u="0.693092" v="0.740752">
+					<skin bone="peon bip Pelvis" weight="1.0"/>
+			</vertex>
+			<vertex x="0.232537" y="-0.014813" z="0.434644"
+				r="1" g="1" b="1" a="1"
+				nx="0.920571" ny="-0.0371098" nz="-0.388809"
+				u="0.740623" v="0.739584">
+					<skin bone="peon bip Spine" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.192076" y="0.0466051" z="1.15083"
+				r="1" g="1" b="1" a="1"
+				nx="-4.56628e-005" ny="-0.035049" nz="0.999386"
+				u="0.719059" v="0.443812">
+					<skin bone="peon bip Spine1" weight="1.0"/>
+			</vertex>
+			<vertex x="0.306324" y="0.0466051" z="1.15091"
+				r="1" g="1" b="1" a="1"
+				nx="-0.000153224" ny="-0.0348358" nz="0.999393"
+				u="0.803577" v="0.444184">
+					<skin bone="peon bip Spine1" weight="1.0"/>
+			</vertex>
+			<vertex x="0.306133" y="0.297665" z="1.15966"
+				r="1" g="1" b="1" a="1"
+				nx="-0.000107738" ny="-0.034926" nz="0.99939"
+				u="0.803357" v="0.486784">
+					<skin bone="peon bip Spine1" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.306133" y="0.297665" z="1.15966"
+				r="1" g="1" b="1" a="1"
+				nx="-0.000107738" ny="-0.034926" nz="0.99939"
+				u="0.803357" v="0.486784">
+					<skin bone="peon bip Spine1" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.192076" y="0.29764" z="1.15966"
+				r="1" g="1" b="1" a="1"
+				nx="-1.51555e-007" ny="-0.0351392" nz="0.999382"
+				u="0.718871" v="0.486408">
+					<skin bone="peon bip Spine1" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.192076" y="0.0466051" z="1.15083"
+				r="1" g="1" b="1" a="1"
+				nx="-4.56628e-005" ny="-0.035049" nz="0.999386"
+				u="0.719059" v="0.443812">
+					<skin bone="peon bip Spine1" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.185294" y="0.340061" z="0.641195"
+				r="1" g="1" b="1" a="1"
+				nx="0.600357" ny="0.52191" nz="-0.605955"
+				u="0.882782" v="0.439636">
+					<skin bone="peon bip Spine1" weight="1.0"/>
+			</vertex>
+			<vertex x="0.0723216" y="0.12625" z="0.628591"
+				r="1" g="1" b="1" a="1"
+				nx="0.274456" ny="0.795714" nz="-0.539919"
+				u="0.901936" v="0.403312">
+					<skin bone="peon bip Spine" weight="0.5"/>
+					<skin bone="peon bip Spine1" weight="0.5"/>
+			</vertex>
+			<vertex x="-0.0553088" y="0.339959" z="0.64105"
+				r="1" g="1" b="1" a="1"
+				nx="-0.597166" ny="0.510717" nz="-0.618515"
+				u="0.923584" v="0.439613">
+					<skin bone="peon bip Spine1" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.306324" y="0.142103" z="1.15268"
+				r="1" g="1" b="1" a="1"
+				nx="0.919559" ny="-0.346612" nz="-0.185127"
+				u="0.845789" v="0.527403">
+					<skin bone="peon bip Spine1" weight="1.0"/>
+			</vertex>
+			<vertex x="0.185294" y="0.340061" z="0.641195"
+				r="1" g="1" b="1" a="1"
+				nx="0.600357" ny="0.52191" nz="-0.605955"
+				u="0.882782" v="0.439636">
+					<skin bone="peon bip Spine1" weight="1.0"/>
+			</vertex>
+			<vertex x="0.230095" y="0.297648" z="1.15966"
+				r="1" g="1" b="1" a="1"
+				nx="0.555144" ny="0.831512" nz="0.0200522"
+				u="0.875184" v="0.527852">
+					<skin bone="peon bip Spine1" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.0553088" y="0.339959" z="0.64105"
+				r="1" g="1" b="1" a="1"
+				nx="-0.597166" ny="0.510717" nz="-0.618515"
+				u="0.923584" v="0.439613">
+					<skin bone="peon bip Spine1" weight="1.0"/>
+			</vertex>
+			<vertex x="0.0723216" y="0.12625" z="0.628591"
+				r="1" g="1" b="1" a="1"
+				nx="0.274456" ny="0.795714" nz="-0.539919"
+				u="0.963922" v="0.426995">
+					<skin bone="peon bip Spine" weight="0.5"/>
+					<skin bone="peon bip Spine1" weight="0.5"/>
+			</vertex>
+			<vertex x="-0.191405" y="0.141909" z="1.15268"
+				r="1" g="1" b="1" a="1"
+				nx="-0.933098" ny="-0.235073" nz="-0.272157"
+				u="0.964016" v="0.526524">
+					<skin bone="peon bip Spine1" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.0902302" y="0.0466051" z="1.15083"
+				r="1" g="1" b="1" a="1"
+				nx="-0.958584" ny="-0.284683" nz="0.00848403"
+				u="0.986025" v="0.518083">
+					<skin bone="peon bip Spine1" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.191405" y="0.141909" z="1.15268"
+				r="1" g="1" b="1" a="1"
+				nx="-0.933098" ny="-0.235073" nz="-0.272157"
+				u="0.964016" v="0.526524">
+					<skin bone="peon bip Spine1" weight="1.0"/>
+			</vertex>
+			<vertex x="0.0723216" y="0.12625" z="0.628591"
+				r="1" g="1" b="1" a="1"
+				nx="0.274456" ny="0.795714" nz="-0.539919"
+				u="0.963922" v="0.426995">
+					<skin bone="peon bip Spine" weight="0.5"/>
+					<skin bone="peon bip Spine1" weight="0.5"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.0" y="0.108668" z="0.343908"
+				r="1" g="1" b="1" a="1"
+				nx="-0.0449488" ny="0.665186" nz="-0.745324"
+				u="0.785754" v="0.725596">
+					<skin bone="peon bip Pelvis" weight="1.0"/>
+			</vertex>
+			<vertex x="0.0723216" y="0.12625" z="0.628591"
+				r="1" g="1" b="1" a="1"
+				nx="0.274456" ny="0.795714" nz="-0.539919"
+				u="0.775103" v="0.774346">
+					<skin bone="peon bip Spine" weight="0.5"/>
+					<skin bone="peon bip Spine1" weight="0.5"/>
+			</vertex>
+			<vertex x="0.232537" y="-0.014813" z="0.434644"
+				r="1" g="1" b="1" a="1"
+				nx="0.920571" ny="-0.0371098" nz="-0.388809"
+				u="0.740659" v="0.739621">
+					<skin bone="peon bip Spine" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.0" y="0.108668" z="0.343908"
+				r="1" g="1" b="1" a="1"
+				nx="-0.0449488" ny="0.665186" nz="-0.745324"
+				u="0.693141" v="0.691033">
+					<skin bone="peon bip Pelvis" weight="1.0"/>
+			</vertex>
+			<vertex x="0.232537" y="-0.014813" z="0.434644"
+				r="1" g="1" b="1" a="1"
+				nx="0.920571" ny="-0.0371098" nz="-0.388809"
+				u="0.740623" v="0.739584">
+					<skin bone="peon bip Spine" weight="1.0"/>
+			</vertex>
+			<vertex x="0.00187058" y="-0.181178" z="0.391448"
+				r="1" g="1" b="1" a="1"
+				nx="0.00407268" ny="-0.847884" nz="-0.530165"
+				u="0.693092" v="0.740752">
+					<skin bone="peon bip Pelvis" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.124107" y="0.297657" z="1.15966"
+				r="1" g="1" b="1" a="1"
+				nx="-0.585308" ny="0.81073" nz="-0.0114237"
+				u="0.93525" v="0.527851">
+					<skin bone="peon bip Spine1" weight="1.0"/>
+			</vertex>
+			<vertex x="0.185294" y="0.340061" z="0.641195"
+				r="1" g="1" b="1" a="1"
+				nx="0.600357" ny="0.52191" nz="-0.605955"
+				u="0.882782" v="0.439636">
+					<skin bone="peon bip Spine1" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.0553088" y="0.339959" z="0.64105"
+				r="1" g="1" b="1" a="1"
+				nx="-0.597166" ny="0.510717" nz="-0.618515"
+				u="0.923584" v="0.439613">
+					<skin bone="peon bip Spine1" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.306324" y="0.142103" z="1.15268"
+				r="1" g="1" b="1" a="1"
+				nx="0.919559" ny="-0.346612" nz="-0.185127"
+				u="0.845789" v="0.527403">
+					<skin bone="peon bip Spine1" weight="1.0"/>
+			</vertex>
+			<vertex x="0.0902303" y="0.0466051" z="1.15083"
+				r="1" g="1" b="1" a="1"
+				nx="0.890981" ny="-0.443595" nz="0.0968354"
+				u="0.808457" v="0.512858">
+					<skin bone="peon bip Spine1" weight="1.0"/>
+			</vertex>
+			<vertex x="0.0723216" y="0.12625" z="0.628591"
+				r="1" g="1" b="1" a="1"
+				nx="0.274456" ny="0.795714" nz="-0.539919"
+				u="0.842845" v="0.430079">
+					<skin bone="peon bip Spine" weight="0.5"/>
+					<skin bone="peon bip Spine1" weight="0.5"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.185294" y="0.340061" z="0.641195"
+				r="1" g="1" b="1" a="1"
+				nx="0.600357" ny="0.52191" nz="-0.605955"
+				u="0.882782" v="0.439636">
+					<skin bone="peon bip Spine1" weight="1.0"/>
+			</vertex>
+			<vertex x="0.306324" y="0.142103" z="1.15268"
+				r="1" g="1" b="1" a="1"
+				nx="0.919559" ny="-0.346612" nz="-0.185127"
+				u="0.845789" v="0.527403">
+					<skin bone="peon bip Spine1" weight="1.0"/>
+			</vertex>
+			<vertex x="0.0723216" y="0.12625" z="0.628591"
+				r="1" g="1" b="1" a="1"
+				nx="0.274456" ny="0.795714" nz="-0.539919"
+				u="0.842845" v="0.430079">
+					<skin bone="peon bip Spine" weight="0.5"/>
+					<skin bone="peon bip Spine1" weight="0.5"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.0553088" y="0.339959" z="0.64105"
+				r="1" g="1" b="1" a="1"
+				nx="-0.597166" ny="0.510717" nz="-0.618515"
+				u="0.923584" v="0.439613">
+					<skin bone="peon bip Spine1" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.191405" y="0.141909" z="1.15268"
+				r="1" g="1" b="1" a="1"
+				nx="-0.933098" ny="-0.235073" nz="-0.272157"
+				u="0.964016" v="0.526524">
+					<skin bone="peon bip Spine1" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.124107" y="0.297657" z="1.15966"
+				r="1" g="1" b="1" a="1"
+				nx="-0.585308" ny="0.81073" nz="-0.0114237"
+				u="0.93525" v="0.527851">
+					<skin bone="peon bip Spine1" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="9.27506e-005" y="-0.295557" z="1.54067"
+				r="1" g="1" b="1" a="1"
+				nx="1.0" ny="0.000660924" nz="0.000414476"
+				u="0.775657" v="0.940879">
+					<skin bone="peon bip Head" weight="1.0"/>
+			</vertex>
+			<vertex x="9.27309e-005" y="-0.0429027" z="1.13783"
+				r="1" g="1" b="1" a="1"
+				nx="1.0" ny="0.000660924" nz="0.000414476"
+				u="0.732812" v="0.872566">
+					<skin bone="peon bip Head" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.000185481" y="-0.0429974" z="1.80922"
+				r="1" g="1" b="1" a="1"
+				nx="1.0" ny="0.000660924" nz="0.000414476"
+				u="0.732828" v="0.986421">
+					<skin bone="peon bip Head" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="9.27309e-005" y="-0.0429027" z="1.13783"
+				r="1" g="1" b="1" a="1"
+				nx="-1.0" ny="-0.000660924" nz="-0.000414476"
+				u="0.732812" v="0.872566">
+					<skin bone="peon bip Head" weight="1.0"/>
+			</vertex>
+			<vertex x="9.27506e-005" y="-0.295557" z="1.54067"
+				r="1" g="1" b="1" a="1"
+				nx="-1.0" ny="-0.000660924" nz="-0.000414476"
+				u="0.775657" v="0.940879">
+					<skin bone="peon bip Head" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.000185481" y="-0.0429974" z="1.80922"
+				r="1" g="1" b="1" a="1"
+				nx="-1.0" ny="-0.000660924" nz="-0.000414476"
+				u="0.732828" v="0.986421">
+					<skin bone="peon bip Head" weight="1.0"/>
+			</vertex>
+		</polygon>
+	</polygons>
+</mesh>

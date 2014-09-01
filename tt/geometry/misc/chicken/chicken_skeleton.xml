@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+
+<!DOCTYPE skeleton [
+	<!ELEMENT skeleton   (bones, init_pose)>
+
+	<!ELEMENT bones      (bone+)>
+
+	<!ELEMENT init_pose  (transform+)>
+
+	<!ELEMENT bone        EMPTY>
+
+	<!ELEMENT transform   EMPTY>
+	<!ATTLIST transform name CDATA #REQUIRED>
+	<!ATTLIST transform m00 CDATA #REQUIRED>
+	<!ATTLIST transform m01 CDATA #REQUIRED>
+	<!ATTLIST transform m02 CDATA #REQUIRED>
+	<!ATTLIST transform m03 CDATA #REQUIRED>
+	<!ATTLIST transform m10 CDATA #REQUIRED>
+	<!ATTLIST transform m11 CDATA #REQUIRED>
+	<!ATTLIST transform m12 CDATA #REQUIRED>
+	<!ATTLIST transform m13 CDATA #REQUIRED>
+	<!ATTLIST transform m20 CDATA #REQUIRED>
+	<!ATTLIST transform m21 CDATA #REQUIRED>
+	<!ATTLIST transform m22 CDATA #REQUIRED>
+	<!ATTLIST transform m23 CDATA #REQUIRED>
+	<!ATTLIST transform m30 CDATA #REQUIRED>
+	<!ATTLIST transform m31 CDATA #REQUIRED>
+	<!ATTLIST transform m32 CDATA #REQUIRED>
+	<!ATTLIST transform m33 CDATA #REQUIRED>
+	<!ATTLIST bone name CDATA #REQUIRED>
+	<!ATTLIST bone parent CDATA #REQUIRED>
+]>
+
+<skeleton>
+	<bones>
+		<bone name="chickenBip Spine" parent="chickenBip Pelvis"/>
+		<bone name="chickenBip Tail" parent="chickenBip Spine"/>
+		<bone name="chickenBip R UpperArm" parent="chickenBip R Clavicle"/>
+		<bone name="chickenBip L UpperArm" parent="chickenBip L Clavicle"/>
+		<bone name="chickenBip R Toe0" parent="chickenBip R Foot"/>
+		<bone name="chickenBip R Foot" parent="chickenBip R Calf"/>
+		<bone name="chickenBip R Calf" parent="chickenBip R Thigh"/>
+		<bone name="chickenBip R Thigh" parent="chickenBip Spine"/>
+		<bone name="chickenBip L Toe0" parent="chickenBip L Foot"/>
+		<bone name="chickenBip L Foot" parent="chickenBip L Calf"/>
+		<bone name="chickenBip L Calf" parent="chickenBip L Thigh"/>
+		<bone name="chickenBip L Thigh" parent="chickenBip Spine"/>
+		<bone name="chickenBip Neck" parent="chickenBip Spine"/>
+		<bone name="chickenBip Head" parent="chickenBip Neck"/>
+		<bone name="chickenBip Ponytail1" parent="chickenBip Head"/>
+	</bones>
+	<init_pose>
+		<transform name="chickenBip Spine"
+			m00="0.939965" m10="0.341272" m20="-4.02147e-007" m30="-0.00922497"
+			m01="1.25281e-006" m11="-2.27224e-006" m21="1.0" m31="0.0"
+			m02="0.341272" m12="-0.939965" m22="-2.56337e-006" m32="0.852232"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="chickenBip Tail"
+			m00="-0.433722" m10="0.901047" m20="1.15044e-006" m30="-0.146261"
+			m01="-6.24347e-007" m11="-1.57732e-006" m21="1.0" m31="0.0"
+			m02="0.901047" m12="0.433722" m22="1.24668e-006" m32="0.899698"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="chickenBip R UpperArm"
+			m00="-0.292234" m10="-0.95559" m20="-0.0380409" m30="0.0687841"
+			m01="-0.224461" m11="0.0298687" m21="0.974025" m31="-0.106053"
+			m02="-0.929633" m12="0.293182" m22="-0.223221" m32="0.846183"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="chickenBip L UpperArm"
+			m00="-0.292234" m10="-0.95559" m20="0.0380381" m30="0.0687838"
+			m01="0.22446" m11="-0.0298715" m21="0.974025" m31="0.106053"
+			m02="-0.929633" m12="0.293182" m22="0.223221" m32="0.846183"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="chickenBip R Toe0"
+			m00="0.964792" m10="0.0" m20="-0.263014" m30="0.321795"
+			m01="-0.263014" m11="0.0" m21="-0.964792" m31="-0.188771"
+			m02="0.0" m12="1.0" m22="0.0" m32="0.00439102"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="chickenBip R Foot"
+			m00="0.0" m10="0.964792" m20="-0.263014" m30="-0.03101"
+			m01="0.0" m11="-0.263014" m21="-0.964792" m31="-0.0925924"
+			m02="-1.0" m12="0.0" m22="0.0" m32="0.166008"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="chickenBip R Calf"
+			m00="0.167782" m10="-0.825862" m20="0.538331" m30="-0.0871541"
+			m01="-0.16669" m11="0.514443" m21="0.841168" m31="-0.0368138"
+			m02="-0.971629" m12="-0.230867" m22="-0.0513485" m32="0.49114"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="chickenBip R Thigh"
+			m00="-0.265715" m10="-0.799747" m20="0.538331" m30="-0.00918404"
+			m01="0.111598" m11="0.529134" m21="0.841168" m31="-0.0695606"
+			m02="-0.957571" m12="0.283587" m22="-0.0513485" m32="0.772125"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="chickenBip L Toe0"
+			m00="0.964791" m10="0.0" m20="0.263017" m30="0.321795"
+			m01="0.263017" m11="0.0" m21="-0.964791" m31="0.188772"
+			m02="0.0" m12="1.0" m22="0.0" m32="0.00439104"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="chickenBip L Foot"
+			m00="0.0" m10="0.964791" m20="0.263017" m30="-0.0310103"
+			m01="0.0" m11="0.263017" m21="-0.964791" m31="0.0925923"
+			m02="-1.0" m12="0.0" m22="0.0" m32="0.166008"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="chickenBip L Calf"
+			m00="0.167782" m10="-0.825861" m20="-0.538333" m30="-0.0871542"
+			m01="0.16669" m11="-0.514445" m21="0.841166" m31="0.0368135"
+			m02="-0.971629" m12="-0.230867" m22="0.0513486" m32="0.49114"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="chickenBip L Thigh"
+			m00="-0.265714" m10="-0.799746" m20="-0.538333" m30="-0.00918423"
+			m01="-0.111599" m11="-0.529136" m21="0.841166" m31="0.0695605"
+			m02="-0.957571" m12="0.283587" m22="0.0513486" m32="0.772125"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="chickenBip Neck"
+			m00="-0.0863625" m10="0.996264" m20="1.41454e-006" m30="0.131557"
+			m01="-1.60025e-007" m11="-1.43372e-006" m21="1.0" m31="1.50328e-007"
+			m02="0.996264" m12="0.0863625" m22="2.83246e-007" m32="0.903422"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="chickenBip Head"
+			m00="-1.3868e-006" m10="1.0" m20="1.4249e-006" m30="0.101311"
+			m01="0.0" m11="-1.4249e-006" m21="1.0" m31="0.0"
+			m02="1.0" m12="1.3868e-006" m22="0.0" m32="1.25234"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="chickenBip Ponytail1"
+			m00="0.999966" m10="0.0082943" m20="-1.32569e-006" m30="0.171466"
+			m01="1.34829e-006" m11="-2.7187e-006" m21="1.0" m31="0.0"
+			m02="0.0082943" m12="-0.999966" m22="-2.72979e-006" m32="1.36522"
+			m03="0" m13="0" m23="0" m33="1"/>
+	</init_pose>
+</skeleton>

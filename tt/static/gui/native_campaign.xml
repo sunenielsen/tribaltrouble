@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+
+<!DOCTYPE native_campaign [
+<!ELEMENT native_campaign	(map,
+							 island0,
+							 island1,
+							 island2,
+							 island3,
+							 island4,
+							 island5,
+							 island6,
+							 island7,
+							 flag0,
+							 flag1,
+							 flag2,
+							 boat0,
+							 boat1,
+							 boat2,
+							 hidden0,
+							 face0,
+							 face1,
+							 face2,
+							 face3,
+							 face4,
+							 face5,
+							 face6,
+							 face7,
+							 face8
+							 )>
+	<!ATTLIST native_campaign texture CDATA #REQUIRED>
+	<!ELEMENT normal	(quad)>
+	<!ELEMENT active	(quad)>
+	<!ELEMENT disabled	(quad)>
+	<!ELEMENT quad	   EMPTY>
+	<!ATTLIST quad left CDATA #REQUIRED>
+	<!ATTLIST quad top CDATA #REQUIRED>
+	<!ATTLIST quad right CDATA #REQUIRED>
+	<!ATTLIST quad bottom CDATA #REQUIRED>
+
+	<!ELEMENT map		(quad)>
+	<!ATTLIST map offset_x CDATA #REQUIRED>
+	<!ATTLIST map offset_y CDATA #REQUIRED>
+	<!ATTLIST map width CDATA #REQUIRED>
+	<!ATTLIST map height CDATA #REQUIRED>
+
+	<!ELEMENT island	(normal, active, disabled)>
+	<!ATTLIST island x CDATA #REQUIRED>
+	<!ATTLIST island y CDATA #REQUIRED>
+	<!ATTLIST island pin_index CDATA #REQUIRED>
+	<!ATTLIST island pin_x CDATA #REQUIRED>
+	<!ATTLIST island pin_y CDATA #REQUIRED>
+
+	<!ELEMENT island0	(island)>
+	<!ELEMENT island1	(island)>
+	<!ELEMENT island2	(island)>
+	<!ELEMENT island3	(island)>
+	<!ELEMENT island4	(island)>
+	<!ELEMENT island5	(island)>
+	<!ELEMENT island6	(island)>
+	<!ELEMENT island7	(island)>
+
+	<!ELEMENT flag0		(quad)>
+	<!ELEMENT flag1		(quad)>
+	<!ELEMENT flag2		(quad)>
+	<!ELEMENT boat0		(quad)>
+	<!ELEMENT boat1		(quad)>
+	<!ELEMENT boat2		(quad)>
+	<!ELEMENT hidden0	(quad)>
+	<!ATTLIST hidden0 x CDATA #REQUIRED>
+	<!ATTLIST hidden0 y CDATA #REQUIRED>
+	<!ELEMENT face0		(quad)>
+	<!ELEMENT face1		(quad)>
+	<!ELEMENT face2		(quad)>
+	<!ELEMENT face3		(quad)>
+	<!ELEMENT face4		(quad)>
+	<!ELEMENT face5		(quad)>
+	<!ELEMENT face6		(quad)>
+	<!ELEMENT face7		(quad)>
+	<!ELEMENT face8		(quad)>
+]>
+
+<native_campaign texture="/textures/gui/native_campaign">
+	<map offset_x="50" offset_y="50" width="700" height="500">
+		<quad left="0" top="424" right="800" bottom="1024"/>
+	</map>
+	<island0>
+		<island x="0" y="0" pin_index="0" pin_x="0" pin_y="0">
+			<normal>
+				<quad left="0" top="0" right="0" bottom="0"/>
+			</normal>
+			<active>
+				<quad left="0" top="0" right="0" bottom="0"/>
+			</active>
+			<disabled>
+				<quad left="0" top="0" right="0" bottom="0"/>
+			</disabled>
+		</island>
+	</island0>
+	<island1>
+		<island x="348" y="899" pin_index="1" pin_x="332" pin_y="869">
+			<normal>
+				<quad left="216" top="0" right="294" bottom="67"/>
+			</normal>
+			<active>
+				<quad left="216" top="67" right="294" bottom="134"/>
+			</active>
+			<disabled>
+				<quad left="216" top="134" right="294" bottom="201"/>
+			</disabled>
+		</island>
+	</island1>
+	<island2>
+		<island x="601" y="735" pin_index="0" pin_x="571" pin_y="699">
+			<normal>
+				<quad left="294" top="0" right="372" bottom="67"/>
+			</normal>
+			<active>
+				<quad left="294" top="67" right="372" bottom="134"/>
+			</active>
+			<disabled>
+				<quad left="294" top="134" right="372" bottom="201"/>
+			</disabled>
+		</island>
+	</island2>
+	<island3>
+		<island x="510" y="644" pin_index="0" pin_x="512" pin_y="592">
+			<normal>
+				<quad left="372" top="0" right="495" bottom="89"/>
+			</normal>
+			<active>
+				<quad left="372" top="89" right="495" bottom="178"/>
+			</active>
+			<disabled>
+				<quad left="372" top="178" right="495" bottom="267"/>
+			</disabled>
+		</island>
+	</island3>
+	<island4>
+		<island x="299" y="607" pin_index="1" pin_x="303" pin_y="566">
+			<normal>
+				<quad left="495" top="0" right="618" bottom="89"/>
+			</normal>
+			<active>
+				<quad left="495" top="89" right="618" bottom="178"/>
+			</active>
+			<disabled>
+				<quad left="495" top="178" right="618" bottom="267"/>
+			</disabled>
+		</island>
+	</island4>
+	<island5>
+		<island x="363" y="734" pin_index="1" pin_x="365" pin_y="695">
+			<normal>
+				<quad left="618" top="0" right="741" bottom="89"/>
+			</normal>
+			<active>
+				<quad left="618" top="89" right="741" bottom="178"/>
+			</active>
+			<disabled>
+				<quad left="618" top="178" right="741" bottom="267"/>
+			</disabled>
+		</island>
+	</island5>
+	<island6>
+		<island x="113" y="808" pin_index="2" pin_x="127" pin_y="748">
+			<normal>
+				<quad left="864" top="0" right="1024" bottom="111"/>
+			</normal>
+			<active>
+				<quad left="864" top="111" right="1024" bottom="222"/>
+			</active>
+			<disabled>
+				<quad left="864" top="222" right="1024" bottom="333"/>
+			</disabled>
+		</island>
+	</island6>
+	<island7>
+		<island x="112" y="668" pin_index="2" pin_x="102" pin_y="622">
+			<normal>
+				<quad left="741" top="0" right="864" bottom="89"/>
+			</normal>
+			<active>
+				<quad left="741" top="89" right="864" bottom="178"/>
+			</active>
+			<disabled>
+				<quad left="741" top="178" right="864" bottom="267"/>
+			</disabled>
+		</island>
+	</island7>
+	<flag0>
+		<quad left="834" top="781" right="929" bottom="862"/>
+	</flag0>
+	<flag1>
+		<quad left="834" top="862" right="929" bottom="943"/>
+	</flag1>
+	<flag2>
+		<quad left="834" top="943" right="929" bottom="1024"/>
+	</flag2>
+	<boat0>
+		<quad left="929" top="781" right="1024" bottom="862"/>
+	</boat0>
+	<boat1>
+		<quad left="929" top="862" right="1024" bottom="943"/>
+	</boat1>
+	<boat2>
+		<quad left="929" top="943" right="1024" bottom="1024"/>
+	</boat2>
+	<hidden0 x="103" y="706">
+		<quad left="83" top="0" right="216" bottom="134"/>
+	</hidden0>
+	<face0>
+		<quad left="0" top="288" right="79" bottom="424"/>
+	</face0>
+	<face1>
+		<quad left="79" top="288" right="202" bottom="424"/>
+	</face1>
+	<face2>
+		<quad left="202" top="288" right="276" bottom="424"/>
+	</face2>
+	<face3>
+		<quad left="276" top="288" right="326" bottom="424"/>
+	</face3>
+	<face4>
+		<quad left="326" top="288" right="405" bottom="424"/>
+	</face4>
+	<face5>
+		<quad left="405" top="288" right="531" bottom="424"/>
+	</face5>
+	<face6>
+		<quad left="531" top="288" right="657" bottom="424"/>
+	</face6>
+	<face7>
+		<quad left="657" top="288" right="780" bottom="424"/>
+	</face7>
+	<face8>
+		<quad left="0" top="152" right="121" bottom="288"/>
+	</face8>
+</native_campaign>

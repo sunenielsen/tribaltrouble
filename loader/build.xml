@@ -1,0 +1,14 @@
+<project name="tools" basedir=".">
+	<import file="../common/common.xml"/>
+
+	<property name="classpath" value="../common/build/classes"/>
+
+	<target name="compiledeps" depends="compile-common">
+	</target>
+
+	<target name="loader" depends="compile">
+		<jar destfile="${build}/loader.jar">
+			<fileset dir="${build}/classes" includes="com/oddlabs/loader/*class"/>
+		</jar>
+	</target>
+</project>

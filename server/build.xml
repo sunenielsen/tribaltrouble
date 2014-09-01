@@ -1,0 +1,41 @@
+<project name="servers" basedir="." default="all">
+	<import file="../common/common.xml"/>
+	<property name="classpath" value="../common/build/classes:${lib}/commons-pool-1.2.jar:${lib}/commons-dbcp-1.2.1.jar:${lib}/commons-collections-3.1.jar"/>
+
+	<target name="compiledeps" depends="compile-common">
+	</target>
+
+	<target name="bugreporter" depends="compile">
+		<jar destfile="${build}/bugreport.jar">
+			<fileset dir="../common/build/classes" includes="com/oddlabs/net/**/*class"/>
+			<fileset dir="../common/build/classes" includes="com/oddlabs/util/**/*class"/>
+			<fileset dir="../common/build/classes" includes="com/oddlabs/event/**/*class"/>
+			<fileset dir="../common/build/classes" includes="com/oddlabs/bugreport/**/*class"/>
+			<fileset dir="${build}/classes" includes="com/oddlabs/bugreportserver/**/*class"/>
+		</jar>
+	</target>
+
+	<target name="router" depends="compile">
+		<jar destfile="${build}/router.jar">
+			<fileset dir="../common/build/classes" includes="com/oddlabs/net/**/*class"/>
+			<fileset dir="../common/build/classes" includes="com/oddlabs/util/**/*class"/>
+			<fileset dir="../common/build/classes" includes="com/oddlabs/event/**/*class"/>
+			<fileset dir="../common/build/classes" includes="com/oddlabs/router/**/*class"/>
+			<fileset dir="${build}/classes" includes="com/oddlabs/routerserver/**/*class"/>
+		</jar>
+	</target>
+
+	<target name="matchmaker" depends="compile">
+		<jar destfile="${build}/matchmaking.jar">
+			<fileset dir="../common/build/classes" includes="com/oddlabs/net/**/*class"/>
+			<fileset dir="../common/build/classes" includes="com/oddlabs/util/**/*class"/>
+			<fileset dir="../common/build/classes" includes="com/oddlabs/event/**/*class"/>
+			<fileset dir="../common/build/classes" includes="com/oddlabs/matchmaking/**/*class"/>
+			<fileset dir="../common/build/classes" includes="com/oddlabs/registration/**/*class"/>
+			<fileset dir="${build}/classes" includes="com/oddlabs/matchserver/**/*class"/>
+			<fileset dir="${commonstatic}" includes="public_reg_key"/>
+		</jar>
+	</target>
+
+	<target name="all" depends="router, matchmaker, bugreporter"/>
+</project>

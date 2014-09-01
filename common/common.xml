@@ -1,0 +1,122 @@
+<project name="common-tools" basedir="." default="compile">
+	<taskdef resource="net/sf/antcontrib/antcontrib.properties">
+		<classpath>
+			<pathelement location="../common/lib/java/ant-contrib-1.0b3.jar"/>
+		</classpath>
+	</taskdef>
+
+	<property name="build" value="build"/>
+	<property name="lib" value="../common/lib/java"/>
+	<property name="tools" value="../tools"/>
+	<property name="nativelib" value="../common/lib/native"/>
+	<property name="commonstatic" value="../common/static"/>
+	<property name="java_source_version" value="1.4"/>
+
+	<target name="init">
+		<tstamp/>
+		<mkdir dir="${build}"/>
+		<mkdir dir="${build}/classes"/>
+	</target>
+
+	<target name="clean">
+		<delete dir="${build}/classes"/>
+	</target>
+
+	<target name="mrproper" depends="clean">
+		<ant inheritAll="false" antfile="../build.xml" target="clean"/>
+		<delete dir="${build}"/>
+	</target>
+
+	<target name="compile-common">
+		<ant inheritAll="false" dir="../common" target="compile"/>
+	</target>
+	
+	<target name="compiledeps"/>
+
+	<target name="compile" depends="init,compiledeps">
+		<javac debug="yes" source="${java_source_version}" target="${java_source_version}" classpath="${classpath}" srcdir="classes" destdir="${build}/classes">
+			<!--			<compilerarg value="-Xmaxerrs"/>
+			<compilerarg value="50"/>-->
+		</javac>
+	</target>
+
+	<target name="rundeps"/>
+
+	<target name="dorundeps" depends="compile,rundeps"/>
+
+	<target name="eventloadzipped" depends="dorundeps">
+		<java fork="yes" classpath="${classpath}:${res_classpath}:${build}/classes" classname="${main_class}">
+			<jvmarg value="-ea"/>
+			<jvmarg value="-Djava.library.path=${nativelib}"/>
+			<jvmarg value="-Dorg.lwjgl.util.Debug=true"/>
+			<jvmarg value="-Deventload=zipped"/>
+			<arg value="--eventload"/>
+			<arg value="zipped"/>
+		</java>
+	</target>
+
+	<target name="eventload" depends="dorundeps">
+		<java fork="yes" classpath="${classpath}:${res_classpath}:${build}/classes" classname="${main_class}">
+			<jvmarg value="-ea"/>
+			<jvmarg value="-Djava.library.path=${nativelib}"/>
+			<jvmarg value="-Dorg.lwjgl.util.Debug=true"/>
+			<jvmarg value="-Deventload=normal"/>
+			<arg value="--eventload"/>
+			<arg value="normal"/>
+		</java>
+	</target>
+
+	<target name="grabframes" depends="dorundeps">
+		<java fork="yes" classpath="${classpath}:${res_classpath}:${build}/classes" classname="${main_class}">
+			<jvmarg value="-ea"/>
+			<jvmarg value="-Djava.library.path=${nativelib}"/>
+			<jvmarg value="-Dgrabframes=true"/>
+			<arg value="--grabframes"/>
+		</java>
+	</target>
+
+	<target name="profile" depends="dorundeps">
+		<java fork="yes" classpath="${classpath}:${res_classpath}:${build}/classes" classname="${main_class}">
+			<jvmarg value="-ea"/>
+			<jvmarg value="-Xbootclasspath/a:/home/elias/snot/jprofiler4/bin/agent.jar"/>
+			<jvmarg value="-agentlib:jprofilerti"/>
+			<jvmarg value="-Djava.library.path=${nativelib}"/>
+		</java>
+	</target>
+
+	<target name="cpuprofile" depends="dorundeps">
+		<java fork="yes" classpath="${classpath}:${res_classpath}:${build}/classes" classname="${main_class}">
+			<jvmarg value="-ea"/>
+			<jvmarg value="-Djava.library.path=${nativelib}"/>
+			<jvmarg value="-Xrunhprof:cpu=samples"/>
+		</java>
+	</target>
+
+	<target name="memprofile" depends="dorundeps">
+		<java fork="yes" classpath="${classpath}:${res_classpath}:${build}/classes" classname="${main_class}">
+			<jvmarg value="-ea"/>
+			<jvmarg value="-verbose:gc"/>
+			<jvmarg value="-Djava.library.path=${nativelib}"/>
+			<jvmarg value="-Xrunhprof:heap=all,depth=12,doe=y"/>
+		</java>
+	</target>
+
+	<target name="gcprofile" depends="dorundeps">
+		<java fork="yes" classpath="${classpath}:${res_classpath}:${build}/classes" classname="${main_class}">
+			<jvmarg value="-ea"/>
+			<jvmarg value="-Djava.library.path=${nativelib}"/>
+			<jvmarg value="-verbose:gc"/>
+		</java>
+	</target>
+
+	<target name="run" depends="dorundeps">
+		<java fork="yes" classpath="${classpath}:${res_classpath}:${build}/classes" classname="${main_class}">
+			<jvmarg value="-ea"/>
+			<jvmarg value="-Djava.library.path=${nativelib}"/>
+			<jvmarg value="-Dorg.lwjgl.util.Debug=true"/>
+			<jvmarg value="-Xmx80000000"/>
+			<!--<jvmarg value="-Djavax.net.debug=ssl,handshake,trustmanager"/>-->
+			<!--    <jvmarg value="-Dorg.lwjgl.opengl.Window.undecorated=true"/>-->
+		</java>
+	</target>
+</project>

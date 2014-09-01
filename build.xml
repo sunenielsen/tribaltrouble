@@ -1,0 +1,22 @@
+<project name="all" basedir="." default="compile">
+	<macrodef name="iterate">
+		<attribute name="target"/>
+		<sequential>
+			<subant target="@{target}">
+				<fileset dir="." includes="*/build.xml"/>
+			</subant>
+		</sequential>
+	</macrodef>
+
+	<target name="clean">
+		<iterate target="clean"/>
+	</target>
+
+	<target name="mrproper">
+		<iterate target="mrproper"/>
+	</target>
+
+	<target name="compile">
+		<iterate target="compile"/>
+	</target>
+</project>

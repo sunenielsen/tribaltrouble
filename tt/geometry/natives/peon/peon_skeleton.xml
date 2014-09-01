@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+
+<!DOCTYPE skeleton [
+	<!ELEMENT skeleton   (bones, init_pose)>
+
+	<!ELEMENT bones      (bone+)>
+
+	<!ELEMENT init_pose  (transform+)>
+
+	<!ELEMENT bone        EMPTY>
+
+	<!ELEMENT transform   EMPTY>
+	<!ATTLIST transform name CDATA #REQUIRED>
+	<!ATTLIST transform m00 CDATA #REQUIRED>
+	<!ATTLIST transform m01 CDATA #REQUIRED>
+	<!ATTLIST transform m02 CDATA #REQUIRED>
+	<!ATTLIST transform m03 CDATA #REQUIRED>
+	<!ATTLIST transform m10 CDATA #REQUIRED>
+	<!ATTLIST transform m11 CDATA #REQUIRED>
+	<!ATTLIST transform m12 CDATA #REQUIRED>
+	<!ATTLIST transform m13 CDATA #REQUIRED>
+	<!ATTLIST transform m20 CDATA #REQUIRED>
+	<!ATTLIST transform m21 CDATA #REQUIRED>
+	<!ATTLIST transform m22 CDATA #REQUIRED>
+	<!ATTLIST transform m23 CDATA #REQUIRED>
+	<!ATTLIST transform m30 CDATA #REQUIRED>
+	<!ATTLIST transform m31 CDATA #REQUIRED>
+	<!ATTLIST transform m32 CDATA #REQUIRED>
+	<!ATTLIST transform m33 CDATA #REQUIRED>
+	<!ATTLIST bone name CDATA #REQUIRED>
+	<!ATTLIST bone parent CDATA #REQUIRED>
+]>
+
+<skeleton>
+	<bones>
+		<bone name="pBip Pelvis" parent="pBip"/>
+		<bone name="pBip Spine" parent="pBip Pelvis"/>
+		<bone name="pBip L Thigh" parent="pBip Spine"/>
+		<bone name="pBip Spine1" parent="pBip Spine"/>
+		<bone name="pBip L Calf" parent="pBip L Thigh"/>
+		<bone name="pBip L Foot" parent="pBip L Calf"/>
+		<bone name="pBip Tail" parent="pBip Spine"/>
+		<bone name="pBip R Thigh" parent="pBip Spine"/>
+		<bone name="pBip R Calf" parent="pBip R Thigh"/>
+		<bone name="pBip R Foot" parent="pBip R Calf"/>
+		<bone name="pBip Spine2" parent="pBip Spine1"/>
+		<bone name="pBip L UpperArm" parent="pBip L Clavicle"/>
+		<bone name="pBip L Clavicle" parent="pBip Neck"/>
+		<bone name="pBip R UpperArm" parent="pBip R Clavicle"/>
+		<bone name="pBip R Clavicle" parent="pBip Neck"/>
+		<bone name="pBip R Forearm" parent="pBip R UpperArm"/>
+		<bone name="pBip R Hand" parent="pBip R Forearm"/>
+		<bone name="pBip Neck" parent="pBip Spine2"/>
+		<bone name="pBip L Forearm" parent="pBip L UpperArm"/>
+		<bone name="pBip L Hand" parent="pBip L Forearm"/>
+		<bone name="pBip L Finger1" parent="pBip L Hand"/>
+		<bone name="pBip L Finger11" parent="pBip L Finger1"/>
+		<bone name="pBip L Finger0" parent="pBip L Hand"/>
+		<bone name="pBip L Finger01" parent="pBip L Finger0"/>
+		<bone name="pBip Prop1" parent="pBip R Hand"/>
+		<bone name="pBip Head" parent="pBip Neck"/>
+		<bone name="pBip Ponytail1" parent="pBip Head"/>
+		<bone name="pBip L Toe0" parent="pBip L Foot"/>
+		<bone name="pBip R Toe0" parent="pBip R Foot"/>
+	</bones>
+	<init_pose>
+		<transform name="pBip Pelvis"
+			m00="-1.3868e-006" m10="2.75771e-006" m20="1.0" m30="0.0"
+			m01="0.0" m11="-1.0" m21="2.75771e-006" m31="0.0326271"
+			m02="1.0" m12="0.0" m22="1.3868e-006" m32="0.455396"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="pBip Spine"
+			m00="3.55871e-007" m10="-1.44969e-006" m20="1.0" m30="0.0"
+			m01="-0.259588" m11="-0.96572" m21="-1.30761e-006" m31="0.0752408"
+			m02="0.96572" m12="-0.259588" m22="-7.19993e-007" m32="0.591338"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="pBip L Thigh"
+			m00="0.0248977" m10="-0.0044185" m20="-0.99968" m30="0.128793"
+			m01="-0.0971567" m11="-0.995267" m21="0.00197924" m31="0.0326272"
+			m02="-0.994958" m12="0.0970763" m22="-0.0252092" m32="0.455396"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="pBip Spine1"
+			m00="1.2057e-007" m10="-1.40801e-006" m20="1.0" m30="0.0"
+			m01="-0.0879488" m11="-0.996125" m21="-1.39195e-006" m31="0.0478099"
+			m02="0.996125" m12="-0.0879488" m22="-2.43935e-007" m32="0.693706"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="pBip L Calf"
+			m00="0.0251713" m10="0.00241384" m20="-0.99968" m30="0.132964"
+			m01="0.173055" m11="-0.98491" m21="0.00197924" m31="0.0163499"
+			m02="-0.98459" m12="-0.173049" m22="-0.0252092" m32="0.288704"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="pBip L Foot"
+			m00="0.0" m10="1.37091e-006" m20="-1.0" m30="0.13765"
+			m01="0.0" m11="-1.0" m21="-1.37091e-006" m31="0.0485657"
+			m02="-1.0" m12="0.0" m22="0.0" m32="0.105414"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="pBip Tail"
+			m00="0.0" m10="3.99225e-006" m20="-1.0" m30="0.0"
+			m01="-0.0455473" m11="-0.998962" m21="-3.99035e-006" m31="-0.0268188"
+			m02="-0.998962" m12="0.0455473" m22="1.32745e-007" m32="0.430851"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="pBip R Thigh"
+			m00="-0.0248975" m10="0.0044214" m20="-0.99968" m30="-0.128793"
+			m01="-0.0971567" m11="-0.995267" m21="-0.00198215" m31="0.0326269"
+			m02="-0.994958" m12="0.0970763" m22="0.0252092" m32="0.455396"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="pBip R Calf"
+			m00="-0.0251718" m10="-0.00241096" m20="-0.99968" m30="-0.132964"
+			m01="0.173055" m11="-0.98491" m21="-0.00198215" m31="0.0163496"
+			m02="-0.98459" m12="-0.173049" m22="0.0252092" m32="0.288704"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="pBip R Foot"
+			m00="0.0" m10="1.37091e-006" m20="-1.0" m30="-0.13765"
+			m01="0.0" m11="-1.0" m21="-1.37091e-006" m31="0.0485653"
+			m02="-1.0" m12="0.0" m22="0.0" m32="0.105414"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="pBip Spine2"
+			m00="0.0" m10="-1.40782e-006" m20="1.0" m30="0.0"
+			m01="0.0863624" m11="-0.996264" m21="-1.39233e-006" m31="0.0385755"
+			m02="0.996264" m12="0.0863624" m22="2.39535e-007" m32="0.799283"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="pBip L UpperArm"
+			m00="0.999065" m10="-0.0192308" m20="0.0387225" m30="0.135623"
+			m01="0.0129075" m11="0.987454" m21="0.157379" m31="0.0481235"
+			m02="-0.0412632" m12="-0.156732" m22="0.986779" m32="0.909426"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="pBip L Clavicle"
+			m00="1.0" m10="-1.36569e-006" m20="0.0" m30="0.0150799"
+			m01="1.3671e-006" m11="0.996195" m21="0.0871557" m31="0.0481234"
+			m02="0.0" m12="-0.0871557" m22="0.996195" m32="0.909426"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="pBip R UpperArm"
+			m00="-0.999065" m10="0.0192279" m20="0.0387229" m30="-0.135623"
+			m01="0.0129046" m11="0.987454" m21="-0.157379" m31="0.0481232"
+			m02="-0.0412632" m12="-0.156732" m22="-0.986779" m32="0.909426"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="pBip R Clavicle"
+			m00="-1.0" m10="-1.36569e-006" m20="1.63194e-007" m30="-0.0150799"
+			m01="-1.37472e-006" m11="0.996195" m21="-0.0871557" m31="0.0481233"
+			m02="0.0" m12="-0.0871557" m22="-0.996195" m32="0.909426"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="pBip R Forearm"
+			m00="-0.999006" m10="-0.022068" m20="0.0387229" m30="-0.343603"
+			m01="-0.0279062" m11="0.987144" m21="-0.157379" m31="0.0508096"
+			m02="-0.0347521" m12="-0.158303" m22="-0.986779" m32="0.900836"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="pBip R Hand"
+			m00="-0.999193" m10="-0.0208437" m20="-0.0343192" m30="-0.506989"
+			m01="0.0214442" m11="-0.999622" m21="-0.0172225" m31="0.0462455"
+			m02="-0.0339473" m12="-0.0179445" m22="0.999263" m32="0.895152"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="pBip Neck"
+			m00="4.52949e-007" m10="-1.47968e-006" m20="1.0" m30="0.0"
+			m01="-0.330401" m11="-0.943841" m21="-1.24693e-006" m31="0.0481922"
+			m02="0.943841" m12="-0.330401" m22="-9.164e-007" m32="0.90945"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="pBip L Forearm"
+			m00="0.999006" m10="0.0220651" m20="0.0387225" m30="0.343603"
+			m01="-0.0279032" m11="0.987144" m21="0.157379" m31="0.0508106"
+			m02="-0.0347521" m12="-0.158303" m22="0.986779" m32="0.900836"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="pBip L Hand"
+			m00="0.997685" m10="0.0586962" m20="-0.0343494" m30="0.506989"
+			m01="0.059313" m11="-0.998091" m21="0.0172211" m31="0.046247"
+			m02="-0.033273" m12="-0.0192185" m22="-0.999261" m32="0.895152"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="pBip L Finger1"
+			m00="0.997685" m10="0.0587235" m20="-0.0343027" m30="0.691143"
+			m01="0.059313" m11="-0.998104" m21="0.0164263" m31="0.057195"
+			m02="-0.033273" m12="-0.0184228" m22="-0.999276" m32="0.889011"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="pBip L Finger11"
+			m00="0.686284" m10="-0.726524" m20="-0.0343027" m30="0.766462"
+			m01="-0.726467" m11="-0.687005" m21="0.0164263" m31="0.0616728"
+			m02="-0.0355002" m12="0.0136467" m22="-0.999276" m32="0.886499"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="pBip L Finger0"
+			m00="0.432798" m10="0.379438" m20="0.817749" m30="0.576869"
+			m01="-0.236907" m11="-0.827352" m21="0.509278" m31="0.0418594"
+			m02="0.869805" m12="-0.414145" m22="-0.268185" m32="1.03717"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="pBip L Finger01"
+			m00="0.552905" m10="0.159946" m20="0.817749" m30="0.61766"
+			m01="-0.565578" m11="-0.648659" m21="0.509278" m31="0.0195308"
+			m02="0.611897" m12="-0.744083" m22="-0.268185" m32="1.11915"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="pBip Prop1"
+			m00="-0.020677" m10="0.999786" m20="0.000938297" m30="-0.611001"
+			m01="-0.999786" m11="-0.0206766" m21="-0.000385077" m31="0.0284357"
+			m02="-0.000365594" m12="-0.000946059" m22="0.999999" m32="0.64139"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="pBip Head"
+			m00="0.0" m10="-1.40269e-006" m20="1.0" m30="0.0"
+			m01="1.34309e-006" m11="-1.0" m21="-1.40269e-006" m31="0.0179287"
+			m02="1.0" m12="1.34309e-006" m22="0.0" m32="0.995902"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="pBip Ponytail1"
+			m00="0.0087404" m10="-0.00545173" m20="-0.999947" m30="0.0"
+			m01="0.284447" m11="0.958688" m21="-0.00274047" m31="-0.0780614"
+			m02="0.958652" m12="-0.284408" m22="0.00993005" m32="1.43133"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="pBip L Toe0"
+			m00="1.37091e-006" m10="0.0" m20="-1.0" m30="0.13765"
+			m01="-1.0" m11="0.0" m21="-1.37091e-006" m31="-0.0631601"
+			m02="0.0" m12="1.0" m22="0.0" m32="0.00271171"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="pBip R Toe0"
+			m00="1.37091e-006" m10="0.0" m20="-1.0" m30="-0.13765"
+			m01="-1.0" m11="0.0" m21="-1.37091e-006" m31="-0.0631605"
+			m02="0.0" m12="1.0" m22="0.0" m32="0.00271171"
+			m03="0" m13="0" m23="0" m33="1"/>
+	</init_pose>
+</skeleton>

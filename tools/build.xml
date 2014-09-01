@@ -1,0 +1,149 @@
+<project name="tools" basedir="." default="compile">
+	<import file="../common/common.xml"/>
+	<property name="classpath" value="../common/build/classes:svn/svnkit.jar:${lib}/lwjgl_util.jar:${lib}/lwjgl.jar:${lib}/jsquish.jar:${lib}/png.jar"/>
+
+	<target name="compiledeps" depends="compile-common"/>
+
+	<target name="geometry" depends="compile">
+		<java failonerror="true" fork="yes" classpath="${classpath}:${build}/classes" classname="com.oddlabs.converter.ConvertToBinary">
+			<jvmarg value="-ea"/>
+			<jvmarg value="-Xmx512000000"/>
+			<arg value="${geometry_file}"/>
+			<arg value="${ressrc}"/>
+			<arg value="${resbuild}"/>
+		</java>
+	</target>
+
+	<target name="geometry2" depends="compile">
+		<java failonerror="true" fork="yes" classpath="${classpath}:${build}/classes" classname="com.oddlabs.converter2.ConvertToBinary">
+			<jvmarg value="-ea"/>
+			<jvmarg value="-Xmx512000000"/>
+			<arg value="${geometry_file}"/>
+			<arg value="${ressrc}"/>
+			<arg value="${resbuild}"/>
+		</java>
+	</target>
+
+	<target name="convert_image">
+		<java failonerror="true" fork="yes" classpath="${classpath}:${build}/classes" classname="com.oddlabs.imageutil.Convert">
+			<jvmarg value="-ea"/>
+			<jvmarg value="-Djava.awt.headless=true"/>
+			<arg file="${image_path}"/>
+			<arg line="${convert_args} -format ${image_ext}"/>
+			<arg value="${dstdir}"/>
+		</java>
+	</target>
+
+	<target name="convert" depends="compile">
+		<property name="dstdir.withtrailingslash" value="${dstdir}${file.separator}"/>
+		<propertyregex property="dstdir.replaced" input="${dstdir.withtrailingslash}" regexp="\\" replace="\\\\\\\\" defaultValue="${dstdir.withtrailingslash}" global="true"/>
+		<condition property="dstdir.regexp" value="${dstdir.replaced}" else="${dstdir.withtrailingslash}">
+			<os family="windows"/>
+		</condition>
+		<condition property="regexp.separator" value="\\" else="${file.separator}">
+			<os family="windows"/>
+		</condition>
+		<outofdate separator="," outputsources="targets" outputtargets="blah">
+			<sourcefiles>
+				<fileset refid="image_files"/>
+			</sourcefiles>
+			<mapper type="regexp" from="^.*${regexp.separator}(.*)\..*$$" to="${dstdir.regexp}\1.${image_ext}"/>
+			<sequential>
+				<foreach list="${targets}" param="image_path" target="convert_image"/>
+			</sequential>
+		</outofdate>
+	</target>
+
+	<target name="textures" depends="compile">
+		<java failonerror="true" fork="yes" classpath="${classpath}:${build}/classes" classname="com.oddlabs.imageutil.ConvertTextures">
+			<jvmarg value="-ea"/>
+			<jvmarg value="-Xmx512000000"/>
+			<arg value="${ressrc}"/>
+			<arg value="${resbuild}"/>
+		</java>
+	</target>
+
+	<target name="copydist" depends="compile">
+		<java failonerror="true" fork="yes" classpath="../common/build/classes:svn/svnkit.jar:${build}/classes" classname="com.oddlabs.svnutil.CopyDist">
+			<arg path="${svnsrc}"/>
+			<arg path="${svndst}"/>
+		</java>
+	</target>
+
+	<target name="revision" depends="compile">
+		<java failonerror="true" fork="yes" classpath="svn/svnkit.jar:${build}/classes" classname="com.oddlabs.svnutil.DetermineRevision">
+			<jvmarg value="-Xmx256000000"/>
+			<arg path="${svn_path}"/>
+			<arg path="${revision_number_file}"/>
+		</java>
+	</target>
+
+	<target name="createfont" depends="compile">
+		<java failonerror="true" fork="yes" classpath="../common/build/classes:${build}/classes:${commonstatic}/fonts" classname="com.oddlabs.fontutil.FontRenderer">
+			<jvmarg value="-ea"/>
+			<arg value="${fontname}"/>
+			<arg value="${fontsize}"/>
+			<arg value="1024"/>
+			<arg value="${numchars}"/>
+			<arg value="${fontinfodir}"/>
+			<arg value="${fonttexdir}"/>
+			<arg value="${fonttexclasspath}"/>
+		</java>
+	</target>
+
+	<target name="generatekeys" depends="compile">
+		<input
+			message="Enter password for private registration key:"
+			addproperty="password"
+			/>
+		<java failonerror="true" fork="yes" classpath="../common/build/classes:${build}/classes" classname="com.oddlabs.regkeygen.RegistrationKeygen">
+			<jvmarg value="-ea"/>
+			<arg path="${commonstatic}"/>
+			<arg value="${password}"/>
+			<arg value="-generate"/>
+		</java>
+	</target>
+	
+	<target name="changekeyspassword" depends="compile">
+		<input
+			message="Enter old password for private registration key:"
+			addproperty="old_password"
+			/>
+		<input
+			message="Enter new password for private registration key:"
+			addproperty="new_password"
+			/>
+		<java failonerror="true" fork="yes" classpath="../common/build/classes:${build}/classes:${commonstatic}" classname="com.oddlabs.regkeygen.RegistrationKeygen">
+			<jvmarg value="-ea"/>
+			<arg path="${commonstatic}"/>
+			<arg value="${new_password}"/>
+			<arg value="${old_password}"/>
+		</java>
+	</target>
+
+	<target name="compile_dir" depends="init">
+		<apply dir="${compiledir}" failonerror="true" executable="cl" dest="${compiledir}" skipemptyfilesets="true">
+			<arg line="/Ox /Wp64 /W2 /nologo /c"/>
+			<arg value="/I${toolkithome}\include"/>
+			<arg value="/I${sdkhome}\include"/>
+			<arg value="/I${java.home}\..\include"/>
+			<arg value="/I${java.home}\..\include\win32"/>
+			<srcfile/>
+			<fileset dir="${compiledir}" includes="*.c"/>
+			<mapper type="glob" from="*.c" to="*.obj"/>
+		</apply>
+	</target>
+
+	<target name="link">
+		<apply dir="${objdir}" parallel="true" executable="cl" failonerror="true">
+			<arg line="/nologo"/>
+			<srcfile/>
+			<arg line="/Fe${linkname} /link"/>
+			<arg value="/LIBPATH:${java.home}\..\lib"/>
+			<arg value="/LIBPATH:${sdkhome}\lib"/>
+			<arg value="/LIBPATH:${toolkithome}\lib"/>
+			<arg line="${libs}"/>
+			<fileset dir="${objdir}" includes="*.obj"/>
+		</apply>
+	</target>
+</project>

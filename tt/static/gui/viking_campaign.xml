@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+
+<!DOCTYPE viking_campaign [
+<!ELEMENT viking_campaign	(map,
+							 island0,
+							 island1,
+							 island2,
+							 island3,
+							 island4,
+							 island5,
+							 island6,
+							 island7,
+							 island8,
+							 island9,
+							 island10,
+							 island11,
+							 island12,
+							 island13,
+							 island14,
+							 flag0,
+							 flag1,
+							 flag2,
+							 flag3,
+							 flag4,
+							 boat0,
+							 boat1,
+							 boat2,
+							 boat3,
+							 boat4,
+							 hidden0,
+							 hidden1,
+							 face0,
+							 face1,
+							 face2,
+							 face3,
+							 face4,
+							 face5,
+							 face6,
+							 face7,
+							 face8
+							 )>
+	<!ATTLIST viking_campaign texture CDATA #REQUIRED>
+	<!ELEMENT normal	(quad)>
+	<!ELEMENT active	(quad)>
+	<!ELEMENT disabled	(quad)>
+	<!ELEMENT quad	   EMPTY>
+	<!ATTLIST quad left CDATA #REQUIRED>
+	<!ATTLIST quad top CDATA #REQUIRED>
+	<!ATTLIST quad right CDATA #REQUIRED>
+	<!ATTLIST quad bottom CDATA #REQUIRED>
+
+	<!ELEMENT map		(quad)>
+	<!ATTLIST map offset_x CDATA #REQUIRED>
+	<!ATTLIST map offset_y CDATA #REQUIRED>
+	<!ATTLIST map width CDATA #REQUIRED>
+	<!ATTLIST map height CDATA #REQUIRED>
+
+	<!ELEMENT island	(normal, active, disabled)>
+	<!ATTLIST island x CDATA #REQUIRED>
+	<!ATTLIST island y CDATA #REQUIRED>
+	<!ATTLIST island pin_index CDATA #REQUIRED>
+	<!ATTLIST island pin_x CDATA #REQUIRED>
+	<!ATTLIST island pin_y CDATA #REQUIRED>
+
+	<!ELEMENT island0	(island)>
+	<!ELEMENT island1	(island)>
+	<!ELEMENT island2	(island)>
+	<!ELEMENT island3	(island)>
+	<!ELEMENT island4	(island)>
+	<!ELEMENT island5	(island)>
+	<!ELEMENT island6	(island)>
+	<!ELEMENT island7	(island)>
+	<!ELEMENT island8	(island)>
+	<!ELEMENT island9	(island)>
+	<!ELEMENT island10	(island)>
+	<!ELEMENT island11	(island)>
+	<!ELEMENT island12	(island)>
+	<!ELEMENT island13	(island)>
+	<!ELEMENT island14	(island)>
+
+	<!ELEMENT flag0		(quad)>
+	<!ELEMENT flag1		(quad)>
+	<!ELEMENT flag2		(quad)>
+	<!ELEMENT flag3		(quad)>
+	<!ELEMENT flag4		(quad)>
+	<!ELEMENT boat0		(quad)>
+	<!ELEMENT boat1		(quad)>
+	<!ELEMENT boat2		(quad)>
+	<!ELEMENT boat3		(quad)>
+	<!ELEMENT boat4		(quad)>
+	<!ELEMENT hidden0	(quad)>
+	<!ATTLIST hidden0 x CDATA #REQUIRED>
+	<!ATTLIST hidden0 y CDATA #REQUIRED>
+	<!ELEMENT hidden1	(quad)>
+	<!ATTLIST hidden1 x CDATA #REQUIRED>
+	<!ATTLIST hidden1 y CDATA #REQUIRED>
+	<!ELEMENT face0		(quad)>
+	<!ELEMENT face1		(quad)>
+	<!ELEMENT face2		(quad)>
+	<!ELEMENT face3		(quad)>
+	<!ELEMENT face4		(quad)>
+	<!ELEMENT face5		(quad)>
+	<!ELEMENT face6		(quad)>
+	<!ELEMENT face7		(quad)>
+	<!ELEMENT face8		(quad)>
+]>
+
+<viking_campaign texture="/textures/gui/viking_campaign">
+	<map offset_x="50" offset_y="50" width="700" height="500">
+		<quad left="0" top="424" right="800" bottom="1024"/>
+	</map>
+	<island0>
+		<island x="68" y="869" pin_index="0" pin_x="66" pin_y="884">
+			<normal>
+				<quad left="576" top="0" right="640" bottom="64"/>
+			</normal>
+			<active>
+				<quad left="576" top="64" right="640" bottom="128"/>
+			</active>
+			<disabled>
+				<quad left="576" top="128" right="640" bottom="192"/>
+			</disabled>
+		</island>
+	</island0>
+	<island1>
+		<island x="117" y="950" pin_index="0" pin_x="110" pin_y="963">
+			<normal>
+				<quad left="640" top="0" right="704" bottom="64"/>
+			</normal>
+			<active>
+				<quad left="640" top="64" right="704" bottom="128"/>
+			</active>
+			<disabled>
+				<quad left="640" top="128" right="704" bottom="192"/>
+			</disabled>
+		</island>
+	</island1>
+	<island2>
+		<island x="241" y="937" pin_index="1" pin_x="229" pin_y="953">
+			<normal>
+				<quad left="768" top="0" right="832" bottom="64"/>
+			</normal>
+			<active>
+				<quad left="768" top="64" right="832" bottom="128"/>
+			</active>
+			<disabled>
+				<quad left="768" top="128" right="832" bottom="192"/>
+			</disabled>
+		</island>
+	</island2>
+	<island3>
+		<island x="166" y="791" pin_index="1" pin_x="164" pin_y="796">
+			<normal>
+				<quad left="256" top="0" right="320" bottom="64"/>
+			</normal>
+			<active>
+				<quad left="256" top="64" right="320" bottom="128"/>
+			</active>
+			<disabled>
+				<quad left="256" top="128" right="320" bottom="192"/>
+			</disabled>
+		</island>
+	</island3>
+	<island4>
+		<island x="86" y="704" pin_index="0" pin_x="84" pin_y="713">
+			<normal>
+				<quad left="512" top="0" right="576" bottom="64"/>
+			</normal>
+			<active>
+				<quad left="512" top="64" right="576" bottom="128"/>
+			</active>
+			<disabled>
+				<quad left="512" top="128" right="576" bottom="192"/>
+			</disabled>
+		</island>
+	</island4>
+	<island5>
+		<island x="95" y="576" pin_index="0" pin_x="93" pin_y="584">
+			<normal>
+				<quad left="384" top="0" right="448" bottom="64"/>
+			</normal>
+			<active>
+				<quad left="384" top="64" right="448" bottom="128"/>
+			</active>
+			<disabled>
+				<quad left="384" top="128" right="448" bottom="192"/>
+			</disabled>
+		</island>
+	</island5>
+	<island6>
+		<island x="196" y="568" pin_index="1" pin_x="195" pin_y="577">
+			<normal>
+				<quad left="448" top="0" right="512" bottom="64"/>
+			</normal>
+			<active>
+				<quad left="448" top="64" right="512" bottom="128"/>
+			</active>
+			<disabled>
+				<quad left="448" top="128" right="512" bottom="192"/>
+			</disabled>
+		</island>
+	</island6>
+	<island7>
+		<island x="295" y="612" pin_index="2" pin_x="294" pin_y="626">
+			<normal>
+				<quad left="320" top="0" right="384" bottom="64"/>
+			</normal>
+			<active>
+				<quad left="320" top="64" right="384" bottom="128"/>
+			</active>
+			<disabled>
+				<quad left="320" top="128" right="384" bottom="192"/>
+			</disabled>
+		</island>
+	</island7>
+	<island8>
+		<island x="337" y="729" pin_index="2" pin_x="333" pin_y="739">
+			<normal>
+				<quad left="64" top="0" right="128" bottom="64"/>
+			</normal>
+			<active>
+				<quad left="64" top="64" right="128" bottom="128"/>
+			</active>
+			<disabled>
+				<quad left="64" top="128" right="128" bottom="192"/>
+			</disabled>
+		</island>
+	</island8>
+	<island9>
+		<island x="402" y="820" pin_index="2" pin_x="397" pin_y="832">
+			<normal>
+				<quad left="896" top="0" right="960" bottom="64"/>
+			</normal>
+			<active>
+				<quad left="896" top="64" right="960" bottom="128"/>
+			</active>
+			<disabled>
+				<quad left="896" top="128" right="960" bottom="192"/>
+			</disabled>
+		</island>
+	</island9>
+	<island10>
+		<island x="456" y="931" pin_index="3" pin_x="452" pin_y="943">
+			<normal>
+				<quad left="192" top="0" right="256" bottom="64"/>
+			</normal>
+			<active>
+				<quad left="192" top="64" right="256" bottom="128"/>
+			</active>
+			<disabled>
+				<quad left="192" top="128" right="256" bottom="192"/>
+			</disabled>
+		</island>
+	</island10>
+	<island11>
+		<island x="443" y="684" pin_index="2" pin_x="431" pin_y="692">
+			<normal>
+				<quad left="704" top="0" right="768" bottom="64"/>
+			</normal>
+			<active>
+				<quad left="704" top="64" right="768" bottom="128"/>
+			</active>
+			<disabled>
+				<quad left="704" top="128" right="768" bottom="192"/>
+			</disabled>
+		</island>
+	</island11>
+	<island12>
+		<island x="558" y="700" pin_index="3" pin_x="550" pin_y="716">
+			<normal>
+				<quad left="832" top="0" right="896" bottom="64"/>
+			</normal>
+			<active>
+				<quad left="832" top="64" right="896" bottom="128"/>
+			</active>
+			<disabled>
+				<quad left="832" top="128" right="896" bottom="192"/>
+			</disabled>
+		</island>
+	</island12>
+	<island13>
+		<island x="664" y="738" pin_index="4" pin_x="664" pin_y="750">
+			<normal>
+				<quad left="128" top="0" right="192" bottom="64"/>
+			</normal>
+			<active>
+				<quad left="128" top="64" right="192" bottom="128"/>
+			</active>
+			<disabled>
+				<quad left="128" top="128" right="192" bottom="192"/>
+			</disabled>
+		</island>
+	</island13>
+	<island14>
+		<island x="652" y="603" pin_index="4" pin_x="648" pin_y="609">
+			<normal>
+				<quad left="0" top="0" right="64" bottom="64"/>
+			</normal>
+			<active>
+				<quad left="0" top="64" right="64" bottom="128"/>
+			</active>
+			<disabled>
+				<quad left="0" top="128" right="64" bottom="192"/>
+			</disabled>
+		</island>
+	</island14>
+	<flag0>
+		<quad left="0" top="192" right="96" bottom="288"/>
+	</flag0>
+	<flag1>
+		<quad left="96" top="192" right="192" bottom="288"/>
+	</flag1>
+	<flag2>
+		<quad left="192" top="192" right="288" bottom="288"/>
+	</flag2>
+	<flag3>
+		<quad left="288" top="192" right="384" bottom="288"/>
+	</flag3>
+	<flag4>
+		<quad left="384" top="192" right="480" bottom="288"/>
+	</flag4>
+	<boat0>
+		<quad left="480" top="192" right="576" bottom="288"/>
+	</boat0>
+	<boat1>
+		<quad left="576" top="192" right="672" bottom="288"/>
+	</boat1>
+	<boat2>
+		<quad left="672" top="192" right="768" bottom="288"/>
+	</boat2>
+	<boat3>
+		<quad left="768" top="192" right="864" bottom="288"/>
+	</boat3>
+	<boat4>
+		<quad left="864" top="192" right="960" bottom="288"/>
+	</boat4>
+	<hidden0 x="516" y="917">
+		<quad left="843" top="835" right="1024" bottom="1024"/>
+	</hidden0>
+	<hidden1 x="426" y="904">
+		<quad left="986" top="742" right="1024" bottom="835"/>
+	</hidden1>
+	<face0>
+		<quad left="0" top="288" right="160" bottom="424"/>
+	</face0>
+	<face1>
+		<quad left="160" top="288" right="232" bottom="424"/>
+	</face1>
+	<face2>
+		<quad left="232" top="288" right="304" bottom="424"/>
+	</face2>
+	<face3>
+		<quad left="304" top="288" right="409" bottom="424"/>
+	</face3>
+	<face4>
+		<quad left="409" top="288" right="520" bottom="424"/>
+	</face4>
+	<face5>
+		<quad left="520" top="288" right="652" bottom="424"/>
+	</face5>
+	<face6>
+		<quad left="652" top="288" right="769" bottom="424"/>
+	</face6>
+	<face7>
+		<quad left="769" top="288" right="883" bottom="424"/>
+	</face7>
+	<face8>
+		<quad left="883" top="288" right="947" bottom="424"/>
+	</face8>
+</viking_campaign>

@@ -1,0 +1,7 @@
+grant {
+  permission java.util.logging.LoggingPermission "control";
+  permission java.io.FilePermission "logs/-", "read,write,delete";
+  permission java.util.PropertyPermission "playback", "read";
+  permission java.net.SocketPermission "*", "accept,resolve,listen";
+};
+

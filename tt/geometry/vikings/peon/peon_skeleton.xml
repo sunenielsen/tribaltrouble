@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+
+<!DOCTYPE skeleton [
+	<!ELEMENT skeleton   (bones, init_pose)>
+
+	<!ELEMENT bones      (bone+)>
+
+	<!ELEMENT init_pose  (transform+)>
+
+	<!ELEMENT bone        EMPTY>
+
+	<!ELEMENT transform   EMPTY>
+	<!ATTLIST transform name CDATA #REQUIRED>
+	<!ATTLIST transform m00 CDATA #REQUIRED>
+	<!ATTLIST transform m01 CDATA #REQUIRED>
+	<!ATTLIST transform m02 CDATA #REQUIRED>
+	<!ATTLIST transform m03 CDATA #REQUIRED>
+	<!ATTLIST transform m10 CDATA #REQUIRED>
+	<!ATTLIST transform m11 CDATA #REQUIRED>
+	<!ATTLIST transform m12 CDATA #REQUIRED>
+	<!ATTLIST transform m13 CDATA #REQUIRED>
+	<!ATTLIST transform m20 CDATA #REQUIRED>
+	<!ATTLIST transform m21 CDATA #REQUIRED>
+	<!ATTLIST transform m22 CDATA #REQUIRED>
+	<!ATTLIST transform m23 CDATA #REQUIRED>
+	<!ATTLIST transform m30 CDATA #REQUIRED>
+	<!ATTLIST transform m31 CDATA #REQUIRED>
+	<!ATTLIST transform m32 CDATA #REQUIRED>
+	<!ATTLIST transform m33 CDATA #REQUIRED>
+	<!ATTLIST bone name CDATA #REQUIRED>
+	<!ATTLIST bone parent CDATA #REQUIRED>
+]>
+
+<skeleton>
+	<bones>
+		<bone name="peon bip Pelvis" parent="peon bip"/>
+		<bone name="peon bip Spine" parent="peon bip Pelvis"/>
+		<bone name="peon bip L Thigh" parent="peon bip Spine"/>
+		<bone name="peon bip R Thigh" parent="peon bip Spine"/>
+		<bone name="peon bip L Toe0" parent="peon bip L Foot"/>
+		<bone name="peon bip L Foot" parent="peon bip L Calf"/>
+		<bone name="peon bip Spine2" parent="peon bip Spine1"/>
+		<bone name="peon bip Spine1" parent="peon bip Spine"/>
+		<bone name="peon bip R Clavicle" parent="peon bip Neck"/>
+		<bone name="peon bip R UpperArm" parent="peon bip R Clavicle"/>
+		<bone name="peon bip Neck" parent="peon bip Spine2"/>
+		<bone name="peon bip Head" parent="peon bip Neck"/>
+		<bone name="peon bip R Forearm" parent="peon bip R UpperArm"/>
+		<bone name="peon bip R Hand" parent="peon bip R Forearm"/>
+		<bone name="peon bip R Calf" parent="peon bip R Thigh"/>
+		<bone name="peon bip R Foot" parent="peon bip R Calf"/>
+		<bone name="peon bip R Toe0" parent="peon bip R Foot"/>
+		<bone name="peon bip L UpperArm" parent="peon bip L Clavicle"/>
+		<bone name="peon bip L Clavicle" parent="peon bip Neck"/>
+		<bone name="peon bip L Forearm" parent="peon bip L UpperArm"/>
+		<bone name="peon bip L Hand" parent="peon bip L Forearm"/>
+		<bone name="peon bip L Finger1" parent="peon bip L Hand"/>
+		<bone name="peon bip L Finger11" parent="peon bip L Finger1"/>
+		<bone name="peon bip L Finger01" parent="peon bip L Finger0"/>
+		<bone name="peon bip Prop1" parent="peon bip R Hand"/>
+		<bone name="peon bip Ponytail2" parent="peon bip Head"/>
+		<bone name="peon bip Ponytail1" parent="peon bip Head"/>
+		<bone name="peon bip L Calf" parent="peon bip L Thigh"/>
+	</bones>
+	<init_pose>
+		<transform name="peon bip Pelvis"
+			m00="-1.3868e-006" m10="2.75771e-006" m20="1.0" m30="-0.00333915"
+			m01="0.0" m11="-1.0" m21="2.75771e-006" m31="-0.00166957"
+			m02="1.0" m12="0.0" m22="1.3868e-006" m32="0.455396"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="peon bip Spine"
+			m00="0.0" m10="-1.40269e-006" m20="1.0" m30="-0.00333921"
+			m01="-0.000796318" m11="-1.0" m21="-1.40269e-006" m31="0.0235102"
+			m02="1.0" m12="-0.000796318" m22="0.0" m32="0.631975"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="peon bip L Thigh"
+			m00="-0.0554923" m10="0.00351465" m20="-0.998453" m30="0.144378"
+			m01="-0.0360357" m11="-0.999349" m21="-0.001515" m31="-0.00166939"
+			m02="-0.997809" m12="0.0358959" m22="0.0555829" m32="0.455396"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="peon bip R Thigh"
+			m00="0.0554924" m10="-0.00351174" m20="-0.998453" m30="-0.151056"
+			m01="-0.0360356" m11="-0.999349" m21="0.00151209" m31="-0.0016698"
+			m02="-0.997809" m12="0.0358959" m22="-0.0555829" m32="0.455396"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="peon bip L Toe0"
+			m00="1.37091e-006" m10="0.0" m20="-1.0" m30="0.125762"
+			m01="-1.0" m11="0.0" m21="-1.37091e-006" m31="-0.106435"
+			m02="0.0" m12="1.0" m22="0.0" m32="0.00326997"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="peon bip L Foot"
+			m00="0.0" m10="1.37091e-006" m20="-1.0" m30="0.125762"
+			m01="0.0" m11="-1.0" m21="-1.37091e-006" m31="0.0127673"
+			m02="-1.0" m12="0.0" m22="0.0" m32="0.121389"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="peon bip Spine2"
+			m00="2.3913e-007" m10="-1.42371e-006" m20="1.0" m30="-0.00333921"
+			m01="-0.174432" m11="-0.984669" m21="-1.36017e-006" m31="0.0235137"
+			m02="0.984669" m12="-0.174432" m22="-4.83805e-007" m32="0.964385"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="peon bip Spine1"
+			m00="0.0" m10="-1.40269e-006" m20="1.0" m30="-0.00333921"
+			m01="-0.000796318" m11="-1.0" m21="-1.40269e-006" m31="0.0235101"
+			m02="1.0" m12="-0.000796318" m22="0.0" m32="0.798168"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="peon bip R Clavicle"
+			m00="-1.0" m10="-1.35008e-006" m20="-1.94344e-007" m30="-0.010923"
+			m01="-1.36332e-006" m11="0.984808" m21="0.173648" m31="-0.00672318"
+			m02="0.0" m12="0.173648" m22="-0.984808" m32="1.13507"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="peon bip R UpperArm"
+			m00="-0.998865" m10="0.00767713" m20="0.0470052" m30="-0.0673156"
+			m01="0.000192355" m11="0.987566" m21="-0.157207" m31="-0.00672326"
+			m02="-0.0476277" m12="-0.157019" m22="-0.986446" m32="1.13507"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="peon bip Neck"
+			m00="8.82038e-007" m10="-1.72413e-006" m20="1.0" m30="-0.00333917"
+			m01="-0.643397" m11="-0.765532" m21="-7.52374e-007" m31="-0.0066631"
+			m02="0.765532" m12="-0.643397" m22="-1.78453e-006" m32="1.13512"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="peon bip Head"
+			m00="0.0" m10="-1.40269e-006" m20="1.0" m30="-0.00333908"
+			m01="1.34309e-006" m11="-1.0" m21="-1.40269e-006" m31="-0.0700456"
+			m02="1.0" m12="1.34309e-006" m22="0.0" m32="1.21054"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="peon bip R Forearm"
+			m00="-0.998329" m10="-0.0336006" m20="0.0470052" m30="-0.273368"
+			m01="-0.0406121" m11="0.98673" m21="-0.157207" m31="-0.00668358"
+			m02="-0.0410993" m12="-0.158853" m22="-0.986446" m32="1.12525"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="peon bip R Hand"
+			m00="-0.999149" m10="-0.00802533" m20="-0.0404629" m30="-0.491681"
+			m01="0.0087321" m11="-0.999812" m21="-0.0173207" m31="-0.0155646"
+			m02="-0.0403163" m12="-0.0176593" m22="0.999031" m32="1.11626"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="peon bip R Calf"
+			m00="0.0549751" m10="0.00833574" m20="-0.998453" m30="-0.139306"
+			m01="0.176704" m11="-0.984263" m21="0.00151209" m31="-0.00930018"
+			m02="-0.982728" m12="-0.176514" m22="-0.0555829" m32="0.244114"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="peon bip R Foot"
+			m00="0.0" m10="1.37091e-006" m20="-1.0" m30="-0.132441"
+			m01="0.0" m11="-1.0" m21="-1.37091e-006" m31="0.012767"
+			m02="-1.0" m12="0.0" m22="0.0" m32="0.121389"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="peon bip R Toe0"
+			m00="1.37091e-006" m10="0.0" m20="-1.0" m30="-0.13244"
+			m01="-1.0" m11="0.0" m21="-1.37091e-006" m31="-0.106435"
+			m02="0.0" m12="1.0" m22="0.0" m32="0.00326997"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="peon bip L UpperArm"
+			m00="0.999065" m10="-0.0192308" m20="0.0387225" m30="0.0606373"
+			m01="0.0129075" m11="0.987454" m21="0.157379" m31="-0.00672308"
+			m02="-0.0412632" m12="-0.156732" m22="0.986779" m32="1.13507"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="peon bip L Clavicle"
+			m00="1.0" m10="-1.35008e-006" m20="2.81767e-007" m30="0.00424463"
+			m01="1.3785e-006" m11="0.984808" m21="-0.173648" m31="-0.00672316"
+			m02="0.0" m12="0.173648" m22="0.984808" m32="1.13507"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="peon bip L Forearm"
+			m00="0.998141" m10="0.0470663" m20="0.0387225" m30="0.266731"
+			m01="-0.0526057" m11="0.986136" m21="0.157379" m31="-0.00406044"
+			m02="-0.0307784" m12="-0.159124" m22="0.986779" m32="1.12656"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="peon bip L Hand"
+			m00="0.998968" m10="0.0340965" m20="-0.0299884" m30="0.485002"
+			m01="0.034618" m11="-0.999255" m21="0.017047" m31="-0.0155641"
+			m02="-0.0293849" m12="-0.0180675" m22="-0.999405" m32="1.11983"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="peon bip L Finger1"
+			m00="0.998968" m10="0.0341204" m20="-0.0299613" m30="0.669393"
+			m01="0.034618" m11="-0.999268" m21="0.0162512" m31="-0.00917431"
+			m02="-0.0293849" m12="-0.0172717" m22="-0.999419" m32="1.11441"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="peon bip L Finger11"
+			m00="0.668262" m10="-0.743322" m20="-0.0299613" m30="0.744809"
+			m01="-0.743232" m11="-0.668836" m21="0.0162512" m31="-0.00656084"
+			m02="-0.0321191" m12="0.0114081" m22="-0.999419" m32="1.11219"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="peon bip L Finger01"
+			m00="0.536357" m10="0.146794" m20="0.831127" m30="0.594099"
+			m01="-0.578439" m11="-0.653168" m21="0.488651" m31="-0.0447777"
+			m02="0.614597" m12="-0.742847" m22="-0.26542" m32="1.34429"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="peon bip Prop1"
+			m00="1.3487e-006" m10="1.0" m20="0.0" m30="-0.62219"
+			m01="-1.0" m11="1.3487e-006" m21="0.0" m31="-0.0511278"
+			m02="0.0" m12="0.0" m22="1.0" m32="0.900291"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="peon bip Ponytail2"
+			m00="-0.906308" m10="0.000719128" m20="0.422618" m30="-0.0503238"
+			m01="0.0143933" m11="0.999471" m21="0.0291658" m31="-0.11839"
+			m02="-0.422374" m12="0.032516" m22="-0.905838" m32="1.47761"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="peon bip Ponytail1"
+			m00="0.906308" m10="-0.000724213" m20="0.422618" m30="0.0436455"
+			m01="0.0143958" m11="0.999471" m21="-0.0291591" m31="-0.11839"
+			m02="-0.422374" m12="0.032511" m22="0.905839" m32="1.47761"
+			m03="0" m13="0" m23="0" m33="1"/>
+		<transform name="peon bip L Calf"
+			m00="-0.0549756" m10="-0.00833287" m20="-0.998453" m30="0.132628"
+			m01="0.176704" m11="-0.984263" m21="-0.001515" m31="-0.00929981"
+			m02="-0.982728" m12="-0.176514" m22="0.0555829" m32="0.244114"
+			m03="0" m13="0" m23="0" m33="1"/>
+	</init_pose>
+</skeleton>

@@ -1,0 +1,1804 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+
+<!DOCTYPE mesh [
+	<!ELEMENT mesh       (polygons)>
+	<!ELEMENT polygons   (polygon+)>
+	<!ELEMENT polygon    (vertex+)>
+	<!ELEMENT vertex     (skin+)>
+
+	<!ELEMENT skin        EMPTY>
+
+	<!ATTLIST vertex x CDATA #REQUIRED>
+	<!ATTLIST vertex y CDATA #REQUIRED>
+	<!ATTLIST vertex z CDATA #REQUIRED>
+	<!ATTLIST vertex r CDATA #REQUIRED>
+	<!ATTLIST vertex g CDATA #REQUIRED>
+	<!ATTLIST vertex b CDATA #REQUIRED>
+	<!ATTLIST vertex a CDATA #REQUIRED>
+	<!ATTLIST vertex nx CDATA #REQUIRED>
+	<!ATTLIST vertex ny CDATA #REQUIRED>
+	<!ATTLIST vertex nz CDATA #REQUIRED>
+	<!ATTLIST vertex u CDATA #REQUIRED>
+	<!ATTLIST vertex v CDATA #REQUIRED>
+	<!ATTLIST skin bone CDATA #REQUIRED>
+	<!ATTLIST skin weight CDATA #REQUIRED>
+]>
+
+<mesh>
+	<polygons>
+		<polygon>
+			<vertex x="0.121007" y="-0.105592" z="0.84271"
+				r="1" g="1" b="1" a="1"
+				nx="0.433907" ny="-0.884055" nz="0.173701"
+				u="0.158143" v="0.720961">
+					<skin bone="chickenBip Spine" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.0626325" y="-0.105592" z="0.869913"
+				r="1" g="1" b="1" a="1"
+				nx="-0.324833" ny="-0.871554" nz="0.367255"
+				u="0.0830975" v="0.742483">
+					<skin bone="chickenBip Spine" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.0331896" y="-0.105591" z="0.753087"
+				r="1" g="1" b="1" a="1"
+				nx="-0.333118" ny="-0.758768" nz="-0.559735"
+				u="0.0767209" v="0.699374">
+					<skin bone="chickenBip Spine" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.0626325" y="-0.105592" z="0.869913"
+				r="1" g="1" b="1" a="1"
+				nx="-0.324833" ny="-0.871554" nz="0.367255"
+				u="0.164658" v="0.808143">
+					<skin bone="chickenBip Spine" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.150614" y="-2.07124e-007" z="0.89984"
+				r="1" g="1" b="1" a="1"
+				nx="-0.883421" ny="-1.78875e-006" nz="0.468579"
+				u="0.217653" v="0.848779">
+					<skin bone="chickenBip Spine" weight="0.184843"/>
+					<skin bone="chickenBip Tail" weight="0.815157"/>
+			</vertex>
+			<vertex x="-0.0563359" y="3.50627e-007" z="0.705854"
+				r="1" g="1" b="1" a="1"
+				nx="-0.471599" ny="3.7977e-006" nz="-0.881813"
+				u="0.124979" v="0.890873">
+					<skin bone="chickenBip Spine" weight="0.403226"/>
+					<skin bone="chickenBip Spine" weight="0.596774"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.0563359" y="3.50627e-007" z="0.705854"
+				r="1" g="1" b="1" a="1"
+				nx="-0.471599" ny="3.7977e-006" nz="-0.881813"
+				u="0.124979" v="0.890873">
+					<skin bone="chickenBip Spine" weight="0.403226"/>
+					<skin bone="chickenBip Spine" weight="0.596774"/>
+			</vertex>
+			<vertex x="-0.0331896" y="-0.105591" z="0.753087"
+				r="1" g="1" b="1" a="1"
+				nx="-0.333118" ny="-0.758768" nz="-0.559735"
+				u="0.115857" v="0.836067">
+					<skin bone="chickenBip Spine" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.0626325" y="-0.105592" z="0.869913"
+				r="1" g="1" b="1" a="1"
+				nx="-0.324833" ny="-0.871554" nz="0.367255"
+				u="0.164658" v="0.808143">
+					<skin bone="chickenBip Spine" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.0331896" y="-0.105591" z="0.753087"
+				r="1" g="1" b="1" a="1"
+				nx="-0.333118" ny="-0.758768" nz="-0.559735"
+				u="0.0767209" v="0.699374">
+					<skin bone="chickenBip Spine" weight="1.0"/>
+			</vertex>
+			<vertex x="0.156707" y="1.08075e-006" z="0.75255"
+				r="1" g="1" b="1" a="1"
+				nx="0.786905" ny="5.42821e-006" nz="-0.617074"
+				u="0.16869" v="0.654505">
+					<skin bone="chickenBip Spine" weight="1.0"/>
+			</vertex>
+			<vertex x="0.121007" y="-0.105592" z="0.84271"
+				r="1" g="1" b="1" a="1"
+				nx="0.433907" ny="-0.884055" nz="0.173701"
+				u="0.158143" v="0.720961">
+					<skin bone="chickenBip Spine" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.156707" y="1.08075e-006" z="0.75255"
+				r="1" g="1" b="1" a="1"
+				nx="0.786905" ny="5.42821e-006" nz="-0.617074"
+				u="0.16869" v="0.654505">
+					<skin bone="chickenBip Spine" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.0331896" y="-0.105591" z="0.753087"
+				r="1" g="1" b="1" a="1"
+				nx="-0.333118" ny="-0.758768" nz="-0.559735"
+				u="0.0767209" v="0.699374">
+					<skin bone="chickenBip Spine" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.0563359" y="3.50627e-007" z="0.705854"
+				r="1" g="1" b="1" a="1"
+				nx="-0.471599" ny="3.7977e-006" nz="-0.881813"
+				u="0.0664343" v="0.644776">
+					<skin bone="chickenBip Spine" weight="0.403226"/>
+					<skin bone="chickenBip Spine" weight="0.596774"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.156707" y="1.08075e-006" z="0.75255"
+				r="1" g="1" b="1" a="1"
+				nx="0.786905" ny="5.42821e-006" nz="-0.617074"
+				u="0.16869" v="0.654505">
+					<skin bone="chickenBip Spine" weight="1.0"/>
+			</vertex>
+			<vertex x="0.138238" y="0.0" z="0.913125"
+				r="1" g="1" b="1" a="1"
+				nx="0.620637" ny="-5.14408e-006" nz="0.784098"
+				u="0.217914" v="0.712599">
+					<skin bone="chickenBip Spine" weight="1.0"/>
+			</vertex>
+			<vertex x="0.121007" y="-0.105592" z="0.84271"
+				r="1" g="1" b="1" a="1"
+				nx="0.433907" ny="-0.884055" nz="0.173701"
+				u="0.158143" v="0.720961">
+					<skin bone="chickenBip Spine" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.138238" y="0.0" z="0.913125"
+				r="1" g="1" b="1" a="1"
+				nx="0.620637" ny="-5.14408e-006" nz="0.784098"
+				u="0.217914" v="0.712599">
+					<skin bone="chickenBip Spine" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.150614" y="-2.07124e-007" z="0.89984"
+				r="1" g="1" b="1" a="1"
+				nx="-0.883421" ny="-1.78875e-006" nz="0.468579"
+				u="0.217653" v="0.848779">
+					<skin bone="chickenBip Spine" weight="0.184843"/>
+					<skin bone="chickenBip Tail" weight="0.815157"/>
+			</vertex>
+			<vertex x="-0.0626325" y="-0.105592" z="0.869913"
+				r="1" g="1" b="1" a="1"
+				nx="-0.324833" ny="-0.871554" nz="0.367255"
+				u="0.164658" v="0.808143">
+					<skin bone="chickenBip Spine" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.0626325" y="-0.105592" z="0.869913"
+				r="1" g="1" b="1" a="1"
+				nx="-0.324833" ny="-0.871554" nz="0.367255"
+				u="0.164658" v="0.808143">
+					<skin bone="chickenBip Spine" weight="1.0"/>
+			</vertex>
+			<vertex x="0.121007" y="-0.105592" z="0.84271"
+				r="1" g="1" b="1" a="1"
+				nx="0.433907" ny="-0.884055" nz="0.173701"
+				u="0.158143" v="0.720961">
+					<skin bone="chickenBip Spine" weight="1.0"/>
+			</vertex>
+			<vertex x="0.138238" y="0.0" z="0.913125"
+				r="1" g="1" b="1" a="1"
+				nx="0.620637" ny="-5.14408e-006" nz="0.784098"
+				u="0.217914" v="0.712599">
+					<skin bone="chickenBip Spine" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.121007" y="-0.105592" z="0.84271"
+				r="1" g="1" b="1" a="1"
+				nx="0.433907" ny="-0.884055" nz="0.173701"
+				u="0.158143" v="0.720961">
+					<skin bone="chickenBip Spine" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.0626325" y="-0.105592" z="0.869913"
+				r="1" g="1" b="1" a="1"
+				nx="-0.324833" ny="-0.871554" nz="0.367255"
+				u="0.164658" v="0.808143">
+					<skin bone="chickenBip Spine" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.0145719" y="-0.17182" z="0.571764"
+				r="1" g="1" b="1" a="1"
+				nx="-0.146457" ny="0.0331843" nz="-0.98866"
+				u="0.0224228" v="0.784583">
+					<skin bone="chickenBip R UpperArm" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.0626325" y="-0.10109" z="0.86731"
+				r="1" g="1" b="1" a="1"
+				nx="-0.0352629" ny="0.970619" nz="-0.238025"
+				u="0.0343455" v="0.97567">
+					<skin bone="chickenBip Spine" weight="1.0"/>
+					<skin bone="chickenBip Tail" weight="0.0"/>
+			</vertex>
+			<vertex x="0.121007" y="-0.101089" z="0.840106"
+				r="1" g="1" b="1" a="1"
+				nx="-0.0352629" ny="0.970619" nz="-0.238025"
+				u="0.0338541" v="0.888241">
+					<skin bone="chickenBip Spine" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.0145719" y="-0.17182" z="0.571764"
+				r="1" g="1" b="1" a="1"
+				nx="-0.146457" ny="0.0331843" nz="-0.98866"
+				u="0.172541" v="0.932105">
+					<skin bone="chickenBip R UpperArm" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.121007" y="0.105592" z="0.842712"
+				r="1" g="1" b="1" a="1"
+				nx="0.433904" ny="0.884055" nz="0.17371"
+				u="0.277254" v="0.720584">
+					<skin bone="chickenBip Spine" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.0331895" y="0.105593" z="0.753088"
+				r="1" g="1" b="1" a="1"
+				nx="-0.33312" ny="0.758774" nz="-0.559726"
+				u="0.359157" v="0.699426">
+					<skin bone="chickenBip Spine" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.0626325" y="0.105592" z="0.869915"
+				r="1" g="1" b="1" a="1"
+				nx="-0.324836" ny="0.87155" nz="0.367263"
+				u="0.352563" v="0.74253">
+					<skin bone="chickenBip Spine" weight="1.0"/>
+					<skin bone="chickenBip Tail" weight="0.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.0626325" y="0.105592" z="0.869915"
+				r="1" g="1" b="1" a="1"
+				nx="-0.324836" ny="0.87155" nz="0.367263"
+				u="0.270573" v="0.807752">
+					<skin bone="chickenBip Spine" weight="1.0"/>
+					<skin bone="chickenBip Tail" weight="0.0"/>
+			</vertex>
+			<vertex x="-0.0563359" y="3.50627e-007" z="0.705854"
+				r="1" g="1" b="1" a="1"
+				nx="-0.471599" ny="3.7977e-006" nz="-0.881813"
+				u="0.310165" v="0.890736">
+					<skin bone="chickenBip Spine" weight="0.403226"/>
+					<skin bone="chickenBip Spine" weight="0.596774"/>
+			</vertex>
+			<vertex x="-0.150614" y="-2.07124e-007" z="0.89984"
+				r="1" g="1" b="1" a="1"
+				nx="-0.883421" ny="-1.78875e-006" nz="0.468579"
+				u="0.217653" v="0.848779">
+					<skin bone="chickenBip Spine" weight="0.184843"/>
+					<skin bone="chickenBip Tail" weight="0.815157"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.0563359" y="3.50627e-007" z="0.705854"
+				r="1" g="1" b="1" a="1"
+				nx="-0.471599" ny="3.7977e-006" nz="-0.881813"
+				u="0.310165" v="0.890736">
+					<skin bone="chickenBip Spine" weight="0.403226"/>
+					<skin bone="chickenBip Spine" weight="0.596774"/>
+			</vertex>
+			<vertex x="-0.0626325" y="0.105592" z="0.869915"
+				r="1" g="1" b="1" a="1"
+				nx="-0.324836" ny="0.87155" nz="0.367263"
+				u="0.270573" v="0.807752">
+					<skin bone="chickenBip Spine" weight="1.0"/>
+					<skin bone="chickenBip Tail" weight="0.0"/>
+			</vertex>
+			<vertex x="-0.0331895" y="0.105593" z="0.753088"
+				r="1" g="1" b="1" a="1"
+				nx="-0.33312" ny="0.758774" nz="-0.559726"
+				u="0.319497" v="0.835966">
+					<skin bone="chickenBip Spine" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.0331895" y="0.105593" z="0.753088"
+				r="1" g="1" b="1" a="1"
+				nx="-0.33312" ny="0.758774" nz="-0.559726"
+				u="0.359157" v="0.699426">
+					<skin bone="chickenBip Spine" weight="1.0"/>
+			</vertex>
+			<vertex x="0.121007" y="0.105592" z="0.842712"
+				r="1" g="1" b="1" a="1"
+				nx="0.433904" ny="0.884055" nz="0.17371"
+				u="0.277254" v="0.720584">
+					<skin bone="chickenBip Spine" weight="1.0"/>
+			</vertex>
+			<vertex x="0.156707" y="1.08075e-006" z="0.75255"
+				r="1" g="1" b="1" a="1"
+				nx="0.786905" ny="5.42821e-006" nz="-0.617074"
+				u="0.267361" v="0.654203">
+					<skin bone="chickenBip Spine" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.156707" y="1.08075e-006" z="0.75255"
+				r="1" g="1" b="1" a="1"
+				nx="0.786905" ny="5.42821e-006" nz="-0.617074"
+				u="0.267361" v="0.654203">
+					<skin bone="chickenBip Spine" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.0563359" y="3.50627e-007" z="0.705854"
+				r="1" g="1" b="1" a="1"
+				nx="-0.471599" ny="3.7977e-006" nz="-0.881813"
+				u="0.369653" v="0.644866">
+					<skin bone="chickenBip Spine" weight="0.403226"/>
+					<skin bone="chickenBip Spine" weight="0.596774"/>
+			</vertex>
+			<vertex x="-0.0331895" y="0.105593" z="0.753088"
+				r="1" g="1" b="1" a="1"
+				nx="-0.33312" ny="0.758774" nz="-0.559726"
+				u="0.359157" v="0.699426">
+					<skin bone="chickenBip Spine" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.156707" y="1.08075e-006" z="0.75255"
+				r="1" g="1" b="1" a="1"
+				nx="0.786905" ny="5.42821e-006" nz="-0.617074"
+				u="0.267361" v="0.654203">
+					<skin bone="chickenBip Spine" weight="1.0"/>
+			</vertex>
+			<vertex x="0.121007" y="0.105592" z="0.842712"
+				r="1" g="1" b="1" a="1"
+				nx="0.433904" ny="0.884055" nz="0.17371"
+				u="0.277254" v="0.720584">
+					<skin bone="chickenBip Spine" weight="1.0"/>
+			</vertex>
+			<vertex x="0.138238" y="0.0" z="0.913125"
+				r="1" g="1" b="1" a="1"
+				nx="0.620637" ny="-5.14408e-006" nz="0.784098"
+				u="0.217914" v="0.712599">
+					<skin bone="chickenBip Spine" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.138238" y="0.0" z="0.913125"
+				r="1" g="1" b="1" a="1"
+				nx="0.620637" ny="-5.14408e-006" nz="0.784098"
+				u="0.217914" v="0.712599">
+					<skin bone="chickenBip Spine" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.0626325" y="0.105592" z="0.869915"
+				r="1" g="1" b="1" a="1"
+				nx="-0.324836" ny="0.87155" nz="0.367263"
+				u="0.270573" v="0.807752">
+					<skin bone="chickenBip Spine" weight="1.0"/>
+					<skin bone="chickenBip Tail" weight="0.0"/>
+			</vertex>
+			<vertex x="-0.150614" y="-2.07124e-007" z="0.89984"
+				r="1" g="1" b="1" a="1"
+				nx="-0.883421" ny="-1.78875e-006" nz="0.468579"
+				u="0.217653" v="0.848779">
+					<skin bone="chickenBip Spine" weight="0.184843"/>
+					<skin bone="chickenBip Tail" weight="0.815157"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.0626325" y="0.105592" z="0.869915"
+				r="1" g="1" b="1" a="1"
+				nx="-0.324836" ny="0.87155" nz="0.367263"
+				u="0.270573" v="0.807752">
+					<skin bone="chickenBip Spine" weight="1.0"/>
+					<skin bone="chickenBip Tail" weight="0.0"/>
+			</vertex>
+			<vertex x="0.138238" y="0.0" z="0.913125"
+				r="1" g="1" b="1" a="1"
+				nx="0.620637" ny="-5.14408e-006" nz="0.784098"
+				u="0.217914" v="0.712599">
+					<skin bone="chickenBip Spine" weight="1.0"/>
+			</vertex>
+			<vertex x="0.121007" y="0.105592" z="0.842712"
+				r="1" g="1" b="1" a="1"
+				nx="0.433904" ny="0.884055" nz="0.17371"
+				u="0.277254" v="0.720584">
+					<skin bone="chickenBip Spine" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.121007" y="0.105592" z="0.842712"
+				r="1" g="1" b="1" a="1"
+				nx="0.433904" ny="0.884055" nz="0.17371"
+				u="0.277254" v="0.720584">
+					<skin bone="chickenBip Spine" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.0145718" y="0.17182" z="0.571764"
+				r="1" g="1" b="1" a="1"
+				nx="-0.146456" ny="-0.0332058" nz="-0.98866"
+				u="0.412577" v="0.784094">
+					<skin bone="chickenBip L UpperArm" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.0626325" y="0.105592" z="0.869915"
+				r="1" g="1" b="1" a="1"
+				nx="-0.324836" ny="0.87155" nz="0.367263"
+				u="0.270573" v="0.807752">
+					<skin bone="chickenBip Spine" weight="1.0"/>
+					<skin bone="chickenBip Tail" weight="0.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.0626325" y="0.101089" z="0.867311"
+				r="1" g="1" b="1" a="1"
+				nx="-0.0352565" ny="-0.970619" nz="-0.238025"
+				u="0.0343455" v="0.97567">
+					<skin bone="chickenBip Spine" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.0145718" y="0.17182" z="0.571764"
+				r="1" g="1" b="1" a="1"
+				nx="-0.146456" ny="-0.0332058" nz="-0.98866"
+				u="0.172541" v="0.932105">
+					<skin bone="chickenBip L UpperArm" weight="1.0"/>
+			</vertex>
+			<vertex x="0.121007" y="0.10109" z="0.840108"
+				r="1" g="1" b="1" a="1"
+				nx="-0.0352565" ny="-0.970619" nz="-0.238025"
+				u="0.0338541" v="0.888241">
+					<skin bone="chickenBip Spine" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.195722" y="-0.429813" z="4.76837e-007"
+				r="1" g="1" b="1" a="1"
+				nx="0.158003" ny="-0.662075" nz="1.12183"
+				u="0.45083" v="0.030819">
+					<skin bone="chickenBip R Toe0" weight="0.5"/>
+					<skin bone="chickenBip R Foot" weight="0.5"/>
+			</vertex>
+			<vertex x="0.417477" y="-0.0487172" z="0.0"
+				r="1" g="1" b="1" a="1"
+				nx="0.529297" ny="0.202484" nz="0.997383"
+				u="0.654645" v="0.0704945">
+					<skin bone="chickenBip R Toe0" weight="0.5"/>
+					<skin bone="chickenBip R Foot" weight="0.5"/>
+			</vertex>
+			<vertex x="0.105031" y="-0.0620166" z="0.16851"
+				r="1" g="1" b="1" a="1"
+				nx="0.520035" ny="0.534385" nz="0.666331"
+				u="0.54862" v="0.199844">
+					<skin bone="chickenBip R Calf" weight="0.5"/>
+					<skin bone="chickenBip R Foot" weight="0.5"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.195722" y="-0.429813" z="4.76837e-007"
+				r="1" g="1" b="1" a="1"
+				nx="0.158003" ny="-0.662075" nz="1.12183"
+				u="0.45083" v="0.030819">
+					<skin bone="chickenBip R Toe0" weight="0.5"/>
+					<skin bone="chickenBip R Foot" weight="0.5"/>
+			</vertex>
+			<vertex x="0.105031" y="-0.0620166" z="0.16851"
+				r="1" g="1" b="1" a="1"
+				nx="0.520035" ny="0.534385" nz="0.666331"
+				u="0.54862" v="0.199844">
+					<skin bone="chickenBip R Calf" weight="0.5"/>
+					<skin bone="chickenBip R Foot" weight="0.5"/>
+			</vertex>
+			<vertex x="0.000942639" y="-0.163808" z="0.168511"
+				r="1" g="1" b="1" a="1"
+				nx="-0.271187" ny="-0.833864" nz="0.480759"
+				u="0.48007" v="0.202577">
+					<skin bone="chickenBip R Calf" weight="0.5"/>
+					<skin bone="chickenBip R Foot" weight="0.5"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.171563" y="-0.0153587" z="4.88758e-006"
+				r="1" g="1" b="1" a="1"
+				nx="-0.775165" ny="0.376008" nz="0.442749"
+				u="0.603981" v="0.343647">
+					<skin bone="chickenBip R Foot" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.0943271" y="-0.0521386" z="0.153377"
+				r="1" g="1" b="1" a="1"
+				nx="-0.87624" ny="0.419414" nz="0.237266"
+				u="0.538201" v="0.293507">
+					<skin bone="chickenBip R Calf" weight="0.5"/>
+					<skin bone="chickenBip R Foot" weight="0.5"/>
+			</vertex>
+			<vertex x="0.105031" y="-0.0620166" z="0.16851"
+				r="1" g="1" b="1" a="1"
+				nx="0.520035" ny="0.534385" nz="0.666331"
+				u="0.54862" v="0.199844">
+					<skin bone="chickenBip R Calf" weight="0.5"/>
+					<skin bone="chickenBip R Foot" weight="0.5"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.417477" y="-0.0487172" z="0.0"
+				r="1" g="1" b="1" a="1"
+				nx="0.529297" ny="0.202484" nz="0.997383"
+				u="0.654645" v="0.0704945">
+					<skin bone="chickenBip R Toe0" weight="0.5"/>
+					<skin bone="chickenBip R Foot" weight="0.5"/>
+			</vertex>
+			<vertex x="-0.171563" y="-0.0153587" z="4.88758e-006"
+				r="1" g="1" b="1" a="1"
+				nx="-0.775165" ny="0.376008" nz="0.442749"
+				u="0.603981" v="0.343647">
+					<skin bone="chickenBip R Foot" weight="1.0"/>
+			</vertex>
+			<vertex x="0.105031" y="-0.0620166" z="0.16851"
+				r="1" g="1" b="1" a="1"
+				nx="0.520035" ny="0.534385" nz="0.666331"
+				u="0.54862" v="0.199844">
+					<skin bone="chickenBip R Calf" weight="0.5"/>
+					<skin bone="chickenBip R Foot" weight="0.5"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.0943271" y="-0.0521386" z="0.153377"
+				r="1" g="1" b="1" a="1"
+				nx="-0.87624" ny="0.419414" nz="0.237266"
+				u="0.45247" v="0.266201">
+					<skin bone="chickenBip R Calf" weight="0.5"/>
+					<skin bone="chickenBip R Foot" weight="0.5"/>
+			</vertex>
+			<vertex x="-0.171563" y="-0.0153587" z="4.88758e-006"
+				r="1" g="1" b="1" a="1"
+				nx="-0.775165" ny="0.376008" nz="0.442749"
+				u="0.370717" v="0.278835">
+					<skin bone="chickenBip R Foot" weight="1.0"/>
+			</vertex>
+			<vertex x="0.000942639" y="-0.163808" z="0.168511"
+				r="1" g="1" b="1" a="1"
+				nx="-0.271187" ny="-0.833864" nz="0.480759"
+				u="0.48007" v="0.202577">
+					<skin bone="chickenBip R Calf" weight="0.5"/>
+					<skin bone="chickenBip R Foot" weight="0.5"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.171563" y="-0.0153587" z="4.88758e-006"
+				r="1" g="1" b="1" a="1"
+				nx="-0.775165" ny="0.376008" nz="0.442749"
+				u="0.370717" v="0.278835">
+					<skin bone="chickenBip R Foot" weight="1.0"/>
+			</vertex>
+			<vertex x="0.195722" y="-0.429813" z="4.76837e-007"
+				r="1" g="1" b="1" a="1"
+				nx="0.158003" ny="-0.662075" nz="1.12183"
+				u="0.45083" v="0.030819">
+					<skin bone="chickenBip R Toe0" weight="0.5"/>
+					<skin bone="chickenBip R Foot" weight="0.5"/>
+			</vertex>
+			<vertex x="0.000942639" y="-0.163808" z="0.168511"
+				r="1" g="1" b="1" a="1"
+				nx="-0.271187" ny="-0.833864" nz="0.480759"
+				u="0.48007" v="0.202577">
+					<skin bone="chickenBip R Calf" weight="0.5"/>
+					<skin bone="chickenBip R Foot" weight="0.5"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.0523957" y="-0.0869848" z="0.491391"
+				r="1" g="1" b="1" a="1"
+				nx="0.130664" ny="-0.975285" nz="0.178175"
+				u="0.919524" v="0.220269">
+					<skin bone="chickenBip R Thigh" weight="0.5"/>
+					<skin bone="chickenBip R Calf" weight="0.5"/>
+			</vertex>
+			<vertex x="0.105031" y="-0.0620166" z="0.16851"
+				r="1" g="1" b="1" a="1"
+				nx="0.520035" ny="0.534385" nz="0.666331"
+				u="0.959761" v="0.0488644">
+					<skin bone="chickenBip R Calf" weight="0.5"/>
+					<skin bone="chickenBip R Foot" weight="0.5"/>
+			</vertex>
+			<vertex x="-0.0211532" y="-0.0113771" z="0.491391"
+				r="1" g="1" b="1" a="1"
+				nx="0.6844" ny="0.705952" nz="0.182286"
+				u="0.958517" v="0.214788">
+					<skin bone="chickenBip R Thigh" weight="0.5"/>
+					<skin bone="chickenBip R Calf" weight="0.5"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.105031" y="-0.0620166" z="0.16851"
+				r="1" g="1" b="1" a="1"
+				nx="0.520035" ny="0.534385" nz="0.666331"
+				u="0.959761" v="0.0488644">
+					<skin bone="chickenBip R Calf" weight="0.5"/>
+					<skin bone="chickenBip R Foot" weight="0.5"/>
+			</vertex>
+			<vertex x="-0.0523957" y="-0.0869848" z="0.491391"
+				r="1" g="1" b="1" a="1"
+				nx="0.130664" ny="-0.975285" nz="0.178175"
+				u="0.919524" v="0.220269">
+					<skin bone="chickenBip R Thigh" weight="0.5"/>
+					<skin bone="chickenBip R Calf" weight="0.5"/>
+			</vertex>
+			<vertex x="0.000942639" y="-0.163808" z="0.168511"
+				r="1" g="1" b="1" a="1"
+				nx="-0.271187" ny="-0.833864" nz="0.480759"
+				u="0.891622" v="0.0572373">
+					<skin bone="chickenBip R Calf" weight="0.5"/>
+					<skin bone="chickenBip R Foot" weight="0.5"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.0211532" y="-0.0113771" z="0.491391"
+				r="1" g="1" b="1" a="1"
+				nx="0.6844" ny="0.705952" nz="0.182286"
+				u="0.830771" v="0.244839">
+					<skin bone="chickenBip R Thigh" weight="0.5"/>
+					<skin bone="chickenBip R Calf" weight="0.5"/>
+			</vertex>
+			<vertex x="-0.0943271" y="-0.0521386" z="0.153377"
+				r="1" g="1" b="1" a="1"
+				nx="-0.87624" ny="0.419414" nz="0.237266"
+				u="0.826002" v="0.0808318">
+					<skin bone="chickenBip R Calf" weight="0.5"/>
+					<skin bone="chickenBip R Foot" weight="0.5"/>
+			</vertex>
+			<vertex x="-0.12497" y="-0.0244972" z="0.491391"
+				r="1" g="1" b="1" a="1"
+				nx="-0.935302" ny="0.324799" nz="0.140412"
+				u="0.87674" v="0.230689">
+					<skin bone="chickenBip R Thigh" weight="0.5"/>
+					<skin bone="chickenBip R Calf" weight="0.5"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.0943271" y="-0.0521386" z="0.153377"
+				r="1" g="1" b="1" a="1"
+				nx="-0.87624" ny="0.419414" nz="0.237266"
+				u="0.826002" v="0.0808318">
+					<skin bone="chickenBip R Calf" weight="0.5"/>
+					<skin bone="chickenBip R Foot" weight="0.5"/>
+			</vertex>
+			<vertex x="-0.0211532" y="-0.0113771" z="0.491391"
+				r="1" g="1" b="1" a="1"
+				nx="0.6844" ny="0.705952" nz="0.182286"
+				u="0.830771" v="0.244839">
+					<skin bone="chickenBip R Thigh" weight="0.5"/>
+					<skin bone="chickenBip R Calf" weight="0.5"/>
+			</vertex>
+			<vertex x="0.105031" y="-0.0620166" z="0.16851"
+				r="1" g="1" b="1" a="1"
+				nx="0.520035" ny="0.534385" nz="0.666331"
+				u="0.738933" v="0.113391">
+					<skin bone="chickenBip R Calf" weight="0.5"/>
+					<skin bone="chickenBip R Foot" weight="0.5"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.12497" y="-0.0244972" z="0.491391"
+				r="1" g="1" b="1" a="1"
+				nx="-0.935302" ny="0.324799" nz="0.140412"
+				u="0.87674" v="0.230689">
+					<skin bone="chickenBip R Thigh" weight="0.5"/>
+					<skin bone="chickenBip R Calf" weight="0.5"/>
+			</vertex>
+			<vertex x="0.000942639" y="-0.163808" z="0.168511"
+				r="1" g="1" b="1" a="1"
+				nx="-0.271187" ny="-0.833864" nz="0.480759"
+				u="0.891622" v="0.0572373">
+					<skin bone="chickenBip R Calf" weight="0.5"/>
+					<skin bone="chickenBip R Foot" weight="0.5"/>
+			</vertex>
+			<vertex x="-0.0523957" y="-0.0869848" z="0.491391"
+				r="1" g="1" b="1" a="1"
+				nx="0.130664" ny="-0.975285" nz="0.178175"
+				u="0.919524" v="0.220269">
+					<skin bone="chickenBip R Thigh" weight="0.5"/>
+					<skin bone="chickenBip R Calf" weight="0.5"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.000942639" y="-0.163808" z="0.168511"
+				r="1" g="1" b="1" a="1"
+				nx="-0.271187" ny="-0.833864" nz="0.480759"
+				u="0.891622" v="0.0572373">
+					<skin bone="chickenBip R Calf" weight="0.5"/>
+					<skin bone="chickenBip R Foot" weight="0.5"/>
+			</vertex>
+			<vertex x="-0.12497" y="-0.0244972" z="0.491391"
+				r="1" g="1" b="1" a="1"
+				nx="-0.935302" ny="0.324799" nz="0.140412"
+				u="0.87674" v="0.230689">
+					<skin bone="chickenBip R Thigh" weight="0.5"/>
+					<skin bone="chickenBip R Calf" weight="0.5"/>
+			</vertex>
+			<vertex x="-0.0943271" y="-0.0521386" z="0.153377"
+				r="1" g="1" b="1" a="1"
+				nx="-0.87624" ny="0.419414" nz="0.237266"
+				u="0.826002" v="0.0808318">
+					<skin bone="chickenBip R Calf" weight="0.5"/>
+					<skin bone="chickenBip R Foot" weight="0.5"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.0523957" y="-0.0869848" z="0.491391"
+				r="1" g="1" b="1" a="1"
+				nx="0.130664" ny="-0.975285" nz="0.178175"
+				u="0.919524" v="0.220269">
+					<skin bone="chickenBip R Thigh" weight="0.5"/>
+					<skin bone="chickenBip R Calf" weight="0.5"/>
+			</vertex>
+			<vertex x="-0.0211532" y="-0.0113771" z="0.491391"
+				r="1" g="1" b="1" a="1"
+				nx="0.6844" ny="0.705952" nz="0.182286"
+				u="0.958517" v="0.214788">
+					<skin bone="chickenBip R Thigh" weight="0.5"/>
+					<skin bone="chickenBip R Calf" weight="0.5"/>
+			</vertex>
+			<vertex x="-0.0109843" y="-0.0867868" z="0.819909"
+				r="1" g="1" b="1" a="1"
+				nx="0.161409" ny="-0.134896" nz="0.977625"
+				u="0.937464" v="0.405961">
+					<skin bone="chickenBip Spine" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.0211532" y="-0.0113771" z="0.491391"
+				r="1" g="1" b="1" a="1"
+				nx="0.6844" ny="0.705952" nz="0.182286"
+				u="0.830771" v="0.244839">
+					<skin bone="chickenBip R Thigh" weight="0.5"/>
+					<skin bone="chickenBip R Calf" weight="0.5"/>
+			</vertex>
+			<vertex x="-0.12497" y="-0.0244972" z="0.491391"
+				r="1" g="1" b="1" a="1"
+				nx="-0.935302" ny="0.324799" nz="0.140412"
+				u="0.87674" v="0.230689">
+					<skin bone="chickenBip R Thigh" weight="0.5"/>
+					<skin bone="chickenBip R Calf" weight="0.5"/>
+			</vertex>
+			<vertex x="-0.0109843" y="-0.0867868" z="0.819909"
+				r="1" g="1" b="1" a="1"
+				nx="0.161409" ny="-0.134896" nz="0.977625"
+				u="0.937464" v="0.405961">
+					<skin bone="chickenBip Spine" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.12497" y="-0.0244972" z="0.491391"
+				r="1" g="1" b="1" a="1"
+				nx="-0.935302" ny="0.324799" nz="0.140412"
+				u="0.87674" v="0.230689">
+					<skin bone="chickenBip R Thigh" weight="0.5"/>
+					<skin bone="chickenBip R Calf" weight="0.5"/>
+			</vertex>
+			<vertex x="-0.0523957" y="-0.0869848" z="0.491391"
+				r="1" g="1" b="1" a="1"
+				nx="0.130664" ny="-0.975285" nz="0.178175"
+				u="0.919524" v="0.220269">
+					<skin bone="chickenBip R Thigh" weight="0.5"/>
+					<skin bone="chickenBip R Calf" weight="0.5"/>
+			</vertex>
+			<vertex x="-0.0109843" y="-0.0867868" z="0.819909"
+				r="1" g="1" b="1" a="1"
+				nx="0.161409" ny="-0.134896" nz="0.977625"
+				u="0.937464" v="0.405961">
+					<skin bone="chickenBip Spine" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.195722" y="-0.429813" z="4.76837e-007"
+				r="1" g="1" b="1" a="1"
+				nx="0.158003" ny="-0.662075" nz="1.12183"
+				u="0.45083" v="0.030819">
+					<skin bone="chickenBip R Toe0" weight="0.5"/>
+					<skin bone="chickenBip R Foot" weight="0.5"/>
+			</vertex>
+			<vertex x="-0.171563" y="-0.0153587" z="4.88758e-006"
+				r="1" g="1" b="1" a="1"
+				nx="-0.775165" ny="0.376008" nz="0.442749"
+				u="0.370717" v="0.278835">
+					<skin bone="chickenBip R Foot" weight="1.0"/>
+			</vertex>
+			<vertex x="0.417477" y="-0.0487172" z="0.0"
+				r="1" g="1" b="1" a="1"
+				nx="0.529297" ny="0.202484" nz="0.997383"
+				u="0.243301" v="0.0330126">
+					<skin bone="chickenBip R Toe0" weight="0.5"/>
+					<skin bone="chickenBip R Foot" weight="0.5"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.195722" y="0.429813" z="4.17233e-007"
+				r="1" g="1" b="1" a="1"
+				nx="0.158004" ny="0.662075" nz="1.12183"
+				u="0.45083" v="0.030819">
+					<skin bone="chickenBip L Toe0" weight="0.5"/>
+					<skin bone="chickenBip L Foot" weight="0.5"/>
+			</vertex>
+			<vertex x="0.105031" y="0.0620166" z="0.16851"
+				r="1" g="1" b="1" a="1"
+				nx="0.520035" ny="-0.534385" nz="0.66633"
+				u="0.54862" v="0.199844">
+					<skin bone="chickenBip L Foot" weight="0.5"/>
+					<skin bone="chickenBip L Calf" weight="0.5"/>
+			</vertex>
+			<vertex x="0.417477" y="0.0487171" z="-2.38419e-007"
+				r="1" g="1" b="1" a="1"
+				nx="0.529297" ny="-0.202484" nz="0.997383"
+				u="0.654645" v="0.0704945">
+					<skin bone="chickenBip L Toe0" weight="0.5"/>
+					<skin bone="chickenBip L Foot" weight="0.5"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.195722" y="0.429813" z="4.17233e-007"
+				r="1" g="1" b="1" a="1"
+				nx="0.158004" ny="0.662075" nz="1.12183"
+				u="0.45083" v="0.030819">
+					<skin bone="chickenBip L Toe0" weight="0.5"/>
+					<skin bone="chickenBip L Foot" weight="0.5"/>
+			</vertex>
+			<vertex x="0.000942669" y="0.163808" z="0.168511"
+				r="1" g="1" b="1" a="1"
+				nx="-0.271186" ny="0.833864" nz="0.480759"
+				u="0.48007" v="0.202577">
+					<skin bone="chickenBip L Foot" weight="0.5"/>
+					<skin bone="chickenBip L Calf" weight="0.5"/>
+			</vertex>
+			<vertex x="0.105031" y="0.0620166" z="0.16851"
+				r="1" g="1" b="1" a="1"
+				nx="0.520035" ny="-0.534385" nz="0.66633"
+				u="0.54862" v="0.199844">
+					<skin bone="chickenBip L Foot" weight="0.5"/>
+					<skin bone="chickenBip L Calf" weight="0.5"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.171563" y="0.0153588" z="4.94719e-006"
+				r="1" g="1" b="1" a="1"
+				nx="-0.775165" ny="-0.376008" nz="0.442749"
+				u="0.603981" v="0.343647">
+					<skin bone="chickenBip L Foot" weight="1.0"/>
+			</vertex>
+			<vertex x="0.105031" y="0.0620166" z="0.16851"
+				r="1" g="1" b="1" a="1"
+				nx="0.520035" ny="-0.534385" nz="0.66633"
+				u="0.54862" v="0.199844">
+					<skin bone="chickenBip L Foot" weight="0.5"/>
+					<skin bone="chickenBip L Calf" weight="0.5"/>
+			</vertex>
+			<vertex x="-0.0943271" y="0.0521387" z="0.153377"
+				r="1" g="1" b="1" a="1"
+				nx="-0.87624" ny="-0.419414" nz="0.237266"
+				u="0.538201" v="0.293507">
+					<skin bone="chickenBip L Foot" weight="0.5"/>
+					<skin bone="chickenBip L Calf" weight="0.5"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.417477" y="0.0487171" z="-2.38419e-007"
+				r="1" g="1" b="1" a="1"
+				nx="0.529297" ny="-0.202484" nz="0.997383"
+				u="0.654645" v="0.0704945">
+					<skin bone="chickenBip L Toe0" weight="0.5"/>
+					<skin bone="chickenBip L Foot" weight="0.5"/>
+			</vertex>
+			<vertex x="0.105031" y="0.0620166" z="0.16851"
+				r="1" g="1" b="1" a="1"
+				nx="0.520035" ny="-0.534385" nz="0.66633"
+				u="0.54862" v="0.199844">
+					<skin bone="chickenBip L Foot" weight="0.5"/>
+					<skin bone="chickenBip L Calf" weight="0.5"/>
+			</vertex>
+			<vertex x="-0.171563" y="0.0153588" z="4.94719e-006"
+				r="1" g="1" b="1" a="1"
+				nx="-0.775165" ny="-0.376008" nz="0.442749"
+				u="0.603981" v="0.343647">
+					<skin bone="chickenBip L Foot" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.0943271" y="0.0521387" z="0.153377"
+				r="1" g="1" b="1" a="1"
+				nx="-0.87624" ny="-0.419414" nz="0.237266"
+				u="0.45247" v="0.266201">
+					<skin bone="chickenBip L Foot" weight="0.5"/>
+					<skin bone="chickenBip L Calf" weight="0.5"/>
+			</vertex>
+			<vertex x="0.000942669" y="0.163808" z="0.168511"
+				r="1" g="1" b="1" a="1"
+				nx="-0.271186" ny="0.833864" nz="0.480759"
+				u="0.48007" v="0.202577">
+					<skin bone="chickenBip L Foot" weight="0.5"/>
+					<skin bone="chickenBip L Calf" weight="0.5"/>
+			</vertex>
+			<vertex x="-0.171563" y="0.0153588" z="4.94719e-006"
+				r="1" g="1" b="1" a="1"
+				nx="-0.775165" ny="-0.376008" nz="0.442749"
+				u="0.370717" v="0.278835">
+					<skin bone="chickenBip L Foot" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.171563" y="0.0153588" z="4.94719e-006"
+				r="1" g="1" b="1" a="1"
+				nx="-0.775165" ny="-0.376008" nz="0.442749"
+				u="0.370717" v="0.278835">
+					<skin bone="chickenBip L Foot" weight="1.0"/>
+			</vertex>
+			<vertex x="0.000942669" y="0.163808" z="0.168511"
+				r="1" g="1" b="1" a="1"
+				nx="-0.271186" ny="0.833864" nz="0.480759"
+				u="0.48007" v="0.202577">
+					<skin bone="chickenBip L Foot" weight="0.5"/>
+					<skin bone="chickenBip L Calf" weight="0.5"/>
+			</vertex>
+			<vertex x="0.195722" y="0.429813" z="4.17233e-007"
+				r="1" g="1" b="1" a="1"
+				nx="0.158004" ny="0.662075" nz="1.12183"
+				u="0.45083" v="0.030819">
+					<skin bone="chickenBip L Toe0" weight="0.5"/>
+					<skin bone="chickenBip L Foot" weight="0.5"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.0523956" y="0.0869849" z="0.491391"
+				r="1" g="1" b="1" a="1"
+				nx="0.130665" ny="0.975285" nz="0.178174"
+				u="0.919801" v="0.220016">
+					<skin bone="chickenBip L Thigh" weight="0.5"/>
+					<skin bone="chickenBip L Calf" weight="0.5"/>
+			</vertex>
+			<vertex x="-0.0211532" y="0.0113772" z="0.491391"
+				r="1" g="1" b="1" a="1"
+				nx="0.6844" ny="-0.705952" nz="0.182286"
+				u="0.958794" v="0.214535">
+					<skin bone="chickenBip L Thigh" weight="0.5"/>
+					<skin bone="chickenBip L Calf" weight="0.5"/>
+			</vertex>
+			<vertex x="0.105031" y="0.0620166" z="0.16851"
+				r="1" g="1" b="1" a="1"
+				nx="0.520035" ny="-0.534385" nz="0.66633"
+				u="0.960038" v="0.0486117">
+					<skin bone="chickenBip L Foot" weight="0.5"/>
+					<skin bone="chickenBip L Calf" weight="0.5"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.105031" y="0.0620166" z="0.16851"
+				r="1" g="1" b="1" a="1"
+				nx="0.520035" ny="-0.534385" nz="0.66633"
+				u="0.960038" v="0.0486117">
+					<skin bone="chickenBip L Foot" weight="0.5"/>
+					<skin bone="chickenBip L Calf" weight="0.5"/>
+			</vertex>
+			<vertex x="0.000942669" y="0.163808" z="0.168511"
+				r="1" g="1" b="1" a="1"
+				nx="-0.271186" ny="0.833864" nz="0.480759"
+				u="0.8919" v="0.0569845">
+					<skin bone="chickenBip L Foot" weight="0.5"/>
+					<skin bone="chickenBip L Calf" weight="0.5"/>
+			</vertex>
+			<vertex x="-0.0523956" y="0.0869849" z="0.491391"
+				r="1" g="1" b="1" a="1"
+				nx="0.130665" ny="0.975285" nz="0.178174"
+				u="0.919801" v="0.220016">
+					<skin bone="chickenBip L Thigh" weight="0.5"/>
+					<skin bone="chickenBip L Calf" weight="0.5"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.0211532" y="0.0113772" z="0.491391"
+				r="1" g="1" b="1" a="1"
+				nx="0.6844" ny="-0.705952" nz="0.182286"
+				u="0.831049" v="0.244586">
+					<skin bone="chickenBip L Thigh" weight="0.5"/>
+					<skin bone="chickenBip L Calf" weight="0.5"/>
+			</vertex>
+			<vertex x="-0.12497" y="0.0244974" z="0.491391"
+				r="1" g="1" b="1" a="1"
+				nx="-0.935302" ny="-0.324798" nz="0.140411"
+				u="0.877017" v="0.230436">
+					<skin bone="chickenBip L Thigh" weight="0.5"/>
+					<skin bone="chickenBip L Calf" weight="0.5"/>
+			</vertex>
+			<vertex x="-0.0943271" y="0.0521387" z="0.153377"
+				r="1" g="1" b="1" a="1"
+				nx="-0.87624" ny="-0.419414" nz="0.237266"
+				u="0.82628" v="0.080579">
+					<skin bone="chickenBip L Foot" weight="0.5"/>
+					<skin bone="chickenBip L Calf" weight="0.5"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.0943271" y="0.0521387" z="0.153377"
+				r="1" g="1" b="1" a="1"
+				nx="-0.87624" ny="-0.419414" nz="0.237266"
+				u="0.82628" v="0.080579">
+					<skin bone="chickenBip L Foot" weight="0.5"/>
+					<skin bone="chickenBip L Calf" weight="0.5"/>
+			</vertex>
+			<vertex x="0.105031" y="0.0620166" z="0.16851"
+				r="1" g="1" b="1" a="1"
+				nx="0.520035" ny="-0.534385" nz="0.66633"
+				u="0.739211" v="0.113138">
+					<skin bone="chickenBip L Foot" weight="0.5"/>
+					<skin bone="chickenBip L Calf" weight="0.5"/>
+			</vertex>
+			<vertex x="-0.0211532" y="0.0113772" z="0.491391"
+				r="1" g="1" b="1" a="1"
+				nx="0.6844" ny="-0.705952" nz="0.182286"
+				u="0.831049" v="0.244586">
+					<skin bone="chickenBip L Thigh" weight="0.5"/>
+					<skin bone="chickenBip L Calf" weight="0.5"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.12497" y="0.0244974" z="0.491391"
+				r="1" g="1" b="1" a="1"
+				nx="-0.935302" ny="-0.324798" nz="0.140411"
+				u="0.877017" v="0.230436">
+					<skin bone="chickenBip L Thigh" weight="0.5"/>
+					<skin bone="chickenBip L Calf" weight="0.5"/>
+			</vertex>
+			<vertex x="-0.0523956" y="0.0869849" z="0.491391"
+				r="1" g="1" b="1" a="1"
+				nx="0.130665" ny="0.975285" nz="0.178174"
+				u="0.919801" v="0.220016">
+					<skin bone="chickenBip L Thigh" weight="0.5"/>
+					<skin bone="chickenBip L Calf" weight="0.5"/>
+			</vertex>
+			<vertex x="0.000942669" y="0.163808" z="0.168511"
+				r="1" g="1" b="1" a="1"
+				nx="-0.271186" ny="0.833864" nz="0.480759"
+				u="0.8919" v="0.0569845">
+					<skin bone="chickenBip L Foot" weight="0.5"/>
+					<skin bone="chickenBip L Calf" weight="0.5"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.000942669" y="0.163808" z="0.168511"
+				r="1" g="1" b="1" a="1"
+				nx="-0.271186" ny="0.833864" nz="0.480759"
+				u="0.8919" v="0.0569845">
+					<skin bone="chickenBip L Foot" weight="0.5"/>
+					<skin bone="chickenBip L Calf" weight="0.5"/>
+			</vertex>
+			<vertex x="-0.0943271" y="0.0521387" z="0.153377"
+				r="1" g="1" b="1" a="1"
+				nx="-0.87624" ny="-0.419414" nz="0.237266"
+				u="0.82628" v="0.080579">
+					<skin bone="chickenBip L Foot" weight="0.5"/>
+					<skin bone="chickenBip L Calf" weight="0.5"/>
+			</vertex>
+			<vertex x="-0.12497" y="0.0244974" z="0.491391"
+				r="1" g="1" b="1" a="1"
+				nx="-0.935302" ny="-0.324798" nz="0.140411"
+				u="0.877017" v="0.230436">
+					<skin bone="chickenBip L Thigh" weight="0.5"/>
+					<skin bone="chickenBip L Calf" weight="0.5"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.0523956" y="0.0869849" z="0.491391"
+				r="1" g="1" b="1" a="1"
+				nx="0.130665" ny="0.975285" nz="0.178174"
+				u="0.919801" v="0.220016">
+					<skin bone="chickenBip L Thigh" weight="0.5"/>
+					<skin bone="chickenBip L Calf" weight="0.5"/>
+			</vertex>
+			<vertex x="-0.0109843" y="0.0867874" z="0.81991"
+				r="1" g="1" b="1" a="1"
+				nx="0.161409" ny="0.134897" nz="0.977625"
+				u="0.937742" v="0.405709">
+					<skin bone="chickenBip Spine" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.0211532" y="0.0113772" z="0.491391"
+				r="1" g="1" b="1" a="1"
+				nx="0.6844" ny="-0.705952" nz="0.182286"
+				u="0.958794" v="0.214535">
+					<skin bone="chickenBip L Thigh" weight="0.5"/>
+					<skin bone="chickenBip L Calf" weight="0.5"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.0211532" y="0.0113772" z="0.491391"
+				r="1" g="1" b="1" a="1"
+				nx="0.6844" ny="-0.705952" nz="0.182286"
+				u="0.831049" v="0.244586">
+					<skin bone="chickenBip L Thigh" weight="0.5"/>
+					<skin bone="chickenBip L Calf" weight="0.5"/>
+			</vertex>
+			<vertex x="-0.0109843" y="0.0867874" z="0.81991"
+				r="1" g="1" b="1" a="1"
+				nx="0.161409" ny="0.134897" nz="0.977625"
+				u="0.937742" v="0.405709">
+					<skin bone="chickenBip Spine" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.12497" y="0.0244974" z="0.491391"
+				r="1" g="1" b="1" a="1"
+				nx="-0.935302" ny="-0.324798" nz="0.140411"
+				u="0.877017" v="0.230436">
+					<skin bone="chickenBip L Thigh" weight="0.5"/>
+					<skin bone="chickenBip L Calf" weight="0.5"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.12497" y="0.0244974" z="0.491391"
+				r="1" g="1" b="1" a="1"
+				nx="-0.935302" ny="-0.324798" nz="0.140411"
+				u="0.877017" v="0.230436">
+					<skin bone="chickenBip L Thigh" weight="0.5"/>
+					<skin bone="chickenBip L Calf" weight="0.5"/>
+			</vertex>
+			<vertex x="-0.0109843" y="0.0867874" z="0.81991"
+				r="1" g="1" b="1" a="1"
+				nx="0.161409" ny="0.134897" nz="0.977625"
+				u="0.937742" v="0.405709">
+					<skin bone="chickenBip Spine" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.0523956" y="0.0869849" z="0.491391"
+				r="1" g="1" b="1" a="1"
+				nx="0.130665" ny="0.975285" nz="0.178174"
+				u="0.919801" v="0.220016">
+					<skin bone="chickenBip L Thigh" weight="0.5"/>
+					<skin bone="chickenBip L Calf" weight="0.5"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.195722" y="0.429813" z="4.17233e-007"
+				r="1" g="1" b="1" a="1"
+				nx="0.158004" ny="0.662075" nz="1.12183"
+				u="0.45083" v="0.030819">
+					<skin bone="chickenBip L Toe0" weight="0.5"/>
+					<skin bone="chickenBip L Foot" weight="0.5"/>
+			</vertex>
+			<vertex x="0.417477" y="0.0487171" z="-2.38419e-007"
+				r="1" g="1" b="1" a="1"
+				nx="0.529297" ny="-0.202484" nz="0.997383"
+				u="0.243301" v="0.0330126">
+					<skin bone="chickenBip L Toe0" weight="0.5"/>
+					<skin bone="chickenBip L Foot" weight="0.5"/>
+			</vertex>
+			<vertex x="-0.171563" y="0.0153588" z="4.94719e-006"
+				r="1" g="1" b="1" a="1"
+				nx="-0.775165" ny="-0.376008" nz="0.442749"
+				u="0.370717" v="0.278835">
+					<skin bone="chickenBip L Foot" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.136876" y="2.79114e-007" z="0.838719"
+				r="1" g="1" b="1" a="1"
+				nx="0.0518868" ny="7.28323e-007" nz="-0.998653"
+				u="0.533406" v="0.642843">
+					<skin bone="chickenBip Spine" weight="0.5"/>
+					<skin bone="chickenBip Neck" weight="0.5"/>
+			</vertex>
+			<vertex x="0.145296" y="-0.0558019" z="1.23728"
+				r="1" g="1" b="1" a="1"
+				nx="-0.0282427" ny="-0.890923" nz="-0.453275"
+				u="0.478698" v="0.824356">
+					<skin bone="chickenBip Head" weight="0.5"/>
+					<skin bone="chickenBip Neck" weight="0.5"/>
+			</vertex>
+			<vertex x="0.0271364" y="0.0" z="1.38822"
+				r="1" g="1" b="1" a="1"
+				nx="-0.98839" ny="8.14572e-007" nz="0.15194"
+				u="0.524233" v="0.905711">
+					<skin bone="chickenBip Head" weight="0.5"/>
+					<skin bone="chickenBip Neck" weight="0.5"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.136876" y="2.79114e-007" z="0.838719"
+				r="1" g="1" b="1" a="1"
+				nx="0.0518868" ny="7.28323e-007" nz="-0.998653"
+				u="0.533406" v="0.642843">
+					<skin bone="chickenBip Spine" weight="0.5"/>
+					<skin bone="chickenBip Neck" weight="0.5"/>
+			</vertex>
+			<vertex x="0.145296" y="0.0558017" z="1.23728"
+				r="1" g="1" b="1" a="1"
+				nx="-0.0282409" ny="0.890918" nz="-0.453286"
+				u="0.430961" v="0.802358">
+					<skin bone="chickenBip Head" weight="0.5"/>
+					<skin bone="chickenBip Neck" weight="0.5"/>
+			</vertex>
+			<vertex x="0.145296" y="-0.0558019" z="1.23728"
+				r="1" g="1" b="1" a="1"
+				nx="-0.0282427" ny="-0.890923" nz="-0.453275"
+				u="0.478698" v="0.824356">
+					<skin bone="chickenBip Head" weight="0.5"/>
+					<skin bone="chickenBip Neck" weight="0.5"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.136876" y="2.79114e-007" z="0.838719"
+				r="1" g="1" b="1" a="1"
+				nx="0.0518868" ny="7.28323e-007" nz="-0.998653"
+				u="0.533406" v="0.642843">
+					<skin bone="chickenBip Spine" weight="0.5"/>
+					<skin bone="chickenBip Neck" weight="0.5"/>
+			</vertex>
+			<vertex x="0.0271364" y="0.0" z="1.38822"
+				r="1" g="1" b="1" a="1"
+				nx="-0.98839" ny="8.14572e-007" nz="0.15194"
+				u="0.524233" v="0.905711">
+					<skin bone="chickenBip Head" weight="0.5"/>
+					<skin bone="chickenBip Neck" weight="0.5"/>
+			</vertex>
+			<vertex x="0.145296" y="0.0558017" z="1.23728"
+				r="1" g="1" b="1" a="1"
+				nx="-0.0282409" ny="0.890918" nz="-0.453286"
+				u="0.577116" v="0.828213">
+					<skin bone="chickenBip Head" weight="0.5"/>
+					<skin bone="chickenBip Neck" weight="0.5"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.145296" y="-0.0558019" z="1.23728"
+				r="1" g="1" b="1" a="1"
+				nx="-0.0282427" ny="-0.890923" nz="-0.453275"
+				u="0.577963" v="0.776563">
+					<skin bone="chickenBip Head" weight="0.5"/>
+					<skin bone="chickenBip Neck" weight="0.5"/>
+			</vertex>
+			<vertex x="0.145296" y="0.0558017" z="1.23728"
+				r="1" g="1" b="1" a="1"
+				nx="-0.0282409" ny="0.890918" nz="-0.453286"
+				u="0.577116" v="0.828213">
+					<skin bone="chickenBip Head" weight="0.5"/>
+					<skin bone="chickenBip Neck" weight="0.5"/>
+			</vertex>
+			<vertex x="0.617072" y="1.27837e-005" z="1.32827"
+				r="1" g="1" b="1" a="1"
+				nx="0.99184" ny="4.14051e-005" nz="-0.127487"
+				u="0.801244" v="0.783275">
+					<skin bone="chickenBip Ponytail1" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.336084" y="-0.13018" z="1.33106"
+				r="1" g="1" b="1" a="1"
+				nx="0.154327" ny="-0.974865" nz="-0.160692"
+				u="0.678088" v="0.862253">
+					<skin bone="chickenBip Head" weight="0.5"/>
+					<skin bone="chickenBip Ponytail1" weight="0.5"/>
+			</vertex>
+			<vertex x="0.145296" y="-0.0558019" z="1.23728"
+				r="1" g="1" b="1" a="1"
+				nx="-0.0282427" ny="-0.890923" nz="-0.453275"
+				u="0.577116" v="0.828213">
+					<skin bone="chickenBip Head" weight="0.5"/>
+					<skin bone="chickenBip Neck" weight="0.5"/>
+			</vertex>
+			<vertex x="0.617072" y="1.27837e-005" z="1.32827"
+				r="1" g="1" b="1" a="1"
+				nx="0.99184" ny="4.14051e-005" nz="-0.127487"
+				u="0.801244" v="0.783275">
+					<skin bone="chickenBip Ponytail1" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.145296" y="-0.0558019" z="1.23728"
+				r="1" g="1" b="1" a="1"
+				nx="-0.0282427" ny="-0.890923" nz="-0.453275"
+				u="0.577116" v="0.828213">
+					<skin bone="chickenBip Head" weight="0.5"/>
+					<skin bone="chickenBip Neck" weight="0.5"/>
+			</vertex>
+			<vertex x="0.336084" y="-0.13018" z="1.33106"
+				r="1" g="1" b="1" a="1"
+				nx="0.154327" ny="-0.974865" nz="-0.160692"
+				u="0.678088" v="0.862253">
+					<skin bone="chickenBip Head" weight="0.5"/>
+					<skin bone="chickenBip Ponytail1" weight="0.5"/>
+			</vertex>
+			<vertex x="0.0694966" y="0.0" z="1.52923"
+				r="1" g="1" b="1" a="1"
+				nx="-0.654903" ny="-7.5592e-006" nz="0.755713"
+				u="0.54949" v="0.970073">
+					<skin bone="chickenBip Head" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.336084" y="0.130191" z="1.3311"
+				r="1" g="1" b="1" a="1"
+				nx="0.154309" ny="0.974913" nz="-0.160414"
+				u="0.678088" v="0.862253">
+					<skin bone="chickenBip Head" weight="0.5"/>
+					<skin bone="chickenBip Ponytail1" weight="0.5"/>
+			</vertex>
+			<vertex x="0.0694966" y="0.0" z="1.52923"
+				r="1" g="1" b="1" a="1"
+				nx="-0.654903" ny="-7.5592e-006" nz="0.755713"
+				u="0.54949" v="0.970073">
+					<skin bone="chickenBip Head" weight="1.0"/>
+			</vertex>
+			<vertex x="0.336084" y="-2.47468e-005" z="1.51787"
+				r="1" g="1" b="1" a="1"
+				nx="0.277041" ny="-0.000190053" nz="0.960858"
+				u="0.675154" v="0.969305">
+					<skin bone="chickenBip Head" weight="0.5"/>
+					<skin bone="chickenBip Ponytail1" weight="0.5"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.336084" y="0.130191" z="1.3311"
+				r="1" g="1" b="1" a="1"
+				nx="0.154309" ny="0.974913" nz="-0.160414"
+				u="0.678088" v="0.862253">
+					<skin bone="chickenBip Head" weight="0.5"/>
+					<skin bone="chickenBip Ponytail1" weight="0.5"/>
+			</vertex>
+			<vertex x="0.617072" y="1.27837e-005" z="1.32827"
+				r="1" g="1" b="1" a="1"
+				nx="0.99184" ny="4.14051e-005" nz="-0.127487"
+				u="0.801244" v="0.783275">
+					<skin bone="chickenBip Ponytail1" weight="1.0"/>
+			</vertex>
+			<vertex x="0.145296" y="0.0558017" z="1.23728"
+				r="1" g="1" b="1" a="1"
+				nx="-0.0282409" ny="0.890918" nz="-0.453286"
+				u="0.577116" v="0.828213">
+					<skin bone="chickenBip Head" weight="0.5"/>
+					<skin bone="chickenBip Neck" weight="0.5"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.0694966" y="0.0" z="1.52923"
+				r="1" g="1" b="1" a="1"
+				nx="-0.654903" ny="-7.5592e-006" nz="0.755713"
+				u="0.54949" v="0.970073">
+					<skin bone="chickenBip Head" weight="1.0"/>
+			</vertex>
+			<vertex x="0.336084" y="0.130191" z="1.3311"
+				r="1" g="1" b="1" a="1"
+				nx="0.154309" ny="0.974913" nz="-0.160414"
+				u="0.678088" v="0.862253">
+					<skin bone="chickenBip Head" weight="0.5"/>
+					<skin bone="chickenBip Ponytail1" weight="0.5"/>
+			</vertex>
+			<vertex x="0.145296" y="0.0558017" z="1.23728"
+				r="1" g="1" b="1" a="1"
+				nx="-0.0282409" ny="0.890918" nz="-0.453286"
+				u="0.577116" v="0.828213">
+					<skin bone="chickenBip Head" weight="0.5"/>
+					<skin bone="chickenBip Neck" weight="0.5"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.336084" y="0.130191" z="1.3311"
+				r="1" g="1" b="1" a="1"
+				nx="0.154309" ny="0.974913" nz="-0.160414"
+				u="0.678088" v="0.862253">
+					<skin bone="chickenBip Head" weight="0.5"/>
+					<skin bone="chickenBip Ponytail1" weight="0.5"/>
+			</vertex>
+			<vertex x="0.336084" y="-2.47468e-005" z="1.51787"
+				r="1" g="1" b="1" a="1"
+				nx="0.277041" ny="-0.000190053" nz="0.960858"
+				u="0.675154" v="0.969305">
+					<skin bone="chickenBip Head" weight="0.5"/>
+					<skin bone="chickenBip Ponytail1" weight="0.5"/>
+			</vertex>
+			<vertex x="0.617072" y="1.27837e-005" z="1.32827"
+				r="1" g="1" b="1" a="1"
+				nx="0.99184" ny="4.14051e-005" nz="-0.127487"
+				u="0.819197" v="0.900145">
+					<skin bone="chickenBip Ponytail1" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.336084" y="-2.47468e-005" z="1.51787"
+				r="1" g="1" b="1" a="1"
+				nx="0.277041" ny="-0.000190053" nz="0.960858"
+				u="0.675154" v="0.969305">
+					<skin bone="chickenBip Head" weight="0.5"/>
+					<skin bone="chickenBip Ponytail1" weight="0.5"/>
+			</vertex>
+			<vertex x="0.336084" y="-0.13018" z="1.33106"
+				r="1" g="1" b="1" a="1"
+				nx="0.154327" ny="-0.974865" nz="-0.160692"
+				u="0.678088" v="0.862253">
+					<skin bone="chickenBip Head" weight="0.5"/>
+					<skin bone="chickenBip Ponytail1" weight="0.5"/>
+			</vertex>
+			<vertex x="0.617072" y="1.27837e-005" z="1.32827"
+				r="1" g="1" b="1" a="1"
+				nx="0.99184" ny="4.14051e-005" nz="-0.127487"
+				u="0.819197" v="0.900145">
+					<skin bone="chickenBip Ponytail1" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.336084" y="-0.13018" z="1.33106"
+				r="1" g="1" b="1" a="1"
+				nx="0.154327" ny="-0.974865" nz="-0.160692"
+				u="0.678088" v="0.862253">
+					<skin bone="chickenBip Head" weight="0.5"/>
+					<skin bone="chickenBip Ponytail1" weight="0.5"/>
+			</vertex>
+			<vertex x="0.336084" y="-2.47468e-005" z="1.51787"
+				r="1" g="1" b="1" a="1"
+				nx="0.277041" ny="-0.000190053" nz="0.960858"
+				u="0.675154" v="0.969305">
+					<skin bone="chickenBip Head" weight="0.5"/>
+					<skin bone="chickenBip Ponytail1" weight="0.5"/>
+			</vertex>
+			<vertex x="0.0694966" y="0.0" z="1.52923"
+				r="1" g="1" b="1" a="1"
+				nx="-0.654903" ny="-7.5592e-006" nz="0.755713"
+				u="0.54949" v="0.970073">
+					<skin bone="chickenBip Head" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.0694966" y="0.0" z="1.52923"
+				r="1" g="1" b="1" a="1"
+				nx="-0.654903" ny="-7.5592e-006" nz="0.755713"
+				u="0.54949" v="0.970073">
+					<skin bone="chickenBip Head" weight="1.0"/>
+			</vertex>
+			<vertex x="0.0271364" y="0.0" z="1.38822"
+				r="1" g="1" b="1" a="1"
+				nx="-0.98839" ny="8.14572e-007" nz="0.15194"
+				u="0.524233" v="0.905711">
+					<skin bone="chickenBip Head" weight="0.5"/>
+					<skin bone="chickenBip Neck" weight="0.5"/>
+			</vertex>
+			<vertex x="0.145296" y="-0.0558019" z="1.23728"
+				r="1" g="1" b="1" a="1"
+				nx="-0.0282427" ny="-0.890923" nz="-0.453275"
+				u="0.577116" v="0.828213">
+					<skin bone="chickenBip Head" weight="0.5"/>
+					<skin bone="chickenBip Neck" weight="0.5"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.0271364" y="0.0" z="1.38822"
+				r="1" g="1" b="1" a="1"
+				nx="-0.98839" ny="8.14572e-007" nz="0.15194"
+				u="0.524233" v="0.905711">
+					<skin bone="chickenBip Head" weight="0.5"/>
+					<skin bone="chickenBip Neck" weight="0.5"/>
+			</vertex>
+			<vertex x="0.0694966" y="0.0" z="1.52923"
+				r="1" g="1" b="1" a="1"
+				nx="-0.654903" ny="-7.5592e-006" nz="0.755713"
+				u="0.54949" v="0.970073">
+					<skin bone="chickenBip Head" weight="1.0"/>
+			</vertex>
+			<vertex x="0.145296" y="0.0558017" z="1.23728"
+				r="1" g="1" b="1" a="1"
+				nx="-0.0282409" ny="0.890918" nz="-0.453286"
+				u="0.577116" v="0.828213">
+					<skin bone="chickenBip Head" weight="0.5"/>
+					<skin bone="chickenBip Neck" weight="0.5"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.0604872" y="-0.121513" z="1.3994"
+				r="1" g="1" b="1" a="1"
+				nx="-0.536884" ny="-0.811221" nz="-0.231682"
+				u="0.940476" v="0.695791">
+					<skin bone="chickenBip Head" weight="1.0"/>
+			</vertex>
+			<vertex x="0.0790882" y="-0.0493496" z="1.51118"
+				r="1" g="1" b="1" a="1"
+				nx="-0.320922" ny="0.0347354" nz="0.946468"
+				u="0.900959" v="0.745795">
+					<skin bone="chickenBip Head" weight="1.0"/>
+			</vertex>
+			<vertex x="0.0447356" y="0.00592185" z="1.3978"
+				r="1" g="1" b="1" a="1"
+				nx="-0.943104" ny="0.310542" nz="-0.118826"
+				u="0.96238" v="0.752285">
+					<skin bone="chickenBip Head" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.0604872" y="-0.121513" z="1.3994"
+				r="1" g="1" b="1" a="1"
+				nx="-0.536884" ny="-0.811221" nz="-0.231682"
+				u="0.940476" v="0.695791">
+					<skin bone="chickenBip Head" weight="1.0"/>
+			</vertex>
+			<vertex x="0.0447356" y="0.00592185" z="1.3978"
+				r="1" g="1" b="1" a="1"
+				nx="-0.943104" ny="0.310542" nz="-0.118826"
+				u="0.974662" v="0.645889">
+					<skin bone="chickenBip Head" weight="1.0"/>
+			</vertex>
+			<vertex x="0.139454" y="-0.0366605" z="1.33148"
+				r="1" g="1" b="1" a="1"
+				nx="0.244501" ny="-0.381798" nz="-0.891319"
+				u="0.917329" v="0.636926">
+					<skin bone="chickenBip Head" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.0604872" y="-0.121513" z="1.3994"
+				r="1" g="1" b="1" a="1"
+				nx="-0.536884" ny="-0.811221" nz="-0.231682"
+				u="0.940476" v="0.695791">
+					<skin bone="chickenBip Head" weight="1.0"/>
+			</vertex>
+			<vertex x="0.139454" y="-0.0366605" z="1.33148"
+				r="1" g="1" b="1" a="1"
+				nx="0.244501" ny="-0.381798" nz="-0.891319"
+				u="0.917329" v="0.636926">
+					<skin bone="chickenBip Head" weight="1.0"/>
+			</vertex>
+			<vertex x="0.184991" y="-0.0961142" z="1.44302"
+				r="1" g="1" b="1" a="1"
+				nx="0.815758" ny="-0.529858" nz="0.231927"
+				u="0.878011" v="0.686561">
+					<skin bone="chickenBip Head" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.0604872" y="-0.121513" z="1.3994"
+				r="1" g="1" b="1" a="1"
+				nx="-0.536884" ny="-0.811221" nz="-0.231682"
+				u="0.940476" v="0.695791">
+					<skin bone="chickenBip Head" weight="1.0"/>
+			</vertex>
+			<vertex x="0.184991" y="-0.0961142" z="1.44302"
+				r="1" g="1" b="1" a="1"
+				nx="0.815758" ny="-0.529858" nz="0.231927"
+				u="0.878011" v="0.686561">
+					<skin bone="chickenBip Head" weight="1.0"/>
+			</vertex>
+			<vertex x="0.0790882" y="-0.0493496" z="1.51118"
+				r="1" g="1" b="1" a="1"
+				nx="-0.320922" ny="0.0347354" nz="0.946468"
+				u="0.900959" v="0.745795">
+					<skin bone="chickenBip Head" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.158055" y="-0.00785452" z="1.44326"
+				r="1" g="1" b="1" a="1"
+				nx="0.817666" ny="0.0481622" nz="0.573675"
+				u="0.923819" v="0.795143">
+					<skin bone="chickenBip Head" weight="1.0"/>
+			</vertex>
+			<vertex x="0.0447356" y="0.00592185" z="1.3978"
+				r="1" g="1" b="1" a="1"
+				nx="-0.943104" ny="0.310542" nz="-0.118826"
+				u="0.96238" v="0.752285">
+					<skin bone="chickenBip Head" weight="1.0"/>
+			</vertex>
+			<vertex x="0.0790882" y="-0.0493496" z="1.51118"
+				r="1" g="1" b="1" a="1"
+				nx="-0.320922" ny="0.0347354" nz="0.946468"
+				u="0.900959" v="0.745795">
+					<skin bone="chickenBip Head" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.158055" y="-0.00785452" z="1.44326"
+				r="1" g="1" b="1" a="1"
+				nx="0.817666" ny="0.0481622" nz="0.573675"
+				u="0.861461" v="0.642399">
+					<skin bone="chickenBip Head" weight="1.0"/>
+			</vertex>
+			<vertex x="0.184991" y="-0.0961142" z="1.44302"
+				r="1" g="1" b="1" a="1"
+				nx="0.815758" ny="-0.529858" nz="0.231927"
+				u="0.878011" v="0.686561">
+					<skin bone="chickenBip Head" weight="1.0"/>
+			</vertex>
+			<vertex x="0.139454" y="-0.0366605" z="1.33148"
+				r="1" g="1" b="1" a="1"
+				nx="0.244501" ny="-0.381798" nz="-0.891319"
+				u="0.917329" v="0.636926">
+					<skin bone="chickenBip Head" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.158055" y="-0.00785452" z="1.44326"
+				r="1" g="1" b="1" a="1"
+				nx="0.817666" ny="0.0481622" nz="0.573675"
+				u="0.847127" v="0.727">
+					<skin bone="chickenBip Head" weight="1.0"/>
+			</vertex>
+			<vertex x="0.0790882" y="-0.0493496" z="1.51118"
+				r="1" g="1" b="1" a="1"
+				nx="-0.320922" ny="0.0347354" nz="0.946468"
+				u="0.900959" v="0.745795">
+					<skin bone="chickenBip Head" weight="1.0"/>
+			</vertex>
+			<vertex x="0.184991" y="-0.0961142" z="1.44302"
+				r="1" g="1" b="1" a="1"
+				nx="0.815758" ny="-0.529858" nz="0.231927"
+				u="0.878011" v="0.686561">
+					<skin bone="chickenBip Head" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.0604872" y="0.121513" z="1.3994"
+				r="1" g="1" b="1" a="1"
+				nx="-0.536883" ny="0.811221" nz="-0.231681"
+				u="0.875002" v="0.883971">
+					<skin bone="chickenBip Head" weight="1.0"/>
+			</vertex>
+			<vertex x="0.0447355" y="-0.00592212" z="1.3978"
+				r="1" g="1" b="1" a="1"
+				nx="-0.949427" ny="-0.30197" nz="-0.0860357"
+				u="0.857092" v="0.941856">
+					<skin bone="chickenBip Head" weight="1.0"/>
+			</vertex>
+			<vertex x="0.0790882" y="0.0493492" z="1.51118"
+				r="1" g="1" b="1" a="1"
+				nx="-0.332734" ny="-0.00120399" nz="0.94302"
+				u="0.91791" v="0.931096">
+					<skin bone="chickenBip Head" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.0604872" y="0.121513" z="1.3994"
+				r="1" g="1" b="1" a="1"
+				nx="-0.536883" ny="0.811221" nz="-0.231681"
+				u="0.875002" v="0.883971">
+					<skin bone="chickenBip Head" weight="1.0"/>
+			</vertex>
+			<vertex x="0.139454" y="0.0366602" z="1.33148"
+				r="1" g="1" b="1" a="1"
+				nx="0.298016" ny="0.366962" nz="-0.881207"
+				u="0.893986" v="0.823635">
+					<skin bone="chickenBip Head" weight="1.0"/>
+			</vertex>
+			<vertex x="0.0447355" y="-0.00592212" z="1.3978"
+				r="1" g="1" b="1" a="1"
+				nx="-0.949427" ny="-0.30197" nz="-0.0860357"
+				u="0.837418" v="0.836576">
+					<skin bone="chickenBip Head" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.0604872" y="0.121513" z="1.3994"
+				r="1" g="1" b="1" a="1"
+				nx="-0.536883" ny="0.811221" nz="-0.231681"
+				u="0.875002" v="0.883971">
+					<skin bone="chickenBip Head" weight="1.0"/>
+			</vertex>
+			<vertex x="0.184991" y="0.0961137" z="1.44302"
+				r="1" g="1" b="1" a="1"
+				nx="0.807481" ny="0.543111" nz="0.230227"
+				u="0.93667" v="0.870407">
+					<skin bone="chickenBip Head" weight="1.0"/>
+			</vertex>
+			<vertex x="0.139454" y="0.0366602" z="1.33148"
+				r="1" g="1" b="1" a="1"
+				nx="0.298016" ny="0.366962" nz="-0.881207"
+				u="0.893986" v="0.823635">
+					<skin bone="chickenBip Head" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.0604872" y="0.121513" z="1.3994"
+				r="1" g="1" b="1" a="1"
+				nx="-0.536883" ny="0.811221" nz="-0.231681"
+				u="0.875002" v="0.883971">
+					<skin bone="chickenBip Head" weight="1.0"/>
+			</vertex>
+			<vertex x="0.0790882" y="0.0493492" z="1.51118"
+				r="1" g="1" b="1" a="1"
+				nx="-0.332734" ny="-0.00120399" nz="0.94302"
+				u="0.91791" v="0.931096">
+					<skin bone="chickenBip Head" weight="1.0"/>
+			</vertex>
+			<vertex x="0.184991" y="0.0961137" z="1.44302"
+				r="1" g="1" b="1" a="1"
+				nx="0.807481" ny="0.543111" nz="0.230227"
+				u="0.93667" v="0.870407">
+					<skin bone="chickenBip Head" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.158055" y="-0.00785452" z="1.44326"
+				r="1" g="1" b="1" a="1"
+				nx="0.817666" ny="0.0481622" nz="0.573675"
+				u="0.898548" v="0.981919">
+					<skin bone="chickenBip Head" weight="1.0"/>
+			</vertex>
+			<vertex x="0.0790882" y="0.0493492" z="1.51118"
+				r="1" g="1" b="1" a="1"
+				nx="-0.332734" ny="-0.00120399" nz="0.94302"
+				u="0.91791" v="0.931096">
+					<skin bone="chickenBip Head" weight="1.0"/>
+			</vertex>
+			<vertex x="0.0447355" y="-0.00592212" z="1.3978"
+				r="1" g="1" b="1" a="1"
+				nx="-0.949427" ny="-0.30197" nz="-0.0860357"
+				u="0.857092" v="0.941856">
+					<skin bone="chickenBip Head" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.158055" y="-0.00785452" z="1.44326"
+				r="1" g="1" b="1" a="1"
+				nx="0.817666" ny="0.0481622" nz="0.573675"
+				u="0.950099" v="0.825198">
+					<skin bone="chickenBip Head" weight="1.0"/>
+			</vertex>
+			<vertex x="0.139454" y="0.0366602" z="1.33148"
+				r="1" g="1" b="1" a="1"
+				nx="0.298016" ny="0.366962" nz="-0.881207"
+				u="0.893986" v="0.823635">
+					<skin bone="chickenBip Head" weight="1.0"/>
+			</vertex>
+			<vertex x="0.184991" y="0.0961137" z="1.44302"
+				r="1" g="1" b="1" a="1"
+				nx="0.807481" ny="0.543111" nz="0.230227"
+				u="0.93667" v="0.870407">
+					<skin bone="chickenBip Head" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.158055" y="-0.00785452" z="1.44326"
+				r="1" g="1" b="1" a="1"
+				nx="0.817666" ny="0.0481622" nz="0.573675"
+				u="0.9703" v="0.908592">
+					<skin bone="chickenBip Head" weight="1.0"/>
+			</vertex>
+			<vertex x="0.184991" y="0.0961137" z="1.44302"
+				r="1" g="1" b="1" a="1"
+				nx="0.807481" ny="0.543111" nz="0.230227"
+				u="0.93667" v="0.870407">
+					<skin bone="chickenBip Head" weight="1.0"/>
+			</vertex>
+			<vertex x="0.0790882" y="0.0493492" z="1.51118"
+				r="1" g="1" b="1" a="1"
+				nx="-0.332734" ny="-0.00120399" nz="0.94302"
+				u="0.91791" v="0.931096">
+					<skin bone="chickenBip Head" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.133843" y="-0.510607" z="0.880933"
+				r="1" g="1" b="1" a="1"
+				nx="-0.904669" ny="2.05088e-007" nz="-0.426115"
+				u="0.491825" v="0.611637">
+					<skin bone="chickenBip Tail" weight="0.833333"/>
+					<skin bone="chickenBip Spine" weight="0.166667"/>
+			</vertex>
+			<vertex x="-0.532396" y="0.0" z="1.72709"
+				r="1" g="1" b="1" a="1"
+				nx="-0.904669" ny="2.05088e-007" nz="-0.426115"
+				u="0.732305" v="0.171142">
+					<skin bone="chickenBip Spine" weight="0.0"/>
+					<skin bone="chickenBip Tail" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.133843" y="0.510607" z="0.880933"
+				r="1" g="1" b="1" a="1"
+				nx="-0.904669" ny="2.05088e-007" nz="-0.426115"
+				u="0.972787" v="0.611637">
+					<skin bone="chickenBip Tail" weight="0.833333"/>
+					<skin bone="chickenBip Spine" weight="0.166667"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.134748" y="0.510607" z="0.880507"
+				r="1" g="1" b="1" a="1"
+				nx="0.904669" ny="0.0" nz="0.426115"
+				u="0.506952" v="0.612057">
+					<skin bone="chickenBip Tail" weight="0.833333"/>
+					<skin bone="chickenBip Spine" weight="0.166667"/>
+			</vertex>
+			<vertex x="-0.5333" y="0.0" z="1.72666"
+				r="1" g="1" b="1" a="1"
+				nx="0.904669" ny="0.0" nz="0.426115"
+				u="0.266471" v="0.171562">
+					<skin bone="chickenBip Spine" weight="0.0"/>
+					<skin bone="chickenBip Tail" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.134748" y="-0.510607" z="0.880507"
+				r="1" g="1" b="1" a="1"
+				nx="0.904669" ny="0.0" nz="0.426115"
+				u="0.0259905" v="0.612057">
+					<skin bone="chickenBip Tail" weight="0.833333"/>
+					<skin bone="chickenBip Spine" weight="0.166667"/>
+			</vertex>
+		</polygon>
+	</polygons>
+</mesh>

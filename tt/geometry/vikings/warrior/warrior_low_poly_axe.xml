@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+
+<!DOCTYPE mesh [
+	<!ELEMENT mesh       (polygons, skeleton)>
+	<!ELEMENT polygons   (polygon+)>
+	<!ELEMENT polygon    (vertex+)>
+	<!ELEMENT vertex     (skin+)>
+
+	<!ELEMENT skeleton   (bones, init_pose)>
+
+	<!ELEMENT bones      (bone+)>
+
+	<!ELEMENT init_pose  (transform+)>
+
+	<!ELEMENT bone        EMPTY>
+
+	<!ELEMENT skin        EMPTY>
+
+	<!ELEMENT transform   EMPTY>
+	<!ATTLIST transform name CDATA #REQUIRED>
+	<!ATTLIST transform m00 CDATA #REQUIRED>
+	<!ATTLIST transform m01 CDATA #REQUIRED>
+	<!ATTLIST transform m02 CDATA #REQUIRED>
+	<!ATTLIST transform m03 CDATA #REQUIRED>
+	<!ATTLIST transform m10 CDATA #REQUIRED>
+	<!ATTLIST transform m11 CDATA #REQUIRED>
+	<!ATTLIST transform m12 CDATA #REQUIRED>
+	<!ATTLIST transform m13 CDATA #REQUIRED>
+	<!ATTLIST transform m20 CDATA #REQUIRED>
+	<!ATTLIST transform m21 CDATA #REQUIRED>
+	<!ATTLIST transform m22 CDATA #REQUIRED>
+	<!ATTLIST transform m23 CDATA #REQUIRED>
+	<!ATTLIST transform m30 CDATA #REQUIRED>
+	<!ATTLIST transform m31 CDATA #REQUIRED>
+	<!ATTLIST transform m32 CDATA #REQUIRED>
+	<!ATTLIST transform m33 CDATA #REQUIRED>
+	<!ATTLIST mesh texture CDATA #REQUIRED>
+	<!ATTLIST vertex x CDATA #REQUIRED>
+	<!ATTLIST vertex y CDATA #REQUIRED>
+	<!ATTLIST vertex z CDATA #REQUIRED>
+	<!ATTLIST vertex r CDATA #REQUIRED>
+	<!ATTLIST vertex g CDATA #REQUIRED>
+	<!ATTLIST vertex b CDATA #REQUIRED>
+	<!ATTLIST vertex a CDATA #REQUIRED>
+	<!ATTLIST vertex nx CDATA #REQUIRED>
+	<!ATTLIST vertex ny CDATA #REQUIRED>
+	<!ATTLIST vertex nz CDATA #REQUIRED>
+	<!ATTLIST vertex u CDATA #REQUIRED>
+	<!ATTLIST vertex v CDATA #REQUIRED>
+	<!ATTLIST bone name CDATA #REQUIRED>
+	<!ATTLIST bone parent CDATA #REQUIRED>
+	<!ATTLIST skin bone CDATA #REQUIRED>
+	<!ATTLIST skin weight CDATA #REQUIRED>
+]>
+
+<mesh texture="viking_warrior">
+	<polygons>
+		<polygon>
+			<vertex x="-0.490513" y="-0.0093473" z="0.220543"
+				r="1" g="1" b="1" a="1"
+				nx="-0.0145214" ny="0.99989" nz="-0.00298821"
+				u="0.10032" v="0.744861">
+					<skin bone="dummy_bone" weight="1"/>
+			</vertex>
+			<vertex x="0.0363592" y="-0.00169549" z="0.220551"
+				r="1" g="1" b="1" a="1"
+				nx="-0.0145214" ny="0.99989" nz="-0.00298821"
+				u="0.14754" v="0.744861">
+					<skin bone="dummy_bone" weight="1"/>
+			</vertex>
+			<vertex x="-0.490342" y="-0.0128556" z="-0.954218"
+				r="1" g="1" b="1" a="1"
+				nx="-0.0145214" ny="0.99989" nz="-0.00298821"
+				u="0.100331" v="0.639586">
+					<skin bone="dummy_bone" weight="1"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.490513" y="-0.0093473" z="0.220543"
+				r="1" g="1" b="1" a="1"
+				nx="0.0145214" ny="-0.99989" nz="0.00298821"
+				u="0.10032" v="0.744861">
+					<skin bone="dummy_bone" weight="1"/>
+			</vertex>
+			<vertex x="-0.490342" y="-0.0128556" z="-0.954218"
+				r="1" g="1" b="1" a="1"
+				nx="0.0145214" ny="-0.99989" nz="0.00298821"
+				u="0.100331" v="0.639586">
+					<skin bone="dummy_bone" weight="1"/>
+			</vertex>
+			<vertex x="0.0363592" y="-0.00169549" z="0.220551"
+				r="1" g="1" b="1" a="1"
+				nx="0.0145214" ny="-0.99989" nz="0.00298821"
+				u="0.14754" v="0.744861">
+					<skin bone="dummy_bone" weight="1"/>
+			</vertex>
+		</polygon>
+	</polygons>
+	<skeleton>
+		<bones>
+			<bone name="dummy_bone" parent="dummy_parent"/>
+		</bones>
+	<init_pose>
+		<transform name="dummy_bone"
+			m00="1" m10="0" m20="0" m30="0"
+			m01="0" m11="1" m21="0" m31="0"
+			m02="0" m12="0" m22="1" m32="0"
+			m03="0" m13="0" m23="0" m33="1"/>
+	</init_pose>
+	</skeleton>
+</mesh>

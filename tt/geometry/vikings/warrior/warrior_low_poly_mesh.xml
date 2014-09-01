@@ -1,0 +1,1746 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+
+<!DOCTYPE mesh [
+	<!ELEMENT mesh       (polygons)>
+	<!ELEMENT polygons   (polygon+)>
+	<!ELEMENT polygon    (vertex+)>
+	<!ELEMENT vertex     (skin+)>
+
+	<!ELEMENT skin        EMPTY>
+
+	<!ATTLIST mesh texture CDATA #REQUIRED>
+	<!ATTLIST vertex x CDATA #REQUIRED>
+	<!ATTLIST vertex y CDATA #REQUIRED>
+	<!ATTLIST vertex z CDATA #REQUIRED>
+	<!ATTLIST vertex r CDATA #REQUIRED>
+	<!ATTLIST vertex g CDATA #REQUIRED>
+	<!ATTLIST vertex b CDATA #REQUIRED>
+	<!ATTLIST vertex a CDATA #REQUIRED>
+	<!ATTLIST vertex nx CDATA #REQUIRED>
+	<!ATTLIST vertex ny CDATA #REQUIRED>
+	<!ATTLIST vertex nz CDATA #REQUIRED>
+	<!ATTLIST vertex u CDATA #REQUIRED>
+	<!ATTLIST vertex v CDATA #REQUIRED>
+	<!ATTLIST skin bone CDATA #REQUIRED>
+	<!ATTLIST skin weight CDATA #REQUIRED>
+]>
+
+<mesh texture="viking_warrior">
+	<polygons>
+		<polygon>
+			<vertex x="-0.224353" y="0.140702" z="1.3751"
+				r="1" g="1" b="1" a="1"
+				nx="-0.713546" ny="0.564497" nz="0.414965"
+				u="0.167296" v="0.733282">
+					<skin bone="warrior Bip Spine1" weight="1.0"/>
+					<skin bone="warrior Bip R UpperArm" weight="0.0"/>
+					<skin bone="warrior Bip Head" weight="0.0"/>
+			</vertex>
+			<vertex x="-0.543141" y="-0.0719832" z="0.648913"
+				r="1" g="1" b="1" a="1"
+				nx="-0.943639" ny="0.183374" nz="-0.275535"
+				u="0.138229" v="0.667866">
+					<skin bone="warrior Bip Pelvis" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.230411" y="-0.680188" z="0.641105"
+				r="1" g="1" b="1" a="1"
+				nx="-0.484513" ny="-0.848776" nz="-0.211723"
+				u="0.187362" v="0.631202">
+					<skin bone="warrior Bip Pelvis" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.224353" y="0.140702" z="1.3751"
+				r="1" g="1" b="1" a="1"
+				nx="-0.713546" ny="0.564497" nz="0.414965"
+				u="0.167296" v="0.733282">
+					<skin bone="warrior Bip Spine1" weight="1.0"/>
+					<skin bone="warrior Bip R UpperArm" weight="0.0"/>
+					<skin bone="warrior Bip Head" weight="0.0"/>
+			</vertex>
+			<vertex x="-0.230411" y="-0.680188" z="0.641105"
+				r="1" g="1" b="1" a="1"
+				nx="-0.484513" ny="-0.848776" nz="-0.211723"
+				u="0.187362" v="0.631202">
+					<skin bone="warrior Bip Pelvis" weight="1.0"/>
+			</vertex>
+			<vertex x="-4.80408e-005" y="-0.246138" z="1.28967"
+				r="1" g="1" b="1" a="1"
+				nx="-0.00184836" ny="-0.839068" nz="0.544023"
+				u="0.207843" v="0.719831">
+					<skin bone="warrior Bip Spine1" weight="0.99966"/>
+					<skin bone="warrior Bip Head" weight="0.000339591"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.00498819" y="0.211973" z="0.631624"
+				r="1" g="1" b="1" a="1"
+				nx="0.00204004" ny="0.914254" nz="-0.405136"
+				u="0.311083" v="0.741311">
+					<skin bone="warrior Bip Pelvis" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.543141" y="-0.0719832" z="0.648913"
+				r="1" g="1" b="1" a="1"
+				nx="-0.943639" ny="0.183374" nz="-0.275535"
+				u="0.368351" v="0.741098">
+					<skin bone="warrior Bip Pelvis" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.224353" y="0.140702" z="1.3751"
+				r="1" g="1" b="1" a="1"
+				nx="-0.713546" ny="0.564497" nz="0.414965"
+				u="0.332275" v="0.808062">
+					<skin bone="warrior Bip Spine1" weight="1.0"/>
+					<skin bone="warrior Bip R UpperArm" weight="0.0"/>
+					<skin bone="warrior Bip Head" weight="0.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.543141" y="-0.0719832" z="0.648913"
+				r="1" g="1" b="1" a="1"
+				nx="-0.943639" ny="0.183374" nz="-0.275535"
+				u="0.153383" v="0.580175">
+					<skin bone="warrior Bip Pelvis" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.000459443" y="-0.115936" z="0.366572"
+				r="1" g="1" b="1" a="1"
+				nx="-0.00471369" ny="0.142933" nz="-0.989721"
+				u="0.208099" v="0.575018">
+					<skin bone="warrior Bip Pelvis" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.230411" y="-0.680188" z="0.641105"
+				r="1" g="1" b="1" a="1"
+				nx="-0.484513" ny="-0.848776" nz="-0.211723"
+				u="0.187362" v="0.631202">
+					<skin bone="warrior Bip Pelvis" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-4.80408e-005" y="-0.246138" z="1.28967"
+				r="1" g="1" b="1" a="1"
+				nx="-0.00184836" ny="-0.839068" nz="0.544023"
+				u="0.207843" v="0.719831">
+					<skin bone="warrior Bip Spine1" weight="0.99966"/>
+					<skin bone="warrior Bip Head" weight="0.000339591"/>
+			</vertex>
+			<vertex x="0.235399" y="-0.680188" z="0.641105"
+				r="1" g="1" b="1" a="1"
+				nx="0.483965" ny="-0.849186" nz="-0.21133"
+				u="0.229105" v="0.631299">
+					<skin bone="warrior Bip Pelvis" weight="1.0"/>
+			</vertex>
+			<vertex x="0.224353" y="0.140702" z="1.3751"
+				r="1" g="1" b="1" a="1"
+				nx="0.710813" ny="0.564897" nz="0.41909"
+				u="0.248138" v="0.733625">
+					<skin bone="warrior Bip Spine1" weight="1.0"/>
+					<skin bone="warrior Bip L UpperArm" weight="0.0"/>
+					<skin bone="warrior Bip Head" weight="0.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.522976" y="-0.0337285" z="1.3499"
+				r="1" g="1" b="1" a="1"
+				nx="-0.343071" ny="-0.933083" nz="-0.107976"
+				u="0.400323" v="0.767061">
+					<skin bone="warrior Bip L UpperArm" weight="0.5"/>
+					<skin bone="warrior Bip L Forearm" weight="0.5"/>
+			</vertex>
+			<vertex x="0.536114" y="0.0926801" z="1.24884"
+				r="1" g="1" b="1" a="1"
+				nx="-0.237192" ny="-0.247044" nz="-0.939526"
+				u="0.398104" v="0.752701">
+					<skin bone="warrior Bip L Forearm" weight="0.666667"/>
+					<skin bone="warrior Bip L UpperArm" weight="0.333333"/>
+			</vertex>
+			<vertex x="1.12521" y="0.0964689" z="1.13584"
+				r="1" g="1" b="1" a="1"
+				nx="0.37633" ny="-0.71631" nz="-0.587602"
+				u="0.450313" v="0.736291">
+					<skin bone="warrior Bip L Forearm" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-4.80408e-005" y="-0.246138" z="1.28967"
+				r="1" g="1" b="1" a="1"
+				nx="-0.00184836" ny="-0.839068" nz="0.544023"
+				u="0.207843" v="0.719831">
+					<skin bone="warrior Bip Spine1" weight="0.99966"/>
+					<skin bone="warrior Bip Head" weight="0.000339591"/>
+			</vertex>
+			<vertex x="0.224353" y="0.140702" z="1.3751"
+				r="1" g="1" b="1" a="1"
+				nx="0.710813" ny="0.564897" nz="0.41909"
+				u="0.248138" v="0.733625">
+					<skin bone="warrior Bip Spine1" weight="1.0"/>
+					<skin bone="warrior Bip L UpperArm" weight="0.0"/>
+					<skin bone="warrior Bip Head" weight="0.0"/>
+			</vertex>
+			<vertex x="0.0" y="-0.300081" z="2.17742"
+				r="1" g="1" b="1" a="1"
+				nx="1.81847e-005" ny="-0.345841" nz="0.938293"
+				u="0.207402" v="0.807615">
+					<skin bone="warrior Bip Head" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-4.80408e-005" y="-0.246138" z="1.28967"
+				r="1" g="1" b="1" a="1"
+				nx="-0.00184836" ny="-0.839068" nz="0.544023"
+				u="0.207843" v="0.719831">
+					<skin bone="warrior Bip Spine1" weight="0.99966"/>
+					<skin bone="warrior Bip Head" weight="0.000339591"/>
+			</vertex>
+			<vertex x="-0.230411" y="-0.680188" z="0.641105"
+				r="1" g="1" b="1" a="1"
+				nx="-0.484513" ny="-0.848776" nz="-0.211723"
+				u="0.187362" v="0.631202">
+					<skin bone="warrior Bip Pelvis" weight="1.0"/>
+			</vertex>
+			<vertex x="0.235399" y="-0.680188" z="0.641105"
+				r="1" g="1" b="1" a="1"
+				nx="0.483965" ny="-0.849186" nz="-0.21133"
+				u="0.229105" v="0.631299">
+					<skin bone="warrior Bip Pelvis" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.543141" y="-0.0719832" z="0.648913"
+				r="1" g="1" b="1" a="1"
+				nx="-0.943639" ny="0.183374" nz="-0.275535"
+				u="0.368351" v="0.741098">
+					<skin bone="warrior Bip Pelvis" weight="1.0"/>
+			</vertex>
+			<vertex x="0.00498819" y="0.211973" z="0.631624"
+				r="1" g="1" b="1" a="1"
+				nx="0.00204004" ny="0.914254" nz="-0.405136"
+				u="0.311083" v="0.741311">
+					<skin bone="warrior Bip Pelvis" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.000459443" y="-0.115936" z="0.366572"
+				r="1" g="1" b="1" a="1"
+				nx="-0.00471369" ny="0.142933" nz="-0.989721"
+				u="0.311338" v="0.703499">
+					<skin bone="warrior Bip Pelvis" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="1.08174" y="0.0973019" z="1.59051"
+				r="1" g="1" b="1" a="1"
+				nx="0.471278" ny="0.108466" nz="0.87529"
+				u="0.481197" v="0.763151">
+					<skin bone="warrior Bip L Forearm" weight="1.0"/>
+			</vertex>
+			<vertex x="1.165" y="-0.209221" z="1.58366"
+				r="1" g="1" b="1" a="1"
+				nx="0.540195" ny="-0.718767" nz="0.437681"
+				u="0.461501" v="0.783709">
+					<skin bone="warrior Bip L Forearm" weight="1.0"/>
+			</vertex>
+			<vertex x="1.12521" y="0.0964689" z="1.13584"
+				r="1" g="1" b="1" a="1"
+				nx="0.37633" ny="-0.71631" nz="-0.587602"
+				u="0.450313" v="0.736291">
+					<skin bone="warrior Bip L Forearm" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.522976" y="-0.0337285" z="1.3499"
+				r="1" g="1" b="1" a="1"
+				nx="-0.343071" ny="-0.933083" nz="-0.107976"
+				u="0.400323" v="0.767061">
+					<skin bone="warrior Bip L UpperArm" weight="0.5"/>
+					<skin bone="warrior Bip L Forearm" weight="0.5"/>
+			</vertex>
+			<vertex x="1.12521" y="0.0964689" z="1.13584"
+				r="1" g="1" b="1" a="1"
+				nx="0.37633" ny="-0.71631" nz="-0.587602"
+				u="0.450313" v="0.736291">
+					<skin bone="warrior Bip L Forearm" weight="1.0"/>
+			</vertex>
+			<vertex x="1.165" y="-0.209221" z="1.58366"
+				r="1" g="1" b="1" a="1"
+				nx="0.540195" ny="-0.718767" nz="0.437681"
+				u="0.461501" v="0.783709">
+					<skin bone="warrior Bip L Forearm" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="1.08174" y="0.0973019" z="1.59051"
+				r="1" g="1" b="1" a="1"
+				nx="0.471278" ny="0.108466" nz="0.87529"
+				u="0.442499" v="0.80491">
+					<skin bone="warrior Bip L Forearm" weight="1.0"/>
+			</vertex>
+			<vertex x="0.536114" y="0.0926801" z="1.45096"
+				r="1" g="1" b="1" a="1"
+				nx="-0.357816" ny="-0.118382" nz="0.926258"
+				u="0.398038" v="0.781426">
+					<skin bone="warrior Bip L UpperArm" weight="0.333333"/>
+					<skin bone="warrior Bip L Forearm" weight="0.666667"/>
+			</vertex>
+			<vertex x="1.165" y="-0.209221" z="1.58366"
+				r="1" g="1" b="1" a="1"
+				nx="0.540195" ny="-0.718767" nz="0.437681"
+				u="0.461501" v="0.783709">
+					<skin bone="warrior Bip L Forearm" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.890975" y="-0.0908025" z="2.24755"
+				r="1" g="1" b="1" a="1"
+				nx="0.123706" ny="-0.991367" nz="-0.0434542"
+				u="0.10032" v="0.744861">
+					<skin bone="warrior Bip Prop1" weight="1.0"/>
+			</vertex>
+			<vertex x="-1.41375" y="-0.155441" z="2.23398"
+				r="1" g="1" b="1" a="1"
+				nx="0.123706" ny="-0.991367" nz="-0.0434542"
+				u="0.14754" v="0.744861">
+					<skin bone="warrior Bip Prop1" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.867312" y="-0.0364223" z="1.07428"
+				r="1" g="1" b="1" a="1"
+				nx="0.123706" ny="-0.991367" nz="-0.0434542"
+				u="0.100331" v="0.639586">
+					<skin bone="warrior Bip Prop1" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.890975" y="-0.0908025" z="2.24755"
+				r="1" g="1" b="1" a="1"
+				nx="-0.123706" ny="0.991367" nz="0.0434542"
+				u="0.10032" v="0.744861">
+					<skin bone="warrior Bip Prop1" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.867312" y="-0.0364223" z="1.07428"
+				r="1" g="1" b="1" a="1"
+				nx="-0.123706" ny="0.991367" nz="0.0434542"
+				u="0.100331" v="0.639586">
+					<skin bone="warrior Bip Prop1" weight="1.0"/>
+			</vertex>
+			<vertex x="-1.41375" y="-0.155441" z="2.23398"
+				r="1" g="1" b="1" a="1"
+				nx="-0.123706" ny="0.991367" nz="0.0434542"
+				u="0.14754" v="0.744861">
+					<skin bone="warrior Bip Prop1" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.508635" y="0.0949147" z="1.85348"
+				r="1" g="1" b="1" a="1"
+				nx="-0.0168829" ny="0.999857" nz="0.0"
+				u="0.388435" v="0.984949">
+					<skin bone="warrior Bip L Forearm" weight="1.0"/>
+					<skin bone="warrior Bip R UpperArm" weight="0.0"/>
+			</vertex>
+			<vertex x="1.40951" y="0.110126" z="0.940323"
+				r="1" g="1" b="1" a="1"
+				nx="-0.0168829" ny="0.999857" nz="0.0"
+				u="0.307693" v="0.903118">
+					<skin bone="warrior Bip L Forearm" weight="1.0"/>
+			</vertex>
+			<vertex x="0.508635" y="0.0949149" z="0.940656"
+				r="1" g="1" b="1" a="1"
+				nx="-0.0168828" ny="0.999857" nz="1.55058e-007"
+				u="0.388435" v="0.903148">
+					<skin bone="warrior Bip L Forearm" weight="1.0"/>
+					<skin bone="warrior Bip R UpperArm" weight="0.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="1.40951" y="0.110126" z="1.85222"
+				r="1" g="1" b="1" a="1"
+				nx="-0.0168829" ny="0.999857" nz="0.0"
+				u="0.307693" v="0.984837">
+					<skin bone="warrior Bip L Forearm" weight="1.0"/>
+			</vertex>
+			<vertex x="1.40951" y="0.110126" z="0.940323"
+				r="1" g="1" b="1" a="1"
+				nx="-0.0168829" ny="0.999857" nz="0.0"
+				u="0.307693" v="0.903118">
+					<skin bone="warrior Bip L Forearm" weight="1.0"/>
+			</vertex>
+			<vertex x="0.508635" y="0.0949147" z="1.85348"
+				r="1" g="1" b="1" a="1"
+				nx="-0.0168829" ny="0.999857" nz="0.0"
+				u="0.388435" v="0.984949">
+					<skin bone="warrior Bip L Forearm" weight="1.0"/>
+					<skin bone="warrior Bip R UpperArm" weight="0.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="1.40951" y="0.110126" z="0.940323"
+				r="1" g="1" b="1" a="1"
+				nx="0.0168829" ny="-0.999857" nz="0.0"
+				u="0.297424" v="0.903265">
+					<skin bone="warrior Bip L Forearm" weight="1.0"/>
+			</vertex>
+			<vertex x="0.508635" y="0.0949147" z="1.85348"
+				r="1" g="1" b="1" a="1"
+				nx="0.0168829" ny="-0.999857" nz="0.0"
+				u="0.216682" v="0.985096">
+					<skin bone="warrior Bip L Forearm" weight="1.0"/>
+					<skin bone="warrior Bip R UpperArm" weight="0.0"/>
+			</vertex>
+			<vertex x="0.508635" y="0.0949149" z="0.940656"
+				r="1" g="1" b="1" a="1"
+				nx="0.0168828" ny="-0.999857" nz="-1.55058e-007"
+				u="0.216682" v="0.903295">
+					<skin bone="warrior Bip L Forearm" weight="1.0"/>
+					<skin bone="warrior Bip R UpperArm" weight="0.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="1.40951" y="0.110126" z="1.85222"
+				r="1" g="1" b="1" a="1"
+				nx="0.0168829" ny="-0.999857" nz="0.0"
+				u="0.297424" v="0.984983">
+					<skin bone="warrior Bip L Forearm" weight="1.0"/>
+			</vertex>
+			<vertex x="0.508635" y="0.0949147" z="1.85348"
+				r="1" g="1" b="1" a="1"
+				nx="0.0168829" ny="-0.999857" nz="0.0"
+				u="0.216682" v="0.985096">
+					<skin bone="warrior Bip L Forearm" weight="1.0"/>
+					<skin bone="warrior Bip R UpperArm" weight="0.0"/>
+			</vertex>
+			<vertex x="1.40951" y="0.110126" z="0.940323"
+				r="1" g="1" b="1" a="1"
+				nx="0.0168829" ny="-0.999857" nz="0.0"
+				u="0.297424" v="0.903265">
+					<skin bone="warrior Bip L Forearm" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.0" y="-0.300081" z="2.17742"
+				r="1" g="1" b="1" a="1"
+				nx="1.81847e-005" ny="-0.345841" nz="0.938293"
+				u="0.312944" v="0.890283">
+					<skin bone="warrior Bip Head" weight="1.0"/>
+			</vertex>
+			<vertex x="0.224353" y="0.140702" z="1.3751"
+				r="1" g="1" b="1" a="1"
+				nx="0.710813" ny="0.564897" nz="0.41909"
+				u="0.292067" v="0.808441">
+					<skin bone="warrior Bip Spine1" weight="1.0"/>
+					<skin bone="warrior Bip L UpperArm" weight="0.0"/>
+					<skin bone="warrior Bip Head" weight="0.0"/>
+			</vertex>
+			<vertex x="-0.224353" y="0.140702" z="1.3751"
+				r="1" g="1" b="1" a="1"
+				nx="-0.713546" ny="0.564497" nz="0.414965"
+				u="0.332275" v="0.808062">
+					<skin bone="warrior Bip Spine1" weight="1.0"/>
+					<skin bone="warrior Bip R UpperArm" weight="0.0"/>
+					<skin bone="warrior Bip Head" weight="0.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.0" y="-0.300081" z="2.17742"
+				r="1" g="1" b="1" a="1"
+				nx="1.81847e-005" ny="-0.345841" nz="0.938293"
+				u="0.207402" v="0.807615">
+					<skin bone="warrior Bip Head" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.224353" y="0.140702" z="1.3751"
+				r="1" g="1" b="1" a="1"
+				nx="-0.713546" ny="0.564497" nz="0.414965"
+				u="0.167296" v="0.733282">
+					<skin bone="warrior Bip Spine1" weight="1.0"/>
+					<skin bone="warrior Bip R UpperArm" weight="0.0"/>
+					<skin bone="warrior Bip Head" weight="0.0"/>
+			</vertex>
+			<vertex x="-4.80408e-005" y="-0.246138" z="1.28967"
+				r="1" g="1" b="1" a="1"
+				nx="-0.00184836" ny="-0.839068" nz="0.544023"
+				u="0.207843" v="0.719831">
+					<skin bone="warrior Bip Spine1" weight="0.99966"/>
+					<skin bone="warrior Bip Head" weight="0.000339591"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.235399" y="-0.680188" z="0.641105"
+				r="1" g="1" b="1" a="1"
+				nx="0.483965" ny="-0.849186" nz="-0.21133"
+				u="0.229105" v="0.631299">
+					<skin bone="warrior Bip Pelvis" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.000459443" y="-0.115936" z="0.366572"
+				r="1" g="1" b="1" a="1"
+				nx="-0.00471369" ny="0.142933" nz="-0.989721"
+				u="0.208099" v="0.575018">
+					<skin bone="warrior Bip Pelvis" weight="1.0"/>
+			</vertex>
+			<vertex x="0.553117" y="-0.0719834" z="0.648913"
+				r="1" g="1" b="1" a="1"
+				nx="0.944932" ny="0.180465" nz="-0.273014"
+				u="0.263663" v="0.580413">
+					<skin bone="warrior Bip Pelvis" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.235399" y="-0.680188" z="0.641105"
+				r="1" g="1" b="1" a="1"
+				nx="0.483965" ny="-0.849186" nz="-0.21133"
+				u="0.229105" v="0.631299">
+					<skin bone="warrior Bip Pelvis" weight="1.0"/>
+			</vertex>
+			<vertex x="0.553117" y="-0.0719834" z="0.648913"
+				r="1" g="1" b="1" a="1"
+				nx="0.944932" ny="0.180465" nz="-0.273014"
+				u="0.278263" v="0.668273">
+					<skin bone="warrior Bip Pelvis" weight="1.0"/>
+			</vertex>
+			<vertex x="0.224353" y="0.140702" z="1.3751"
+				r="1" g="1" b="1" a="1"
+				nx="0.710813" ny="0.564897" nz="0.41909"
+				u="0.248138" v="0.733625">
+					<skin bone="warrior Bip Spine1" weight="1.0"/>
+					<skin bone="warrior Bip L UpperArm" weight="0.0"/>
+					<skin bone="warrior Bip Head" weight="0.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.230411" y="-0.680188" z="0.641105"
+				r="1" g="1" b="1" a="1"
+				nx="-0.484513" ny="-0.848776" nz="-0.211723"
+				u="0.187362" v="0.631202">
+					<skin bone="warrior Bip Pelvis" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.000459443" y="-0.115936" z="0.366572"
+				r="1" g="1" b="1" a="1"
+				nx="-0.00471369" ny="0.142933" nz="-0.989721"
+				u="0.208099" v="0.575018">
+					<skin bone="warrior Bip Pelvis" weight="1.0"/>
+			</vertex>
+			<vertex x="0.235399" y="-0.680188" z="0.641105"
+				r="1" g="1" b="1" a="1"
+				nx="0.483965" ny="-0.849186" nz="-0.21133"
+				u="0.229105" v="0.631299">
+					<skin bone="warrior Bip Pelvis" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.224353" y="0.140702" z="1.3751"
+				r="1" g="1" b="1" a="1"
+				nx="0.710813" ny="0.564897" nz="0.41909"
+				u="0.292067" v="0.808441">
+					<skin bone="warrior Bip Spine1" weight="1.0"/>
+					<skin bone="warrior Bip L UpperArm" weight="0.0"/>
+					<skin bone="warrior Bip Head" weight="0.0"/>
+			</vertex>
+			<vertex x="0.00498819" y="0.211973" z="0.631624"
+				r="1" g="1" b="1" a="1"
+				nx="0.00204004" ny="0.914254" nz="-0.405136"
+				u="0.311083" v="0.741311">
+					<skin bone="warrior Bip Pelvis" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.224353" y="0.140702" z="1.3751"
+				r="1" g="1" b="1" a="1"
+				nx="-0.713546" ny="0.564497" nz="0.414965"
+				u="0.332275" v="0.808062">
+					<skin bone="warrior Bip Spine1" weight="1.0"/>
+					<skin bone="warrior Bip R UpperArm" weight="0.0"/>
+					<skin bone="warrior Bip Head" weight="0.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.00498819" y="0.211973" z="0.631624"
+				r="1" g="1" b="1" a="1"
+				nx="0.00204004" ny="0.914254" nz="-0.405136"
+				u="0.311083" v="0.741311">
+					<skin bone="warrior Bip Pelvis" weight="1.0"/>
+			</vertex>
+			<vertex x="0.553117" y="-0.0719834" z="0.648913"
+				r="1" g="1" b="1" a="1"
+				nx="0.944932" ny="0.180465" nz="-0.273014"
+				u="0.253737" v="0.741263">
+					<skin bone="warrior Bip Pelvis" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.000459443" y="-0.115936" z="0.366572"
+				r="1" g="1" b="1" a="1"
+				nx="-0.00471369" ny="0.142933" nz="-0.989721"
+				u="0.311338" v="0.703499">
+					<skin bone="warrior Bip Pelvis" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.536114" y="0.0926801" z="1.45096"
+				r="1" g="1" b="1" a="1"
+				nx="-0.357816" ny="-0.118382" nz="0.926258"
+				u="0.398038" v="0.781426">
+					<skin bone="warrior Bip L UpperArm" weight="0.333333"/>
+					<skin bone="warrior Bip L Forearm" weight="0.666667"/>
+			</vertex>
+			<vertex x="0.522976" y="-0.0337285" z="1.3499"
+				r="1" g="1" b="1" a="1"
+				nx="-0.343071" ny="-0.933083" nz="-0.107976"
+				u="0.400323" v="0.767061">
+					<skin bone="warrior Bip L UpperArm" weight="0.5"/>
+					<skin bone="warrior Bip L Forearm" weight="0.5"/>
+			</vertex>
+			<vertex x="1.165" y="-0.209221" z="1.58366"
+				r="1" g="1" b="1" a="1"
+				nx="0.540195" ny="-0.718767" nz="0.437681"
+				u="0.461501" v="0.783709">
+					<skin bone="warrior Bip L Forearm" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.379907" y="-0.318733" z="2.3155"
+				r="1" g="1" b="1" a="1"
+				nx="1.55804e-007" ny="-0.993061" nz="-0.1176"
+				u="0.279539" v="0.812915">
+					<skin bone="warrior Bip Head" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.379907" y="-0.318734" z="2.3155"
+				r="1" g="1" b="1" a="1"
+				nx="1.55804e-007" ny="-0.993061" nz="-0.1176"
+				u="0.211449" v="0.812915">
+					<skin bone="warrior Bip Head" weight="1.0"/>
+			</vertex>
+			<vertex x="0.0" y="-0.271086" z="1.91315"
+				r="1" g="1" b="1" a="1"
+				nx="1.55804e-007" ny="-0.993061" nz="-0.1176"
+				u="0.245494" v="0.776606">
+					<skin bone="warrior Bip Head" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.379907" y="-0.318734" z="2.3155"
+				r="1" g="1" b="1" a="1"
+				nx="-1.55804e-007" ny="0.993061" nz="0.1176"
+				u="0.211449" v="0.812915">
+					<skin bone="warrior Bip Head" weight="1.0"/>
+			</vertex>
+			<vertex x="0.379907" y="-0.318733" z="2.3155"
+				r="1" g="1" b="1" a="1"
+				nx="-1.55804e-007" ny="0.993061" nz="0.1176"
+				u="0.279539" v="0.812915">
+					<skin bone="warrior Bip Head" weight="1.0"/>
+			</vertex>
+			<vertex x="0.0" y="-0.271086" z="1.91315"
+				r="1" g="1" b="1" a="1"
+				nx="-1.55804e-007" ny="0.993061" nz="0.1176"
+				u="0.245494" v="0.776606">
+					<skin bone="warrior Bip Head" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.522976" y="-0.0337285" z="1.3499"
+				r="1" g="1" b="1" a="1"
+				nx="0.343071" ny="-0.933083" nz="-0.107975"
+				u="0.14605" v="0.788119">
+					<skin bone="warrior Bip R UpperArm" weight="0.333333"/>
+					<skin bone="warrior Bip R Forearm" weight="0.666667"/>
+			</vertex>
+			<vertex x="-1.12521" y="0.096469" z="1.13584"
+				r="1" g="1" b="1" a="1"
+				nx="-0.513662" ny="0.256841" nz="-0.818648"
+				u="0.0953926" v="0.757716">
+					<skin bone="warrior Bip R Hand" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.536114" y="0.0926801" z="1.24884"
+				r="1" g="1" b="1" a="1"
+				nx="0.228188" ny="0.406302" nz="-0.884788"
+				u="0.148269" v="0.773755">
+					<skin bone="warrior Bip R Forearm" weight="0.5"/>
+					<skin bone="warrior Bip R UpperArm" weight="0.5"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.093441" y="0.0160623" z="1.36687"
+				r="1" g="1" b="1" a="1"
+				nx="0.996355" ny="-0.077074" nz="0.0365648"
+				u="0.186356" v="0.790622">
+					<skin bone="warrior Bip Spine1" weight="0.5"/>
+					<skin bone="warrior Bip Head" weight="0.0"/>
+					<skin bone="warrior Bip R UpperArm" weight="0.5"/>
+			</vertex>
+			<vertex x="-0.536114" y="0.0926801" z="1.24884"
+				r="1" g="1" b="1" a="1"
+				nx="0.228188" ny="0.406302" nz="-0.884788"
+				u="0.158603" v="0.823436">
+					<skin bone="warrior Bip R Forearm" weight="0.5"/>
+					<skin bone="warrior Bip R UpperArm" weight="0.5"/>
+			</vertex>
+			<vertex x="-0.536114" y="0.0926801" z="1.45096"
+				r="1" g="1" b="1" a="1"
+				nx="0.321336" ny="0.475185" nz="0.819111"
+				u="0.148169" v="0.804616">
+					<skin bone="warrior Bip R Forearm" weight="0.5"/>
+					<skin bone="warrior Bip R UpperArm" weight="0.5"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.093441" y="0.0160623" z="1.36687"
+				r="1" g="1" b="1" a="1"
+				nx="0.996355" ny="-0.077074" nz="0.0365648"
+				u="0.186356" v="0.790622">
+					<skin bone="warrior Bip Spine1" weight="0.5"/>
+					<skin bone="warrior Bip Head" weight="0.0"/>
+					<skin bone="warrior Bip R UpperArm" weight="0.5"/>
+			</vertex>
+			<vertex x="-0.549802" y="-0.0337285" z="1.3499"
+				r="1" g="1" b="1" a="1"
+				nx="0.109018" ny="-0.993918" nz="-0.0155431"
+				u="0.14605" v="0.788119">
+					<skin bone="warrior Bip R UpperArm" weight="0.666667"/>
+					<skin bone="warrior Bip R Forearm" weight="0.333333"/>
+			</vertex>
+			<vertex x="-0.536114" y="0.0926801" z="1.24884"
+				r="1" g="1" b="1" a="1"
+				nx="0.228188" ny="0.406302" nz="-0.884788"
+				u="0.148269" v="0.773755">
+					<skin bone="warrior Bip R Forearm" weight="0.5"/>
+					<skin bone="warrior Bip R UpperArm" weight="0.5"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.093441" y="0.0160623" z="1.36687"
+				r="1" g="1" b="1" a="1"
+				nx="0.996355" ny="-0.077074" nz="0.0365648"
+				u="0.186356" v="0.790622">
+					<skin bone="warrior Bip Spine1" weight="0.5"/>
+					<skin bone="warrior Bip Head" weight="0.0"/>
+					<skin bone="warrior Bip R UpperArm" weight="0.5"/>
+			</vertex>
+			<vertex x="-0.536114" y="0.0926801" z="1.45096"
+				r="1" g="1" b="1" a="1"
+				nx="0.321336" ny="0.475185" nz="0.819111"
+				u="0.148169" v="0.804616">
+					<skin bone="warrior Bip R Forearm" weight="0.5"/>
+					<skin bone="warrior Bip R UpperArm" weight="0.5"/>
+			</vertex>
+			<vertex x="-0.549802" y="-0.0337285" z="1.3499"
+				r="1" g="1" b="1" a="1"
+				nx="0.109018" ny="-0.993918" nz="-0.0155431"
+				u="0.14605" v="0.788119">
+					<skin bone="warrior Bip R UpperArm" weight="0.666667"/>
+					<skin bone="warrior Bip R Forearm" weight="0.333333"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-1.08174" y="0.0973019" z="1.59051"
+				r="1" g="1" b="1" a="1"
+				nx="-0.372874" ny="0.610718" nz="0.698562"
+				u="0.0645087" v="0.784576">
+					<skin bone="warrior Bip R Hand" weight="1.0"/>
+			</vertex>
+			<vertex x="-1.12521" y="0.096469" z="1.13584"
+				r="1" g="1" b="1" a="1"
+				nx="-0.513662" ny="0.256841" nz="-0.818648"
+				u="0.0953926" v="0.757716">
+					<skin bone="warrior Bip R Hand" weight="1.0"/>
+			</vertex>
+			<vertex x="-1.165" y="-0.209221" z="1.58366"
+				r="1" g="1" b="1" a="1"
+				nx="-0.540195" ny="-0.718767" nz="0.437681"
+				u="0.0842617" v="0.805016">
+					<skin bone="warrior Bip R Hand" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.522976" y="-0.0337285" z="1.3499"
+				r="1" g="1" b="1" a="1"
+				nx="0.343071" ny="-0.933083" nz="-0.107975"
+				u="0.14605" v="0.788119">
+					<skin bone="warrior Bip R UpperArm" weight="0.333333"/>
+					<skin bone="warrior Bip R Forearm" weight="0.666667"/>
+			</vertex>
+			<vertex x="-1.165" y="-0.209221" z="1.58366"
+				r="1" g="1" b="1" a="1"
+				nx="-0.540195" ny="-0.718767" nz="0.437681"
+				u="0.0842617" v="0.805016">
+					<skin bone="warrior Bip R Hand" weight="1.0"/>
+			</vertex>
+			<vertex x="-1.12521" y="0.096469" z="1.13584"
+				r="1" g="1" b="1" a="1"
+				nx="-0.513662" ny="0.256841" nz="-0.818648"
+				u="0.0953926" v="0.757716">
+					<skin bone="warrior Bip R Hand" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-1.08174" y="0.0973019" z="1.59051"
+				r="1" g="1" b="1" a="1"
+				nx="-0.372874" ny="0.610718" nz="0.698562"
+				u="0.101084" v="0.827908">
+					<skin bone="warrior Bip R Hand" weight="1.0"/>
+			</vertex>
+			<vertex x="-1.165" y="-0.209221" z="1.58366"
+				r="1" g="1" b="1" a="1"
+				nx="-0.540195" ny="-0.718767" nz="0.437681"
+				u="0.0842617" v="0.805016">
+					<skin bone="warrior Bip R Hand" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.536114" y="0.0926801" z="1.45096"
+				r="1" g="1" b="1" a="1"
+				nx="0.321336" ny="0.475185" nz="0.819111"
+				u="0.148169" v="0.804616">
+					<skin bone="warrior Bip R Forearm" weight="0.5"/>
+					<skin bone="warrior Bip R UpperArm" weight="0.5"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.536114" y="0.0926801" z="1.45096"
+				r="1" g="1" b="1" a="1"
+				nx="0.321336" ny="0.475185" nz="0.819111"
+				u="0.148169" v="0.804616">
+					<skin bone="warrior Bip R Forearm" weight="0.5"/>
+					<skin bone="warrior Bip R UpperArm" weight="0.5"/>
+			</vertex>
+			<vertex x="-1.165" y="-0.209221" z="1.58366"
+				r="1" g="1" b="1" a="1"
+				nx="-0.540195" ny="-0.718767" nz="0.437681"
+				u="0.0842617" v="0.805016">
+					<skin bone="warrior Bip R Hand" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.522976" y="-0.0337285" z="1.3499"
+				r="1" g="1" b="1" a="1"
+				nx="0.343071" ny="-0.933083" nz="-0.107975"
+				u="0.14605" v="0.788119">
+					<skin bone="warrior Bip R UpperArm" weight="0.333333"/>
+					<skin bone="warrior Bip R Forearm" weight="0.666667"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.0934409" y="0.0160623" z="1.36687"
+				r="1" g="1" b="1" a="1"
+				nx="-0.996355" ny="-0.0770741" nz="0.0365643"
+				u="0.359004" v="0.769581">
+					<skin bone="warrior Bip Spine1" weight="0.5"/>
+					<skin bone="warrior Bip Head" weight="0.0"/>
+					<skin bone="warrior Bip L UpperArm" weight="0.5"/>
+			</vertex>
+			<vertex x="0.536114" y="0.0926801" z="1.45096"
+				r="1" g="1" b="1" a="1"
+				nx="-0.357816" ny="-0.118382" nz="0.926258"
+				u="0.398038" v="0.781426">
+					<skin bone="warrior Bip L UpperArm" weight="0.333333"/>
+					<skin bone="warrior Bip L Forearm" weight="0.666667"/>
+			</vertex>
+			<vertex x="0.536114" y="0.0926801" z="1.24884"
+				r="1" g="1" b="1" a="1"
+				nx="-0.237192" ny="-0.247044" nz="-0.939526"
+				u="0.389755" v="0.797635">
+					<skin bone="warrior Bip L Forearm" weight="0.666667"/>
+					<skin bone="warrior Bip L UpperArm" weight="0.333333"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.0934409" y="0.0160623" z="1.36687"
+				r="1" g="1" b="1" a="1"
+				nx="-0.996355" ny="-0.0770741" nz="0.0365643"
+				u="0.359004" v="0.769581">
+					<skin bone="warrior Bip Spine1" weight="0.5"/>
+					<skin bone="warrior Bip Head" weight="0.0"/>
+					<skin bone="warrior Bip L UpperArm" weight="0.5"/>
+			</vertex>
+			<vertex x="0.536114" y="0.0926801" z="1.24884"
+				r="1" g="1" b="1" a="1"
+				nx="-0.237192" ny="-0.247044" nz="-0.939526"
+				u="0.398104" v="0.752701">
+					<skin bone="warrior Bip L Forearm" weight="0.666667"/>
+					<skin bone="warrior Bip L UpperArm" weight="0.333333"/>
+			</vertex>
+			<vertex x="0.549802" y="-0.0337285" z="1.3499"
+				r="1" g="1" b="1" a="1"
+				nx="-0.109018" ny="-0.993918" nz="-0.0155436"
+				u="0.400323" v="0.767061">
+					<skin bone="warrior Bip L UpperArm" weight="0.993833"/>
+					<skin bone="warrior Bip L Forearm" weight="0.00616705"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.0934409" y="0.0160623" z="1.36687"
+				r="1" g="1" b="1" a="1"
+				nx="-0.996355" ny="-0.0770741" nz="0.0365643"
+				u="0.359004" v="0.769581">
+					<skin bone="warrior Bip Spine1" weight="0.5"/>
+					<skin bone="warrior Bip Head" weight="0.0"/>
+					<skin bone="warrior Bip L UpperArm" weight="0.5"/>
+			</vertex>
+			<vertex x="0.549802" y="-0.0337285" z="1.3499"
+				r="1" g="1" b="1" a="1"
+				nx="-0.109018" ny="-0.993918" nz="-0.0155436"
+				u="0.400323" v="0.767061">
+					<skin bone="warrior Bip L UpperArm" weight="0.993833"/>
+					<skin bone="warrior Bip L Forearm" weight="0.00616705"/>
+			</vertex>
+			<vertex x="0.536114" y="0.0926801" z="1.45096"
+				r="1" g="1" b="1" a="1"
+				nx="-0.357816" ny="-0.118382" nz="0.926258"
+				u="0.398038" v="0.781426">
+					<skin bone="warrior Bip L UpperArm" weight="0.333333"/>
+					<skin bone="warrior Bip L Forearm" weight="0.666667"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.553117" y="-0.0719834" z="0.648913"
+				r="1" g="1" b="1" a="1"
+				nx="0.944932" ny="0.180465" nz="-0.273014"
+				u="0.253737" v="0.741263">
+					<skin bone="warrior Bip Pelvis" weight="1.0"/>
+			</vertex>
+			<vertex x="0.00498819" y="0.211973" z="0.631624"
+				r="1" g="1" b="1" a="1"
+				nx="0.00204004" ny="0.914254" nz="-0.405136"
+				u="0.311083" v="0.741311">
+					<skin bone="warrior Bip Pelvis" weight="1.0"/>
+			</vertex>
+			<vertex x="0.224353" y="0.140702" z="1.3751"
+				r="1" g="1" b="1" a="1"
+				nx="0.710813" ny="0.564897" nz="0.41909"
+				u="0.292067" v="0.808441">
+					<skin bone="warrior Bip Spine1" weight="1.0"/>
+					<skin bone="warrior Bip L UpperArm" weight="0.0"/>
+					<skin bone="warrior Bip Head" weight="0.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-1.08174" y="0.0973019" z="1.59051"
+				r="1" g="1" b="1" a="1"
+				nx="-0.372874" ny="0.610718" nz="0.698562"
+				u="0.101084" v="0.827908">
+					<skin bone="warrior Bip R Hand" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.536114" y="0.0926801" z="1.45096"
+				r="1" g="1" b="1" a="1"
+				nx="0.321336" ny="0.475185" nz="0.819111"
+				u="0.148169" v="0.804616">
+					<skin bone="warrior Bip R Forearm" weight="0.5"/>
+					<skin bone="warrior Bip R UpperArm" weight="0.5"/>
+			</vertex>
+			<vertex x="-0.536114" y="0.0926801" z="1.24884"
+				r="1" g="1" b="1" a="1"
+				nx="0.228188" ny="0.406302" nz="-0.884788"
+				u="0.158603" v="0.823436">
+					<skin bone="warrior Bip R Forearm" weight="0.5"/>
+					<skin bone="warrior Bip R UpperArm" weight="0.5"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-1.08174" y="0.0973019" z="1.59051"
+				r="1" g="1" b="1" a="1"
+				nx="-0.372874" ny="0.610718" nz="0.698562"
+				u="0.101084" v="0.827908">
+					<skin bone="warrior Bip R Hand" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.536114" y="0.0926801" z="1.24884"
+				r="1" g="1" b="1" a="1"
+				nx="0.228188" ny="0.406302" nz="-0.884788"
+				u="0.158603" v="0.823436">
+					<skin bone="warrior Bip R Forearm" weight="0.5"/>
+					<skin bone="warrior Bip R UpperArm" weight="0.5"/>
+			</vertex>
+			<vertex x="-1.12521" y="0.096469" z="1.13584"
+				r="1" g="1" b="1" a="1"
+				nx="-0.513662" ny="0.256841" nz="-0.818648"
+				u="0.122189" v="0.862978">
+					<skin bone="warrior Bip R Hand" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.13609" y="-0.161574" z="0.63571"
+				r="1" g="1" b="1" a="1"
+				nx="0.878306" ny="-0.468517" nz="-0.0952391"
+				u="0.570503" v="0.779589">
+					<skin bone="warrior Bip R Thigh" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.391469" y="-0.161574" z="0.631122"
+				r="1" g="1" b="1" a="1"
+				nx="-0.871105" ny="-0.475717" nz="-0.121938"
+				u="0.547618" v="0.779178">
+					<skin bone="warrior Bip R Thigh" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.184255" y="-0.171095" z="0.331712"
+				r="1" g="1" b="1" a="1"
+				nx="0.846672" ny="-0.48126" nz="-0.227013"
+				u="0.566188" v="0.752333">
+					<skin bone="warrior Bip R Calf" weight="0.5"/>
+					<skin bone="warrior Bip R Thigh" weight="0.5"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.184255" y="-0.171095" z="0.331712"
+				r="1" g="1" b="1" a="1"
+				nx="0.846672" ny="-0.48126" nz="-0.227013"
+				u="0.566188" v="0.752333">
+					<skin bone="warrior Bip R Calf" weight="0.5"/>
+					<skin bone="warrior Bip R Thigh" weight="0.5"/>
+			</vertex>
+			<vertex x="-0.267387" y="-0.025259" z="0.317715"
+				r="1" g="1" b="1" a="1"
+				nx="-0.0355691" ny="0.974774" nz="-0.220343"
+				u="0.580193" v="0.746668">
+					<skin bone="warrior Bip R Thigh" weight="0.666667"/>
+					<skin bone="warrior Bip R Calf" weight="0.333333"/>
+			</vertex>
+			<vertex x="-0.13609" y="-0.161574" z="0.63571"
+				r="1" g="1" b="1" a="1"
+				nx="0.878306" ny="-0.468517" nz="-0.0952391"
+				u="0.570503" v="0.779589">
+					<skin bone="warrior Bip R Thigh" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.344431" y="-0.171095" z="0.331712"
+				r="1" g="1" b="1" a="1"
+				nx="-0.849449" ny="-0.48593" nz="-0.205689"
+				u="0.551834" v="0.752333">
+					<skin bone="warrior Bip R Calf" weight="0.5"/>
+					<skin bone="warrior Bip R Thigh" weight="0.5"/>
+			</vertex>
+			<vertex x="-0.266557" y="0.0318596" z="0.617218"
+				r="1" g="1" b="1" a="1"
+				nx="-0.00943867" ny="0.976155" nz="-0.216872"
+				u="0.527713" v="0.7736">
+					<skin bone="warrior Bip Pelvis" weight="0.666667"/>
+					<skin bone="warrior Bip R Thigh" weight="0.333333"/>
+			</vertex>
+			<vertex x="-0.267387" y="-0.025259" z="0.317715"
+				r="1" g="1" b="1" a="1"
+				nx="-0.0355691" ny="0.974774" nz="-0.220343"
+				u="0.538002" v="0.746905">
+					<skin bone="warrior Bip R Thigh" weight="0.666667"/>
+					<skin bone="warrior Bip R Calf" weight="0.333333"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.13609" y="-0.161574" z="0.63571"
+				r="1" g="1" b="1" a="1"
+				nx="0.878306" ny="-0.468517" nz="-0.0952391"
+				u="0.570503" v="0.779589">
+					<skin bone="warrior Bip R Thigh" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.267387" y="-0.025259" z="0.317715"
+				r="1" g="1" b="1" a="1"
+				nx="-0.0355691" ny="0.974774" nz="-0.220343"
+				u="0.580193" v="0.746668">
+					<skin bone="warrior Bip R Thigh" weight="0.666667"/>
+					<skin bone="warrior Bip R Calf" weight="0.333333"/>
+			</vertex>
+			<vertex x="-0.266557" y="0.0318596" z="0.617218"
+				r="1" g="1" b="1" a="1"
+				nx="-0.00943867" ny="0.976155" nz="-0.216872"
+				u="0.590568" v="0.773479">
+					<skin bone="warrior Bip Pelvis" weight="0.666667"/>
+					<skin bone="warrior Bip R Thigh" weight="0.333333"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.344431" y="-0.171095" z="0.331712"
+				r="1" g="1" b="1" a="1"
+				nx="-0.849449" ny="-0.48593" nz="-0.205689"
+				u="0.551834" v="0.752333">
+					<skin bone="warrior Bip R Calf" weight="0.5"/>
+					<skin bone="warrior Bip R Thigh" weight="0.5"/>
+			</vertex>
+			<vertex x="-0.391469" y="-0.161574" z="0.631122"
+				r="1" g="1" b="1" a="1"
+				nx="-0.871105" ny="-0.475717" nz="-0.121938"
+				u="0.547618" v="0.779178">
+					<skin bone="warrior Bip R Thigh" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.266557" y="0.0318596" z="0.617218"
+				r="1" g="1" b="1" a="1"
+				nx="-0.00943867" ny="0.976155" nz="-0.216872"
+				u="0.527713" v="0.7736">
+					<skin bone="warrior Bip Pelvis" weight="0.666667"/>
+					<skin bone="warrior Bip R Thigh" weight="0.333333"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.184255" y="-0.171095" z="0.331712"
+				r="1" g="1" b="1" a="1"
+				nx="0.846672" ny="-0.48126" nz="-0.227013"
+				u="0.566188" v="0.752333">
+					<skin bone="warrior Bip R Calf" weight="0.5"/>
+					<skin bone="warrior Bip R Thigh" weight="0.5"/>
+			</vertex>
+			<vertex x="-0.391469" y="-0.161574" z="0.631122"
+				r="1" g="1" b="1" a="1"
+				nx="-0.871105" ny="-0.475717" nz="-0.121938"
+				u="0.547618" v="0.779178">
+					<skin bone="warrior Bip R Thigh" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.344431" y="-0.171095" z="0.331712"
+				r="1" g="1" b="1" a="1"
+				nx="-0.849449" ny="-0.48593" nz="-0.205689"
+				u="0.551834" v="0.752333">
+					<skin bone="warrior Bip R Calf" weight="0.5"/>
+					<skin bone="warrior Bip R Thigh" weight="0.5"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.184255" y="-0.171095" z="0.331712"
+				r="1" g="1" b="1" a="1"
+				nx="0.846672" ny="-0.48126" nz="-0.227013"
+				u="0.566188" v="0.752333">
+					<skin bone="warrior Bip R Calf" weight="0.5"/>
+					<skin bone="warrior Bip R Thigh" weight="0.5"/>
+			</vertex>
+			<vertex x="-0.265913" y="-0.0690526" z="0.024512"
+				r="1" g="1" b="1" a="1"
+				nx="-0.00163974" ny="0.167622" nz="-0.98585"
+				u="0.55887" v="0.723325">
+					<skin bone="warrior Bip R Foot" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.267387" y="-0.025259" z="0.35993"
+				r="1" g="1" b="1" a="1"
+				nx="-0.0147879" ny="0.991467" nz="-0.129515"
+				u="0.580193" v="0.746668">
+					<skin bone="warrior Bip R Calf" weight="0.8"/>
+					<skin bone="warrior Bip R Thigh" weight="0.2"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.344431" y="-0.171095" z="0.331712"
+				r="1" g="1" b="1" a="1"
+				nx="-0.849449" ny="-0.48593" nz="-0.205689"
+				u="0.551834" v="0.752333">
+					<skin bone="warrior Bip R Calf" weight="0.5"/>
+					<skin bone="warrior Bip R Thigh" weight="0.5"/>
+			</vertex>
+			<vertex x="-0.267387" y="-0.025259" z="0.35993"
+				r="1" g="1" b="1" a="1"
+				nx="-0.0147879" ny="0.991467" nz="-0.129515"
+				u="0.538002" v="0.746905">
+					<skin bone="warrior Bip R Calf" weight="0.8"/>
+					<skin bone="warrior Bip R Thigh" weight="0.2"/>
+			</vertex>
+			<vertex x="-0.265913" y="-0.0690526" z="0.024512"
+				r="1" g="1" b="1" a="1"
+				nx="-0.00163974" ny="0.167622" nz="-0.98585"
+				u="0.55887" v="0.723325">
+					<skin bone="warrior Bip R Foot" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.265913" y="-0.0690526" z="0.024512"
+				r="1" g="1" b="1" a="1"
+				nx="-0.00163974" ny="0.167622" nz="-0.98585"
+				u="0.55887" v="0.723325">
+					<skin bone="warrior Bip R Foot" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.184255" y="-0.171095" z="0.331712"
+				r="1" g="1" b="1" a="1"
+				nx="0.846672" ny="-0.48126" nz="-0.227013"
+				u="0.566188" v="0.752333">
+					<skin bone="warrior Bip R Calf" weight="0.5"/>
+					<skin bone="warrior Bip R Thigh" weight="0.5"/>
+			</vertex>
+			<vertex x="-0.344431" y="-0.171095" z="0.331712"
+				r="1" g="1" b="1" a="1"
+				nx="-0.849449" ny="-0.48593" nz="-0.205689"
+				u="0.551834" v="0.752333">
+					<skin bone="warrior Bip R Calf" weight="0.5"/>
+					<skin bone="warrior Bip R Thigh" weight="0.5"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.254973" y="-0.382487" z="0.152054"
+				r="1" g="1" b="1" a="1"
+				nx="0.0789377" ny="-0.276511" nz="0.957763"
+				u="0.644043" v="0.698205">
+					<skin bone="warrior Bip R Toe0" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.557382" y="-0.465435" z="3.93475e-006"
+				r="1" g="1" b="1" a="1"
+				nx="-0.87851" ny="-0.439011" nz="-0.188386"
+				u="0.615917" v="0.684631">
+					<skin bone="warrior Bip R Toe0" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.245935" y="-0.602987" z="4.03536e-006"
+				r="1" g="1" b="1" a="1"
+				nx="0.080709" ny="-0.968107" nz="-0.237182"
+				u="0.644588" v="0.674195">
+					<skin bone="warrior Bip R Toe0" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.0455555" y="-0.465435" z="4.03123e-006"
+				r="1" g="1" b="1" a="1"
+				nx="0.874652" ny="-0.420607" nz="-0.240985"
+				u="0.663948" v="0.684174">
+					<skin bone="warrior Bip R Toe0" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.108875" y="0.0584387" z="1.02166e-006"
+				r="1" g="1" b="1" a="1"
+				nx="0.625807" ny="0.745674" nz="-0.228772"
+				u="0.659933" v="0.743782">
+					<skin bone="warrior Bip R Foot" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.264011" y="-0.129776" z="0.175168"
+				r="1" g="1" b="1" a="1"
+				nx="0.0369368" ny="0.240663" nz="0.969906"
+				u="0.643519" v="0.725359">
+					<skin bone="warrior Bip R Foot" weight="1.0"/>
+					<skin bone="warrior Bip R Calf" weight="0.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.0455555" y="-0.465435" z="4.03123e-006"
+				r="1" g="1" b="1" a="1"
+				nx="0.874652" ny="-0.420607" nz="-0.240985"
+				u="0.575765" v="0.710613">
+					<skin bone="warrior Bip R Toe0" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.557382" y="-0.465435" z="3.93475e-006"
+				r="1" g="1" b="1" a="1"
+				nx="-0.87851" ny="-0.439011" nz="-0.188386"
+				u="0.615917" v="0.684631">
+					<skin bone="warrior Bip R Toe0" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.426023" y="0.0429917" z="2.50887e-006"
+				r="1" g="1" b="1" a="1"
+				nx="-0.62377" ny="0.743474" nz="-0.241159"
+				u="0.62741" v="0.743133">
+					<skin bone="warrior Bip R Foot" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.557382" y="-0.465435" z="3.93475e-006"
+				r="1" g="1" b="1" a="1"
+				nx="-0.87851" ny="-0.439011" nz="-0.188386"
+				u="0.615917" v="0.684631">
+					<skin bone="warrior Bip R Toe0" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.264011" y="-0.129776" z="0.175168"
+				r="1" g="1" b="1" a="1"
+				nx="0.0369368" ny="0.240663" nz="0.969906"
+				u="0.643519" v="0.725359">
+					<skin bone="warrior Bip R Foot" weight="1.0"/>
+					<skin bone="warrior Bip R Calf" weight="0.0"/>
+			</vertex>
+			<vertex x="-0.426023" y="0.0429917" z="2.50887e-006"
+				r="1" g="1" b="1" a="1"
+				nx="-0.62377" ny="0.743474" nz="-0.241159"
+				u="0.62741" v="0.743133">
+					<skin bone="warrior Bip R Foot" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.254973" y="-0.382487" z="0.152054"
+				r="1" g="1" b="1" a="1"
+				nx="0.0789377" ny="-0.276511" nz="0.957763"
+				u="0.644043" v="0.698205">
+					<skin bone="warrior Bip R Toe0" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.245935" y="-0.602987" z="4.03536e-006"
+				r="1" g="1" b="1" a="1"
+				nx="0.080709" ny="-0.968107" nz="-0.237182"
+				u="0.644588" v="0.674195">
+					<skin bone="warrior Bip R Toe0" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.0455555" y="-0.465435" z="4.03123e-006"
+				r="1" g="1" b="1" a="1"
+				nx="0.874652" ny="-0.420607" nz="-0.240985"
+				u="0.663948" v="0.684174">
+					<skin bone="warrior Bip R Toe0" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.426023" y="0.0429917" z="2.50887e-006"
+				r="1" g="1" b="1" a="1"
+				nx="-0.62377" ny="0.743474" nz="-0.241159"
+				u="0.62741" v="0.743133">
+					<skin bone="warrior Bip R Foot" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.264011" y="-0.129776" z="0.175168"
+				r="1" g="1" b="1" a="1"
+				nx="0.0369368" ny="0.240663" nz="0.969906"
+				u="0.643519" v="0.725359">
+					<skin bone="warrior Bip R Foot" weight="1.0"/>
+					<skin bone="warrior Bip R Calf" weight="0.0"/>
+			</vertex>
+			<vertex x="-0.108875" y="0.0584387" z="1.02166e-006"
+				r="1" g="1" b="1" a="1"
+				nx="0.625807" ny="0.745674" nz="-0.228772"
+				u="0.659933" v="0.743782">
+					<skin bone="warrior Bip R Foot" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.0455555" y="-0.465435" z="4.03123e-006"
+				r="1" g="1" b="1" a="1"
+				nx="0.874652" ny="-0.420607" nz="-0.240985"
+				u="0.575765" v="0.710613">
+					<skin bone="warrior Bip R Toe0" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.245935" y="-0.602987" z="4.03536e-006"
+				r="1" g="1" b="1" a="1"
+				nx="0.080709" ny="-0.968107" nz="-0.237182"
+				u="0.586632" v="0.691738">
+					<skin bone="warrior Bip R Toe0" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.557382" y="-0.465435" z="3.93475e-006"
+				r="1" g="1" b="1" a="1"
+				nx="-0.87851" ny="-0.439011" nz="-0.188386"
+				u="0.615917" v="0.684631">
+					<skin bone="warrior Bip R Toe0" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.0455555" y="-0.465435" z="4.03123e-006"
+				r="1" g="1" b="1" a="1"
+				nx="0.874652" ny="-0.420607" nz="-0.240985"
+				u="0.575765" v="0.710613">
+					<skin bone="warrior Bip R Toe0" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.426023" y="0.0429917" z="2.50887e-006"
+				r="1" g="1" b="1" a="1"
+				nx="-0.62377" ny="0.743474" nz="-0.241159"
+				u="0.62741" v="0.743133">
+					<skin bone="warrior Bip R Foot" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.108875" y="0.0584387" z="1.02166e-006"
+				r="1" g="1" b="1" a="1"
+				nx="0.625807" ny="0.745674" nz="-0.228772"
+				u="0.601167" v="0.750499">
+					<skin bone="warrior Bip R Foot" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.264011" y="-0.129776" z="0.175168"
+				r="1" g="1" b="1" a="1"
+				nx="0.0369368" ny="0.240663" nz="0.969906"
+				u="0.643519" v="0.725359">
+					<skin bone="warrior Bip R Foot" weight="1.0"/>
+					<skin bone="warrior Bip R Calf" weight="0.0"/>
+			</vertex>
+			<vertex x="-0.254973" y="-0.382487" z="0.152054"
+				r="1" g="1" b="1" a="1"
+				nx="0.0789377" ny="-0.276511" nz="0.957763"
+				u="0.644043" v="0.698205">
+					<skin bone="warrior Bip R Toe0" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.0455555" y="-0.465435" z="4.03123e-006"
+				r="1" g="1" b="1" a="1"
+				nx="0.874652" ny="-0.420607" nz="-0.240985"
+				u="0.663948" v="0.684174">
+					<skin bone="warrior Bip R Toe0" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="-0.264011" y="-0.129776" z="0.175168"
+				r="1" g="1" b="1" a="1"
+				nx="0.0369368" ny="0.240663" nz="0.969906"
+				u="0.643519" v="0.725359">
+					<skin bone="warrior Bip R Foot" weight="1.0"/>
+					<skin bone="warrior Bip R Calf" weight="0.0"/>
+			</vertex>
+			<vertex x="-0.557382" y="-0.465435" z="3.93475e-006"
+				r="1" g="1" b="1" a="1"
+				nx="-0.87851" ny="-0.439011" nz="-0.188386"
+				u="0.615917" v="0.684631">
+					<skin bone="warrior Bip R Toe0" weight="1.0"/>
+			</vertex>
+			<vertex x="-0.254973" y="-0.382487" z="0.152054"
+				r="1" g="1" b="1" a="1"
+				nx="0.0789377" ny="-0.276511" nz="0.957763"
+				u="0.644043" v="0.698205">
+					<skin bone="warrior Bip R Toe0" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.13609" y="-0.161574" z="0.63571"
+				r="1" g="1" b="1" a="1"
+				nx="-0.878306" ny="-0.468518" nz="-0.095239"
+				u="0.570503" v="0.779589">
+					<skin bone="warrior Bip L Thigh" weight="1.0"/>
+			</vertex>
+			<vertex x="0.184255" y="-0.171095" z="0.331712"
+				r="1" g="1" b="1" a="1"
+				nx="-0.846672" ny="-0.48126" nz="-0.227013"
+				u="0.566188" v="0.752333">
+					<skin bone="warrior Bip L Calf" weight="0.5"/>
+					<skin bone="warrior Bip L Thigh" weight="0.5"/>
+			</vertex>
+			<vertex x="0.391469" y="-0.161574" z="0.631122"
+				r="1" g="1" b="1" a="1"
+				nx="0.871105" ny="-0.475718" nz="-0.121937"
+				u="0.547618" v="0.779178">
+					<skin bone="warrior Bip L Thigh" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.184255" y="-0.171095" z="0.331712"
+				r="1" g="1" b="1" a="1"
+				nx="-0.846672" ny="-0.48126" nz="-0.227013"
+				u="0.566188" v="0.752333">
+					<skin bone="warrior Bip L Calf" weight="0.5"/>
+					<skin bone="warrior Bip L Thigh" weight="0.5"/>
+			</vertex>
+			<vertex x="0.13609" y="-0.161574" z="0.63571"
+				r="1" g="1" b="1" a="1"
+				nx="-0.878306" ny="-0.468518" nz="-0.095239"
+				u="0.570503" v="0.779589">
+					<skin bone="warrior Bip L Thigh" weight="1.0"/>
+			</vertex>
+			<vertex x="0.267387" y="-0.025259" z="0.317715"
+				r="1" g="1" b="1" a="1"
+				nx="0.0355692" ny="0.974774" nz="-0.220343"
+				u="0.580193" v="0.746668">
+					<skin bone="warrior Bip L Thigh" weight="0.666667"/>
+					<skin bone="warrior Bip L Calf" weight="0.333333"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.344431" y="-0.171095" z="0.331712"
+				r="1" g="1" b="1" a="1"
+				nx="0.849449" ny="-0.48593" nz="-0.205689"
+				u="0.551834" v="0.752333">
+					<skin bone="warrior Bip L Calf" weight="0.5"/>
+					<skin bone="warrior Bip L Thigh" weight="0.5"/>
+			</vertex>
+			<vertex x="0.267387" y="-0.025259" z="0.317715"
+				r="1" g="1" b="1" a="1"
+				nx="0.0355692" ny="0.974774" nz="-0.220343"
+				u="0.538002" v="0.746905">
+					<skin bone="warrior Bip L Thigh" weight="0.666667"/>
+					<skin bone="warrior Bip L Calf" weight="0.333333"/>
+			</vertex>
+			<vertex x="0.266557" y="0.0318595" z="0.617218"
+				r="1" g="1" b="1" a="1"
+				nx="0.00943863" ny="0.976155" nz="-0.216872"
+				u="0.527713" v="0.7736">
+					<skin bone="warrior Bip L Thigh" weight="0.333333"/>
+					<skin bone="warrior Bip Pelvis" weight="0.666667"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.13609" y="-0.161574" z="0.63571"
+				r="1" g="1" b="1" a="1"
+				nx="-0.878306" ny="-0.468518" nz="-0.095239"
+				u="0.570503" v="0.779589">
+					<skin bone="warrior Bip L Thigh" weight="1.0"/>
+			</vertex>
+			<vertex x="0.266557" y="0.0318595" z="0.617218"
+				r="1" g="1" b="1" a="1"
+				nx="0.00943863" ny="0.976155" nz="-0.216872"
+				u="0.590568" v="0.773479">
+					<skin bone="warrior Bip L Thigh" weight="0.333333"/>
+					<skin bone="warrior Bip Pelvis" weight="0.666667"/>
+			</vertex>
+			<vertex x="0.267387" y="-0.025259" z="0.317715"
+				r="1" g="1" b="1" a="1"
+				nx="0.0355692" ny="0.974774" nz="-0.220343"
+				u="0.580193" v="0.746668">
+					<skin bone="warrior Bip L Thigh" weight="0.666667"/>
+					<skin bone="warrior Bip L Calf" weight="0.333333"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.344431" y="-0.171095" z="0.331712"
+				r="1" g="1" b="1" a="1"
+				nx="0.849449" ny="-0.48593" nz="-0.205689"
+				u="0.551834" v="0.752333">
+					<skin bone="warrior Bip L Calf" weight="0.5"/>
+					<skin bone="warrior Bip L Thigh" weight="0.5"/>
+			</vertex>
+			<vertex x="0.266557" y="0.0318595" z="0.617218"
+				r="1" g="1" b="1" a="1"
+				nx="0.00943863" ny="0.976155" nz="-0.216872"
+				u="0.527713" v="0.7736">
+					<skin bone="warrior Bip L Thigh" weight="0.333333"/>
+					<skin bone="warrior Bip Pelvis" weight="0.666667"/>
+			</vertex>
+			<vertex x="0.391469" y="-0.161574" z="0.631122"
+				r="1" g="1" b="1" a="1"
+				nx="0.871105" ny="-0.475718" nz="-0.121937"
+				u="0.547618" v="0.779178">
+					<skin bone="warrior Bip L Thigh" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.184255" y="-0.171095" z="0.331712"
+				r="1" g="1" b="1" a="1"
+				nx="-0.846672" ny="-0.48126" nz="-0.227013"
+				u="0.566188" v="0.752333">
+					<skin bone="warrior Bip L Calf" weight="0.5"/>
+					<skin bone="warrior Bip L Thigh" weight="0.5"/>
+			</vertex>
+			<vertex x="0.344431" y="-0.171095" z="0.331712"
+				r="1" g="1" b="1" a="1"
+				nx="0.849449" ny="-0.48593" nz="-0.205689"
+				u="0.551834" v="0.752333">
+					<skin bone="warrior Bip L Calf" weight="0.5"/>
+					<skin bone="warrior Bip L Thigh" weight="0.5"/>
+			</vertex>
+			<vertex x="0.391469" y="-0.161574" z="0.631122"
+				r="1" g="1" b="1" a="1"
+				nx="0.871105" ny="-0.475718" nz="-0.121937"
+				u="0.547618" v="0.779178">
+					<skin bone="warrior Bip L Thigh" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.184255" y="-0.171095" z="0.331712"
+				r="1" g="1" b="1" a="1"
+				nx="-0.846672" ny="-0.48126" nz="-0.227013"
+				u="0.566188" v="0.752333">
+					<skin bone="warrior Bip L Calf" weight="0.5"/>
+					<skin bone="warrior Bip L Thigh" weight="0.5"/>
+			</vertex>
+			<vertex x="0.267387" y="-0.025259" z="0.35993"
+				r="1" g="1" b="1" a="1"
+				nx="0.0147879" ny="0.991467" nz="-0.129515"
+				u="0.580193" v="0.746668">
+					<skin bone="warrior Bip L Calf" weight="0.8"/>
+					<skin bone="warrior Bip L Thigh" weight="0.2"/>
+			</vertex>
+			<vertex x="0.265913" y="-0.0690526" z="0.024512"
+				r="1" g="1" b="1" a="1"
+				nx="0.00163951" ny="0.167621" nz="-0.98585"
+				u="0.55887" v="0.723325">
+					<skin bone="warrior Bip L Foot" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.344431" y="-0.171095" z="0.331712"
+				r="1" g="1" b="1" a="1"
+				nx="0.849449" ny="-0.48593" nz="-0.205689"
+				u="0.551834" v="0.752333">
+					<skin bone="warrior Bip L Calf" weight="0.5"/>
+					<skin bone="warrior Bip L Thigh" weight="0.5"/>
+			</vertex>
+			<vertex x="0.265913" y="-0.0690526" z="0.024512"
+				r="1" g="1" b="1" a="1"
+				nx="0.00163951" ny="0.167621" nz="-0.98585"
+				u="0.55887" v="0.723325">
+					<skin bone="warrior Bip L Foot" weight="1.0"/>
+			</vertex>
+			<vertex x="0.267387" y="-0.025259" z="0.35993"
+				r="1" g="1" b="1" a="1"
+				nx="0.0147879" ny="0.991467" nz="-0.129515"
+				u="0.538002" v="0.746905">
+					<skin bone="warrior Bip L Calf" weight="0.8"/>
+					<skin bone="warrior Bip L Thigh" weight="0.2"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.265913" y="-0.0690526" z="0.024512"
+				r="1" g="1" b="1" a="1"
+				nx="0.00163951" ny="0.167621" nz="-0.98585"
+				u="0.55887" v="0.723325">
+					<skin bone="warrior Bip L Foot" weight="1.0"/>
+			</vertex>
+			<vertex x="0.344431" y="-0.171095" z="0.331712"
+				r="1" g="1" b="1" a="1"
+				nx="0.849449" ny="-0.48593" nz="-0.205689"
+				u="0.551834" v="0.752333">
+					<skin bone="warrior Bip L Calf" weight="0.5"/>
+					<skin bone="warrior Bip L Thigh" weight="0.5"/>
+			</vertex>
+			<vertex x="0.184255" y="-0.171095" z="0.331712"
+				r="1" g="1" b="1" a="1"
+				nx="-0.846672" ny="-0.48126" nz="-0.227013"
+				u="0.566188" v="0.752333">
+					<skin bone="warrior Bip L Calf" weight="0.5"/>
+					<skin bone="warrior Bip L Thigh" weight="0.5"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.254973" y="-0.382487" z="0.152054"
+				r="1" g="1" b="1" a="1"
+				nx="-0.0789378" ny="-0.276511" nz="0.957763"
+				u="0.644043" v="0.698205">
+					<skin bone="warrior Bip L Toe0" weight="1.0"/>
+			</vertex>
+			<vertex x="0.245935" y="-0.602987" z="4.0353e-006"
+				r="1" g="1" b="1" a="1"
+				nx="-0.080709" ny="-0.968107" nz="-0.237182"
+				u="0.644588" v="0.674195">
+					<skin bone="warrior Bip L Toe0" weight="1.0"/>
+			</vertex>
+			<vertex x="0.557382" y="-0.465435" z="4.01632e-006"
+				r="1" g="1" b="1" a="1"
+				nx="0.87851" ny="-0.439011" nz="-0.188386"
+				u="0.615917" v="0.684631">
+					<skin bone="warrior Bip L Toe0" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.0455555" y="-0.465435" z="3.98032e-006"
+				r="1" g="1" b="1" a="1"
+				nx="-0.874651" ny="-0.420607" nz="-0.240986"
+				u="0.663948" v="0.684174">
+					<skin bone="warrior Bip L Toe0" weight="1.0"/>
+			</vertex>
+			<vertex x="0.264011" y="-0.129776" z="0.175168"
+				r="1" g="1" b="1" a="1"
+				nx="-0.036937" ny="0.240663" nz="0.969906"
+				u="0.643519" v="0.725359">
+					<skin bone="warrior Bip L Foot" weight="1.0"/>
+			</vertex>
+			<vertex x="0.108875" y="0.0584387" z="9.97446e-007"
+				r="1" g="1" b="1" a="1"
+				nx="-0.625807" ny="0.745674" nz="-0.228772"
+				u="0.659933" v="0.743782">
+					<skin bone="warrior Bip L Foot" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.0455555" y="-0.465435" z="3.98032e-006"
+				r="1" g="1" b="1" a="1"
+				nx="-0.874651" ny="-0.420607" nz="-0.240986"
+				u="0.575765" v="0.710613">
+					<skin bone="warrior Bip L Toe0" weight="1.0"/>
+			</vertex>
+			<vertex x="0.426023" y="0.0429917" z="2.54007e-006"
+				r="1" g="1" b="1" a="1"
+				nx="0.62377" ny="0.743474" nz="-0.241159"
+				u="0.62741" v="0.743133">
+					<skin bone="warrior Bip L Foot" weight="1.0"/>
+			</vertex>
+			<vertex x="0.557382" y="-0.465435" z="4.01632e-006"
+				r="1" g="1" b="1" a="1"
+				nx="0.87851" ny="-0.439011" nz="-0.188386"
+				u="0.615917" v="0.684631">
+					<skin bone="warrior Bip L Toe0" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.557382" y="-0.465435" z="4.01632e-006"
+				r="1" g="1" b="1" a="1"
+				nx="0.87851" ny="-0.439011" nz="-0.188386"
+				u="0.615917" v="0.684631">
+					<skin bone="warrior Bip L Toe0" weight="1.0"/>
+			</vertex>
+			<vertex x="0.426023" y="0.0429917" z="2.54007e-006"
+				r="1" g="1" b="1" a="1"
+				nx="0.62377" ny="0.743474" nz="-0.241159"
+				u="0.62741" v="0.743133">
+					<skin bone="warrior Bip L Foot" weight="1.0"/>
+			</vertex>
+			<vertex x="0.264011" y="-0.129776" z="0.175168"
+				r="1" g="1" b="1" a="1"
+				nx="-0.036937" ny="0.240663" nz="0.969906"
+				u="0.643519" v="0.725359">
+					<skin bone="warrior Bip L Foot" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.254973" y="-0.382487" z="0.152054"
+				r="1" g="1" b="1" a="1"
+				nx="-0.0789378" ny="-0.276511" nz="0.957763"
+				u="0.644043" v="0.698205">
+					<skin bone="warrior Bip L Toe0" weight="1.0"/>
+			</vertex>
+			<vertex x="0.0455555" y="-0.465435" z="3.98032e-006"
+				r="1" g="1" b="1" a="1"
+				nx="-0.874651" ny="-0.420607" nz="-0.240986"
+				u="0.663948" v="0.684174">
+					<skin bone="warrior Bip L Toe0" weight="1.0"/>
+			</vertex>
+			<vertex x="0.245935" y="-0.602987" z="4.0353e-006"
+				r="1" g="1" b="1" a="1"
+				nx="-0.080709" ny="-0.968107" nz="-0.237182"
+				u="0.644588" v="0.674195">
+					<skin bone="warrior Bip L Toe0" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.426023" y="0.0429917" z="2.54007e-006"
+				r="1" g="1" b="1" a="1"
+				nx="0.62377" ny="0.743474" nz="-0.241159"
+				u="0.62741" v="0.743133">
+					<skin bone="warrior Bip L Foot" weight="1.0"/>
+			</vertex>
+			<vertex x="0.108875" y="0.0584387" z="9.97446e-007"
+				r="1" g="1" b="1" a="1"
+				nx="-0.625807" ny="0.745674" nz="-0.228772"
+				u="0.659933" v="0.743782">
+					<skin bone="warrior Bip L Foot" weight="1.0"/>
+			</vertex>
+			<vertex x="0.264011" y="-0.129776" z="0.175168"
+				r="1" g="1" b="1" a="1"
+				nx="-0.036937" ny="0.240663" nz="0.969906"
+				u="0.643519" v="0.725359">
+					<skin bone="warrior Bip L Foot" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.0455555" y="-0.465435" z="3.98032e-006"
+				r="1" g="1" b="1" a="1"
+				nx="-0.874651" ny="-0.420607" nz="-0.240986"
+				u="0.575765" v="0.710613">
+					<skin bone="warrior Bip L Toe0" weight="1.0"/>
+			</vertex>
+			<vertex x="0.557382" y="-0.465435" z="4.01632e-006"
+				r="1" g="1" b="1" a="1"
+				nx="0.87851" ny="-0.439011" nz="-0.188386"
+				u="0.615917" v="0.684631">
+					<skin bone="warrior Bip L Toe0" weight="1.0"/>
+			</vertex>
+			<vertex x="0.245935" y="-0.602987" z="4.0353e-006"
+				r="1" g="1" b="1" a="1"
+				nx="-0.080709" ny="-0.968107" nz="-0.237182"
+				u="0.586632" v="0.691738">
+					<skin bone="warrior Bip L Toe0" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.0455555" y="-0.465435" z="3.98032e-006"
+				r="1" g="1" b="1" a="1"
+				nx="-0.874651" ny="-0.420607" nz="-0.240986"
+				u="0.575765" v="0.710613">
+					<skin bone="warrior Bip L Toe0" weight="1.0"/>
+			</vertex>
+			<vertex x="0.108875" y="0.0584387" z="9.97446e-007"
+				r="1" g="1" b="1" a="1"
+				nx="-0.625807" ny="0.745674" nz="-0.228772"
+				u="0.601167" v="0.750499">
+					<skin bone="warrior Bip L Foot" weight="1.0"/>
+			</vertex>
+			<vertex x="0.426023" y="0.0429917" z="2.54007e-006"
+				r="1" g="1" b="1" a="1"
+				nx="0.62377" ny="0.743474" nz="-0.241159"
+				u="0.62741" v="0.743133">
+					<skin bone="warrior Bip L Foot" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.264011" y="-0.129776" z="0.175168"
+				r="1" g="1" b="1" a="1"
+				nx="-0.036937" ny="0.240663" nz="0.969906"
+				u="0.643519" v="0.725359">
+					<skin bone="warrior Bip L Foot" weight="1.0"/>
+			</vertex>
+			<vertex x="0.0455555" y="-0.465435" z="3.98032e-006"
+				r="1" g="1" b="1" a="1"
+				nx="-0.874651" ny="-0.420607" nz="-0.240986"
+				u="0.663948" v="0.684174">
+					<skin bone="warrior Bip L Toe0" weight="1.0"/>
+			</vertex>
+			<vertex x="0.254973" y="-0.382487" z="0.152054"
+				r="1" g="1" b="1" a="1"
+				nx="-0.0789378" ny="-0.276511" nz="0.957763"
+				u="0.644043" v="0.698205">
+					<skin bone="warrior Bip L Toe0" weight="1.0"/>
+			</vertex>
+		</polygon>
+		<polygon>
+			<vertex x="0.264011" y="-0.129776" z="0.175168"
+				r="1" g="1" b="1" a="1"
+				nx="-0.036937" ny="0.240663" nz="0.969906"
+				u="0.643519" v="0.725359">
+					<skin bone="warrior Bip L Foot" weight="1.0"/>
+			</vertex>
+			<vertex x="0.254973" y="-0.382487" z="0.152054"
+				r="1" g="1" b="1" a="1"
+				nx="-0.0789378" ny="-0.276511" nz="0.957763"
+				u="0.644043" v="0.698205">
+					<skin bone="warrior Bip L Toe0" weight="1.0"/>
+			</vertex>
+			<vertex x="0.557382" y="-0.465435" z="4.01632e-006"
+				r="1" g="1" b="1" a="1"
+				nx="0.87851" ny="-0.439011" nz="-0.188386"
+				u="0.615917" v="0.684631">
+					<skin bone="warrior Bip L Toe0" weight="1.0"/>
+			</vertex>
+		</polygon>
+	</polygons>
+</mesh>
