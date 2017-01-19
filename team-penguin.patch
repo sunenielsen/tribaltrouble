@@ -1,0 +1,1056 @@
+diff -ur tribaltrouble/common/build.xml tribaltrouble-master/common/build.xml
+--- tribaltrouble/common/build.xml	2017-01-17 18:02:01.000000000 -0800
++++ tribaltrouble-master/common/build.xml	2014-09-11 15:49:06.000000000 -0700
+@@ -1,5 +1,5 @@
+ <project name="common" basedir="." default="compile">
+ 	<import file="common.xml"/>
+ 
+-	<property name="classpath" value="${lib}/javasvn.jar:${lib}/lwjgl.jar:${lib}/lwjgl_util.jar:${lib}/jorbis.jar:${lib}/commons-pool-1.2.jar:${lib}/commons-dbcp-1.2.1.jar:${lib}/commons-collections-3.1.jar"/>
++	<property name="classpath" value="${lib}/javasvn.jar:${lib}/lwjgl.jar:${lib}/lwjgl_util.jar:${lib}/jorbis.jar:${lib}/commons-pool.jar:${lib}/commons-dbcp.jar:${lib}/commons-collections.jar"/>
+ </project>
+diff -ur tribaltrouble/common/classes/com/oddlabs/geometry/LowDetailModel.java tribaltrouble-master/common/classes/com/oddlabs/geometry/LowDetailModel.java
+--- tribaltrouble/common/classes/com/oddlabs/geometry/LowDetailModel.java	2017-01-17 18:02:01.000000000 -0800
++++ tribaltrouble-master/common/classes/com/oddlabs/geometry/LowDetailModel.java	2017-01-14 10:36:55.000000000 -0800
+@@ -7,20 +7,21 @@
+ 
+ 	private final float[] vertices;
+ 	private final float[] tex_coords;
+-	private final short[] indices;
++	private final int[] indices;
+ 	private final int poly_count;
+ 
+-	public LowDetailModel(short[] indices, float[] vertices, float[] tex_coords) {
++/* Team Penguin */
++	public LowDetailModel(int[] indices, float[] vertices, float[] tex_coords) {
+ 		this.indices = indices;
+ 		this.vertices = vertices;
+ 		this.tex_coords = tex_coords;
+ 		this.poly_count = indices.length/3;
+ 	}
+ 
+-	public final short[] getIndices() {
++	public final int[] getIndices() {
+ 		return indices;
+ 	}
+-
++/* End Penguin */
+ 	public final float[] getVertices() {
+ 		return vertices;
+ 	}
+diff -ur tribaltrouble/common/classes/com/oddlabs/geometry/SpriteInfo.java tribaltrouble-master/common/classes/com/oddlabs/geometry/SpriteInfo.java
+--- tribaltrouble/common/classes/com/oddlabs/geometry/SpriteInfo.java	2017-01-17 18:02:01.000000000 -0800
++++ tribaltrouble-master/common/classes/com/oddlabs/geometry/SpriteInfo.java	2017-01-14 10:15:41.000000000 -0800
+@@ -7,7 +7,8 @@
+ public final strictfp class SpriteInfo implements Serializable {
+ 	private final static long serialVersionUID = 1;
+ 
+-	private final short[] indices;
++	/* Team Penguin */
++	private final int[] indices;
+ 	private final ShortCompressedFloatArray vertices;
+ 	private final ByteCompressedFloatArray normals;
+ 	private final ShortCompressedFloatArray texcoords;
+@@ -16,7 +17,7 @@
+ 	private final String[][] textures;
+ 	private final float[] clear_color;
+ 
+-	public SpriteInfo(String[][] textures, short[] indices, float[] vertices, float[] normals, float[] texcoords, byte[][] skin_names, float[][] skin_weights, float[] clear_color) {
++	public SpriteInfo(String[][] textures, int[] indices, float[] vertices, float[] normals, float[] texcoords, byte[][] skin_names, float[][] skin_weights, float[] clear_color) {
+ 		this.textures = textures;
+ 		this.indices = indices;
+ 		this.vertices = new ShortCompressedFloatArray(vertices, 3);
+@@ -27,9 +28,10 @@
+ 		this.clear_color = clear_color;
+ 	}
+ 
+-	public final short[] getIndices() {
++	public final int[] getIndices() {
+ 		return indices;
+ 	}
++	/* End Penguin */
+ 
+ 	public final float[] getVertices() {
+ 		return vertices.getFloatArray();
+diff -ur tribaltrouble/common/classes/com/oddlabs/geometry/SpriteInfo2.java tribaltrouble-master/common/classes/com/oddlabs/geometry/SpriteInfo2.java
+--- tribaltrouble/common/classes/com/oddlabs/geometry/SpriteInfo2.java	2017-01-17 18:02:01.000000000 -0800
++++ tribaltrouble-master/common/classes/com/oddlabs/geometry/SpriteInfo2.java	2017-01-15 10:30:30.000000000 -0800
+@@ -7,7 +7,9 @@
+ public final strictfp class SpriteInfo2 implements Serializable {
+ 	private final static long serialVersionUID = 1;
+ 
+-	private final short[] indices;
++	/* Team Penguin */
++	private final int[] indices;
++	/* End Penguin */
+ 	private final ShortCompressedFloatArray vertices;
+ 	private final ByteCompressedFloatArray normals;
+ 	private final ShortCompressedFloatArray texcoords;
+@@ -17,7 +19,9 @@
+ 	private final String[][] textures;
+ 	private final float[] clear_color;
+ 
+-	public SpriteInfo2(String[][] textures, short[] indices, float[] vertices, float[] normals, float[] texcoords, float[] texcoords2, byte[][] skin_names, float[][] skin_weights, float[] clear_color) {
++	/* Team Penguin */
++	public SpriteInfo2(String[][] textures, int[] indices, float[] vertices, float[] normals, float[] texcoords, float[] texcoords2, byte[][] skin_names, float[][] skin_weights, float[] clear_color) {
++	/* End Penguin */
+ 		this.textures = textures;
+ 		this.indices = indices;
+ 		this.vertices = new ShortCompressedFloatArray(vertices, 3);
+@@ -32,7 +36,9 @@
+ 		this.clear_color = clear_color;
+ 	}
+ 
+-	public final short[] getIndices() {
++	/* Team Penguin */
++	public final int[] getIndices() {
++	/* End Penguin */
+ 		return indices;
+ 	}
+ 
+diff -ur tribaltrouble/common/classes/com/oddlabs/matchmaking/Game.java tribaltrouble-master/common/classes/com/oddlabs/matchmaking/Game.java
+--- tribaltrouble/common/classes/com/oddlabs/matchmaking/Game.java	2017-01-17 18:02:01.000000000 -0800
++++ tribaltrouble-master/common/classes/com/oddlabs/matchmaking/Game.java	2017-01-14 07:54:28.000000000 -0800
+@@ -8,6 +8,7 @@
+ 	public final static int SIZE_SMALL = 0;
+ 	public final static int SIZE_MEDIUM = 1;
+ 	public final static int SIZE_LARGE = 2;
++	public final static int SIZE_HUGE = 3;
+ 
+ 	public final static int TERRAIN_TYPE_NATIVE = 0;
+ 	public final static int TERRAIN_TYPE_VIKING = 1;
+diff -ur tribaltrouble/common/classes/com/oddlabs/matchmaking/MatchmakingServerInterface.java tribaltrouble-master/common/classes/com/oddlabs/matchmaking/MatchmakingServerInterface.java
+--- tribaltrouble/common/classes/com/oddlabs/matchmaking/MatchmakingServerInterface.java	2017-01-17 18:02:01.000000000 -0800
++++ tribaltrouble-master/common/classes/com/oddlabs/matchmaking/MatchmakingServerInterface.java	2016-12-23 18:11:40.000000000 -0800
+@@ -11,7 +11,7 @@
+ 	
+ 	public final static int MATCHMAKING_SERVER_PORT = 33214;
+ 
+-	public final static int MAX_PLAYERS = 6;
++	public final static int MAX_PLAYERS = 8;
+ 	public final static int MIN_PLAYERS = 1;
+ 	public final static int MIN_ROOM_NAME_LENGTH = 1;
+ 	public final static int MAX_ROOM_NAME_LENGTH = 20;
+diff -ur tribaltrouble/common/classes/com/oddlabs/util/IndexListOptimizer.java tribaltrouble-master/common/classes/com/oddlabs/util/IndexListOptimizer.java
+--- tribaltrouble/common/classes/com/oddlabs/util/IndexListOptimizer.java	2017-01-17 18:02:01.000000000 -0800
++++ tribaltrouble-master/common/classes/com/oddlabs/util/IndexListOptimizer.java	2017-01-14 08:52:12.000000000 -0800
+@@ -1,6 +1,7 @@
+ package com.oddlabs.util;
+ 
+ import java.nio.ShortBuffer;
++import java.nio.IntBuffer;
+ import java.util.List;
+ import java.util.ArrayList;
+ import java.util.Set;
+@@ -19,18 +20,24 @@
+ 	private final static float VALENCE_BOOST_SCALE = 2f;
+ 	private final static float VALENCE_BOOST_POWER = .5f;
+ 
+-	public static void optimize(ShortBuffer buffer) {
++/* Team Penguin */
++	public static void optimize(IntBuffer buffer) {
++/* End Penguin */
+ /*System.out.println("buffer:");
+ dumpBuffer(buffer);*/
+ 		Index[] lru = new Index[LRU_SIZE];
+ 		Map indices = new LinkedHashMap();
+ 		Set triangles = new LinkedHashSet();
+ 		for (int i = 0; i < buffer.remaining()/3; i++) {
+-			short[] index_array = new short[]{buffer.get(buffer.position() + i*3),
++			/* Team Penguin */
++			int[] index_array = new int[]{buffer.get(buffer.position() + i*3),
+ 				buffer.get(buffer.position() + i*3 + 1), buffer.get(buffer.position() + i*3 + 2)};
++			/* End Penguin */
+ 			Index[] triangle_indices = new Index[index_array.length];
+ 			for (int j = 0; j < index_array.length; j++) {
+-				Short index_key = new Short(index_array[j]);
++				/* Team Penguin */
++				Integer index_key = new Integer(index_array[j]);
++				/* End Penguin */
+ 				Index index = (Index)indices.get(index_key);
+ 				if (index == null) {
+ 					index = new Index(index_array[j]);
+@@ -122,14 +129,16 @@
+ 
+ 	private final static strictfp class Index {
+ 		private final List triangle_list = new ArrayList();
+-		private final short index;
++		/* Team Penguin */
++		private final int index;
+ 
+ 		private float score;
+ 		private int round_added;
+ 
+-		public Index(short index) {
++		public Index(int index) {
+ 			this.index = index;
+ 		}
++		/* End Penguin */
+ 
+ 		public final void updateScore(int cache_index, int round) {
+ 			score = 0;
+@@ -189,10 +198,12 @@
+ 			}
+ 		}
+ 
+-		public final void addToBuffer(ShortBuffer buffer) {
++		/* Team Penguin */
++		public final void addToBuffer(IntBuffer buffer) {
+ 			for (int i = 0; i < indices.length; i++)
+ 				buffer.put(indices[i].index);
+ 		}
++		/* End Penguin */
+ 
+ 		public final String toString() {
+ 			String result = "Triangle score = " + getScore();
+diff -ur tribaltrouble/server/build.xml tribaltrouble-master/server/build.xml
+--- tribaltrouble/server/build.xml	2017-01-17 18:02:02.000000000 -0800
++++ tribaltrouble-master/server/build.xml	2014-09-12 19:45:58.000000000 -0700
+@@ -1,6 +1,6 @@
+ <project name="servers" basedir="." default="all">
+ 	<import file="../common/common.xml"/>
+-	<property name="classpath" value="../common/build/classes:${lib}/commons-pool-1.2.jar:${lib}/commons-dbcp-1.2.1.jar:${lib}/commons-collections-3.1.jar"/>
++	<property name="classpath" value="../common/build/classes:commons-pool.jar:commons-dbcp.jar:commons-collections.jar"/>
+ 
+ 	<target name="compiledeps" depends="compile-common">
+ 	</target>
+@@ -33,7 +33,13 @@
+ 			<fileset dir="../common/build/classes" includes="com/oddlabs/matchmaking/**/*class"/>
+ 			<fileset dir="../common/build/classes" includes="com/oddlabs/registration/**/*class"/>
+ 			<fileset dir="${build}/classes" includes="com/oddlabs/matchserver/**/*class"/>
+-			<fileset dir="${commonstatic}" includes="public_reg_key"/>
++			<fileset dir="../common/static" includes="public_reg_key"/>
++		</jar>
++	</target>
++
++	<target name="regservice" depends="compile">
++		<jar destfile="${build}/regservice.jar">
++			<fileset dir="../common/build/classes" includes="com/oddlabs/registration/**/*class"/>
+ 		</jar>
+ 	</target>
+ 
+diff -ur tribaltrouble/server/classes/com/oddlabs/matchserver/Authenticator.java tribaltrouble-master/server/classes/com/oddlabs/matchserver/Authenticator.java
+--- tribaltrouble/server/classes/com/oddlabs/matchserver/Authenticator.java	2017-01-17 18:02:02.000000000 -0800
++++ tribaltrouble-master/server/classes/com/oddlabs/matchserver/Authenticator.java	2016-12-28 18:30:32.000000000 -0800
+@@ -1,5 +1,6 @@
+ package com.oddlabs.matchserver;
+ 
++import com.oddlabs.util.CryptUtils;
+ import com.oddlabs.util.KeyManager;
+ import com.oddlabs.net.AbstractConnection;
+ import com.oddlabs.net.ARMIEvent;
+@@ -112,6 +113,7 @@
+ 		try {
+ 			if (DBInterface.getRegKeyUsername(reg_key_encoded) != null) {
+ 				client_interface.loginError(MatchmakingClientInterface.USERNAME_ERROR_TOO_MANY);
++				MatchmakingServer.getLogger().info("team-penguin -> Create user fail: " + login.getUsername() + " email address: " + login_details.getEmail() + " key: " + reg_key_encoded + " password: " + CryptUtils.digest(login.getPasswordDigest()));
+ 				return;
+ 			}
+ 		} catch (IllegalArgumentException e) {
+diff -ur tribaltrouble/server/classes/com/oddlabs/matchserver/DBInterface.java tribaltrouble-master/server/classes/com/oddlabs/matchserver/DBInterface.java
+--- tribaltrouble/server/classes/com/oddlabs/matchserver/DBInterface.java	2017-01-17 18:02:02.000000000 -0800
++++ tribaltrouble-master/server/classes/com/oddlabs/matchserver/DBInterface.java	2016-12-28 18:03:44.000000000 -0800
+@@ -50,7 +50,7 @@
+ 			}
+ 		} catch (SQLException e) {
+ 			MatchmakingServer.getLogger().throwing(DBInterface.class.getName(), "getRegKeyUsername", e);
+-			throw new IllegalArgumentException("key " + reg_key + " not i DB");
++			throw new IllegalArgumentException("key " + reg_key + " not in DB");
+ 		}
+ 	}
+ 	
+@@ -259,8 +259,8 @@
+ 
+ 	public final static void saveGameReport(int game_id, int tick, int[] team_score) {
+ 		try {
+-			PreparedStatement stmt = DBUtils.createStatement("INSERT INTO game_reports (game_id, tick, team1, team2, team3, team4, team5, team6) " + 
+-					"VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
++			PreparedStatement stmt = DBUtils.createStatement("INSERT INTO game_reports (game_id, tick, team1, team2, team3, team4, team5, team6, team7, team8) " + 
++					"VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+ 			try {
+ 				stmt.setInt(1, game_id);
+ 				stmt.setInt(2, tick);
+@@ -270,6 +270,8 @@
+ 				stmt.setInt(6, team_score[3]);
+ 				stmt.setInt(7, team_score[4]);
+ 				stmt.setInt(8, team_score[5]);
++				stmt.setInt(9, team_score[6]);
++				stmt.setInt(10, team_score[7]);
+ 				int row_count = stmt.executeUpdate();
+ 				assert row_count == 1;
+ 			} finally {
+diff -ur tribaltrouble/server/matchmaker tribaltrouble-master/server/matchmaker
+--- tribaltrouble/server/matchmaker	2017-01-17 18:02:02.000000000 -0800
++++ tribaltrouble-master/server/matchmaker	2016-12-23 18:43:25.000000000 -0800
+@@ -1,10 +1,4 @@
+ #!/bin/bash
+ 
+-SENDMAIL=/usr/sbin/sendmail
+-SENDTO=all@oddlabs.com
+-ERRORMAIL=./error_mail
+-
+-until java -Djava.security.manager -Djava.security.policy=matchmaker.policy -server -ea -cp matchmaking.jar:mysql.jar:commons-pool-1.2.jar:commons-dbcp-1.2.1.jar:commons-collections-3.1.jar com.oddlabs.matchserver.MatchmakingServer; do
+-echo "Service crashed, sending report";
+-cat $ERRORMAIL | $SENDMAIL -oi $SENDTO; done
++java -Djava.security.manager -Djava.security.policy=matchmaker.policy -server -ea -cp matchmaking.jar:mysql.jar:commons-pool.jar:commons-dbcp.jar:commons-collections.jar com.oddlabs.matchserver.MatchmakingServer
+ 
+diff -ur tribaltrouble/server/router tribaltrouble-master/server/router
+--- tribaltrouble/server/router	2017-01-17 18:02:02.000000000 -0800
++++ tribaltrouble-master/server/router	2014-09-13 10:10:04.000000000 -0700
+@@ -1,8 +1,3 @@
+ #!/bin/bash
+ 
+-SENDMAIL=/usr/sbin/sendmail
+-SENDTO=all@oddlabs.com
+-ERRORMAIL=./error_mail
+-
+-until java -Djava.security.manager -Djava.security.policy=router.policy -server -ea -cp router.jar com.oddlabs.routerserver.RouterServer; do echo "Service crashed, sending report";
+-cat $ERRORMAIL | $SENDMAIL -oi $SENDTO; done
++java -Djava.security.manager -Djava.security.policy=router.policy -server -ea -cp router.jar com.oddlabs.routerserver.RouterServer
+diff -ur tribaltrouble/servlet/build.xml tribaltrouble-master/servlet/build.xml
+--- tribaltrouble/servlet/build.xml	2017-01-17 18:02:02.000000000 -0800
++++ tribaltrouble-master/servlet/build.xml	2016-12-27 23:29:38.000000000 -0800
+@@ -2,15 +2,15 @@
+ 	<property name="java_source_version" value="1.5"/>
+ 	<import file="../common/common.xml"/>
+ 	<property name="classpath" value="../common/build/classes:${lib}/servlet-api.jar"/>
+-	<property name="tomcat.home" location="/usr/share/tomcat5.5"/>
++	<property name="tomcat.home" location="/var/lib/tomcat-6-oddlabs"/>
+ 
+ 	<target name="compiledeps" depends="compile-common">
+ 	</target>
+ 
+ 	<target name="deploy">
+-		<taskdef name="reload" classpath="${tomcat.home}/server/lib/catalina-ant.jar" classname="org.apache.catalina.ant.ReloadTask"/>
+-		<unwar src="build/${servlet}.war" dest="${tomcat.home}/webapps/${servlet}" overwrite="true"/>
+-		<reload url="http://localhost:8180/manager" path="/matchservlet" username="tomcat" password="tomcat"/>
++		<taskdef name="reload" classpath="/usr/share/tomcat-6/lib/catalina-ant.jar" classname="org.apache.catalina.ant.ReloadTask"/>
++		<unwar src="build/oddlabs.war" dest="${tomcat.home}/webapps/oddlabs" overwrite="true"/>
++		<reload url="http://localhost:33215/manager" path="/oddlabs" username="tomcat" password="tomcat"/>
+ 	</target>
+ 
+ 	<!--	<target name="deploy">
+@@ -42,7 +42,8 @@
+ 			<classes dir="../common/build/classes" includes="com/oddlabs/registration/**/*class"/>
+ 			<classes dir="${build}/classes" includes="com/oddlabs/regservlet/**/*class"/>
+ 			<metainf dir="regservlet" includes="context.xml"/>
+-			<classes dir="${commonstatic}" includes="private_reg_key"/>
++			<classes dir="../common/static" includes="private_reg_key"/>
++			<lib dir="regservlet/lib" includes="*.jar"/>
+ 		</war>
+ 	</target>
+ 
+diff -ur tribaltrouble/servlet/classes/com/oddlabs/graphservlet/GraphServlet.java tribaltrouble-master/servlet/classes/com/oddlabs/graphservlet/GraphServlet.java
+--- tribaltrouble/servlet/classes/com/oddlabs/graphservlet/GraphServlet.java	2017-01-17 18:02:02.000000000 -0800
++++ tribaltrouble-master/servlet/classes/com/oddlabs/graphservlet/GraphServlet.java	2016-12-23 11:05:46.000000000 -0800
+@@ -46,12 +46,12 @@
+ 	} 
+ 	
+ 	private final int[][] getGameData(Connection conn, int game_id) throws SQLException {
+-		PreparedStatement stmt = conn.prepareStatement("SELECT tick, team1, team2, team3, team4, team5, team6 FROM game_reports WHERE game_id = ?");
++		PreparedStatement stmt = conn.prepareStatement("SELECT tick, team1, team2, team3, team4, team5, team6, team7, team8 FROM game_reports WHERE game_id = ?");
+ 		stmt.setInt(1, game_id);
+ 		ResultSet result = stmt.executeQuery();
+ 		ArrayList list = new ArrayList();
+ 		while (result.next()) {
+-			list.add(new int[]{result.getInt("tick"), result.getInt("team1"), result.getInt("team2"), result.getInt("team3"), result.getInt("team4"), result.getInt("team5"), result.getInt("team6")});
++			list.add(new int[]{result.getInt("tick"), result.getInt("team1"), result.getInt("team2"), result.getInt("team3"), result.getInt("team4"), result.getInt("team5"), result.getInt("team6"), result.getInt("team7"), result.getInt("team8")});
+ 		}
+ 		int[][] array = new int[list.size()][];
+ 		for (int i = 0; i < array.length; i++) {
+diff -ur tribaltrouble/servlet/regservlet/context.xml tribaltrouble-master/servlet/regservlet/context.xml
+--- tribaltrouble/servlet/regservlet/context.xml	2017-01-17 18:02:02.000000000 -0800
++++ tribaltrouble-master/servlet/regservlet/context.xml	2014-09-12 15:49:14.000000000 -0700
+@@ -34,6 +34,7 @@
+ 		username="matchmaker" password="U46TawOp"
+ 		url="jdbc:mysql://localhost/oddlabs" driverClassName="com.mysql.jdbc.Driver"
+ 		removeAbandoned="true" removeAbandonedTimeout="60"
++		factory="org.apache.commons.dbcp.BasicDataSourceFactory"
+ 		/>
+ 
+ </Context>
+diff -ur tribaltrouble/tools/build.xml tribaltrouble-master/tools/build.xml
+--- tribaltrouble/tools/build.xml	2017-01-17 18:02:02.000000000 -0800
++++ tribaltrouble-master/tools/build.xml	2014-09-14 10:48:51.000000000 -0700
+@@ -1,6 +1,6 @@
+ <project name="tools" basedir="." default="compile">
+ 	<import file="../common/common.xml"/>
+-	<property name="classpath" value="../common/build/classes:svn/svnkit.jar:${lib}/lwjgl_util.jar:${lib}/lwjgl.jar:${lib}/jsquish.jar:${lib}/png.jar"/>
++	<property name="classpath" value="../common/build/classes:svn/svnkit.jar:svn/sqljet.jar:svn/sequence-library.jar:../common/build/classes:${lib}/lwjgl_util.jar:${lib}/lwjgl.jar:${lib}/jsquish.jar:${lib}/png.jar"/>
+ 
+ 	<target name="compiledeps" depends="compile-common"/>
+ 
+@@ -64,16 +64,16 @@
+ 	</target>
+ 
+ 	<target name="copydist" depends="compile">
+-		<java failonerror="true" fork="yes" classpath="../common/build/classes:svn/svnkit.jar:${build}/classes" classname="com.oddlabs.svnutil.CopyDist">
++		<java failonerror="true" fork="yes" classpath="../common/build/classes:svn/svnkit.jar:svn/sequence-library.jar:svn/sqljet.jar:${build}/classes" classname="com.oddlabs.svnutil.CopyDist">
+ 			<arg path="${svnsrc}"/>
+ 			<arg path="${svndst}"/>
+ 		</java>
+ 	</target>
+ 
+ 	<target name="revision" depends="compile">
+-		<java failonerror="true" fork="yes" classpath="svn/svnkit.jar:${build}/classes" classname="com.oddlabs.svnutil.DetermineRevision">
++		<java failonerror="true" fork="yes" classpath="../common/build/classes:svn/svnkit.jar:svn/sequence-library.jar:svn/sqljet.jar:${build}/classes" classname="com.oddlabs.svnutil.DetermineRevision">
+ 			<jvmarg value="-Xmx256000000"/>
+-			<arg path="${svn_path}"/>
++			<arg path="svndist"/>
+ 			<arg path="${revision_number_file}"/>
+ 		</java>
+ 	</target>
+diff -ur tribaltrouble/tools/classes/com/oddlabs/converter/ModelInfo.java tribaltrouble-master/tools/classes/com/oddlabs/converter/ModelInfo.java
+--- tribaltrouble/tools/classes/com/oddlabs/converter/ModelInfo.java	2017-01-17 18:02:02.000000000 -0800
++++ tribaltrouble-master/tools/classes/com/oddlabs/converter/ModelInfo.java	2017-01-14 10:10:11.000000000 -0800
+@@ -3,7 +3,8 @@
+ import java.util.Map;
+ 
+ public final strictfp class ModelInfo {
+-	public final short[] indices;
++	/* Team Penguin */
++	public final int[] indices;
+ 	public final float[] normals;
+ 	public final float[] vertices;
+ 	public final float[] colors;
+@@ -12,7 +13,8 @@
+ 	public final float[][] skin_weights;
+ //	public final String tex_name;
+ 
+-	public ModelInfo(/*String tex_name, */short[] indices, float[] vertices, float[] normals, float[] colors, float[] texcoords, byte[][] skin_names, float[][] skin_weights) {
++	public ModelInfo(/*String tex_name, */int[] indices, float[] vertices, float[] normals, float[] colors, float[] texcoords, byte[][] skin_names, float[][] skin_weights) {
++	/* End Penguin */
+ 		this.normals = normals;
+ 		this.vertices = vertices;
+ 		this.indices = indices;
+diff -ur tribaltrouble/tools/classes/com/oddlabs/converter/Optimizer.java tribaltrouble-master/tools/classes/com/oddlabs/converter/Optimizer.java
+--- tribaltrouble/tools/classes/com/oddlabs/converter/Optimizer.java	2017-01-17 18:02:02.000000000 -0800
++++ tribaltrouble-master/tools/classes/com/oddlabs/converter/Optimizer.java	2017-01-14 10:04:44.000000000 -0800
+@@ -8,6 +8,7 @@
+ import java.util.Map;
+ import java.nio.FloatBuffer;
+ import java.nio.ShortBuffer;
++import java.nio.IntBuffer;
+ 
+ public final strictfp class Optimizer {
+ 	private final static float VERTEX_TRESHOLD = 0.000001f;
+@@ -56,7 +57,9 @@
+ 	}
+ 
+ 	protected final static ModelInfo optimize(/*String tex_name, */int num_vertices, float[] vertices, float[] normals, float[] colors, float[] uvs, byte[][] skin_names, float[][] skin_weights) {
+-		short[] indices = new short[num_vertices];
++		/* Teamp Penguin */
++		int[] indices = new int[num_vertices];
++		/* End Penguin */
+ 		float[] r_vertices = new float[vertices.length];
+ 		float[] r_colors = new float[colors.length];
+ 		float[] r_normals = new float[normals.length];
+@@ -97,7 +100,9 @@
+ 		r_uvs = stripArray(index*2, r_uvs);
+ 		r_skin_names = stripArray(index, r_skin_names);
+ 		r_skin_weights = stripArray(index, r_skin_weights);
+-		ShortBuffer index_buffer = ShortBuffer.wrap(indices);
++		/* Team Penguin */
++		IntBuffer index_buffer = IntBuffer.wrap(indices);
++		/* End Penguin */
+ 		IndexListOptimizer.optimize(index_buffer);
+ //		System.out.println("resulting vertices = " + index);
+ 		return new ModelInfo(/*tex_name,*/ indices, r_vertices, r_normals, r_colors, r_uvs, r_skin_names, r_skin_weights);
+diff -ur tribaltrouble/tools/classes/com/oddlabs/converter2/ModelInfo.java tribaltrouble-master/tools/classes/com/oddlabs/converter2/ModelInfo.java
+--- tribaltrouble/tools/classes/com/oddlabs/converter2/ModelInfo.java	2017-01-17 18:02:02.000000000 -0800
++++ tribaltrouble-master/tools/classes/com/oddlabs/converter2/ModelInfo.java	2017-01-15 10:23:35.000000000 -0800
+@@ -3,7 +3,9 @@
+ import java.util.Map;
+ 
+ public final strictfp class ModelInfo {
+-	public final short[] indices;
++	/* Team Penguin */
++	public final int[] indices;
++	/* End Penguin */
+ 	public final float[] normals;
+ 	public final float[] vertices;
+ 	public final float[] colors;
+@@ -13,7 +15,9 @@
+ 	public final float[][] skin_weights;
+ //	public final String tex_name;
+ 
+-	public ModelInfo(/*String tex_name, */short[] indices, float[] vertices, float[] normals, float[] colors, float[] texcoords, float[] texcoords2, byte[][] skin_names, float[][] skin_weights) {
++	/* Team Penguin */
++	public ModelInfo(/*String tex_name, */int[] indices, float[] vertices, float[] normals, float[] colors, float[] texcoords, float[] texcoords2, byte[][] skin_names, float[][] skin_weights) {
++	/* End Penguin */
+ 		this.normals = normals;
+ 		this.vertices = vertices;
+ 		this.indices = indices;
+diff -ur tribaltrouble/tools/classes/com/oddlabs/converter2/Optimizer.java tribaltrouble-master/tools/classes/com/oddlabs/converter2/Optimizer.java
+--- tribaltrouble/tools/classes/com/oddlabs/converter2/Optimizer.java	2017-01-17 18:02:02.000000000 -0800
++++ tribaltrouble-master/tools/classes/com/oddlabs/converter2/Optimizer.java	2017-01-15 10:27:20.000000000 -0800
+@@ -6,7 +6,7 @@
+ import org.lwjgl.util.vector.Matrix4f;
+ import org.lwjgl.util.vector.Vector4f;
+ import java.util.Map;
+-import java.nio.ShortBuffer;
++import java.nio.IntBuffer;
+ import java.nio.FloatBuffer;
+ 
+ public final strictfp class Optimizer {
+@@ -56,7 +56,9 @@
+ 	}
+ 
+ 	protected final static ModelInfo optimize(/*String tex_name, */int num_vertices, float[] vertices, float[] normals, float[] colors, float[] uvs, float[] uvs2, byte[][] skin_names, float[][] skin_weights) {
+-		short[] indices = new short[num_vertices];
++		/* Team Penguin */
++		int[] indices = new int[num_vertices];
++		/* End Penguin */
+ 		float[] r_vertices = new float[vertices.length];
+ 		float[] r_colors = new float[colors.length];
+ 		float[] r_normals = new float[normals.length];
+@@ -88,10 +90,12 @@
+ 				copyFloats(i, index, 2, uvs2, r_uvs2);
+ 				copyObjects(i, index, 1, skin_names, r_skin_names);
+ 				copyObjects(i, index, 1, skin_weights, r_skin_weights);
+-				indices[i] = (short)index;
++				/* Team Penguin */
++				indices[i] = index;
+ 				index++;
+ 			} else {
+-				indices[i] = (short)j;
++				indices[i] = j;
++				/* End Penguin */
+ 			}
+ 		}
+ 		r_vertices = stripArray(index*3, r_vertices);
+@@ -109,7 +113,9 @@
+ 				using_texture_coords2 = true;
+ 		if (!using_texture_coords2)
+ 			r_uvs2 = null;
+-		ShortBuffer index_buffer = ShortBuffer.wrap(indices);
++		/* Team Penguin */
++		IntBuffer index_buffer = IntBuffer.wrap(indices);
++		/* End Penguin */
+ 		IndexListOptimizer.optimize(index_buffer);
+ 		return new ModelInfo(/*tex_name,*/ indices, r_vertices, r_normals, r_colors, r_uvs, r_uvs2, r_skin_names, r_skin_weights);
+ 	}
+diff -ur tribaltrouble/tt/build.xml tribaltrouble-master/tt/build.xml
+--- tribaltrouble/tt/build.xml	2017-01-17 18:02:03.000000000 -0800
++++ tribaltrouble-master/tt/build.xml	2014-09-15 11:48:34.000000000 -0700
+@@ -1,6 +1,6 @@
+ <project name="tt" basedir="." default="compile">
+ 	<import file="../common/common.xml"/>
+-	<property name="jre" value="jre1.5.0_04"/>
++	<property name="jre" value="jre1.5.0_22"/>
+ 	<property name="main_class" value="com.oddlabs.tt.Main"/>
+ 	<property name="classpath" value="../common/build/classes:${lib}/javasvn.jar:${lib}/lwjgl.jar:${lib}/lwjgl_util.jar:${lib}/jorbis.jar:${lib}/jsquish.jar"/>
+ 	<property name="res_classpath" value="${build}:static:i18n:${commonstatic}"/>
+@@ -144,7 +144,7 @@
+ 		<exec executable="hg" output="${revision_number_file}">
+ 			<arg value="tip"/>
+ 			<arg value="--template"/>
+-			<arg value="{rev}"/>
++			<arg value="2137"/>
+ 		</exec>
+ 	</target>
+ 
+@@ -164,7 +164,8 @@
+ 	</target>
+ 
+ 	<!-- installer stuff -->
+-	<target name="dist" depends="mrproper, copydist" description="generate the distribution"/>
++	<!-- target name="dist" depends="mrproper, copydist" description="generate the distribution"/-->
++	<target name="dist" depends="copydist" description="generate the distribution"/>
+ 
+ 	<target name="cleaninstallers">
+ 		<delete dir="${installers.assembly}"/>
+diff -ur tribaltrouble/tt/classes/com/oddlabs/tt/camera/GameCamera.java tribaltrouble-master/tt/classes/com/oddlabs/tt/camera/GameCamera.java
+--- tribaltrouble/tt/classes/com/oddlabs/tt/camera/GameCamera.java	2017-01-17 18:02:03.000000000 -0800
++++ tribaltrouble-master/tt/classes/com/oddlabs/tt/camera/GameCamera.java	2016-08-21 08:42:06.000000000 -0700
+@@ -426,12 +426,12 @@
+ 			return;
+ 		}
+ 
+-		if (LocalInput.isKeyDown(Keyboard.KEY_HOME) || LocalInput.isKeyDown(Keyboard.KEY_NUMPAD8))
++		if (LocalInput.isKeyDown(Keyboard.KEY_HOME) || LocalInput.isKeyDown(Keyboard.KEY_NUMPAD8) || LocalInput.isKeyDown(Keyboard.KEY_LBRACKET))
+ 			pitch_up = true;
+ 		else
+ 			pitch_up = false;
+ 
+-		if (LocalInput.isKeyDown(Keyboard.KEY_END) || LocalInput.isKeyDown(Keyboard.KEY_NUMPAD2))
++		if (LocalInput.isKeyDown(Keyboard.KEY_END) || LocalInput.isKeyDown(Keyboard.KEY_NUMPAD2) || LocalInput.isKeyDown(Keyboard.KEY_RBRACKET))
+ 			pitch_down = true;
+ 		else
+ 			pitch_down = false;
+diff -ur tribaltrouble/tt/classes/com/oddlabs/tt/form/NewUserForm.java tribaltrouble-master/tt/classes/com/oddlabs/tt/form/NewUserForm.java
+--- tribaltrouble/tt/classes/com/oddlabs/tt/form/NewUserForm.java	2017-01-17 18:02:03.000000000 -0800
++++ tribaltrouble-master/tt/classes/com/oddlabs/tt/form/NewUserForm.java	2014-09-15 09:48:02.000000000 -0700
+@@ -21,6 +21,7 @@
+ import com.oddlabs.tt.util.Utils;
+ import com.oddlabs.tt.delegate.MainMenu;
+ import com.oddlabs.net.NetworkSelector;
++import com.oddlabs.util.CryptUtils;
+ 
+ public final strictfp class NewUserForm extends Form {
+ 	private final static int MIN_PASSWORD_LENGTH = 6;
+@@ -141,6 +142,7 @@
+ 			if (!login.isValid())
+ 				gui_root.addModalForm(new MessageForm(Utils.getBundleString(bundle, "invalid_login")));
+ 			else
++				System.out.println("team-penguin: username = " + username + ", password = " + CryptUtils.digest(login.getPasswordDigest()) + ", " + login_details.getEmail() + ", pw_digest = " + password + ", " + login.getUsername());
+ 				doCreateUser(username, login_details, password, login);
+ 		}
+ 	}
+diff -ur tribaltrouble/tt/classes/com/oddlabs/tt/form/TerrainMenu.java tribaltrouble-master/tt/classes/com/oddlabs/tt/form/TerrainMenu.java
+--- tribaltrouble/tt/classes/com/oddlabs/tt/form/TerrainMenu.java	2017-01-17 18:02:03.000000000 -0800
++++ tribaltrouble-master/tt/classes/com/oddlabs/tt/form/TerrainMenu.java	2017-01-15 08:37:57.000000000 -0800
+@@ -56,10 +56,11 @@
+ 	public final static byte SMALL = 0;
+ 	public final static byte MEDIUM = 1;
+ 	public final static byte LARGE = 2;
++	public final static byte HUGE = 3;
+ 
+ 	private final static int NORMAL = 2;
+ 	private final static int HARD = 3;
+-	private final static int[] SIZES = new int[]{256, 512, 1024};
++	private final static int[] SIZES = new int[]{256, 512, 1024, 2048};
+ 	
+ 	private final static int SLIDER_LENGTH = 250;
+ 	private final static int BUTTON_WIDTH = 100;
+@@ -68,10 +69,10 @@
+ 	private final static String SEED_CARDINALITY = "40000";
+ 	private final static int SLIDER_CARDINALITY = 11;
+ 	private final static int TERRAIN_TYPE_CARDINALITY = 2;
+-	private final static int SIZE_CARDINALITY = 3;
++	private final static int SIZE_CARDINALITY = 4;
+ 	private final static int DIFFICULTY_CARDINALITY = 4;
+ 	private final static int RACE_CARDINALITY = 2;
+-	private final static int TEAM_CARDINALITY = 6;
++	private final static int TEAM_CARDINALITY = 8;
+ 	private final static BigInteger MAX_VALUE;
+ 
+ 	private final Menu main_menu;
+@@ -118,6 +119,7 @@
+ 			max = max.multiply(new BigInteger(new byte[]{RACE_CARDINALITY}));
+ 			max = max.multiply(new BigInteger(new byte[]{TEAM_CARDINALITY}));
+ 		}
++		//System.out.println("team.penguin: MAX_VALUE = " + max);
+ 		MAX_VALUE = max;
+ 	}
+ 
+@@ -189,6 +191,7 @@
+ 		pulldown_size.addItem(new PulldownItem(ServerMessageBundler.getSizeString(Game.SIZE_SMALL)));
+ 		pulldown_size.addItem(new PulldownItem(ServerMessageBundler.getSizeString(Game.SIZE_MEDIUM)));
+ 		pulldown_size.addItem(new PulldownItem(ServerMessageBundler.getSizeString(Game.SIZE_LARGE)));
++		pulldown_size.addItem(new PulldownItem(ServerMessageBundler.getSizeString(Game.SIZE_HUGE)));
+ 
+ 		PulldownButton pb_size = new PulldownButton(gui_root, pulldown_size, 1, 150);
+ 		group_size.addChild(pb_size);
+@@ -638,7 +641,7 @@
+ 				vegetation_amount/(float)SLIDER_MAX_VALUE,
+ 				supplies_amount/(float)SLIDER_MAX_VALUE,
+ 				seed*seed,
+-				new String[]{ai_string + "0", ai_string + "1", ai_string + "2", ai_string + "3", ai_string + "4", ai_string + "5"});
++				new String[]{ai_string + "0", ai_string + "1", ai_string + "2", ai_string + "3", ai_string + "4", ai_string + "5", ai_string + "6", ai_string + "7"});
+ 		game_network.getClient().getServerInterface().setPlayerSlot(0, PlayerSlot.HUMAN, race_pulldown_menus[0].getChosenItemIndex(), team_pulldown_menus[0].getChosenItemIndex(), !multiplayer, PlayerSlot.AI_NONE);
+ 		if (!multiplayer) {
+ 			for (int i = 1; i < race_pulldown_menus.length; i++) {
+@@ -694,7 +697,7 @@
+ 	
+ 	private final strictfp class PulldownUpdateSizeListener implements ItemChosenListener {
+ 		public final void itemChosen(PulldownMenu menu, int item_index) {
+-			if (item_index == LARGE && !Renderer.isRegistered()) {
++			if (item_index >= LARGE && !Renderer.isRegistered()) {
+ 				menu.chooseItem(MEDIUM);
+ 				if (show_demo) {
+ 					ResourceBundle db = ResourceBundle.getBundle(DemoForm.class.getName());
+diff -ur tribaltrouble/tt/classes/com/oddlabs/tt/global/Settings.java tribaltrouble-master/tt/classes/com/oddlabs/tt/global/Settings.java
+--- tribaltrouble/tt/classes/com/oddlabs/tt/global/Settings.java	2017-01-17 18:02:03.000000000 -0800
++++ tribaltrouble-master/tt/classes/com/oddlabs/tt/global/Settings.java	2014-09-14 10:02:23.000000000 -0700
+@@ -25,7 +25,7 @@
+ 
+ 	// event logging
+ 	public String last_event_log_dir = "";
+-	public int last_revision = -1;
++	public int last_revision = 1;
+ 	public boolean crashed = false;
+ 
+ 	// network
+diff -ur tribaltrouble/tt/classes/com/oddlabs/tt/gui/GUIRoot.java tribaltrouble-master/tt/classes/com/oddlabs/tt/gui/GUIRoot.java
+--- tribaltrouble/tt/classes/com/oddlabs/tt/gui/GUIRoot.java	2017-01-17 18:02:03.000000000 -0800
++++ tribaltrouble-master/tt/classes/com/oddlabs/tt/gui/GUIRoot.java	2016-12-24 12:22:17.000000000 -0800
+@@ -9,7 +9,7 @@
+ import org.lwjgl.BufferUtils;
+ import org.lwjgl.input.Keyboard;
+ import org.lwjgl.opengl.GL11;
+-import org.lwjgl.opengl.glu.GLU;
++import org.lwjgl.util.glu.GLU;
+ import org.lwjgl.util.vector.Matrix4f;
+ import org.lwjgl.util.vector.Vector3f;
+ 
+diff -ur tribaltrouble/tt/classes/com/oddlabs/tt/landscape/LandscapeTileIndices.java tribaltrouble-master/tt/classes/com/oddlabs/tt/landscape/LandscapeTileIndices.java
+--- tribaltrouble/tt/classes/com/oddlabs/tt/landscape/LandscapeTileIndices.java	2017-01-17 18:02:03.000000000 -0800
++++ tribaltrouble-master/tt/classes/com/oddlabs/tt/landscape/LandscapeTileIndices.java	2017-01-14 08:38:46.000000000 -0800
+@@ -1,6 +1,7 @@
+ package com.oddlabs.tt.landscape;
+ 
+ import java.nio.ShortBuffer;
++import java.nio.IntBuffer;
+ import org.lwjgl.BufferUtils;
+ 
+ import java.util.List;
+@@ -16,7 +17,9 @@
+ 	private final int patch_exp;
+ 	private final int[] patch_indices_indices;
+ 	private final LandscapeTileTriangle[][][] quad_to_planes;
+-	private final ShortBuffer indices;
++	/* Team Penguin */
++	private final IntBuffer indices;
++	/* End Penguin */
+ 
+ 	static int getIndex(int patch_exp, int x, int y) {
+ 		int patch_size = getPatchSize(patch_exp);
+@@ -137,7 +140,9 @@
+ 		}
+ 		patch_indices_indices[index++] = triangle_index;
+ 		assert index == patch_indices_indices.length: index + " " + patch_indices_indices.length;
+-		this.indices = BufferUtils.createShortBuffer(triangle_index*3);
++		/* Team Penguin */
++		this.indices = BufferUtils.createIntBuffer(triangle_index*3);
++		/* End Penguin */
+ 		for (int i = 0; i < num_lod; i++) {
+ 			buildTile(lower, higher, i, 0, indices);
+ 			if (i%2 == 1) { // Need link tiles
+@@ -158,11 +163,12 @@
+ System.out.println("indices.remaining() = " + indices.remaining());*/
+ 	}
+ 
+-	public final ShortBuffer getIndices() {
++/* Team Penguin */
++	public final IntBuffer getIndices() {
+ 		return indices;
+ 	}
+ 
+-	private static void buildTile(LandscapeTileTriangle lower, LandscapeTileTriangle higher, int lod, int border_set, ShortBuffer indices) {
++	private static void buildTile(LandscapeTileTriangle lower, LandscapeTileTriangle higher, int lod, int border_set, IntBuffer indices) {
+ 		int pos = indices.position();
+ 		lower.putIndices(lod, border_set, indices);
+ 		higher.putIndices(lod ,border_set, indices);
+@@ -174,6 +180,7 @@
+ 		indices.limit(saved_limit);
+ 		indices.position(saved_pos);
+ 	}
++/* End Penguin */
+ 
+ 	public final void fillCoverIndices(ShortBuffer buffer, int lod, int border_set, int start_x, int start_y, int end_x, int end_y) {
+ 		border_set = adjustBorderSet(lod, border_set);
+diff -ur tribaltrouble/tt/classes/com/oddlabs/tt/landscape/LandscapeTileTriangle.java tribaltrouble-master/tt/classes/com/oddlabs/tt/landscape/LandscapeTileTriangle.java
+--- tribaltrouble/tt/classes/com/oddlabs/tt/landscape/LandscapeTileTriangle.java	2017-01-17 18:02:03.000000000 -0800
++++ tribaltrouble-master/tt/classes/com/oddlabs/tt/landscape/LandscapeTileTriangle.java	2017-01-14 09:14:48.000000000 -0800
+@@ -3,6 +3,7 @@
+ import java.util.List;
+ 
+ import java.nio.ShortBuffer;
++import java.nio.IntBuffer;
+ 
+ import com.oddlabs.tt.util.StrictVector3f;
+ 
+@@ -182,7 +183,8 @@
+ 		return (border_set & border_direction) != 0;
+ 	}
+ 
+-	public final void putIndices(int lod, int border_set, ShortBuffer indices) {
++/* Team Penguin */
++	public final void putIndices(int lod, int border_set, IntBuffer indices) {
+ //System.out.println("lod = " + lod + " | Integer.toHexString(border_set) = " + Integer.toHexString(border_set) + " | Integer.toHexString(border_direction) = " + Integer.toHexString(border_direction));
+ 		if (lod > 0 || (lod == 0 && containsBorder(border_set))) {
+ 			t0.putIndices(lod - 1, border_set, indices);
+@@ -193,6 +195,7 @@
+ 			indices.put(i2);
+ 		}
+ 	}
++/* End Penguin */
+ 
+ 	public final void update(HeightMap heightmap, int offset_x, int offset_y) {
+ 		heightmap.makePlaneVector(i0_x + offset_x, i0_y + offset_y, i1_x + offset_x, i1_y + offset_y, i2_x + offset_x, i2_y + offset_y, current_plane);
+diff -ur tribaltrouble/tt/classes/com/oddlabs/tt/player/Player.java tribaltrouble-master/tt/classes/com/oddlabs/tt/player/Player.java
+--- tribaltrouble/tt/classes/com/oddlabs/tt/player/Player.java	2017-01-17 18:02:03.000000000 -0800
++++ tribaltrouble-master/tt/classes/com/oddlabs/tt/player/Player.java	2016-12-24 18:16:10.000000000 -0800
+@@ -41,11 +41,13 @@
+ 	public final static int DEFAULT_MAX_UNIT_COUNT = 250;
+ 
+ 	public static final float[][] COLORS = {{1f, .75f, 0f, 1f},
+-											{0f, .5f, 1f, 1f},
+-											{1f, 0f, .25f, 1f},
+-											{0f, 1f, .75f, 1f},
+-											{.75f, 0f, 1f, 1f},
+-											{.75f, 1f, 0f, 1f}};
++						{0f, .5f, 1f, 1f},
++						{1f, 0f, .25f, 1f},
++						{0f, 1f, .75f, 1f},
++						{.75f, 0f, 1f, 1f},
++						{.75f, 1f, 0f, 1f},
++						{0f, .4f, 0f, 1f},
++						{1f, .6f, .8f, 1f}};
+ 	
+ 	private final World world;
+ 	private final PlayerInfo player_info;
+diff -ur tribaltrouble/tt/classes/com/oddlabs/tt/procedural/Landscape.java tribaltrouble-master/tt/classes/com/oddlabs/tt/procedural/Landscape.java
+--- tribaltrouble/tt/classes/com/oddlabs/tt/procedural/Landscape.java	2017-01-17 18:02:03.000000000 -0800
++++ tribaltrouble-master/tt/classes/com/oddlabs/tt/procedural/Landscape.java	2017-01-15 14:36:09.000000000 -0800
+@@ -110,6 +110,11 @@
+ 				height_scale = 64;
+ 				access_threshold = 0.025f;
+ 				break;
++			case 2048:
++				size_multiplier = 32;
++				height_scale = 72;
++				access_threshold = 0.01875f;
++				break;
+ 			default:
+ 				size_multiplier = 0;
+ 				assert false : "illegal meters_per_world";
+diff -ur tribaltrouble/tt/classes/com/oddlabs/tt/render/BillboardPainter.java tribaltrouble-master/tt/classes/com/oddlabs/tt/render/BillboardPainter.java
+--- tribaltrouble/tt/classes/com/oddlabs/tt/render/BillboardPainter.java	2017-01-17 18:02:03.000000000 -0800
++++ tribaltrouble-master/tt/classes/com/oddlabs/tt/render/BillboardPainter.java	2017-01-14 09:47:57.000000000 -0800
+@@ -13,7 +13,9 @@
+ 	private final static FloatBuffer matrix_buf = BufferUtils.createFloatBuffer(16);
+ 	private final static DoubleBuffer plane_buf = BufferUtils.createDoubleBuffer(4);
+ 
+-	private final static void initClipPlane(int clip_enum, int face_index, int vertex_index1, int vertex_index2, short[] indices, float[] face_tex_coords, float handedness) {
++	/* Team Penguin */
++	private final static void initClipPlane(int clip_enum, int face_index, int vertex_index1, int vertex_index2, int[] indices, float[] face_tex_coords, float handedness) {
++	/* End Penguin */
+ 		float u1 = getElement(face_index, vertex_index1, 0, 2, indices, face_tex_coords);
+ 		float v1 = getElement(face_index, vertex_index1, 1, 2, indices, face_tex_coords);
+ 		float u2 = getElement(face_index, vertex_index2, 0, 2, indices, face_tex_coords);
+@@ -42,12 +44,14 @@
+ 		GL11.glEnable(GL11.GL_CLIP_PLANE2);
+ 	}
+ 
+-	private final static float getElement(int face_index, int vertex_index, int element_index, int vertex_size, short[] indices, float[] vertices) {
++	/* Team Penguin */
++	private final static float getElement(int face_index, int vertex_index, int element_index, int vertex_size, int[] indices, float[] vertices) {
+ 		int vertices_index = indices[face_index*3 + vertex_index];
+ 		return vertices[vertices_index*vertex_size + element_index];
+ 	}
+ 
+-	public final static void loadFaceMatrixAndClipPlanes(int face_index, short[] indices, float[] face_vertices, float[] face_tex_coords) {
++	public final static void loadFaceMatrixAndClipPlanes(int face_index, int[] indices, float[] face_vertices, float[] face_tex_coords) {
++	/* End Penguin */
+ 		// Find object space to texture space matrix, mapping vectors in object space to vectors in texture space
+ 		Vector3f v1 = new Vector3f(getElement(face_index, 0, 0, 3, indices, face_vertices),
+ 								   getElement(face_index, 0, 1, 3, indices, face_vertices),
+diff -ur tribaltrouble/tt/classes/com/oddlabs/tt/render/LandscapeRenderer.java tribaltrouble-master/tt/classes/com/oddlabs/tt/render/LandscapeRenderer.java
+--- tribaltrouble/tt/classes/com/oddlabs/tt/render/LandscapeRenderer.java	2017-01-17 18:02:03.000000000 -0800
++++ tribaltrouble-master/tt/classes/com/oddlabs/tt/render/LandscapeRenderer.java	2017-01-14 08:32:01.000000000 -0800
+@@ -28,8 +28,10 @@
+ import com.oddlabs.tt.resource.WorldInfo;
+ import com.oddlabs.tt.gui.GUIRoot;
+ import com.oddlabs.tt.vbo.ShortVBO;
++import com.oddlabs.tt.vbo.IntVBO;
+ 
+ import java.nio.ShortBuffer;
++import java.nio.IntBuffer;
+ 
+ public final strictfp class LandscapeRenderer implements Animated {
+ 	private final List[] patch_lists;
+@@ -41,7 +43,9 @@
+ 	private final PatchLevel[][] patch_levels;
+ 	private final LandscapeTileVertices landscape_vertices;
+ 	private final ShortBuffer shadow_indices_buffer;
+-	private final ShortVBO indices_vbo;
++	/* Team Penguin */
++	private final IntVBO indices_vbo;
++	/* End Penguin */
+ 	private final AnimationManager manager;
+ 
+ 	private int current_map_x;
+@@ -54,8 +58,10 @@
+ 	private int edit_patch_y1;
+ 
+ 	public LandscapeRenderer(World world, WorldInfo world_info, GUIRoot gui_root, AnimationManager manager) {
+-		ShortBuffer indices = world.getLandscapeIndices().getIndices();
+-		this.indices_vbo = new ShortVBO(ARBBufferObject.GL_STATIC_DRAW_ARB, indices.remaining());
++		/* Team Penguin */
++		IntBuffer indices = world.getLandscapeIndices().getIndices();
++		this.indices_vbo = new IntVBO(ARBBufferObject.GL_STATIC_DRAW_ARB, indices.remaining());
++		/* End Penguin */
+ 		this.indices_vbo.put(indices);
+ 
+ 		this.landscape_vertices = new LandscapeTileVertices(world.getHeightMap(), HeightMap.GRID_UNITS_PER_PATCH_EXP, world.getHeightMap().getPatchesPerWorld());
+diff -ur tribaltrouble/tt/classes/com/oddlabs/tt/render/Renderer.java tribaltrouble-master/tt/classes/com/oddlabs/tt/render/Renderer.java
+--- tribaltrouble/tt/classes/com/oddlabs/tt/render/Renderer.java	2017-01-17 18:02:03.000000000 -0800
++++ tribaltrouble-master/tt/classes/com/oddlabs/tt/render/Renderer.java	2016-12-28 02:24:18.000000000 -0800
+@@ -508,7 +508,8 @@
+ 		Map parameters = new HashMap();
+ 		parameters.put("current_affiliate_id", Settings.getSettings().affiliate_id);
+ 		parameters.put("affiliate_id", affiliate_id);
+-		return new HttpRequestParameters("https://" + Settings.getSettings().registration_address + "/oddlabs/registration", parameters);
++		//return new HttpRequestParameters("https://" + Settings.getSettings().registration_address + "/oddlabs/registration", parameters);
++		return new HttpRequestParameters("http://" + Settings.getSettings().registration_address + "/oddlabs/registration", parameters);
+ 	} 
+ 
+ 	public final Locale getDefaultLocale() {
+diff -ur tribaltrouble/tt/classes/com/oddlabs/tt/render/Sprite.java tribaltrouble-master/tt/classes/com/oddlabs/tt/render/Sprite.java
+--- tribaltrouble/tt/classes/com/oddlabs/tt/render/Sprite.java	2017-01-17 18:02:03.000000000 -0800
++++ tribaltrouble-master/tt/classes/com/oddlabs/tt/render/Sprite.java	2017-01-15 07:08:06.000000000 -0800
+@@ -25,6 +25,7 @@
+ import com.oddlabs.tt.util.GLStateStack;
+ import com.oddlabs.tt.vbo.FloatVBO;
+ import com.oddlabs.tt.vbo.ShortVBO;
++import com.oddlabs.tt.vbo.IntVBO;
+ 
+ final strictfp class Sprite {
+ 	public final static int LOWDETAIL_NORMAL = 1;
+@@ -37,7 +38,9 @@
+ 	public static int global_size = 0;
+ 	private final static FloatBuffer white_color;
+ 
+-	private final ShortVBO indices;
++	/* Team Penguin */
++	private final IntVBO indices;
++	/* End Penguin */
+ 	private final FloatVBO vertices_and_normals;
+ 	private final FloatVBO texcoords;
+ 
+@@ -69,7 +72,9 @@
+ 		this.type_array = type_array;
+ 		this.animation_length_array = animation_length_array;
+ 
+-		short[] tmp_indices = sprite_info.getIndices();
++		/* Team Penguin */
++		int[] tmp_indices = sprite_info.getIndices();
++		/* End Penguin */
+ 		float[] tmp_texcoords = sprite_info.getTexCoords();
+ 		num_vertices = tmp_texcoords.length/2;
+ 		num_triangles = tmp_indices.length/3;
+@@ -81,7 +86,9 @@
+ 
+ 		clear_color = sprite_info.getClearColor();
+ 
+-		indices = new ShortVBO(ARBBufferObject.GL_STATIC_DRAW_ARB, tmp_indices.length);
++		/* Team Penguin */
++		indices = new IntVBO(ARBBufferObject.GL_STATIC_DRAW_ARB, tmp_indices.length);
++		/* End Penguin */
+ 		indices.put(tmp_indices);
+ 		
+ 		texcoords = new FloatVBO(ARBBufferObject.GL_STATIC_DRAW_ARB, tmp_texcoords.length);
+diff -ur tribaltrouble/tt/classes/com/oddlabs/tt/render/TreeLowDetail.java tribaltrouble-master/tt/classes/com/oddlabs/tt/render/TreeLowDetail.java
+--- tribaltrouble/tt/classes/com/oddlabs/tt/render/TreeLowDetail.java	2017-01-17 18:02:03.000000000 -0800
++++ tribaltrouble-master/tt/classes/com/oddlabs/tt/render/TreeLowDetail.java	2017-01-15 11:43:03.000000000 -0800
+@@ -25,6 +25,7 @@
+ import com.oddlabs.tt.procedural.Landscape;
+ import com.oddlabs.tt.vbo.FloatVBO;
+ import com.oddlabs.tt.vbo.ShortVBO;
++import com.oddlabs.tt.vbo.IntVBO;
+ 
+ public final strictfp class TreeLowDetail {
+ 	private final static StrictVector4f src = new StrictVector4f();
+@@ -33,7 +34,9 @@
+ 
+ 	private final FloatVBO vertices;
+ 	private final FloatVBO texcoords;
+-	private final ShortVBO tree_indices;
++	/* Team Penguin */
++	private final IntVBO tree_indices;
++	/* End Penguin */
+ 	private final Texture[] lowdetail_textures;
+ 	private final Tree[] trees;
+ 	private final LowDetailModel[] low_details;
+@@ -64,13 +67,16 @@
+ 		current_vertex_index = 0;
+ 		int vertex_count = 0;
+ 		int index_count = 0;
++		System.out.println("num_trees = " + num_trees.length);
+ 		for (int i = 0; i < num_trees.length; i++) {
+ 			vertex_count += num_trees[i]*low_details[i].getVertices().length/3;
+ 			index_count += num_trees[i]*low_details[i].getIndices().length;
+ 		}
+ 		vertices = new FloatVBO(ARBBufferObject.GL_DYNAMIC_DRAW_ARB, vertex_count*3);
+ 		texcoords = new FloatVBO(ARBBufferObject.GL_STATIC_DRAW_ARB, vertex_count*2);
+-		tree_indices = new ShortVBO(ARBBufferObject.GL_STATIC_DRAW_ARB, index_count);
++		/* Team Penguin */
++		tree_indices = new IntVBO(ARBBufferObject.GL_STATIC_DRAW_ARB, index_count);
++		/* End Penguin */
+ 	}
+ 
+ 	final Tree[] getTrees() {
+@@ -113,17 +119,17 @@
+ 		return index + 1;
+ 	}
+ 
+-	private final int putIndex(int index, int tree_index, short[] tree_indice_array) {
+-		assert tree_index <= Character.MAX_VALUE;
+-		short tree_char_index = (short)tree_index;
+-		tree_indice_array[index] = tree_char_index;
++/* Team Penguin */
++	private final int putIndex(int index, int tree_index, int[] tree_indice_array) {
++		assert tree_index <= Integer.MAX_VALUE;
++		tree_indice_array[index] = tree_index;
+ 		return index + 1;
+ 	}
+ 
+-	private int[] putLowDetail(int start_index, StrictMatrix4f matrix, LowDetailModel low_detail_model, float[] vertice_array, float[] texcoord_array, short[] tree_indice_array) {
++	private int[] putLowDetail(int start_index, StrictMatrix4f matrix, LowDetailModel low_detail_model, float[] vertice_array, float[] texcoord_array, int[] tree_indice_array) {
+ 		float[] vertices = low_detail_model.getVertices();
+ 		float[] tex_coords = low_detail_model.getTexCoords();
+-		short[] indices = low_detail_model.getIndices();
++		int[] indices = low_detail_model.getIndices();
+ 		int end = start_index;
+ 		int start_vertex_index = current_vertex_index;
+ 		for (int i = 0; i < indices.length; i++)
+@@ -137,6 +143,7 @@
+ 		}
+ 		return new int[]{end, start_vertex_index};
+ 	}
++/* End Penguin */
+ 
+ 	public final void updateLowDetail(StrictMatrix4f matrix, TreeSupply tree) {
+ 		int start_vertex_index = tree.getLowDetailStartIndex();
+@@ -174,7 +181,9 @@
+ 		private int end = 0;
+ 		private final float[] vertex_array = new float[vertices.capacity()];
+ 		private final float[] texcoord_array = new float[texcoords.capacity()];
+-		private final short[] tree_index_array = new short[tree_indices.capacity()];
++		/* Team Penguin */
++		private final int[] tree_index_array = new int[tree_indices.capacity()];
++		/* End Penguin */
+ 
+ 		public final void visitLeaf(TreeLeaf tree_leaf) {
+ 			int start = end;
+diff -ur tribaltrouble/tt/classes/com/oddlabs/tt/util/ServerMessageBundler.java tribaltrouble-master/tt/classes/com/oddlabs/tt/util/ServerMessageBundler.java
+--- tribaltrouble/tt/classes/com/oddlabs/tt/util/ServerMessageBundler.java	2017-01-17 18:02:03.000000000 -0800
++++ tribaltrouble-master/tt/classes/com/oddlabs/tt/util/ServerMessageBundler.java	2017-01-14 07:49:02.000000000 -0800
+@@ -16,6 +16,8 @@
+ 				return Utils.getBundleString(bundle, "size_medium");
+ 			case Game.SIZE_LARGE:
+ 				return Utils.getBundleString(bundle, "size_large");
++			case Game.SIZE_HUGE:
++				return Utils.getBundleString(bundle, "size_huge");
+ 			default:
+ 				throw new RuntimeException();
+ 		}
+diff -ur tribaltrouble/tt/classes/com/oddlabs/tt/util/Utils.java tribaltrouble-master/tt/classes/com/oddlabs/tt/util/Utils.java
+--- tribaltrouble/tt/classes/com/oddlabs/tt/util/Utils.java	2017-01-17 18:02:03.000000000 -0800
++++ tribaltrouble-master/tt/classes/com/oddlabs/tt/util/Utils.java	2017-01-08 10:15:14.000000000 -0800
+@@ -48,6 +48,13 @@
+ 		return buffer;
+ 	}
+ 
++	public final static IntBuffer toBuffer(int[] ints) {
++		IntBuffer buffer = BufferUtils.createIntBuffer(ints.length);
++		buffer.put(ints);
++		buffer.rewind();
++		return buffer;
++	}
++
+ 	public final static void saveAsBMP(String filename, ByteBuffer pixel_data, int width, int height) {
+ 		long before = System.currentTimeMillis();
+ 		int pad = 4 - (width*3)%4;
+diff -ur tribaltrouble/tt/i18n/com/oddlabs/tt/util/ServerMessageBundler.properties tribaltrouble-master/tt/i18n/com/oddlabs/tt/util/ServerMessageBundler.properties
+--- tribaltrouble/tt/i18n/com/oddlabs/tt/util/ServerMessageBundler.properties	2017-01-17 18:02:03.000000000 -0800
++++ tribaltrouble-master/tt/i18n/com/oddlabs/tt/util/ServerMessageBundler.properties	2017-01-14 07:50:59.000000000 -0800
+@@ -1,6 +1,7 @@
+ size_small=Small
+ size_medium=Medium
+ size_large=Large
++size_huge=Huge
+ 
+ terrain_type_native=Tropical
+ terrain_type_viking=Northern

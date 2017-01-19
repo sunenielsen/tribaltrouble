@@ -1,3 +1,24 @@
+Team Penguin's goals:
+
+- Build a Matchmaking/Registration instance using the same processes as the original game.
+- Extend game functionality to (8) Teams and (1) additional Island size: Huge
+- Learn NetBeans and wrangle the code base into a manageable build environment.
+
+Team Penguin's progress:
+
+- Matchmaking, Routing and Registration services are working.
+- The Game plays with (8) Teams on a Huge Island.
+
+Team Penguin's current state:
+
+- Merge completed.
+- GitHub n00b.
+
+
+The file: 'team-penguin.patch' can be applied to a fresh copy of 'sunenielsen/tribaltrouble Branch: master' with the command: patch -p1 <team-penguin.patch
+
+
+
 Tribal Trouble
 ==============
 Tribal Trouble is a realtime strategy game released by Oddlabs in 2004. In 2014 the source was released under GPL2 license, and can be found in this repository.
