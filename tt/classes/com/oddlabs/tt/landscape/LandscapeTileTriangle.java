@@ -3,6 +3,7 @@ package com.oddlabs.tt.landscape;
 import java.util.List;
 
 import java.nio.ShortBuffer;
+import java.nio.IntBuffer;
 
 import com.oddlabs.tt.util.StrictVector3f;
 
@@ -182,7 +183,8 @@ public final strictfp class LandscapeTileTriangle {
 		return (border_set & border_direction) != 0;
 	}
 
-	public final void putIndices(int lod, int border_set, ShortBuffer indices) {
+/* Team Penguin */
+	public final void putIndices(int lod, int border_set, IntBuffer indices) {
 //System.out.println("lod = " + lod + " | Integer.toHexString(border_set) = " + Integer.toHexString(border_set) + " | Integer.toHexString(border_direction) = " + Integer.toHexString(border_direction));
 		if (lod > 0 || (lod == 0 && containsBorder(border_set))) {
 			t0.putIndices(lod - 1, border_set, indices);
@@ -193,6 +195,7 @@ public final strictfp class LandscapeTileTriangle {
 			indices.put(i2);
 		}
 	}
+/* End Penguin */
 
 	public final void update(HeightMap heightmap, int offset_x, int offset_y) {
 		heightmap.makePlaneVector(i0_x + offset_x, i0_y + offset_y, i1_x + offset_x, i1_y + offset_y, i2_x + offset_x, i2_y + offset_y, current_plane);

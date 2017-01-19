@@ -28,8 +28,10 @@ import com.oddlabs.tt.util.BoundingBox;
 import com.oddlabs.tt.resource.WorldInfo;
 import com.oddlabs.tt.gui.GUIRoot;
 import com.oddlabs.tt.vbo.ShortVBO;
+import com.oddlabs.tt.vbo.IntVBO;
 
 import java.nio.ShortBuffer;
+import java.nio.IntBuffer;
 
 public final strictfp class LandscapeRenderer implements Animated {
 	private final List[] patch_lists;
@@ -41,7 +43,9 @@ public final strictfp class LandscapeRenderer implements Animated {
 	private final PatchLevel[][] patch_levels;
 	private final LandscapeTileVertices landscape_vertices;
 	private final ShortBuffer shadow_indices_buffer;
-	private final ShortVBO indices_vbo;
+	/* Team Penguin */
+	private final IntVBO indices_vbo;
+	/* End Penguin */
 	private final AnimationManager manager;
 
 	private int current_map_x;
@@ -54,8 +58,10 @@ public final strictfp class LandscapeRenderer implements Animated {
 	private int edit_patch_y1;
 
 	public LandscapeRenderer(World world, WorldInfo world_info, GUIRoot gui_root, AnimationManager manager) {
-		ShortBuffer indices = world.getLandscapeIndices().getIndices();
-		this.indices_vbo = new ShortVBO(ARBBufferObject.GL_STATIC_DRAW_ARB, indices.remaining());
+		/* Team Penguin */
+		IntBuffer indices = world.getLandscapeIndices().getIndices();
+		this.indices_vbo = new IntVBO(ARBBufferObject.GL_STATIC_DRAW_ARB, indices.remaining());
+		/* End Penguin */
 		this.indices_vbo.put(indices);
 
 		this.landscape_vertices = new LandscapeTileVertices(world.getHeightMap(), HeightMap.GRID_UNITS_PER_PATCH_EXP, world.getHeightMap().getPatchesPerWorld());

@@ -1,6 +1,7 @@
 package com.oddlabs.util;
 
 import java.nio.ShortBuffer;
+import java.nio.IntBuffer;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Set;
@@ -19,18 +20,24 @@ public final strictfp class IndexListOptimizer {
 	private final static float VALENCE_BOOST_SCALE = 2f;
 	private final static float VALENCE_BOOST_POWER = .5f;
 
-	public static void optimize(ShortBuffer buffer) {
+/* Team Penguin */
+	public static void optimize(IntBuffer buffer) {
+/* End Penguin */
 /*System.out.println("buffer:");
 dumpBuffer(buffer);*/
 		Index[] lru = new Index[LRU_SIZE];
 		Map indices = new LinkedHashMap();
 		Set triangles = new LinkedHashSet();
 		for (int i = 0; i < buffer.remaining()/3; i++) {
-			short[] index_array = new short[]{buffer.get(buffer.position() + i*3),
+			/* Team Penguin */
+			int[] index_array = new int[]{buffer.get(buffer.position() + i*3),
 				buffer.get(buffer.position() + i*3 + 1), buffer.get(buffer.position() + i*3 + 2)};
+			/* End Penguin */
 			Index[] triangle_indices = new Index[index_array.length];
 			for (int j = 0; j < index_array.length; j++) {
-				Short index_key = new Short(index_array[j]);
+				/* Team Penguin */
+				Integer index_key = new Integer(index_array[j]);
+				/* End Penguin */
 				Index index = (Index)indices.get(index_key);
 				if (index == null) {
 					index = new Index(index_array[j]);
@@ -122,14 +129,16 @@ dumpBuffer(buffer);*/
 
 	private final static strictfp class Index {
 		private final List triangle_list = new ArrayList();
-		private final short index;
+		/* Team Penguin */
+		private final int index;
 
 		private float score;
 		private int round_added;
 
-		public Index(short index) {
+		public Index(int index) {
 			this.index = index;
 		}
+		/* End Penguin */
 
 		public final void updateScore(int cache_index, int round) {
 			score = 0;
@@ -189,10 +198,12 @@ dumpBuffer(buffer);*/
 			}
 		}
 
-		public final void addToBuffer(ShortBuffer buffer) {
+		/* Team Penguin */
+		public final void addToBuffer(IntBuffer buffer) {
 			for (int i = 0; i < indices.length; i++)
 				buffer.put(indices[i].index);
 		}
+		/* End Penguin */
 
 		public final String toString() {
 			String result = "Triangle score = " + getScore();

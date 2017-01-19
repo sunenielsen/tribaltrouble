@@ -25,7 +25,7 @@ public final strictfp class Settings implements Serializable {
 
 	// event logging
 	public String last_event_log_dir = "";
-	public int last_revision = -1;
+	public int last_revision = 1;
 	public boolean crashed = false;
 
 	// network

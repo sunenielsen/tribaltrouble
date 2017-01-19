@@ -48,6 +48,13 @@ public final strictfp class Utils {
 		return buffer;
 	}
 
+	public final static IntBuffer toBuffer(int[] ints) {
+		IntBuffer buffer = BufferUtils.createIntBuffer(ints.length);
+		buffer.put(ints);
+		buffer.rewind();
+		return buffer;
+	}
+
 	public final static void saveAsBMP(String filename, ByteBuffer pixel_data, int width, int height) {
 		long before = System.currentTimeMillis();
 		int pad = 4 - (width*3)%4;

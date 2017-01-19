@@ -56,10 +56,11 @@ public final strictfp class TerrainMenu extends Group {
 	public final static byte SMALL = 0;
 	public final static byte MEDIUM = 1;
 	public final static byte LARGE = 2;
+	public final static byte HUGE = 3;
 
 	private final static int NORMAL = 2;
 	private final static int HARD = 3;
-	private final static int[] SIZES = new int[]{256, 512, 1024};
+	private final static int[] SIZES = new int[]{256, 512, 1024, 2048};
 	
 	private final static int SLIDER_LENGTH = 250;
 	private final static int BUTTON_WIDTH = 100;
@@ -68,10 +69,10 @@ public final strictfp class TerrainMenu extends Group {
 	private final static String SEED_CARDINALITY = "40000";
 	private final static int SLIDER_CARDINALITY = 11;
 	private final static int TERRAIN_TYPE_CARDINALITY = 2;
-	private final static int SIZE_CARDINALITY = 3;
+	private final static int SIZE_CARDINALITY = 4;
 	private final static int DIFFICULTY_CARDINALITY = 4;
 	private final static int RACE_CARDINALITY = 2;
-	private final static int TEAM_CARDINALITY = 6;
+	private final static int TEAM_CARDINALITY = 8;
 	private final static BigInteger MAX_VALUE;
 
 	private final Menu main_menu;
@@ -118,6 +119,7 @@ public final strictfp class TerrainMenu extends Group {
 			max = max.multiply(new BigInteger(new byte[]{RACE_CARDINALITY}));
 			max = max.multiply(new BigInteger(new byte[]{TEAM_CARDINALITY}));
 		}
+		//System.out.println("team.penguin: MAX_VALUE = " + max);
 		MAX_VALUE = max;
 	}
 
@@ -189,6 +191,7 @@ public final strictfp class TerrainMenu extends Group {
 		pulldown_size.addItem(new PulldownItem(ServerMessageBundler.getSizeString(Game.SIZE_SMALL)));
 		pulldown_size.addItem(new PulldownItem(ServerMessageBundler.getSizeString(Game.SIZE_MEDIUM)));
 		pulldown_size.addItem(new PulldownItem(ServerMessageBundler.getSizeString(Game.SIZE_LARGE)));
+		pulldown_size.addItem(new PulldownItem(ServerMessageBundler.getSizeString(Game.SIZE_HUGE)));
 
 		PulldownButton pb_size = new PulldownButton(gui_root, pulldown_size, 1, 150);
 		group_size.addChild(pb_size);
@@ -638,7 +641,7 @@ System.out.println("hills = " + hills/(float)SLIDER_MAX_VALUE + " | vegetation_a
 				vegetation_amount/(float)SLIDER_MAX_VALUE,
 				supplies_amount/(float)SLIDER_MAX_VALUE,
 				seed*seed,
-				new String[]{ai_string + "0", ai_string + "1", ai_string + "2", ai_string + "3", ai_string + "4", ai_string + "5"});
+				new String[]{ai_string + "0", ai_string + "1", ai_string + "2", ai_string + "3", ai_string + "4", ai_string + "5", ai_string + "6", ai_string + "7"});
 		game_network.getClient().getServerInterface().setPlayerSlot(0, PlayerSlot.HUMAN, race_pulldown_menus[0].getChosenItemIndex(), team_pulldown_menus[0].getChosenItemIndex(), !multiplayer, PlayerSlot.AI_NONE);
 		if (!multiplayer) {
 			for (int i = 1; i < race_pulldown_menus.length; i++) {
@@ -694,7 +697,7 @@ System.out.println("Start server");
 	
 	private final strictfp class PulldownUpdateSizeListener implements ItemChosenListener {
 		public final void itemChosen(PulldownMenu menu, int item_index) {
-			if (item_index == LARGE && !Renderer.isRegistered()) {
+			if (item_index >= LARGE && !Renderer.isRegistered()) {
 				menu.chooseItem(MEDIUM);
 				if (show_demo) {
 					ResourceBundle db = ResourceBundle.getBundle(DemoForm.class.getName());

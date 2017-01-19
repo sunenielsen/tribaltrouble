@@ -34,6 +34,7 @@
 		username="matchmaker" password="U46TawOp"
 		url="jdbc:mysql://localhost/oddlabs" driverClassName="com.mysql.jdbc.Driver"
 		removeAbandoned="true" removeAbandonedTimeout="60"
+		factory="org.apache.commons.dbcp.BasicDataSourceFactory"
 		/>
 
 </Context>

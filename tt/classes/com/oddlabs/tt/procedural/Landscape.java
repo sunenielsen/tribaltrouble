@@ -110,6 +110,11 @@ public final strictfp class Landscape {
 				height_scale = 64;
 				access_threshold = 0.025f;
 				break;
+			case 2048:
+				size_multiplier = 32;
+				height_scale = 72;
+				access_threshold = 0.01875f;
+				break;
 			default:
 				size_multiplier = 0;
 				assert false : "illegal meters_per_world";

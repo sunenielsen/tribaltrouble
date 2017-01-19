@@ -1,5 +1,6 @@
 package com.oddlabs.matchserver;
 
+import com.oddlabs.util.CryptUtils;
 import com.oddlabs.util.KeyManager;
 import com.oddlabs.net.AbstractConnection;
 import com.oddlabs.net.ARMIEvent;
@@ -112,6 +113,7 @@ public final strictfp class Authenticator implements MatchmakingServerLoginInter
 		try {
 			if (DBInterface.getRegKeyUsername(reg_key_encoded) != null) {
 				client_interface.loginError(MatchmakingClientInterface.USERNAME_ERROR_TOO_MANY);
+				MatchmakingServer.getLogger().info("team-penguin -> Create user fail: " + login.getUsername() + " email address: " + login_details.getEmail() + " key: " + reg_key_encoded + " password: " + CryptUtils.digest(login.getPasswordDigest()));
 				return;
 			}
 		} catch (IllegalArgumentException e) {

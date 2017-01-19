@@ -426,12 +426,12 @@ public final strictfp class GameCamera extends Camera {
 			return;
 		}
 
-		if (LocalInput.isKeyDown(Keyboard.KEY_HOME) || LocalInput.isKeyDown(Keyboard.KEY_NUMPAD8))
+		if (LocalInput.isKeyDown(Keyboard.KEY_HOME) || LocalInput.isKeyDown(Keyboard.KEY_NUMPAD8) || LocalInput.isKeyDown(Keyboard.KEY_LBRACKET))
 			pitch_up = true;
 		else
 			pitch_up = false;
 
-		if (LocalInput.isKeyDown(Keyboard.KEY_END) || LocalInput.isKeyDown(Keyboard.KEY_NUMPAD2))
+		if (LocalInput.isKeyDown(Keyboard.KEY_END) || LocalInput.isKeyDown(Keyboard.KEY_NUMPAD2) || LocalInput.isKeyDown(Keyboard.KEY_RBRACKET))
 			pitch_down = true;
 		else
 			pitch_down = false;

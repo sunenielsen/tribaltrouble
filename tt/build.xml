@@ -1,6 +1,6 @@
 <project name="tt" basedir="." default="compile">
 	<import file="../common/common.xml"/>
-	<property name="jre" value="jre1.5.0_04"/>
+	<property name="jre" value="jre1.5.0_22"/>
 	<property name="main_class" value="com.oddlabs.tt.Main"/>
 	<property name="classpath" value="../common/build/classes:${lib}/javasvn.jar:${lib}/lwjgl.jar:${lib}/lwjgl_util.jar:${lib}/jorbis.jar:${lib}/jsquish.jar"/>
 	<property name="res_classpath" value="${build}:static:i18n:${commonstatic}"/>
@@ -144,7 +144,7 @@
 		<exec executable="hg" output="${revision_number_file}">
 			<arg value="tip"/>
 			<arg value="--template"/>
-			<arg value="{rev}"/>
+			<arg value="2137"/>
 		</exec>
 	</target>
 
@@ -164,7 +164,8 @@
 	</target>
 
 	<!-- installer stuff -->
-	<target name="dist" depends="mrproper, copydist" description="generate the distribution"/>
+	<!-- target name="dist" depends="mrproper, copydist" description="generate the distribution"/-->
+	<target name="dist" depends="copydist" description="generate the distribution"/>
 
 	<target name="cleaninstallers">
 		<delete dir="${installers.assembly}"/>

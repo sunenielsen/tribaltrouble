@@ -25,6 +25,7 @@ import com.oddlabs.tt.global.Globals;
 import com.oddlabs.tt.procedural.Landscape;
 import com.oddlabs.tt.vbo.FloatVBO;
 import com.oddlabs.tt.vbo.ShortVBO;
+import com.oddlabs.tt.vbo.IntVBO;
 
 public final strictfp class TreeLowDetail {
 	private final static StrictVector4f src = new StrictVector4f();
@@ -33,7 +34,9 @@ public final strictfp class TreeLowDetail {
 
 	private final FloatVBO vertices;
 	private final FloatVBO texcoords;
-	private final ShortVBO tree_indices;
+	/* Team Penguin */
+	private final IntVBO tree_indices;
+	/* End Penguin */
 	private final Texture[] lowdetail_textures;
 	private final Tree[] trees;
 	private final LowDetailModel[] low_details;
@@ -64,13 +67,16 @@ public final strictfp class TreeLowDetail {
 		current_vertex_index = 0;
 		int vertex_count = 0;
 		int index_count = 0;
+		System.out.println("num_trees = " + num_trees.length);
 		for (int i = 0; i < num_trees.length; i++) {
 			vertex_count += num_trees[i]*low_details[i].getVertices().length/3;
 			index_count += num_trees[i]*low_details[i].getIndices().length;
 		}
 		vertices = new FloatVBO(ARBBufferObject.GL_DYNAMIC_DRAW_ARB, vertex_count*3);
 		texcoords = new FloatVBO(ARBBufferObject.GL_STATIC_DRAW_ARB, vertex_count*2);
-		tree_indices = new ShortVBO(ARBBufferObject.GL_STATIC_DRAW_ARB, index_count);
+		/* Team Penguin */
+		tree_indices = new IntVBO(ARBBufferObject.GL_STATIC_DRAW_ARB, index_count);
+		/* End Penguin */
 	}
 
 	final Tree[] getTrees() {
@@ -113,17 +119,17 @@ public final strictfp class TreeLowDetail {
 		return index + 1;
 	}
 
-	private final int putIndex(int index, int tree_index, short[] tree_indice_array) {
-		assert tree_index <= Character.MAX_VALUE;
-		short tree_char_index = (short)tree_index;
-		tree_indice_array[index] = tree_char_index;
+/* Team Penguin */
+	private final int putIndex(int index, int tree_index, int[] tree_indice_array) {
+		assert tree_index <= Integer.MAX_VALUE;
+		tree_indice_array[index] = tree_index;
 		return index + 1;
 	}
 
-	private int[] putLowDetail(int start_index, StrictMatrix4f matrix, LowDetailModel low_detail_model, float[] vertice_array, float[] texcoord_array, short[] tree_indice_array) {
+	private int[] putLowDetail(int start_index, StrictMatrix4f matrix, LowDetailModel low_detail_model, float[] vertice_array, float[] texcoord_array, int[] tree_indice_array) {
 		float[] vertices = low_detail_model.getVertices();
 		float[] tex_coords = low_detail_model.getTexCoords();
-		short[] indices = low_detail_model.getIndices();
+		int[] indices = low_detail_model.getIndices();
 		int end = start_index;
 		int start_vertex_index = current_vertex_index;
 		for (int i = 0; i < indices.length; i++)
@@ -137,6 +143,7 @@ public final strictfp class TreeLowDetail {
 		}
 		return new int[]{end, start_vertex_index};
 	}
+/* End Penguin */
 
 	public final void updateLowDetail(StrictMatrix4f matrix, TreeSupply tree) {
 		int start_vertex_index = tree.getLowDetailStartIndex();
@@ -174,7 +181,9 @@ public final strictfp class TreeLowDetail {
 		private int end = 0;
 		private final float[] vertex_array = new float[vertices.capacity()];
 		private final float[] texcoord_array = new float[texcoords.capacity()];
-		private final short[] tree_index_array = new short[tree_indices.capacity()];
+		/* Team Penguin */
+		private final int[] tree_index_array = new int[tree_indices.capacity()];
+		/* End Penguin */
 
 		public final void visitLeaf(TreeLeaf tree_leaf) {
 			int start = end;

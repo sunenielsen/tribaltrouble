@@ -8,6 +8,7 @@ import org.lwjgl.util.vector.Vector4f;
 import java.util.Map;
 import java.nio.FloatBuffer;
 import java.nio.ShortBuffer;
+import java.nio.IntBuffer;
 
 public final strictfp class Optimizer {
 	private final static float VERTEX_TRESHOLD = 0.000001f;
@@ -56,7 +57,9 @@ public final strictfp class Optimizer {
 	}
 
 	protected final static ModelInfo optimize(/*String tex_name, */int num_vertices, float[] vertices, float[] normals, float[] colors, float[] uvs, byte[][] skin_names, float[][] skin_weights) {
-		short[] indices = new short[num_vertices];
+		/* Teamp Penguin */
+		int[] indices = new int[num_vertices];
+		/* End Penguin */
 		float[] r_vertices = new float[vertices.length];
 		float[] r_colors = new float[colors.length];
 		float[] r_normals = new float[normals.length];
@@ -97,7 +100,9 @@ public final strictfp class Optimizer {
 		r_uvs = stripArray(index*2, r_uvs);
 		r_skin_names = stripArray(index, r_skin_names);
 		r_skin_weights = stripArray(index, r_skin_weights);
-		ShortBuffer index_buffer = ShortBuffer.wrap(indices);
+		/* Team Penguin */
+		IntBuffer index_buffer = IntBuffer.wrap(indices);
+		/* End Penguin */
 		IndexListOptimizer.optimize(index_buffer);
 //		System.out.println("resulting vertices = " + index);
 		return new ModelInfo(/*tex_name,*/ indices, r_vertices, r_normals, r_colors, r_uvs, r_skin_names, r_skin_weights);
