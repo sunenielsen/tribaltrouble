@@ -1,4 +1,4 @@
--- MySQL dump 10.15  Distrib 10.0.28-MariaDB, for Linux (i686)
+-- MySQL dump 10.15  Distrib 10.0.29-MariaDB, for Linux (i686)
 --
 -- Host: localhost    Database: localhost
 -- ------------------------------------------------------
@@ -76,7 +76,7 @@ CREATE TABLE `games` (
   `name` varchar(40) NOT NULL DEFAULT '',
   `rated` enum('N','Y') NOT NULL DEFAULT 'N',
   `speed` enum('1','2','3','4') NOT NULL DEFAULT '1',
-  `size` enum('1','2','3') NOT NULL DEFAULT '1',
+  `size` enum('1','2','3','4') NOT NULL DEFAULT '1',
   `hills` tinyint(3) unsigned NOT NULL DEFAULT '0',
   `trees` tinyint(3) unsigned NOT NULL DEFAULT '0',
   `resources` tinyint(3) unsigned NOT NULL DEFAULT '0',
@@ -84,7 +84,7 @@ CREATE TABLE `games` (
   `status` enum('created','started','completed','dropped') NOT NULL DEFAULT 'created',
   `winner` tinyint(4) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=1496878 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=1496872 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -286,4 +286,4 @@ CREATE TABLE `settings` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-01-18 20:49:21
+-- Dump completed on 2017-01-21  7:42:41
