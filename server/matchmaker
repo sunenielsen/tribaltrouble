@@ -1,4 +1,9 @@
 #!/bin/bash
 
+if [[ ! -d logs ]]
+then
+	mkdir logs
+fi
+
 java -Djava.security.manager -Djava.security.policy=matchmaker.policy -server -ea -cp matchmaking.jar:mysql.jar:commons-pool.jar:commons-dbcp.jar:commons-collections.jar com.oddlabs.matchserver.MatchmakingServer
 

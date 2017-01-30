@@ -1,6 +1,6 @@
 <project name="servers" basedir="." default="all">
 	<import file="../common/common.xml"/>
-	<property name="classpath" value="../common/build/classes:commons-pool.jar:commons-dbcp.jar:commons-collections.jar"/>
+	<property name="classpath" value="../common/build/classes:../common/lib/java/commons-pool-1.2.jar:../common/lib/java/commons-dbcp-1.2.1.jar:../common/lib/java/commons-collections.jar"/>
 
 	<target name="compiledeps" depends="compile-common">
 	</target>

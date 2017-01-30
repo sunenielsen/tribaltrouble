@@ -5,6 +5,7 @@ grant {
   permission java.util.logging.LoggingPermission "control";
   permission java.io.FilePermission "logs/-", "read,write,delete";
   permission java.util.PropertyPermission "playback", "read";
+  permission java.util.PropertyPermission "file.encoding", "read";
   permission java.net.SocketPermission "*", "accept,resolve,listen";
   permission java.net.SocketPermission "localhost:3306", "connect,resolve";
   permission java.net.SocketPermission "127.0.0.1:3306", "connect,resolve";

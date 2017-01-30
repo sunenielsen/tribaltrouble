@@ -2,7 +2,7 @@
 	<import file="../common/common.xml"/>
 	<property name="jre" value="jre1.5.0_22"/>
 	<property name="main_class" value="com.oddlabs.tt.Main"/>
-	<property name="classpath" value="../common/build/classes:${lib}/javasvn.jar:${lib}/lwjgl.jar:${lib}/lwjgl_util.jar:${lib}/jorbis.jar:${lib}/jsquish.jar"/>
+	<property name="classpath" value="../common/build/classes:${lib}/javasvn.jar:${lib}/lwjgl.jar:${lib}/lwjgl_util.jar:${lib}/jorbis.jar:${lib}/jsquish.jar:${lib}/commons-lang3-3.5.jar"/>
 	<property name="res_classpath" value="${build}:static:i18n:${commonstatic}"/>
 
 	<property name="revision_number_file" location="${build}/revision_number"/>
@@ -252,6 +252,7 @@
 				<include name="lwjgl_util.jar"/>
 				<include name="jorbis.jar"/>
 				<include name="jsquish.jar"/>
+				<include name="commons-lang3-3.5.jar"/>
 			</fileset>
 		</copy>
 		<copy todir="${dist}/windows-x86">

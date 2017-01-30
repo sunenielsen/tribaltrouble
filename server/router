@@ -1,3 +1,8 @@
 #!/bin/bash
 
+if [[ ! -d logs ]]
+then
+	mkdir logs
+fi
+
 java -Djava.security.manager -Djava.security.policy=router.policy -server -ea -cp router.jar com.oddlabs.routerserver.RouterServer

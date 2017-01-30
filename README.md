@@ -1,21 +1,20 @@
 Team Penguin's goals:
 
 - Build a Matchmaking/Registration instance using the same processes as the original game.
-- Extend game functionality to (8) Teams and (1) additional Island size: Huge
+- Extend game functionality to (8) Players and (1) additional Island size: Huge
 - Learn NetBeans and wrangle the code base into a manageable build environment.
 
 Team Penguin's progress:
 
 - Matchmaking, Routing and Registration services are working.
-- The Game plays with (8) Teams on a Huge Island.
+- The Game plays with (8) Players on a Huge Island.
 
 Team Penguin's current state:
 
-- Merge completed.
-- GitHub n00b.
-
-
-The file: 'team-penguin.patch' can be applied to a fresh copy of 'sunenielsen/tribaltrouble Branch: master' with the command: patch -p1 <team-penguin.patch
+- Inital merge completed.
+- Added LWJGL 2.9.3 java/native code: http://legacy.lwjgl.org/
+- Added first patch:  team-penguin_first.patch
+- Added second patch: team-penguin_second.patch
 
 
 

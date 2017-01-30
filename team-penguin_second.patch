@@ -1,0 +1,182 @@
+diff -ur tribaltrouble/README.md tribaltrouble.wip/README.md
+--- tribaltrouble/README.md	2017-01-18 18:43:55.000000000 -0800
++++ tribaltrouble.wip/README.md	2017-01-29 15:55:14.000000000 -0800
+@@ -1,21 +1,20 @@
+ Team Penguin's goals:
+ 
+ - Build a Matchmaking/Registration instance using the same processes as the original game.
+-- Extend game functionality to (8) Teams and (1) additional Island size: Huge
++- Extend game functionality to (8) Players and (1) additional Island size: Huge
+ - Learn NetBeans and wrangle the code base into a manageable build environment.
+ 
+ Team Penguin's progress:
+ 
+ - Matchmaking, Routing and Registration services are working.
+-- The Game plays with (8) Teams on a Huge Island.
++- The Game plays with (8) Players on a Huge Island.
+ 
+ Team Penguin's current state:
+ 
+-- Merge completed.
+-- GitHub n00b.
+-
+-
+-The file: 'team-penguin.patch' can be applied to a fresh copy of 'sunenielsen/tribaltrouble Branch: master' with the command: patch -p1 <team-penguin.patch
++- Inital merge completed.
++- Added LWJGL 2.9.3 java/native code: http://legacy.lwjgl.org/
++- Added first patch:  team-penguin_first.patch
++- Added second patch: team-penguin_second.patch
+ 
+ 
+ 
+diff -ur tribaltrouble/common/build.xml tribaltrouble.wip/common/build.xml
+--- tribaltrouble/common/build.xml	2017-01-18 19:50:38.000000000 -0800
++++ tribaltrouble.wip/common/build.xml	2017-01-28 19:58:54.000000000 -0800
+@@ -1,5 +1,5 @@
+ <project name="common" basedir="." default="compile">
+ 	<import file="common.xml"/>
+ 
+-	<property name="classpath" value="${lib}/javasvn.jar:${lib}/lwjgl.jar:${lib}/lwjgl_util.jar:${lib}/jorbis.jar:${lib}/commons-pool.jar:${lib}/commons-dbcp.jar:${lib}/commons-collections.jar"/>
++	<property name="classpath" value="${lib}/javasvn.jar:${lib}/lwjgl.jar:${lib}/lwjgl_util.jar:${lib}/commons-pool-1.2.jar:${lib}/commons-dbcp-1.2.1.jar:${lib}/commons-collections-3.1.jar:${lib}/commons-lang3-3.5.jar"/>
+ </project>
+diff -ur tribaltrouble/common/classes/com/oddlabs/regclient/RegistrationClient.java tribaltrouble.wip/common/classes/com/oddlabs/regclient/RegistrationClient.java
+--- tribaltrouble/common/classes/com/oddlabs/regclient/RegistrationClient.java	2017-01-18 19:42:57.000000000 -0800
++++ tribaltrouble.wip/common/classes/com/oddlabs/regclient/RegistrationClient.java	2017-01-29 11:13:47.000000000 -0800
+@@ -10,6 +10,7 @@
+ import com.oddlabs.net.TaskThread;
+ import com.oddlabs.event.Deterministic;
+ import com.oddlabs.http.HttpRequestParameters;
++import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
+ 
+ public strictfp class RegistrationClient {
+ 	public final static int KEY_FORMAT_EXCEPTION = 1;
+@@ -67,13 +68,16 @@
+ 			public final void loadSucceeded(Object obj) {
+ 				try {
+ 					SignedObject signed_obj = (SignedObject)obj;
++					/* Team Penguin */
++					System.out.println("registration_info: " + ReflectionToStringBuilder.toString(signed_obj.getObject()));
+ 					PublicKey public_key = RegistrationKey.loadPublicKey();
+-					if (RegistrationKey.verify(public_key, signed_obj)) {
++					//if (RegistrationKey.verify(public_key, signed_obj)) {
+ 						signed_registration_key = signed_obj;
+ 						registration_info = (RegistrationInfo)signed_registration_key.getObject();
+ 						if (registration_listener != null)
+ 							registration_listener.registrationCompleted();
+-					}
++					//}
++					/* End Penguin */
+ 				} catch (Exception e) {
+ 					failed(e);
+ 				}
+diff -ur tribaltrouble/common/classes/com/oddlabs/util/KeyManager.java tribaltrouble.wip/common/classes/com/oddlabs/util/KeyManager.java
+--- tribaltrouble/common/classes/com/oddlabs/util/KeyManager.java	2017-01-18 19:42:57.000000000 -0800
++++ tribaltrouble.wip/common/classes/com/oddlabs/util/KeyManager.java	2017-01-29 11:11:38.000000000 -0800
+@@ -163,7 +163,7 @@
+ 
+ 		System.out.print(pass_prompt);
+ 		System.out.flush();
+-loop:   while (true) {
++		loop:   while (true) {
+ 			switch (c = in.read()) {
+ 				case -1: 
+ 				case '\n':
+diff -ur tribaltrouble/common/common.xml tribaltrouble.wip/common/common.xml
+--- tribaltrouble/common/common.xml	2017-01-18 19:42:57.000000000 -0800
++++ tribaltrouble.wip/common/common.xml	2017-01-29 09:28:37.000000000 -0800
+@@ -10,7 +10,7 @@
+ 	<property name="tools" value="../tools"/>
+ 	<property name="nativelib" value="../common/lib/native"/>
+ 	<property name="commonstatic" value="../common/static"/>
+-	<property name="java_source_version" value="1.4"/>
++	<property name="java_source_version" value="1.5"/>
+ 
+ 	<target name="init">
+ 		<tstamp/>
+@@ -114,7 +114,7 @@
+ 			<jvmarg value="-ea"/>
+ 			<jvmarg value="-Djava.library.path=${nativelib}"/>
+ 			<jvmarg value="-Dorg.lwjgl.util.Debug=true"/>
+-			<jvmarg value="-Xmx80000000"/>
++			<jvmarg value="-Xmx400m"/>
+ 			<!--<jvmarg value="-Djavax.net.debug=ssl,handshake,trustmanager"/>-->
+ 			<!--    <jvmarg value="-Dorg.lwjgl.opengl.Window.undecorated=true"/>-->
+ 		</java>
+diff -ur tribaltrouble/server/build.xml tribaltrouble.wip/server/build.xml
+--- tribaltrouble/server/build.xml	2017-01-18 19:50:38.000000000 -0800
++++ tribaltrouble.wip/server/build.xml	2017-01-28 16:53:29.000000000 -0800
+@@ -1,6 +1,6 @@
+ <project name="servers" basedir="." default="all">
+ 	<import file="../common/common.xml"/>
+-	<property name="classpath" value="../common/build/classes:commons-pool.jar:commons-dbcp.jar:commons-collections.jar"/>
++	<property name="classpath" value="../common/build/classes:../common/lib/java/commons-pool-1.2.jar:../common/lib/java/commons-dbcp-1.2.1.jar:../common/lib/java/commons-collections.jar"/>
+ 
+ 	<target name="compiledeps" depends="compile-common">
+ 	</target>
+diff -ur tribaltrouble/server/matchmaker tribaltrouble.wip/server/matchmaker
+--- tribaltrouble/server/matchmaker	2017-01-18 19:50:38.000000000 -0800
++++ tribaltrouble.wip/server/matchmaker	2017-01-28 17:48:58.000000000 -0800
+@@ -1,4 +1,9 @@
+ #!/bin/bash
+ 
++if [[ ! -d logs ]]
++then
++	mkdir logs
++fi
++
+ java -Djava.security.manager -Djava.security.policy=matchmaker.policy -server -ea -cp matchmaking.jar:mysql.jar:commons-pool.jar:commons-dbcp.jar:commons-collections.jar com.oddlabs.matchserver.MatchmakingServer
+ 
+diff -ur tribaltrouble/server/matchmaker.policy tribaltrouble.wip/server/matchmaker.policy
+--- tribaltrouble/server/matchmaker.policy	2017-01-18 19:42:57.000000000 -0800
++++ tribaltrouble.wip/server/matchmaker.policy	2017-01-28 14:37:32.000000000 -0800
+@@ -5,6 +5,7 @@
+   permission java.util.logging.LoggingPermission "control";
+   permission java.io.FilePermission "logs/-", "read,write,delete";
+   permission java.util.PropertyPermission "playback", "read";
++  permission java.util.PropertyPermission "file.encoding", "read";
+   permission java.net.SocketPermission "*", "accept,resolve,listen";
+   permission java.net.SocketPermission "localhost:3306", "connect,resolve";
+   permission java.net.SocketPermission "127.0.0.1:3306", "connect,resolve";
+diff -ur tribaltrouble/server/router tribaltrouble.wip/server/router
+--- tribaltrouble/server/router	2017-01-18 19:50:38.000000000 -0800
++++ tribaltrouble.wip/server/router	2017-01-28 17:51:52.000000000 -0800
+@@ -1,3 +1,8 @@
+ #!/bin/bash
+ 
++if [[ ! -d logs ]]
++then
++	mkdir logs
++fi
++
+ java -Djava.security.manager -Djava.security.policy=router.policy -server -ea -cp router.jar com.oddlabs.routerserver.RouterServer
+diff -ur tribaltrouble/tt/build.xml tribaltrouble.wip/tt/build.xml
+--- tribaltrouble/tt/build.xml	2017-01-18 19:50:38.000000000 -0800
++++ tribaltrouble.wip/tt/build.xml	2017-01-28 20:37:57.000000000 -0800
+@@ -2,7 +2,7 @@
+ 	<import file="../common/common.xml"/>
+ 	<property name="jre" value="jre1.5.0_22"/>
+ 	<property name="main_class" value="com.oddlabs.tt.Main"/>
+-	<property name="classpath" value="../common/build/classes:${lib}/javasvn.jar:${lib}/lwjgl.jar:${lib}/lwjgl_util.jar:${lib}/jorbis.jar:${lib}/jsquish.jar"/>
++	<property name="classpath" value="../common/build/classes:${lib}/javasvn.jar:${lib}/lwjgl.jar:${lib}/lwjgl_util.jar:${lib}/jorbis.jar:${lib}/jsquish.jar:${lib}/commons-lang3-3.5.jar"/>
+ 	<property name="res_classpath" value="${build}:static:i18n:${commonstatic}"/>
+ 
+ 	<property name="revision_number_file" location="${build}/revision_number"/>
+@@ -252,6 +252,7 @@
+ 				<include name="lwjgl_util.jar"/>
+ 				<include name="jorbis.jar"/>
+ 				<include name="jsquish.jar"/>
++				<include name="commons-lang3-3.5.jar"/>
+ 			</fileset>
+ 		</copy>
+ 		<copy todir="${dist}/windows-x86">
+diff -ur tribaltrouble/tt/classes/com/oddlabs/tt/render/Renderer.java tribaltrouble.wip/tt/classes/com/oddlabs/tt/render/Renderer.java
+--- tribaltrouble/tt/classes/com/oddlabs/tt/render/Renderer.java	2017-01-18 19:50:38.000000000 -0800
++++ tribaltrouble.wip/tt/classes/com/oddlabs/tt/render/Renderer.java	2017-01-28 20:33:42.000000000 -0800
+@@ -36,6 +36,7 @@
+ import org.lwjgl.opengl.GLContext;
+ import org.lwjgl.input.Keyboard;
+ import org.lwjgl.Sys;
++import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
+ 
+ import com.oddlabs.net.NetworkSelector;
+ import com.oddlabs.regclient.RegistrationClient;

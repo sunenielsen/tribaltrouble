@@ -1,6 +1,48 @@
-diff -ur tribaltrouble/common/build.xml tribaltrouble-master/common/build.xml
---- tribaltrouble/common/build.xml	2017-01-17 18:02:01.000000000 -0800
-+++ tribaltrouble-master/common/build.xml	2014-09-11 15:49:06.000000000 -0700
+diff -ur tribaltrouble-master/README.md tribaltrouble/README.md
+--- tribaltrouble-master/README.md	2014-09-01 05:12:24.000000000 -0700
++++ tribaltrouble/README.md	2017-01-18 18:43:55.000000000 -0800
+@@ -1,3 +1,24 @@
++Team Penguin's goals:
++
++- Build a Matchmaking/Registration instance using the same processes as the original game.
++- Extend game functionality to (8) Teams and (1) additional Island size: Huge
++- Learn NetBeans and wrangle the code base into a manageable build environment.
++
++Team Penguin's progress:
++
++- Matchmaking, Routing and Registration services are working.
++- The Game plays with (8) Teams on a Huge Island.
++
++Team Penguin's current state:
++
++- Merge completed.
++- GitHub n00b.
++
++
++The file: 'team-penguin.patch' can be applied to a fresh copy of 'sunenielsen/tribaltrouble Branch: master' with the command: patch -p1 <team-penguin.patch
++
++
++
+ Tribal Trouble
+ ==============
+ Tribal Trouble is a realtime strategy game released by Oddlabs in 2004. In 2014 the source was released under GPL2 license, and can be found in this repository.
+@@ -16,6 +37,13 @@
+ 
+ Please note that the multiplayer server referenced in these builds, is no longer available.
+ 
++You can register the binaries by putting the registration file in the binaries folder into this folder:
++- Windows XP: `C:\Documents and Settings\Username\TribalTrouble\`
++- Windows Vista or newer: `C:\Users\Username\TribalTrouble\`
++- Mac OS X: `Library/Application Support/TribalTrouble/`
++- Linux: `~/.TribalTrouble/`
++
++
+ Building
+ --------
+ Clone the repository:
+diff -ur tribaltrouble-master/common/build.xml tribaltrouble/common/build.xml
+--- tribaltrouble-master/common/build.xml	2014-09-01 05:12:24.000000000 -0700
++++ tribaltrouble/common/build.xml	2017-01-18 19:50:38.000000000 -0800
 @@ -1,5 +1,5 @@
  <project name="common" basedir="." default="compile">
  	<import file="common.xml"/>
@@ -8,9 +50,9 @@ diff -ur tribaltrouble/common/build.xml tribaltrouble-master/common/build.xml
 -	<property name="classpath" value="${lib}/javasvn.jar:${lib}/lwjgl.jar:${lib}/lwjgl_util.jar:${lib}/jorbis.jar:${lib}/commons-pool-1.2.jar:${lib}/commons-dbcp-1.2.1.jar:${lib}/commons-collections-3.1.jar"/>
 +	<property name="classpath" value="${lib}/javasvn.jar:${lib}/lwjgl.jar:${lib}/lwjgl_util.jar:${lib}/jorbis.jar:${lib}/commons-pool.jar:${lib}/commons-dbcp.jar:${lib}/commons-collections.jar"/>
  </project>
-diff -ur tribaltrouble/common/classes/com/oddlabs/geometry/LowDetailModel.java tribaltrouble-master/common/classes/com/oddlabs/geometry/LowDetailModel.java
---- tribaltrouble/common/classes/com/oddlabs/geometry/LowDetailModel.java	2017-01-17 18:02:01.000000000 -0800
-+++ tribaltrouble-master/common/classes/com/oddlabs/geometry/LowDetailModel.java	2017-01-14 10:36:55.000000000 -0800
+diff -ur tribaltrouble-master/common/classes/com/oddlabs/geometry/LowDetailModel.java tribaltrouble/common/classes/com/oddlabs/geometry/LowDetailModel.java
+--- tribaltrouble-master/common/classes/com/oddlabs/geometry/LowDetailModel.java	2014-09-01 05:12:24.000000000 -0700
++++ tribaltrouble/common/classes/com/oddlabs/geometry/LowDetailModel.java	2017-01-18 19:50:38.000000000 -0800
 @@ -7,20 +7,21 @@
  
  	private final float[] vertices;
@@ -37,9 +79,9 @@ diff -ur tribaltrouble/common/classes/com/oddlabs/geometry/LowDetailModel.java t
  	public final float[] getVertices() {
  		return vertices;
  	}
-diff -ur tribaltrouble/common/classes/com/oddlabs/geometry/SpriteInfo.java tribaltrouble-master/common/classes/com/oddlabs/geometry/SpriteInfo.java
---- tribaltrouble/common/classes/com/oddlabs/geometry/SpriteInfo.java	2017-01-17 18:02:01.000000000 -0800
-+++ tribaltrouble-master/common/classes/com/oddlabs/geometry/SpriteInfo.java	2017-01-14 10:15:41.000000000 -0800
+diff -ur tribaltrouble-master/common/classes/com/oddlabs/geometry/SpriteInfo.java tribaltrouble/common/classes/com/oddlabs/geometry/SpriteInfo.java
+--- tribaltrouble-master/common/classes/com/oddlabs/geometry/SpriteInfo.java	2014-09-01 05:12:24.000000000 -0700
++++ tribaltrouble/common/classes/com/oddlabs/geometry/SpriteInfo.java	2017-01-18 19:50:38.000000000 -0800
 @@ -7,7 +7,8 @@
  public final strictfp class SpriteInfo implements Serializable {
  	private final static long serialVersionUID = 1;
@@ -71,9 +113,9 @@ diff -ur tribaltrouble/common/classes/com/oddlabs/geometry/SpriteInfo.java triba
  
  	public final float[] getVertices() {
  		return vertices.getFloatArray();
-diff -ur tribaltrouble/common/classes/com/oddlabs/geometry/SpriteInfo2.java tribaltrouble-master/common/classes/com/oddlabs/geometry/SpriteInfo2.java
---- tribaltrouble/common/classes/com/oddlabs/geometry/SpriteInfo2.java	2017-01-17 18:02:01.000000000 -0800
-+++ tribaltrouble-master/common/classes/com/oddlabs/geometry/SpriteInfo2.java	2017-01-15 10:30:30.000000000 -0800
+diff -ur tribaltrouble-master/common/classes/com/oddlabs/geometry/SpriteInfo2.java tribaltrouble/common/classes/com/oddlabs/geometry/SpriteInfo2.java
+--- tribaltrouble-master/common/classes/com/oddlabs/geometry/SpriteInfo2.java	2014-09-01 05:12:24.000000000 -0700
++++ tribaltrouble/common/classes/com/oddlabs/geometry/SpriteInfo2.java	2017-01-18 19:50:38.000000000 -0800
 @@ -7,7 +7,9 @@
  public final strictfp class SpriteInfo2 implements Serializable {
  	private final static long serialVersionUID = 1;
@@ -107,9 +149,9 @@ diff -ur tribaltrouble/common/classes/com/oddlabs/geometry/SpriteInfo2.java trib
  		return indices;
  	}
  
-diff -ur tribaltrouble/common/classes/com/oddlabs/matchmaking/Game.java tribaltrouble-master/common/classes/com/oddlabs/matchmaking/Game.java
---- tribaltrouble/common/classes/com/oddlabs/matchmaking/Game.java	2017-01-17 18:02:01.000000000 -0800
-+++ tribaltrouble-master/common/classes/com/oddlabs/matchmaking/Game.java	2017-01-14 07:54:28.000000000 -0800
+diff -ur tribaltrouble-master/common/classes/com/oddlabs/matchmaking/Game.java tribaltrouble/common/classes/com/oddlabs/matchmaking/Game.java
+--- tribaltrouble-master/common/classes/com/oddlabs/matchmaking/Game.java	2014-09-01 05:12:24.000000000 -0700
++++ tribaltrouble/common/classes/com/oddlabs/matchmaking/Game.java	2017-01-18 19:50:38.000000000 -0800
 @@ -8,6 +8,7 @@
  	public final static int SIZE_SMALL = 0;
  	public final static int SIZE_MEDIUM = 1;
@@ -118,9 +160,9 @@ diff -ur tribaltrouble/common/classes/com/oddlabs/matchmaking/Game.java tribaltr
  
  	public final static int TERRAIN_TYPE_NATIVE = 0;
  	public final static int TERRAIN_TYPE_VIKING = 1;
-diff -ur tribaltrouble/common/classes/com/oddlabs/matchmaking/MatchmakingServerInterface.java tribaltrouble-master/common/classes/com/oddlabs/matchmaking/MatchmakingServerInterface.java
---- tribaltrouble/common/classes/com/oddlabs/matchmaking/MatchmakingServerInterface.java	2017-01-17 18:02:01.000000000 -0800
-+++ tribaltrouble-master/common/classes/com/oddlabs/matchmaking/MatchmakingServerInterface.java	2016-12-23 18:11:40.000000000 -0800
+diff -ur tribaltrouble-master/common/classes/com/oddlabs/matchmaking/MatchmakingServerInterface.java tribaltrouble/common/classes/com/oddlabs/matchmaking/MatchmakingServerInterface.java
+--- tribaltrouble-master/common/classes/com/oddlabs/matchmaking/MatchmakingServerInterface.java	2014-09-01 05:12:24.000000000 -0700
++++ tribaltrouble/common/classes/com/oddlabs/matchmaking/MatchmakingServerInterface.java	2017-01-18 19:50:38.000000000 -0800
 @@ -11,7 +11,7 @@
  	
  	public final static int MATCHMAKING_SERVER_PORT = 33214;
@@ -130,9 +172,9 @@ diff -ur tribaltrouble/common/classes/com/oddlabs/matchmaking/MatchmakingServerI
  	public final static int MIN_PLAYERS = 1;
  	public final static int MIN_ROOM_NAME_LENGTH = 1;
  	public final static int MAX_ROOM_NAME_LENGTH = 20;
-diff -ur tribaltrouble/common/classes/com/oddlabs/util/IndexListOptimizer.java tribaltrouble-master/common/classes/com/oddlabs/util/IndexListOptimizer.java
---- tribaltrouble/common/classes/com/oddlabs/util/IndexListOptimizer.java	2017-01-17 18:02:01.000000000 -0800
-+++ tribaltrouble-master/common/classes/com/oddlabs/util/IndexListOptimizer.java	2017-01-14 08:52:12.000000000 -0800
+diff -ur tribaltrouble-master/common/classes/com/oddlabs/util/IndexListOptimizer.java tribaltrouble/common/classes/com/oddlabs/util/IndexListOptimizer.java
+--- tribaltrouble-master/common/classes/com/oddlabs/util/IndexListOptimizer.java	2014-09-01 05:12:24.000000000 -0700
++++ tribaltrouble/common/classes/com/oddlabs/util/IndexListOptimizer.java	2017-01-18 19:50:38.000000000 -0800
 @@ -1,6 +1,7 @@
  package com.oddlabs.util;
  
@@ -202,9 +244,9 @@ diff -ur tribaltrouble/common/classes/com/oddlabs/util/IndexListOptimizer.java t
  
  		public final String toString() {
  			String result = "Triangle score = " + getScore();
-diff -ur tribaltrouble/server/build.xml tribaltrouble-master/server/build.xml
---- tribaltrouble/server/build.xml	2017-01-17 18:02:02.000000000 -0800
-+++ tribaltrouble-master/server/build.xml	2014-09-12 19:45:58.000000000 -0700
+diff -ur tribaltrouble-master/server/build.xml tribaltrouble/server/build.xml
+--- tribaltrouble-master/server/build.xml	2014-09-01 05:12:24.000000000 -0700
++++ tribaltrouble/server/build.xml	2017-01-18 19:50:38.000000000 -0800
 @@ -1,6 +1,6 @@
  <project name="servers" basedir="." default="all">
  	<import file="../common/common.xml"/>
@@ -228,9 +270,9 @@ diff -ur tribaltrouble/server/build.xml tribaltrouble-master/server/build.xml
  		</jar>
  	</target>
  
-diff -ur tribaltrouble/server/classes/com/oddlabs/matchserver/Authenticator.java tribaltrouble-master/server/classes/com/oddlabs/matchserver/Authenticator.java
---- tribaltrouble/server/classes/com/oddlabs/matchserver/Authenticator.java	2017-01-17 18:02:02.000000000 -0800
-+++ tribaltrouble-master/server/classes/com/oddlabs/matchserver/Authenticator.java	2016-12-28 18:30:32.000000000 -0800
+diff -ur tribaltrouble-master/server/classes/com/oddlabs/matchserver/Authenticator.java tribaltrouble/server/classes/com/oddlabs/matchserver/Authenticator.java
+--- tribaltrouble-master/server/classes/com/oddlabs/matchserver/Authenticator.java	2014-09-01 05:12:24.000000000 -0700
++++ tribaltrouble/server/classes/com/oddlabs/matchserver/Authenticator.java	2017-01-18 19:50:38.000000000 -0800
 @@ -1,5 +1,6 @@
  package com.oddlabs.matchserver;
  
@@ -246,9 +288,9 @@ diff -ur tribaltrouble/server/classes/com/oddlabs/matchserver/Authenticator.java
  				return;
  			}
  		} catch (IllegalArgumentException e) {
-diff -ur tribaltrouble/server/classes/com/oddlabs/matchserver/DBInterface.java tribaltrouble-master/server/classes/com/oddlabs/matchserver/DBInterface.java
---- tribaltrouble/server/classes/com/oddlabs/matchserver/DBInterface.java	2017-01-17 18:02:02.000000000 -0800
-+++ tribaltrouble-master/server/classes/com/oddlabs/matchserver/DBInterface.java	2016-12-28 18:03:44.000000000 -0800
+diff -ur tribaltrouble-master/server/classes/com/oddlabs/matchserver/DBInterface.java tribaltrouble/server/classes/com/oddlabs/matchserver/DBInterface.java
+--- tribaltrouble-master/server/classes/com/oddlabs/matchserver/DBInterface.java	2014-09-01 05:12:24.000000000 -0700
++++ tribaltrouble/server/classes/com/oddlabs/matchserver/DBInterface.java	2017-01-18 19:50:38.000000000 -0800
 @@ -50,7 +50,7 @@
  			}
  		} catch (SQLException e) {
@@ -278,9 +320,9 @@ diff -ur tribaltrouble/server/classes/com/oddlabs/matchserver/DBInterface.java t
  				int row_count = stmt.executeUpdate();
  				assert row_count == 1;
  			} finally {
-diff -ur tribaltrouble/server/matchmaker tribaltrouble-master/server/matchmaker
---- tribaltrouble/server/matchmaker	2017-01-17 18:02:02.000000000 -0800
-+++ tribaltrouble-master/server/matchmaker	2016-12-23 18:43:25.000000000 -0800
+diff -ur tribaltrouble-master/server/matchmaker tribaltrouble/server/matchmaker
+--- tribaltrouble-master/server/matchmaker	2014-09-01 05:12:24.000000000 -0700
++++ tribaltrouble/server/matchmaker	2017-01-18 19:50:38.000000000 -0800
 @@ -1,10 +1,4 @@
  #!/bin/bash
  
@@ -293,9 +335,9 @@ diff -ur tribaltrouble/server/matchmaker tribaltrouble-master/server/matchmaker
 -cat $ERRORMAIL | $SENDMAIL -oi $SENDTO; done
 +java -Djava.security.manager -Djava.security.policy=matchmaker.policy -server -ea -cp matchmaking.jar:mysql.jar:commons-pool.jar:commons-dbcp.jar:commons-collections.jar com.oddlabs.matchserver.MatchmakingServer
  
-diff -ur tribaltrouble/server/router tribaltrouble-master/server/router
---- tribaltrouble/server/router	2017-01-17 18:02:02.000000000 -0800
-+++ tribaltrouble-master/server/router	2014-09-13 10:10:04.000000000 -0700
+diff -ur tribaltrouble-master/server/router tribaltrouble/server/router
+--- tribaltrouble-master/server/router	2014-09-01 05:12:24.000000000 -0700
++++ tribaltrouble/server/router	2017-01-18 19:50:38.000000000 -0800
 @@ -1,8 +1,3 @@
  #!/bin/bash
  
@@ -306,9 +348,9 @@ diff -ur tribaltrouble/server/router tribaltrouble-master/server/router
 -until java -Djava.security.manager -Djava.security.policy=router.policy -server -ea -cp router.jar com.oddlabs.routerserver.RouterServer; do echo "Service crashed, sending report";
 -cat $ERRORMAIL | $SENDMAIL -oi $SENDTO; done
 +java -Djava.security.manager -Djava.security.policy=router.policy -server -ea -cp router.jar com.oddlabs.routerserver.RouterServer
-diff -ur tribaltrouble/servlet/build.xml tribaltrouble-master/servlet/build.xml
---- tribaltrouble/servlet/build.xml	2017-01-17 18:02:02.000000000 -0800
-+++ tribaltrouble-master/servlet/build.xml	2016-12-27 23:29:38.000000000 -0800
+diff -ur tribaltrouble-master/servlet/build.xml tribaltrouble/servlet/build.xml
+--- tribaltrouble-master/servlet/build.xml	2014-09-01 05:12:24.000000000 -0700
++++ tribaltrouble/servlet/build.xml	2017-01-18 19:50:38.000000000 -0800
 @@ -2,15 +2,15 @@
  	<property name="java_source_version" value="1.5"/>
  	<import file="../common/common.xml"/>
@@ -339,9 +381,9 @@ diff -ur tribaltrouble/servlet/build.xml tribaltrouble-master/servlet/build.xml
  		</war>
  	</target>
  
-diff -ur tribaltrouble/servlet/classes/com/oddlabs/graphservlet/GraphServlet.java tribaltrouble-master/servlet/classes/com/oddlabs/graphservlet/GraphServlet.java
---- tribaltrouble/servlet/classes/com/oddlabs/graphservlet/GraphServlet.java	2017-01-17 18:02:02.000000000 -0800
-+++ tribaltrouble-master/servlet/classes/com/oddlabs/graphservlet/GraphServlet.java	2016-12-23 11:05:46.000000000 -0800
+diff -ur tribaltrouble-master/servlet/classes/com/oddlabs/graphservlet/GraphServlet.java tribaltrouble/servlet/classes/com/oddlabs/graphservlet/GraphServlet.java
+--- tribaltrouble-master/servlet/classes/com/oddlabs/graphservlet/GraphServlet.java	2014-09-01 05:12:24.000000000 -0700
++++ tribaltrouble/servlet/classes/com/oddlabs/graphservlet/GraphServlet.java	2017-01-18 19:50:38.000000000 -0800
 @@ -46,12 +46,12 @@
  	} 
  	
@@ -357,9 +399,9 @@ diff -ur tribaltrouble/servlet/classes/com/oddlabs/graphservlet/GraphServlet.jav
  		}
  		int[][] array = new int[list.size()][];
  		for (int i = 0; i < array.length; i++) {
-diff -ur tribaltrouble/servlet/regservlet/context.xml tribaltrouble-master/servlet/regservlet/context.xml
---- tribaltrouble/servlet/regservlet/context.xml	2017-01-17 18:02:02.000000000 -0800
-+++ tribaltrouble-master/servlet/regservlet/context.xml	2014-09-12 15:49:14.000000000 -0700
+diff -ur tribaltrouble-master/servlet/regservlet/context.xml tribaltrouble/servlet/regservlet/context.xml
+--- tribaltrouble-master/servlet/regservlet/context.xml	2014-09-01 05:12:24.000000000 -0700
++++ tribaltrouble/servlet/regservlet/context.xml	2017-01-18 19:50:38.000000000 -0800
 @@ -34,6 +34,7 @@
  		username="matchmaker" password="U46TawOp"
  		url="jdbc:mysql://localhost/oddlabs" driverClassName="com.mysql.jdbc.Driver"
@@ -368,9 +410,9 @@ diff -ur tribaltrouble/servlet/regservlet/context.xml tribaltrouble-master/servl
  		/>
  
  </Context>
-diff -ur tribaltrouble/tools/build.xml tribaltrouble-master/tools/build.xml
---- tribaltrouble/tools/build.xml	2017-01-17 18:02:02.000000000 -0800
-+++ tribaltrouble-master/tools/build.xml	2014-09-14 10:48:51.000000000 -0700
+diff -ur tribaltrouble-master/tools/build.xml tribaltrouble/tools/build.xml
+--- tribaltrouble-master/tools/build.xml	2014-09-01 05:12:24.000000000 -0700
++++ tribaltrouble/tools/build.xml	2017-01-18 19:50:38.000000000 -0800
 @@ -1,6 +1,6 @@
  <project name="tools" basedir="." default="compile">
  	<import file="../common/common.xml"/>
@@ -399,9 +441,9 @@ diff -ur tribaltrouble/tools/build.xml tribaltrouble-master/tools/build.xml
  			<arg path="${revision_number_file}"/>
  		</java>
  	</target>
-diff -ur tribaltrouble/tools/classes/com/oddlabs/converter/ModelInfo.java tribaltrouble-master/tools/classes/com/oddlabs/converter/ModelInfo.java
---- tribaltrouble/tools/classes/com/oddlabs/converter/ModelInfo.java	2017-01-17 18:02:02.000000000 -0800
-+++ tribaltrouble-master/tools/classes/com/oddlabs/converter/ModelInfo.java	2017-01-14 10:10:11.000000000 -0800
+diff -ur tribaltrouble-master/tools/classes/com/oddlabs/converter/ModelInfo.java tribaltrouble/tools/classes/com/oddlabs/converter/ModelInfo.java
+--- tribaltrouble-master/tools/classes/com/oddlabs/converter/ModelInfo.java	2014-09-01 05:12:24.000000000 -0700
++++ tribaltrouble/tools/classes/com/oddlabs/converter/ModelInfo.java	2017-01-18 19:50:38.000000000 -0800
 @@ -3,7 +3,8 @@
  import java.util.Map;
  
@@ -422,9 +464,9 @@ diff -ur tribaltrouble/tools/classes/com/oddlabs/converter/ModelInfo.java tribal
  		this.normals = normals;
  		this.vertices = vertices;
  		this.indices = indices;
-diff -ur tribaltrouble/tools/classes/com/oddlabs/converter/Optimizer.java tribaltrouble-master/tools/classes/com/oddlabs/converter/Optimizer.java
---- tribaltrouble/tools/classes/com/oddlabs/converter/Optimizer.java	2017-01-17 18:02:02.000000000 -0800
-+++ tribaltrouble-master/tools/classes/com/oddlabs/converter/Optimizer.java	2017-01-14 10:04:44.000000000 -0800
+diff -ur tribaltrouble-master/tools/classes/com/oddlabs/converter/Optimizer.java tribaltrouble/tools/classes/com/oddlabs/converter/Optimizer.java
+--- tribaltrouble-master/tools/classes/com/oddlabs/converter/Optimizer.java	2014-09-01 05:12:24.000000000 -0700
++++ tribaltrouble/tools/classes/com/oddlabs/converter/Optimizer.java	2017-01-18 19:50:38.000000000 -0800
 @@ -8,6 +8,7 @@
  import java.util.Map;
  import java.nio.FloatBuffer;
@@ -455,9 +497,9 @@ diff -ur tribaltrouble/tools/classes/com/oddlabs/converter/Optimizer.java tribal
  		IndexListOptimizer.optimize(index_buffer);
  //		System.out.println("resulting vertices = " + index);
  		return new ModelInfo(/*tex_name,*/ indices, r_vertices, r_normals, r_colors, r_uvs, r_skin_names, r_skin_weights);
-diff -ur tribaltrouble/tools/classes/com/oddlabs/converter2/ModelInfo.java tribaltrouble-master/tools/classes/com/oddlabs/converter2/ModelInfo.java
---- tribaltrouble/tools/classes/com/oddlabs/converter2/ModelInfo.java	2017-01-17 18:02:02.000000000 -0800
-+++ tribaltrouble-master/tools/classes/com/oddlabs/converter2/ModelInfo.java	2017-01-15 10:23:35.000000000 -0800
+diff -ur tribaltrouble-master/tools/classes/com/oddlabs/converter2/ModelInfo.java tribaltrouble/tools/classes/com/oddlabs/converter2/ModelInfo.java
+--- tribaltrouble-master/tools/classes/com/oddlabs/converter2/ModelInfo.java	2014-09-01 05:12:24.000000000 -0700
++++ tribaltrouble/tools/classes/com/oddlabs/converter2/ModelInfo.java	2017-01-18 19:50:38.000000000 -0800
 @@ -3,7 +3,9 @@
  import java.util.Map;
  
@@ -480,9 +522,9 @@ diff -ur tribaltrouble/tools/classes/com/oddlabs/converter2/ModelInfo.java triba
  		this.normals = normals;
  		this.vertices = vertices;
  		this.indices = indices;
-diff -ur tribaltrouble/tools/classes/com/oddlabs/converter2/Optimizer.java tribaltrouble-master/tools/classes/com/oddlabs/converter2/Optimizer.java
---- tribaltrouble/tools/classes/com/oddlabs/converter2/Optimizer.java	2017-01-17 18:02:02.000000000 -0800
-+++ tribaltrouble-master/tools/classes/com/oddlabs/converter2/Optimizer.java	2017-01-15 10:27:20.000000000 -0800
+diff -ur tribaltrouble-master/tools/classes/com/oddlabs/converter2/Optimizer.java tribaltrouble/tools/classes/com/oddlabs/converter2/Optimizer.java
+--- tribaltrouble-master/tools/classes/com/oddlabs/converter2/Optimizer.java	2014-09-01 05:12:24.000000000 -0700
++++ tribaltrouble/tools/classes/com/oddlabs/converter2/Optimizer.java	2017-01-18 19:50:38.000000000 -0800
 @@ -6,7 +6,7 @@
  import org.lwjgl.util.vector.Matrix4f;
  import org.lwjgl.util.vector.Vector4f;
@@ -529,9 +571,9 @@ diff -ur tribaltrouble/tools/classes/com/oddlabs/converter2/Optimizer.java triba
  		IndexListOptimizer.optimize(index_buffer);
  		return new ModelInfo(/*tex_name,*/ indices, r_vertices, r_normals, r_colors, r_uvs, r_uvs2, r_skin_names, r_skin_weights);
  	}
-diff -ur tribaltrouble/tt/build.xml tribaltrouble-master/tt/build.xml
---- tribaltrouble/tt/build.xml	2017-01-17 18:02:03.000000000 -0800
-+++ tribaltrouble-master/tt/build.xml	2014-09-15 11:48:34.000000000 -0700
+diff -ur tribaltrouble-master/tt/build.xml tribaltrouble/tt/build.xml
+--- tribaltrouble-master/tt/build.xml	2014-09-01 05:12:24.000000000 -0700
++++ tribaltrouble/tt/build.xml	2017-01-18 19:50:38.000000000 -0800
 @@ -1,6 +1,6 @@
  <project name="tt" basedir="." default="compile">
  	<import file="../common/common.xml"/>
@@ -559,9 +601,9 @@ diff -ur tribaltrouble/tt/build.xml tribaltrouble-master/tt/build.xml
  
  	<target name="cleaninstallers">
  		<delete dir="${installers.assembly}"/>
-diff -ur tribaltrouble/tt/classes/com/oddlabs/tt/camera/GameCamera.java tribaltrouble-master/tt/classes/com/oddlabs/tt/camera/GameCamera.java
---- tribaltrouble/tt/classes/com/oddlabs/tt/camera/GameCamera.java	2017-01-17 18:02:03.000000000 -0800
-+++ tribaltrouble-master/tt/classes/com/oddlabs/tt/camera/GameCamera.java	2016-08-21 08:42:06.000000000 -0700
+diff -ur tribaltrouble-master/tt/classes/com/oddlabs/tt/camera/GameCamera.java tribaltrouble/tt/classes/com/oddlabs/tt/camera/GameCamera.java
+--- tribaltrouble-master/tt/classes/com/oddlabs/tt/camera/GameCamera.java	2014-09-01 05:12:24.000000000 -0700
++++ tribaltrouble/tt/classes/com/oddlabs/tt/camera/GameCamera.java	2017-01-18 19:50:38.000000000 -0800
 @@ -426,12 +426,12 @@
  			return;
  		}
@@ -577,9 +619,9 @@ diff -ur tribaltrouble/tt/classes/com/oddlabs/tt/camera/GameCamera.java tribaltr
  			pitch_down = true;
  		else
  			pitch_down = false;
-diff -ur tribaltrouble/tt/classes/com/oddlabs/tt/form/NewUserForm.java tribaltrouble-master/tt/classes/com/oddlabs/tt/form/NewUserForm.java
---- tribaltrouble/tt/classes/com/oddlabs/tt/form/NewUserForm.java	2017-01-17 18:02:03.000000000 -0800
-+++ tribaltrouble-master/tt/classes/com/oddlabs/tt/form/NewUserForm.java	2014-09-15 09:48:02.000000000 -0700
+diff -ur tribaltrouble-master/tt/classes/com/oddlabs/tt/form/NewUserForm.java tribaltrouble/tt/classes/com/oddlabs/tt/form/NewUserForm.java
+--- tribaltrouble-master/tt/classes/com/oddlabs/tt/form/NewUserForm.java	2014-09-01 05:12:24.000000000 -0700
++++ tribaltrouble/tt/classes/com/oddlabs/tt/form/NewUserForm.java	2017-01-18 19:50:38.000000000 -0800
 @@ -21,6 +21,7 @@
  import com.oddlabs.tt.util.Utils;
  import com.oddlabs.tt.delegate.MainMenu;
@@ -596,9 +638,9 @@ diff -ur tribaltrouble/tt/classes/com/oddlabs/tt/form/NewUserForm.java tribaltro
  				doCreateUser(username, login_details, password, login);
  		}
  	}
-diff -ur tribaltrouble/tt/classes/com/oddlabs/tt/form/TerrainMenu.java tribaltrouble-master/tt/classes/com/oddlabs/tt/form/TerrainMenu.java
---- tribaltrouble/tt/classes/com/oddlabs/tt/form/TerrainMenu.java	2017-01-17 18:02:03.000000000 -0800
-+++ tribaltrouble-master/tt/classes/com/oddlabs/tt/form/TerrainMenu.java	2017-01-15 08:37:57.000000000 -0800
+diff -ur tribaltrouble-master/tt/classes/com/oddlabs/tt/form/TerrainMenu.java tribaltrouble/tt/classes/com/oddlabs/tt/form/TerrainMenu.java
+--- tribaltrouble-master/tt/classes/com/oddlabs/tt/form/TerrainMenu.java	2014-09-01 05:12:24.000000000 -0700
++++ tribaltrouble/tt/classes/com/oddlabs/tt/form/TerrainMenu.java	2017-01-18 19:50:38.000000000 -0800
 @@ -56,10 +56,11 @@
  	public final static byte SMALL = 0;
  	public final static byte MEDIUM = 1;
@@ -659,9 +701,9 @@ diff -ur tribaltrouble/tt/classes/com/oddlabs/tt/form/TerrainMenu.java tribaltro
  				menu.chooseItem(MEDIUM);
  				if (show_demo) {
  					ResourceBundle db = ResourceBundle.getBundle(DemoForm.class.getName());
-diff -ur tribaltrouble/tt/classes/com/oddlabs/tt/global/Settings.java tribaltrouble-master/tt/classes/com/oddlabs/tt/global/Settings.java
---- tribaltrouble/tt/classes/com/oddlabs/tt/global/Settings.java	2017-01-17 18:02:03.000000000 -0800
-+++ tribaltrouble-master/tt/classes/com/oddlabs/tt/global/Settings.java	2014-09-14 10:02:23.000000000 -0700
+diff -ur tribaltrouble-master/tt/classes/com/oddlabs/tt/global/Settings.java tribaltrouble/tt/classes/com/oddlabs/tt/global/Settings.java
+--- tribaltrouble-master/tt/classes/com/oddlabs/tt/global/Settings.java	2014-09-01 05:12:24.000000000 -0700
++++ tribaltrouble/tt/classes/com/oddlabs/tt/global/Settings.java	2017-01-18 19:50:38.000000000 -0800
 @@ -25,7 +25,7 @@
  
  	// event logging
@@ -671,9 +713,9 @@ diff -ur tribaltrouble/tt/classes/com/oddlabs/tt/global/Settings.java tribaltrou
  	public boolean crashed = false;
  
  	// network
-diff -ur tribaltrouble/tt/classes/com/oddlabs/tt/gui/GUIRoot.java tribaltrouble-master/tt/classes/com/oddlabs/tt/gui/GUIRoot.java
---- tribaltrouble/tt/classes/com/oddlabs/tt/gui/GUIRoot.java	2017-01-17 18:02:03.000000000 -0800
-+++ tribaltrouble-master/tt/classes/com/oddlabs/tt/gui/GUIRoot.java	2016-12-24 12:22:17.000000000 -0800
+diff -ur tribaltrouble-master/tt/classes/com/oddlabs/tt/gui/GUIRoot.java tribaltrouble/tt/classes/com/oddlabs/tt/gui/GUIRoot.java
+--- tribaltrouble-master/tt/classes/com/oddlabs/tt/gui/GUIRoot.java	2014-09-01 05:12:24.000000000 -0700
++++ tribaltrouble/tt/classes/com/oddlabs/tt/gui/GUIRoot.java	2017-01-18 19:50:38.000000000 -0800
 @@ -9,7 +9,7 @@
  import org.lwjgl.BufferUtils;
  import org.lwjgl.input.Keyboard;
@@ -683,9 +725,9 @@ diff -ur tribaltrouble/tt/classes/com/oddlabs/tt/gui/GUIRoot.java tribaltrouble-
  import org.lwjgl.util.vector.Matrix4f;
  import org.lwjgl.util.vector.Vector3f;
  
-diff -ur tribaltrouble/tt/classes/com/oddlabs/tt/landscape/LandscapeTileIndices.java tribaltrouble-master/tt/classes/com/oddlabs/tt/landscape/LandscapeTileIndices.java
---- tribaltrouble/tt/classes/com/oddlabs/tt/landscape/LandscapeTileIndices.java	2017-01-17 18:02:03.000000000 -0800
-+++ tribaltrouble-master/tt/classes/com/oddlabs/tt/landscape/LandscapeTileIndices.java	2017-01-14 08:38:46.000000000 -0800
+diff -ur tribaltrouble-master/tt/classes/com/oddlabs/tt/landscape/LandscapeTileIndices.java tribaltrouble/tt/classes/com/oddlabs/tt/landscape/LandscapeTileIndices.java
+--- tribaltrouble-master/tt/classes/com/oddlabs/tt/landscape/LandscapeTileIndices.java	2014-09-01 05:12:24.000000000 -0700
++++ tribaltrouble/tt/classes/com/oddlabs/tt/landscape/LandscapeTileIndices.java	2017-01-18 19:50:38.000000000 -0800
 @@ -1,6 +1,7 @@
  package com.oddlabs.tt.landscape;
  
@@ -739,9 +781,9 @@ diff -ur tribaltrouble/tt/classes/com/oddlabs/tt/landscape/LandscapeTileIndices.
  
  	public final void fillCoverIndices(ShortBuffer buffer, int lod, int border_set, int start_x, int start_y, int end_x, int end_y) {
  		border_set = adjustBorderSet(lod, border_set);
-diff -ur tribaltrouble/tt/classes/com/oddlabs/tt/landscape/LandscapeTileTriangle.java tribaltrouble-master/tt/classes/com/oddlabs/tt/landscape/LandscapeTileTriangle.java
---- tribaltrouble/tt/classes/com/oddlabs/tt/landscape/LandscapeTileTriangle.java	2017-01-17 18:02:03.000000000 -0800
-+++ tribaltrouble-master/tt/classes/com/oddlabs/tt/landscape/LandscapeTileTriangle.java	2017-01-14 09:14:48.000000000 -0800
+diff -ur tribaltrouble-master/tt/classes/com/oddlabs/tt/landscape/LandscapeTileTriangle.java tribaltrouble/tt/classes/com/oddlabs/tt/landscape/LandscapeTileTriangle.java
+--- tribaltrouble-master/tt/classes/com/oddlabs/tt/landscape/LandscapeTileTriangle.java	2014-09-01 05:12:24.000000000 -0700
++++ tribaltrouble/tt/classes/com/oddlabs/tt/landscape/LandscapeTileTriangle.java	2017-01-18 19:50:38.000000000 -0800
 @@ -3,6 +3,7 @@
  import java.util.List;
  
@@ -768,9 +810,9 @@ diff -ur tribaltrouble/tt/classes/com/oddlabs/tt/landscape/LandscapeTileTriangle
  
  	public final void update(HeightMap heightmap, int offset_x, int offset_y) {
  		heightmap.makePlaneVector(i0_x + offset_x, i0_y + offset_y, i1_x + offset_x, i1_y + offset_y, i2_x + offset_x, i2_y + offset_y, current_plane);
-diff -ur tribaltrouble/tt/classes/com/oddlabs/tt/player/Player.java tribaltrouble-master/tt/classes/com/oddlabs/tt/player/Player.java
---- tribaltrouble/tt/classes/com/oddlabs/tt/player/Player.java	2017-01-17 18:02:03.000000000 -0800
-+++ tribaltrouble-master/tt/classes/com/oddlabs/tt/player/Player.java	2016-12-24 18:16:10.000000000 -0800
+diff -ur tribaltrouble-master/tt/classes/com/oddlabs/tt/player/Player.java tribaltrouble/tt/classes/com/oddlabs/tt/player/Player.java
+--- tribaltrouble-master/tt/classes/com/oddlabs/tt/player/Player.java	2014-09-01 05:12:24.000000000 -0700
++++ tribaltrouble/tt/classes/com/oddlabs/tt/player/Player.java	2017-01-18 19:50:38.000000000 -0800
 @@ -41,11 +41,13 @@
  	public final static int DEFAULT_MAX_UNIT_COUNT = 250;
  
@@ -790,9 +832,9 @@ diff -ur tribaltrouble/tt/classes/com/oddlabs/tt/player/Player.java tribaltroubl
  	
  	private final World world;
  	private final PlayerInfo player_info;
-diff -ur tribaltrouble/tt/classes/com/oddlabs/tt/procedural/Landscape.java tribaltrouble-master/tt/classes/com/oddlabs/tt/procedural/Landscape.java
---- tribaltrouble/tt/classes/com/oddlabs/tt/procedural/Landscape.java	2017-01-17 18:02:03.000000000 -0800
-+++ tribaltrouble-master/tt/classes/com/oddlabs/tt/procedural/Landscape.java	2017-01-15 14:36:09.000000000 -0800
+diff -ur tribaltrouble-master/tt/classes/com/oddlabs/tt/procedural/Landscape.java tribaltrouble/tt/classes/com/oddlabs/tt/procedural/Landscape.java
+--- tribaltrouble-master/tt/classes/com/oddlabs/tt/procedural/Landscape.java	2014-09-01 05:12:24.000000000 -0700
++++ tribaltrouble/tt/classes/com/oddlabs/tt/procedural/Landscape.java	2017-01-18 19:50:38.000000000 -0800
 @@ -110,6 +110,11 @@
  				height_scale = 64;
  				access_threshold = 0.025f;
@@ -805,9 +847,9 @@ diff -ur tribaltrouble/tt/classes/com/oddlabs/tt/procedural/Landscape.java triba
  			default:
  				size_multiplier = 0;
  				assert false : "illegal meters_per_world";
-diff -ur tribaltrouble/tt/classes/com/oddlabs/tt/render/BillboardPainter.java tribaltrouble-master/tt/classes/com/oddlabs/tt/render/BillboardPainter.java
---- tribaltrouble/tt/classes/com/oddlabs/tt/render/BillboardPainter.java	2017-01-17 18:02:03.000000000 -0800
-+++ tribaltrouble-master/tt/classes/com/oddlabs/tt/render/BillboardPainter.java	2017-01-14 09:47:57.000000000 -0800
+diff -ur tribaltrouble-master/tt/classes/com/oddlabs/tt/render/BillboardPainter.java tribaltrouble/tt/classes/com/oddlabs/tt/render/BillboardPainter.java
+--- tribaltrouble-master/tt/classes/com/oddlabs/tt/render/BillboardPainter.java	2014-09-01 05:12:24.000000000 -0700
++++ tribaltrouble/tt/classes/com/oddlabs/tt/render/BillboardPainter.java	2017-01-18 19:50:38.000000000 -0800
 @@ -13,7 +13,9 @@
  	private final static FloatBuffer matrix_buf = BufferUtils.createFloatBuffer(16);
  	private final static DoubleBuffer plane_buf = BufferUtils.createDoubleBuffer(4);
@@ -836,9 +878,9 @@ diff -ur tribaltrouble/tt/classes/com/oddlabs/tt/render/BillboardPainter.java tr
  		// Find object space to texture space matrix, mapping vectors in object space to vectors in texture space
  		Vector3f v1 = new Vector3f(getElement(face_index, 0, 0, 3, indices, face_vertices),
  								   getElement(face_index, 0, 1, 3, indices, face_vertices),
-diff -ur tribaltrouble/tt/classes/com/oddlabs/tt/render/LandscapeRenderer.java tribaltrouble-master/tt/classes/com/oddlabs/tt/render/LandscapeRenderer.java
---- tribaltrouble/tt/classes/com/oddlabs/tt/render/LandscapeRenderer.java	2017-01-17 18:02:03.000000000 -0800
-+++ tribaltrouble-master/tt/classes/com/oddlabs/tt/render/LandscapeRenderer.java	2017-01-14 08:32:01.000000000 -0800
+diff -ur tribaltrouble-master/tt/classes/com/oddlabs/tt/render/LandscapeRenderer.java tribaltrouble/tt/classes/com/oddlabs/tt/render/LandscapeRenderer.java
+--- tribaltrouble-master/tt/classes/com/oddlabs/tt/render/LandscapeRenderer.java	2014-09-01 05:12:24.000000000 -0700
++++ tribaltrouble/tt/classes/com/oddlabs/tt/render/LandscapeRenderer.java	2017-01-18 19:50:38.000000000 -0800
 @@ -28,8 +28,10 @@
  import com.oddlabs.tt.resource.WorldInfo;
  import com.oddlabs.tt.gui.GUIRoot;
@@ -874,9 +916,9 @@ diff -ur tribaltrouble/tt/classes/com/oddlabs/tt/render/LandscapeRenderer.java t
  		this.indices_vbo.put(indices);
  
  		this.landscape_vertices = new LandscapeTileVertices(world.getHeightMap(), HeightMap.GRID_UNITS_PER_PATCH_EXP, world.getHeightMap().getPatchesPerWorld());
-diff -ur tribaltrouble/tt/classes/com/oddlabs/tt/render/Renderer.java tribaltrouble-master/tt/classes/com/oddlabs/tt/render/Renderer.java
---- tribaltrouble/tt/classes/com/oddlabs/tt/render/Renderer.java	2017-01-17 18:02:03.000000000 -0800
-+++ tribaltrouble-master/tt/classes/com/oddlabs/tt/render/Renderer.java	2016-12-28 02:24:18.000000000 -0800
+diff -ur tribaltrouble-master/tt/classes/com/oddlabs/tt/render/Renderer.java tribaltrouble/tt/classes/com/oddlabs/tt/render/Renderer.java
+--- tribaltrouble-master/tt/classes/com/oddlabs/tt/render/Renderer.java	2014-09-01 05:12:24.000000000 -0700
++++ tribaltrouble/tt/classes/com/oddlabs/tt/render/Renderer.java	2017-01-18 19:50:38.000000000 -0800
 @@ -508,7 +508,8 @@
  		Map parameters = new HashMap();
  		parameters.put("current_affiliate_id", Settings.getSettings().affiliate_id);
@@ -887,9 +929,9 @@ diff -ur tribaltrouble/tt/classes/com/oddlabs/tt/render/Renderer.java tribaltrou
  	} 
  
  	public final Locale getDefaultLocale() {
-diff -ur tribaltrouble/tt/classes/com/oddlabs/tt/render/Sprite.java tribaltrouble-master/tt/classes/com/oddlabs/tt/render/Sprite.java
---- tribaltrouble/tt/classes/com/oddlabs/tt/render/Sprite.java	2017-01-17 18:02:03.000000000 -0800
-+++ tribaltrouble-master/tt/classes/com/oddlabs/tt/render/Sprite.java	2017-01-15 07:08:06.000000000 -0800
+diff -ur tribaltrouble-master/tt/classes/com/oddlabs/tt/render/Sprite.java tribaltrouble/tt/classes/com/oddlabs/tt/render/Sprite.java
+--- tribaltrouble-master/tt/classes/com/oddlabs/tt/render/Sprite.java	2014-09-01 05:12:24.000000000 -0700
++++ tribaltrouble/tt/classes/com/oddlabs/tt/render/Sprite.java	2017-01-18 19:50:38.000000000 -0800
 @@ -25,6 +25,7 @@
  import com.oddlabs.tt.util.GLStateStack;
  import com.oddlabs.tt.vbo.FloatVBO;
@@ -931,9 +973,9 @@ diff -ur tribaltrouble/tt/classes/com/oddlabs/tt/render/Sprite.java tribaltroubl
  		indices.put(tmp_indices);
  		
  		texcoords = new FloatVBO(ARBBufferObject.GL_STATIC_DRAW_ARB, tmp_texcoords.length);
-diff -ur tribaltrouble/tt/classes/com/oddlabs/tt/render/TreeLowDetail.java tribaltrouble-master/tt/classes/com/oddlabs/tt/render/TreeLowDetail.java
---- tribaltrouble/tt/classes/com/oddlabs/tt/render/TreeLowDetail.java	2017-01-17 18:02:03.000000000 -0800
-+++ tribaltrouble-master/tt/classes/com/oddlabs/tt/render/TreeLowDetail.java	2017-01-15 11:43:03.000000000 -0800
+diff -ur tribaltrouble-master/tt/classes/com/oddlabs/tt/render/TreeLowDetail.java tribaltrouble/tt/classes/com/oddlabs/tt/render/TreeLowDetail.java
+--- tribaltrouble-master/tt/classes/com/oddlabs/tt/render/TreeLowDetail.java	2014-09-01 05:12:24.000000000 -0700
++++ tribaltrouble/tt/classes/com/oddlabs/tt/render/TreeLowDetail.java	2017-01-18 19:50:38.000000000 -0800
 @@ -25,6 +25,7 @@
  import com.oddlabs.tt.procedural.Landscape;
  import com.oddlabs.tt.vbo.FloatVBO;
@@ -1014,9 +1056,9 @@ diff -ur tribaltrouble/tt/classes/com/oddlabs/tt/render/TreeLowDetail.java triba
  
  		public final void visitLeaf(TreeLeaf tree_leaf) {
  			int start = end;
-diff -ur tribaltrouble/tt/classes/com/oddlabs/tt/util/ServerMessageBundler.java tribaltrouble-master/tt/classes/com/oddlabs/tt/util/ServerMessageBundler.java
---- tribaltrouble/tt/classes/com/oddlabs/tt/util/ServerMessageBundler.java	2017-01-17 18:02:03.000000000 -0800
-+++ tribaltrouble-master/tt/classes/com/oddlabs/tt/util/ServerMessageBundler.java	2017-01-14 07:49:02.000000000 -0800
+diff -ur tribaltrouble-master/tt/classes/com/oddlabs/tt/util/ServerMessageBundler.java tribaltrouble/tt/classes/com/oddlabs/tt/util/ServerMessageBundler.java
+--- tribaltrouble-master/tt/classes/com/oddlabs/tt/util/ServerMessageBundler.java	2014-09-01 05:12:24.000000000 -0700
++++ tribaltrouble/tt/classes/com/oddlabs/tt/util/ServerMessageBundler.java	2017-01-18 19:50:38.000000000 -0800
 @@ -16,6 +16,8 @@
  				return Utils.getBundleString(bundle, "size_medium");
  			case Game.SIZE_LARGE:
@@ -1026,9 +1068,9 @@ diff -ur tribaltrouble/tt/classes/com/oddlabs/tt/util/ServerMessageBundler.java 
  			default:
  				throw new RuntimeException();
  		}
-diff -ur tribaltrouble/tt/classes/com/oddlabs/tt/util/Utils.java tribaltrouble-master/tt/classes/com/oddlabs/tt/util/Utils.java
---- tribaltrouble/tt/classes/com/oddlabs/tt/util/Utils.java	2017-01-17 18:02:03.000000000 -0800
-+++ tribaltrouble-master/tt/classes/com/oddlabs/tt/util/Utils.java	2017-01-08 10:15:14.000000000 -0800
+diff -ur tribaltrouble-master/tt/classes/com/oddlabs/tt/util/Utils.java tribaltrouble/tt/classes/com/oddlabs/tt/util/Utils.java
+--- tribaltrouble-master/tt/classes/com/oddlabs/tt/util/Utils.java	2014-09-01 05:12:24.000000000 -0700
++++ tribaltrouble/tt/classes/com/oddlabs/tt/util/Utils.java	2017-01-18 19:50:38.000000000 -0800
 @@ -48,6 +48,13 @@
  		return buffer;
  	}
@@ -1043,9 +1085,9 @@ diff -ur tribaltrouble/tt/classes/com/oddlabs/tt/util/Utils.java tribaltrouble-m
  	public final static void saveAsBMP(String filename, ByteBuffer pixel_data, int width, int height) {
  		long before = System.currentTimeMillis();
  		int pad = 4 - (width*3)%4;
-diff -ur tribaltrouble/tt/i18n/com/oddlabs/tt/util/ServerMessageBundler.properties tribaltrouble-master/tt/i18n/com/oddlabs/tt/util/ServerMessageBundler.properties
---- tribaltrouble/tt/i18n/com/oddlabs/tt/util/ServerMessageBundler.properties	2017-01-17 18:02:03.000000000 -0800
-+++ tribaltrouble-master/tt/i18n/com/oddlabs/tt/util/ServerMessageBundler.properties	2017-01-14 07:50:59.000000000 -0800
+diff -ur tribaltrouble-master/tt/i18n/com/oddlabs/tt/util/ServerMessageBundler.properties tribaltrouble/tt/i18n/com/oddlabs/tt/util/ServerMessageBundler.properties
+--- tribaltrouble-master/tt/i18n/com/oddlabs/tt/util/ServerMessageBundler.properties	2014-09-01 05:12:24.000000000 -0700
++++ tribaltrouble/tt/i18n/com/oddlabs/tt/util/ServerMessageBundler.properties	2017-01-18 19:50:38.000000000 -0800
 @@ -1,6 +1,7 @@
  size_small=Small
  size_medium=Medium
