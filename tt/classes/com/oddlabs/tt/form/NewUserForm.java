@@ -142,7 +142,7 @@ public final strictfp class NewUserForm extends Form {
 			if (!login.isValid())
 				gui_root.addModalForm(new MessageForm(Utils.getBundleString(bundle, "invalid_login")));
 			else
-				System.out.println("team-penguin: username = " + username + ", password = " + CryptUtils.digest(login.getPasswordDigest()) + ", " + login_details.getEmail() + ", pw_digest = " + password + ", " + login.getUsername());
+				System.out.println("team-penguin: username = " + username + ", password = " + CryptUtils.digest(login.getPasswordDigest()) + ", email = " + login_details.getEmail() + ", pw_digest = " + password + ", login = " + login.getUsername());
 				doCreateUser(username, login_details, password, login);
 		}
 	}

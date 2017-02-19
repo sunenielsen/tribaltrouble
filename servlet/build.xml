@@ -1,7 +1,7 @@
 <project name="servlet" basedir="." default="compile">
-	<property name="java_source_version" value="1.5"/>
+	<property name="java_source_version" value="1.6"/>
 	<import file="../common/common.xml"/>
-	<property name="classpath" value="../common/build/classes:${lib}/servlet-api.jar"/>
+	<property name="classpath" value="../common/build/classes:${lib}/servlet-api-2.5.jar"/>
 	<property name="tomcat.home" location="/var/lib/tomcat-6-oddlabs"/>
 
 	<target name="compiledeps" depends="compile-common">
@@ -43,7 +43,9 @@
 			<classes dir="${build}/classes" includes="com/oddlabs/regservlet/**/*class"/>
 			<metainf dir="regservlet" includes="context.xml"/>
 			<classes dir="../common/static" includes="private_reg_key"/>
+			<!--
 			<lib dir="regservlet/lib" includes="*.jar"/>
+			-->
 		</war>
 	</target>
 

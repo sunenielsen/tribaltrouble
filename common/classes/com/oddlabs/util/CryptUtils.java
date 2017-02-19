@@ -83,7 +83,7 @@ public final strictfp class CryptUtils {
 	}
 /*
 	public final static void main(String[] args) {
-//		String bla = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_.:;?+={}[]()/&%¤#!1§<\\>'*";
+//		String bla = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_.:;?+={}[]()/&%\u00A4#!1\u00A7<\\>'*";
 System.out.println("		digest(\"xarerenlamer4kasbdvljh\") = " + 		digest("xarerenlamer4kasbdvljh"));
 //		digest(bla);
 	}

@@ -2,7 +2,7 @@
 	<import file="../common/common.xml"/>
 	<property name="jre" value="jre1.5.0_22"/>
 	<property name="main_class" value="com.oddlabs.tt.Main"/>
-	<property name="classpath" value="../common/build/classes:${lib}/javasvn.jar:${lib}/lwjgl.jar:${lib}/lwjgl_util.jar:${lib}/jorbis.jar:${lib}/jsquish.jar:${lib}/commons-lang3-3.5.jar"/>
+	<property name="classpath" value="../common/build/classes:${lib}/javasvn.jar:${lib}/lwjgl.jar:${lib}/lwjgl_util.jar:${lib}/jorbis-0.0.17.jar:${lib}/jsquish.jar:${lib}/commons-lang3-3.5.jar"/>
 	<property name="res_classpath" value="${build}:static:i18n:${commonstatic}"/>
 
 	<property name="revision_number_file" location="${build}/revision_number"/>
@@ -181,7 +181,7 @@
 		<mkdir dir="${dist}/linux-x86"/>
 		<mkdir dir="${dist}/windows-x86"/>
 		<mkdir dir="${dist}/macosx-ppc"/>
-		<jar compress="false" destfile="${dist}/common/tt-code.jar">
+		<jar compress="false" destfile="${dist}/common/lib/tt-code.jar">
 			<fileset dir="${build}/classes">
 				<include name="com/oddlabs/tt/**/*class"/>
 			</fileset>
@@ -205,15 +205,20 @@
 			<fileset dir="static">
 				<include name="scripts/*.xml"/>
 			</fileset>
+			<fileset file="${revision_number_file}"/>
+			<fileset dir="../common/static">
+				<include name="public_reg_key"/>
+			</fileset>
 		</jar>
-		<jar compress="false" destfile="${dist}/common/tt-i18n.jar">
+		<jar compress="false" destfile="${dist}/common/lib/tt-i18n.jar">
 			<fileset dir="i18n">
 				<include name="com/oddlabs/tt/**/*properties"/>
 			</fileset>
 		</jar>
 		<copy todir="${dist}/common">
 			<fileset dir="${build}">
-				<!--			<include name="com/oddlabs/tt/**/*class"/>
+				<!--
+				<include name="com/oddlabs/tt/**/*class"/>
 				<include name="com/oddlabs/net/**/*class"/>
 				<include name="com/oddlabs/util/**/*class"/>
 				<include name="com/oddlabs/registration/**/*class"/>
@@ -233,26 +238,43 @@
 				<include name="textures/font/*image"/>
 				<include name="textures/font/*dxtn"/>
 			</fileset>
+			<!--
 			<fileset file="${revision_number_file}"/>
 			<fileset dir="../common/static">
 				<include name="public_reg_key"/>
 			</fileset>
+			-->
 			<fileset dir="static">
 				<include name="gui/*.xml"/>
 				<include name="sfx/*.ogg"/>
 				<include name="sfx/*.wav"/>
 				<include name="music/*.ogg"/>
 				<include name="font/*font"/>
-				<!--				<include name="textures/models/*png"/>
-				<include name="textures/models/*jpg"/>-->
+				<!--
+				<include name="textures/models/*png"/>
+				<include name="textures/models/*jpg"/>
+				-->
 			</fileset>
+		</copy>
+		<exec executable="cp">
+			<arg line="../common/static/tribaltrouble.sh ${dist}/common/."/>
+		</exec>
+		<copy todir="${dist}/common/lib">
 			<fileset dir="${lib}">
 				<include name="javasvn.jar"/>
 				<include name="lwjgl.jar"/>
 				<include name="lwjgl_util.jar"/>
-				<include name="jorbis.jar"/>
+				<include name="jorbis-0.0.17.jar"/>
 				<include name="jsquish.jar"/>
 				<include name="commons-lang3-3.5.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="${dist}/common/lib/native">
+			<fileset dir="${nativelib}">
+				<include name="liblwjgl.so"/>
+				<include name="liblwjgl64.so"/>
+				<include name="libopenal.so"/>
+				<include name="libopenal64.so"/>
 			</fileset>
 		</copy>
 		<copy todir="${dist}/windows-x86">
@@ -266,12 +288,6 @@
 				<include name="liblwjgl.jnilib"/>
 				<include name="liblwjgl-legacy.jnilib"/>
 				<include name="openal.dylib"/>
-			</fileset>
-		</copy>
-		<copy todir="${dist}/linux-x86">
-			<fileset dir="${nativelib}">
-				<include name="liblwjgl.so"/>
-				<include name="libopenal.so"/>
 			</fileset>
 		</copy>
 	</target>

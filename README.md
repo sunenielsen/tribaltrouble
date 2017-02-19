@@ -1,20 +1,14 @@
-Team Penguin's goals:
+## Team Penguin's progress:
 
-- Build a Matchmaking/Registration instance using the same processes as the original game.
-- Extend game functionality to (8) Players and (1) additional Island size: Huge
-- Learn NetBeans and wrangle the code base into a manageable build environment.
+- [x] Matchmaking, Routing and Registration.
+- [x] Game play with (8) Players on a Huge Island.
 
-Team Penguin's progress:
+- Server setup documentation
 
-- Matchmaking, Routing and Registration services are working.
-- The Game plays with (8) Players on a Huge Island.
-
-Team Penguin's current state:
-
-- Inital merge completed.
-- Added LWJGL 2.9.3 java/native code: http://legacy.lwjgl.org/
-- Added first patch:  team-penguin_first.patch
-- Added second patch: team-penguin_second.patch
+[DNS](dns/DNS.md)
+[MySQL](mysql/MYSQL.md)
+[Registration](registration-files/REGISTRATION.md)
+[Apache Tomcat 6](apache-tomcat/TOMCAT.md)
 
 
 

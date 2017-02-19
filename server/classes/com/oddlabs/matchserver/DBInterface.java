@@ -77,7 +77,10 @@ public final strictfp class DBInterface {
 
 	public final static void createUser(Login login, LoginDetails login_details, String reg_key) {
 		try {
-			PreparedStatement stmt = DBUtils.createStatement("UPDATE registrations R SET username = ?, email = ?, password = ? WHERE R.reg_key = ? AND R.username IS NULL AND R.password IS NULL AND R.email IS NULL");
+			/* Team Penguin */
+			PreparedStatement stmt = DBUtils.createStatement("UPDATE registrations R SET username = ?, email = ?, password = ? WHERE R.reg_key = ? AND COALESCE(R.username, R.password, R.email) = ''");
+			//System.out.println("Add new user: UPDATE registrations R SET username = '" + login.getUsername() + "', email = '" + login_details.getEmail() + "', password = '" + CryptUtils.digest(login.getPasswordDigest()) + "' WHERE R.reg_key = '" + reg_key + "' AND COALESCE(R.username, R.password, R.email) = '';");
+			/* End Penguin */
 			try {
 				stmt.setString(1, login.getUsername());
 				stmt.setString(2, login_details.getEmail());

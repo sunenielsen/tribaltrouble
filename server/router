@@ -5,4 +5,4 @@ then
 	mkdir logs
 fi
 
-java -Djava.security.manager -Djava.security.policy=router.policy -server -ea -cp router.jar com.oddlabs.routerserver.RouterServer
+java -Djava.security.manager -Djava.security.policy=router.policy -server -ea -cp ./build/router.jar com.oddlabs.routerserver.RouterServer

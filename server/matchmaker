@@ -5,5 +5,5 @@ then
 	mkdir logs
 fi
 
-java -Djava.security.manager -Djava.security.policy=matchmaker.policy -server -ea -cp matchmaking.jar:mysql.jar:commons-pool.jar:commons-dbcp.jar:commons-collections.jar com.oddlabs.matchserver.MatchmakingServer
+java -Djava.security.manager -Djava.security.policy=matchmaker.policy -server -ea -cp ../common/lib/java/mysql.jar:../common/lib/java/commons-pool-1.6.jar:../common/lib/java/commons-dbcp-1.4.jar:./build/matchmaking.jar com.oddlabs.matchserver.MatchmakingServer
 
