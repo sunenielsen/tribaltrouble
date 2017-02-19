@@ -15,6 +15,7 @@ Copy to the appropriate location:
 - Mac OS X: `Library/Application Support/TribalTrouble/`
 - Linux: `~/.TribalTrouble/`
 <br />
+<br />
 With these registration files, you can play the full game or connect to your **private** Matchmaking service. <br />
 <br />
 The following services must be running to play a Match:
