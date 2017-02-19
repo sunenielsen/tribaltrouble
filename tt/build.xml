@@ -238,12 +238,9 @@
 				<include name="textures/font/*image"/>
 				<include name="textures/font/*dxtn"/>
 			</fileset>
-			<!--
-			<fileset file="${revision_number_file}"/>
 			<fileset dir="../common/static">
-				<include name="public_reg_key"/>
+				<include name="tribaltrouble.sh"/>
 			</fileset>
-			-->
 			<fileset dir="static">
 				<include name="gui/*.xml"/>
 				<include name="sfx/*.ogg"/>
@@ -256,9 +253,7 @@
 				-->
 			</fileset>
 		</copy>
-		<exec executable="cp">
-			<arg line="../common/static/tribaltrouble.sh ${dist}/common/."/>
-		</exec>
+		<chmod file="${dist}/common/tribaltrouble.sh" perm="755"/>
 		<copy todir="${dist}/common/lib">
 			<fileset dir="${lib}">
 				<include name="javasvn.jar"/>
