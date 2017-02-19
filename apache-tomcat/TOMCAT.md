@@ -1,13 +1,14 @@
 Apache Tomcat 6 is required for the Registration servlet.
-- servlet/regservlet
-
-Typical Tomcat installations listen on port 8080. <br />
+<br />
+Typical Tomcat installations listen on port 8080.
+<br />
 The sample Apache Virtual Host configuration [00_registration_vhost.conf](00_registration_vhost.conf) requires:
 - mod_proxy
 - mod_proxy_http
-
-This example will direct HTTP requests to the Tomcat instance. <br />
-In order to use HTTP instead of HTTPS, the code has been modified in: <br />
+<br />
+This example will direct HTTP requests to the Tomcat instance.
+<br />
+In order to use HTTP instead of HTTPS, the code has been modified in:
 - tt/classes/com/oddlabs/tt/render/Renderer.java
 ```
 //return new HttpRequestParameters("https://" + Settings.getSettings().registration_address + "/oddlabs/registration", parameters);

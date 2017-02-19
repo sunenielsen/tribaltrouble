@@ -1,7 +1,10 @@
-DNS is required for Tribal Trouble Match play. <br />
-The sample [oddlabs.zone](oddlabs.zone) file resolves services to the loopback interface. <br />
-One can just as easily resolve to a server on your **private** network. <br />
-One can also modify the server definitions in:
+DNS is required for Tribal Trouble Match play.
+<br />
+The sample [oddlabs.zone](oddlabs.zone) file resolves services to the loopback interface.
+<br />
+One can just as easily resolve to a server on your **private** network.
+<br />
+One can also modify the _address definitions in:
 - tt/classes/com/oddlabs/tt/global/Settings.java
 ```
 // network
