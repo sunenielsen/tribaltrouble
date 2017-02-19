@@ -6,6 +6,7 @@ The sample Apache Virtual Host configuration [00_registration_vhost.conf](00_reg
 - mod_proxy
 - mod_proxy_http
 <br />
+<br />
 This example will direct HTTP requests to the Tomcat instance.
 <br />
 In order to use HTTP instead of HTTPS, the code has been modified in:
