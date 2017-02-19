@@ -3,12 +3,12 @@
 - [x] Matchmaking, Routing and Registration.
 - [x] Game play with (8) Players on a Huge Island.
 
-- Server setup documentation
+# Server setup documentation
 
-[DNS](dns/DNS.md)
-[MySQL](mysql/MYSQL.md)
-[Registration](registration-files/REGISTRATION.md)
-[Apache Tomcat 6](apache-tomcat/TOMCAT.md)
+- [DNS](dns/DNS.md)
+- [MySQL](mysql/MYSQL.md)
+- [Registration](registration-files/REGISTRATION.md)
+- [Apache Tomcat 6](apache-tomcat/TOMCAT.md)
 
 
 
