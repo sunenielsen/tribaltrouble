@@ -111,9 +111,9 @@ public final strictfp class Landscape {
 				access_threshold = 0.025f;
 				break;
 			case 2048:
-				size_multiplier = 80;
-				height_scale = 64;
-				access_threshold = 0.0375f;
+				size_multiplier = 64;
+				height_scale = 80;
+				access_threshold = 0.0145f;
 				break;
 			default:
 				size_multiplier = 0;
