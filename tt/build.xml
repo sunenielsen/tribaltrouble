@@ -141,6 +141,7 @@
 	</target>
 
 	<target name="revision">
+		<mkdir dir=".hg"/>
 		<exec executable="hg" output="${revision_number_file}">
 			<arg value="tip"/>
 			<arg value="--template"/>
