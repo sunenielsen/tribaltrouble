@@ -4,9 +4,9 @@ package com.oddlabs.svnutil;
 import org.tmatesoft.svn.core.internal.io.svn.SVNRepositoryFactoryImpl;
 import org.tmatesoft.svn.core.internal.ws.fs.FSEntryFactory;*/
 
-import org.tmatesoft.svn.core.*;
-import org.tmatesoft.svn.core.wc.*;
-import org.tmatesoft.svn.core.io.*;
+import org.tmatesoft.svn.core.SVNException;
+import org.tmatesoft.svn.core.wc.SVNWCClient;
+import org.tmatesoft.svn.core.wc.SVNClientManager;
 
 import com.oddlabs.util.FileUtils;
 

@@ -1,8 +1,11 @@
 package com.oddlabs.svnutil;
 
-import org.tmatesoft.svn.core.*;
-import org.tmatesoft.svn.core.wc.*;
-import org.tmatesoft.svn.core.io.*;
+import org.tmatesoft.svn.core.SVNException;
+import org.tmatesoft.svn.core.wc.ISVNStatusHandler;
+import org.tmatesoft.svn.core.wc.SVNStatus;
+import org.tmatesoft.svn.core.wc.SVNClientManager;
+import org.tmatesoft.svn.core.wc.SVNStatusClient;
+import org.tmatesoft.svn.core.wc.SVNStatusType;
 
 import java.io.*;
 
@@ -31,7 +34,7 @@ System.out.println("revision: " + latest_revision);
 		out.close();
 	}
 	
-	public static void main(String[] args) throws SVNException, IOException {
+	public static void main(String[] args) throws org.tmatesoft.svn.core.SVNException, IOException {
 		File workspace_location = new File(args[0]);
 		File revision_file = new File(args[1]);
 		new DetermineRevision(workspace_location, revision_file);
