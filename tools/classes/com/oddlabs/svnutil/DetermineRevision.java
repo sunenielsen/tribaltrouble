@@ -34,7 +34,7 @@ System.out.println("revision: " + latest_revision);
 		out.close();
 	}
 	
-	public static void main(String[] args) throws org.tmatesoft.svn.core.SVNException, IOException {
+	public static void main(String[] args) throws SVNException, IOException {
 		File workspace_location = new File(args[0]);
 		File revision_file = new File(args[1]);
 		new DetermineRevision(workspace_location, revision_file);

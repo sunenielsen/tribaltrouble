@@ -64,7 +64,7 @@
 	</target>
 
 	<target name="copydist" depends="compile">
-		<java failonerror="true" fork="yes" classpath="../common/build/classes:svn/svnkit.jar:svn/sequence-library.jar:svn/sqljet.jar:${build}/classes" classname="com.oddlabs.svnutil.CopyDist">
+		<java failonerror="true" fork="no" classpath="../common/build/classes:${build}/classes:svn/svnkit.jar:svn/sequence-library.jar:svn/sqljet.jar:${build}/classes" classname="com.oddlabs.svnutil.CopyDist">
 			<arg path="${svnsrc}"/>
 			<arg path="${svndst}"/>
 		</java>

@@ -254,7 +254,7 @@
 				-->
 			</fileset>
 		</copy>
-		<chmod file="${dist}/common/tribaltrouble.sh" perm="755"/>
+		<chmod file="${dist}/common/tribaltrouble.sh" perm="750"/>
 		<copy todir="${dist}/common/lib">
 			<fileset dir="${lib}">
 				<include name="javasvn.jar"/>
