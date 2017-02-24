@@ -24,13 +24,13 @@ Binaries
 --------
 If you are simply looking for a working binary version of the game, you can find the latest released installers here:
 
-- [Windows](binaries/TribalTroubleSetup.exe)
-- [Mac](binaries/TribalTrouble.dmg)
-- [Linux](binaries/TribalTroubleSetup.sh)
+- [Windows](https://github.com/sunenielsen/tribaltrouble/blob/master/binaries/TribalTroubleSetup.exe)
+- [Mac](https://github.com/sunenielsen/tribaltrouble/blob/master/binaries/TribalTrouble.dmg)
+- [Linux](https://github.com/sunenielsen/tribaltrouble/blob/master/binaries/TribalTroubleSetup.sh)
 
 Please note that the multiplayer server referenced in these builds, is no longer available.
 
-You can register the binaries by putting the registration file in the binaries folder into this folder:
+You can register the binaries by putting the [registration](https://github.com/sunenielsen/tribaltrouble/blob/master/binaries/TribalTroubleSetup.sh) file into this folder:
 - Windows XP: `C:\Documents and Settings\Username\TribalTrouble\`
 - Windows Vista or newer: `C:\Users\Username\TribalTrouble\`
 - Mac OS X: `Library/Application Support/TribalTrouble/`
