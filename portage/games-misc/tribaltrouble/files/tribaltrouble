@@ -1,0 +1,19 @@
+#!/bin/bash
+
+if [[ -x /usr/share/games/tribaltrouble/tribaltrouble.sh ]]
+then
+	if [[ ! -d $HOME/.TribalTrouble ]]
+	then
+		mkdir $HOME/.TribalTrouble && cp /usr/share/games/tribaltrouble/registration $HOME/.TribalTrouble/.
+	elif [[ ! -f $HOME/.TribalTrouble/registration ]]
+	then
+		cp /usr/share/games/tribaltrouble/registration $HOME/.TribalTrouble/.
+	fi
+
+	cd /usr/share/games/tribaltrouble && ./tribaltrouble.sh
+	cd -
+else
+	echo
+	echo " Tribal Trouble appears to be missing..."
+	echo
+fi

@@ -2,6 +2,7 @@
 
 - [x] Matchmaking, Routing and Registration.
 - [x] Game play with (8) Players on a Huge Island.
+- [x] Gentoo Ebuild created for: `games-misc/tribaltrouble`
 
 ### Server setup documentation
 
