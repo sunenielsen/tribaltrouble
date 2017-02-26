@@ -15,10 +15,10 @@ SLOT="0"
 KEYWORDS="amd64 x86"
 IUSE="+java"
 
-DEPEND="app-arch/unzip
+DEPEND=">=virtual/jdk-1.6
+	app-arch/unzip
+	dev-java/ant-core
 	dev-vcs/mercurial"
-RDEPEND=">=virtual/jdk-1.6
-	${DEPEND}"
 
 S=${WORKDIR}
 
