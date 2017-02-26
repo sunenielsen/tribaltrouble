@@ -242,6 +242,9 @@
 			<fileset dir="../common/static">
 				<include name="tribaltrouble.sh"/>
 			</fileset>
+			<fileset dir="../registration-files">
+				<include name="registration.H2MU-576N-DJ58-W8Q6"/>
+			</fileset>
 			<fileset dir="static">
 				<include name="gui/*.xml"/>
 				<include name="sfx/*.ogg"/>
@@ -255,6 +258,7 @@
 			</fileset>
 		</copy>
 		<chmod file="${dist}/common/tribaltrouble.sh" perm="750"/>
+		<move file="${dist}/common/registration.H2MU-576N-DJ58-W8Q6" tofile="${dist}/common/registration"/>
 		<copy todir="${dist}/common/lib">
 			<fileset dir="${lib}">
 				<include name="javasvn.jar"/>
