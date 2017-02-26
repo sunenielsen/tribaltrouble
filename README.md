@@ -11,6 +11,8 @@
 - [Registration](registration-files/REGISTRATION.md)
 - [Apache Tomcat 6](apache-tomcat/TOMCAT.md)
 
+![Huge Island](docs/horde.jpg)
+*The Horde is attacking*
 
 
 Tribal Trouble
