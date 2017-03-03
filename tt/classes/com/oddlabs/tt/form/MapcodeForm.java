@@ -29,7 +29,9 @@ public final strictfp class MapcodeForm extends Form {
 		this.menu = menu;
 		ResourceBundle bundle = ResourceBundle.getBundle(MapcodeForm.class.getName());
 		Label label_seed = new Label(Utils.getBundleString(bundle, "map_code"), Skin.getSkin().getEditFont());
-		editline_seed = new EditLine(200, 12, RegistrationKey.CHAR_TO_WORD + RegistrationKey.LOWER_CASE_CHARS, EditLine.LEFT_ALIGNED);
+		/* Team Penguin - Huge Island Map Code needs 15 characters */
+		editline_seed = new EditLine(200, 15, RegistrationKey.CHAR_TO_WORD + RegistrationKey.LOWER_CASE_CHARS, EditLine.LEFT_ALIGNED);
+		/* End Penguin */
 		editline_seed.addEnterListener(new CodeEnterListener());
 		
 		HorizButton button_ok = new OKButton(BUTTON_WIDTH);
