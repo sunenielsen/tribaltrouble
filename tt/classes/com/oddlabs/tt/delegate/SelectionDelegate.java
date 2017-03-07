@@ -121,10 +121,7 @@ public final strictfp class SelectionDelegate extends ControllableCameraDelegate
 						getViewer().getSelection().setShortcutArmy(army_number);
 					} else {
 						boolean selected = getViewer().getSelection().enableShortcutArmy(army_number);
-						/* Team Penguin - Single keypress causes jump... sometimes */
-						//if (selected && event.getNumClicks() > 1) {
-						if (selected && event.getNumClicks() >= 2) {
-						/* End Penguin */
+						if (selected && event.getNumClicks() > 1) {
 							Set set = getViewer().getSelection().getCurrentSelection().getSet();
 							if (set.size() > 0) {
 								Selectable s = (Selectable)set.iterator().next();
