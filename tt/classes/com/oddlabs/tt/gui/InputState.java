@@ -1,5 +1,8 @@
 package com.oddlabs.tt.gui;
 
+/* Team Penguin */
+import java.util.concurrent.atomic.AtomicInteger;
+
 import com.oddlabs.tt.animation.Updatable;
 import com.oddlabs.tt.animation.TimerAnimation;
 import com.oddlabs.tt.font.Index;
@@ -33,7 +36,7 @@ public final strictfp class InputState {
 	private int clicked_x;
 	private int clicked_y;
 	private KeyboardEvent key_event;
-	private int key_counter = 0;
+	private AtomicInteger key_counter = new AtomicInteger(0);
 
 	// Keyboard handling
 	private KeyboardEvent held_event;
@@ -151,7 +154,7 @@ public final strictfp class InputState {
 		double_key_timer.stop();
 		double_key_timer.resetTime();
 		key_event = null;
-		key_counter = 0;
+		key_counter.set(0);
 	}
 
 	public final void keyTyped( int key_code, char key_char) {
@@ -175,7 +178,8 @@ public final strictfp class InputState {
 			double_key_timer.start();
 		}
 		if (!repeat)
-			key_counter++;
+			key_counter.getAndIncrement();
+/* End Penguin */
 		KeyboardEvent event = new KeyboardEvent(key_code, key_char, shift_down, control_down, key_counter);
 		key_event = event;
 
