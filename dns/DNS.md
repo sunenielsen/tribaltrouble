@@ -1,4 +1,4 @@
-##Domain Name System
+## Domain Name System
 Tribal Trouble must resolve specific hosts in order for Match play to work.
 <br />
 The sample [oddlabs.zone](oddlabs.zone) configuration resolves these specific hosts to the loopback interface.
