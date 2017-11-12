@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE repositories SYSTEM "/dtd/repositories.dtd">
+<repositories xmlns="" version="1.0">
+  <repo quality="experimental" status="unofficial">
+    <name><![CDATA[tribaltrouble-overlay]]></name>
+    <description lang="en"><![CDATA[Tribal Trouble Overlay]]></description>
+    <homepage>https://github.com/team-penguin/tribaltrouble/</homepage>
+    <owner type="person">
+      <email>team-penguin50@gmail.com</email>
+      <name><![CDATA[Team Penguin]]></name>
+    </owner>
+    <source type="git">git://github.com/team-penguin/tribaltrouble.git</source>
+    <feed>https://github.com/team-penguin/tribaltrouble/commits/master.atom</feed>
+  </repo>
+</repositories>
+
