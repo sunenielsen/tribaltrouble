@@ -1,7 +1,7 @@
 ## Windows package installation and build information
 1. Install Java 8
 1. Unzip __Tribal_Trouble.zip__
-1. Edit [tribaltrouble.bat](Tribal\ Trouble/tribaltrouble.bat)
+1. Edit [tribaltrouble.bat](Tribal&nbsp;Trouble/tribaltrouble.bat)
    1. Change `-Djava.library.path=` to the Unzipped location prefix.
       1. Example: __C:/Users/_Username_/Desktop/Tribal Trouble/lib/native__
 1. Install [registration](../registration-files/registration.H2MU-576N-DJ58-W8Q6) file.
