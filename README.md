@@ -3,7 +3,7 @@
 - [x] Matchmaking, Routing and Registration.
 - [x] Game play with (8) Players on a Huge Island.
 - [x] Gentoo Ebuild created: [games-misc/tribaltrouble](portage/PORTAGE.md)
-- [x] Windows package with Huge/8 Team support.
+- [x] Windows package with Huge/8 Team support: [Tribal_Trouble.zip](wbin/Tribal_Trouble.zip)
 - [Instructions](wbin/TT.md)
 
 ### Server setup documentation
