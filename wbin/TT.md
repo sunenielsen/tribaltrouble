@@ -8,7 +8,7 @@
    1. Place file in **C:\Users\*Username*\TribalTrouble\**
    1. Rename **registration.H2MU-576N-DJ58-W8Q6** to **registration**.
 <br />
-### The package was built with the following tools:
+## The package was built with the following tools:
 - Oracle Java SDK 1.8.0_151
 - Apache Ant 1.10.5
 - TortoiseHg 4.7
