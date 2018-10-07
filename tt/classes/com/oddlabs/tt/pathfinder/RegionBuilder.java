@@ -5,7 +5,11 @@ import com.oddlabs.tt.landscape.World;
 import com.oddlabs.tt.util.PocketList;
 
 public final strictfp class RegionBuilder {
-	public final static int MAX_EXAMINED_NODES_PER_PATH = 600;
+	/* Team Penguin */
+	/* Prevent dance parties on HUGE Islands */
+	/* public final static int MAX_EXAMINED_NODES_PER_PATH = 600; */
+	public final static int MAX_EXAMINED_NODES_PER_PATH = 900;
+	/* End Penguin */
 	public final static int REGION_PATH_MAX_COST = 70;
 	public final static int MAX_PATH_COST = 1024;
 	public final static int GRID_SIZE = 128;
