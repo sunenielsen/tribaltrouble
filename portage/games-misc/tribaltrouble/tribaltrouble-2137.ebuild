@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit eutils java-pkg-2 java-ant-2
+inherit eutils java-pkg-2 java-ant-2 games
 
 DESCRIPTION="Tribal Trouble is a realtime strategy game released by Oddlabs in 2004."
 HOMEPAGE="https://github.com/team-penguin/tribaltrouble"
