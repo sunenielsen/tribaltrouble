@@ -16,6 +16,7 @@ KEYWORDS="amd64 x86"
 IUSE="+java"
 
 DEPEND=">=virtual/jdk-1.6
+    games-misc/games-envd
 	app-arch/unzip
 	dev-java/ant-core
 	dev-vcs/mercurial"
