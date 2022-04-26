@@ -36,6 +36,7 @@ import org.lwjgl.opengl.GL13;
 import org.lwjgl.opengl.GLContext;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.Sys;
+import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 
 import com.oddlabs.net.NetworkSelector;
 import com.oddlabs.regclient.RegistrationClient;
@@ -508,7 +509,8 @@ e.printStackTrace();
 		Map parameters = new HashMap();
 		parameters.put("current_affiliate_id", Settings.getSettings().affiliate_id);
 		parameters.put("affiliate_id", affiliate_id);
-		return new HttpRequestParameters("https://" + Settings.getSettings().registration_address + "/oddlabs/registration", parameters);
+		//return new HttpRequestParameters("https://" + Settings.getSettings().registration_address + "/oddlabs/registration", parameters);
+		return new HttpRequestParameters("http://" + Settings.getSettings().registration_address + "/oddlabs/registration", parameters);
 	} 
 
 	public final Locale getDefaultLocale() {

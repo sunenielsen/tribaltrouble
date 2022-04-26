@@ -1,2 +1,8 @@
-.svn
-build
+server/logs/
+nbproject/
+nbbuild/
+nbdist/
+build/
+dist/
+.nb-gradle/
+.svn/

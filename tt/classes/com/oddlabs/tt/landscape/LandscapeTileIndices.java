@@ -1,6 +1,7 @@
 package com.oddlabs.tt.landscape;
 
 import java.nio.ShortBuffer;
+import java.nio.IntBuffer;
 import org.lwjgl.BufferUtils;
 
 import java.util.List;
@@ -16,7 +17,9 @@ public final strictfp class LandscapeTileIndices {
 	private final int patch_exp;
 	private final int[] patch_indices_indices;
 	private final LandscapeTileTriangle[][][] quad_to_planes;
-	private final ShortBuffer indices;
+	/* Team Penguin */
+	private final IntBuffer indices;
+	/* End Penguin */
 
 	static int getIndex(int patch_exp, int x, int y) {
 		int patch_size = getPatchSize(patch_exp);
@@ -137,7 +140,9 @@ public final strictfp class LandscapeTileIndices {
 		}
 		patch_indices_indices[index++] = triangle_index;
 		assert index == patch_indices_indices.length: index + " " + patch_indices_indices.length;
-		this.indices = BufferUtils.createShortBuffer(triangle_index*3);
+		/* Team Penguin */
+		this.indices = BufferUtils.createIntBuffer(triangle_index*3);
+		/* End Penguin */
 		for (int i = 0; i < num_lod; i++) {
 			buildTile(lower, higher, i, 0, indices);
 			if (i%2 == 1) { // Need link tiles
@@ -158,11 +163,12 @@ System.out.println("indices.get(i) = " + indices.get(i));
 System.out.println("indices.remaining() = " + indices.remaining());*/
 	}
 
-	public final ShortBuffer getIndices() {
+/* Team Penguin */
+	public final IntBuffer getIndices() {
 		return indices;
 	}
 
-	private static void buildTile(LandscapeTileTriangle lower, LandscapeTileTriangle higher, int lod, int border_set, ShortBuffer indices) {
+	private static void buildTile(LandscapeTileTriangle lower, LandscapeTileTriangle higher, int lod, int border_set, IntBuffer indices) {
 		int pos = indices.position();
 		lower.putIndices(lod, border_set, indices);
 		higher.putIndices(lod ,border_set, indices);
@@ -174,6 +180,7 @@ System.out.println("indices.remaining() = " + indices.remaining());*/
 		indices.limit(saved_limit);
 		indices.position(saved_pos);
 	}
+/* End Penguin */
 
 	public final void fillCoverIndices(ShortBuffer buffer, int lod, int border_set, int start_x, int start_y, int end_x, int end_y) {
 		border_set = adjustBorderSet(lod, border_set);

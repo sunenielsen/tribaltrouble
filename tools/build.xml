@@ -1,6 +1,6 @@
 <project name="tools" basedir="." default="compile">
 	<import file="../common/common.xml"/>
-	<property name="classpath" value="../common/build/classes:svn/svnkit.jar:${lib}/lwjgl_util.jar:${lib}/lwjgl.jar:${lib}/jsquish.jar:${lib}/png.jar"/>
+	<property name="classpath" value="../common/build/classes:svn/svnkit.jar:svn/sqljet.jar:svn/sequence-library.jar:../common/build/classes:${lib}/lwjgl_util.jar:${lib}/lwjgl.jar:${lib}/jsquish.jar:${lib}/png.jar"/>
 
 	<target name="compiledeps" depends="compile-common"/>
 
@@ -64,16 +64,16 @@
 	</target>
 
 	<target name="copydist" depends="compile">
-		<java failonerror="true" fork="yes" classpath="../common/build/classes:svn/svnkit.jar:${build}/classes" classname="com.oddlabs.svnutil.CopyDist">
+		<java failonerror="true" fork="no" classpath="../common/build/classes:${build}/classes:svn/svnkit.jar:svn/sequence-library.jar:svn/sqljet.jar:${build}/classes" classname="com.oddlabs.svnutil.CopyDist">
 			<arg path="${svnsrc}"/>
 			<arg path="${svndst}"/>
 		</java>
 	</target>
 
 	<target name="revision" depends="compile">
-		<java failonerror="true" fork="yes" classpath="svn/svnkit.jar:${build}/classes" classname="com.oddlabs.svnutil.DetermineRevision">
+		<java failonerror="true" fork="yes" classpath="../common/build/classes:svn/svnkit.jar:svn/sequence-library.jar:svn/sqljet.jar:${build}/classes" classname="com.oddlabs.svnutil.DetermineRevision">
 			<jvmarg value="-Xmx256000000"/>
-			<arg path="${svn_path}"/>
+			<arg path="svndist"/>
 			<arg path="${revision_number_file}"/>
 		</java>
 	</target>

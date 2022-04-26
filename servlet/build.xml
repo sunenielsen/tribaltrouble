@@ -1,16 +1,16 @@
 <project name="servlet" basedir="." default="compile">
-	<property name="java_source_version" value="1.5"/>
+	<property name="java_source_version" value="1.6"/>
 	<import file="../common/common.xml"/>
-	<property name="classpath" value="../common/build/classes:${lib}/servlet-api.jar"/>
-	<property name="tomcat.home" location="/usr/share/tomcat5.5"/>
+	<property name="classpath" value="../common/build/classes:${lib}/servlet-api-2.5.jar"/>
+	<property name="tomcat.home" location="/var/lib/tomcat-6-oddlabs"/>
 
 	<target name="compiledeps" depends="compile-common">
 	</target>
 
 	<target name="deploy">
-		<taskdef name="reload" classpath="${tomcat.home}/server/lib/catalina-ant.jar" classname="org.apache.catalina.ant.ReloadTask"/>
-		<unwar src="build/${servlet}.war" dest="${tomcat.home}/webapps/${servlet}" overwrite="true"/>
-		<reload url="http://localhost:8180/manager" path="/matchservlet" username="tomcat" password="tomcat"/>
+		<taskdef name="reload" classpath="/usr/share/tomcat-6/lib/catalina-ant.jar" classname="org.apache.catalina.ant.ReloadTask"/>
+		<unwar src="build/oddlabs.war" dest="${tomcat.home}/webapps/oddlabs" overwrite="true"/>
+		<reload url="http://localhost:33215/manager" path="/oddlabs" username="tomcat" password="tomcat"/>
 	</target>
 
 	<!--	<target name="deploy">
@@ -42,7 +42,10 @@
 			<classes dir="../common/build/classes" includes="com/oddlabs/registration/**/*class"/>
 			<classes dir="${build}/classes" includes="com/oddlabs/regservlet/**/*class"/>
 			<metainf dir="regservlet" includes="context.xml"/>
-			<classes dir="${commonstatic}" includes="private_reg_key"/>
+			<classes dir="../common/static" includes="private_reg_key"/>
+			<!--
+			<lib dir="regservlet/lib" includes="*.jar"/>
+			-->
 		</war>
 	</target>
 

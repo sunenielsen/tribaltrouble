@@ -25,6 +25,7 @@ import com.oddlabs.tt.util.GLState;
 import com.oddlabs.tt.util.GLStateStack;
 import com.oddlabs.tt.vbo.FloatVBO;
 import com.oddlabs.tt.vbo.ShortVBO;
+import com.oddlabs.tt.vbo.IntVBO;
 
 final strictfp class Sprite {
 	public final static int LOWDETAIL_NORMAL = 1;
@@ -37,7 +38,9 @@ final strictfp class Sprite {
 	public static int global_size = 0;
 	private final static FloatBuffer white_color;
 
-	private final ShortVBO indices;
+	/* Team Penguin */
+	private final IntVBO indices;
+	/* End Penguin */
 	private final FloatVBO vertices_and_normals;
 	private final FloatVBO texcoords;
 
@@ -69,7 +72,9 @@ final strictfp class Sprite {
 		this.type_array = type_array;
 		this.animation_length_array = animation_length_array;
 
-		short[] tmp_indices = sprite_info.getIndices();
+		/* Team Penguin */
+		int[] tmp_indices = sprite_info.getIndices();
+		/* End Penguin */
 		float[] tmp_texcoords = sprite_info.getTexCoords();
 		num_vertices = tmp_texcoords.length/2;
 		num_triangles = tmp_indices.length/3;
@@ -81,7 +86,9 @@ final strictfp class Sprite {
 
 		clear_color = sprite_info.getClearColor();
 
-		indices = new ShortVBO(ARBBufferObject.GL_STATIC_DRAW_ARB, tmp_indices.length);
+		/* Team Penguin */
+		indices = new IntVBO(ARBBufferObject.GL_STATIC_DRAW_ARB, tmp_indices.length);
+		/* End Penguin */
 		indices.put(tmp_indices);
 		
 		texcoords = new FloatVBO(ARBBufferObject.GL_STATIC_DRAW_ARB, tmp_texcoords.length);

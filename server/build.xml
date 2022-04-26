@@ -1,6 +1,6 @@
 <project name="servers" basedir="." default="all">
 	<import file="../common/common.xml"/>
-	<property name="classpath" value="../common/build/classes:${lib}/commons-pool-1.2.jar:${lib}/commons-dbcp-1.2.1.jar:${lib}/commons-collections-3.1.jar"/>
+	<property name="classpath" value="../common/build/classes:../common/lib/java/commons-pool-1.6.jar:../common/lib/java/commons-dbcp-1.4.jar:../common/lib/java/commons-collections-3.1.jar"/>
 
 	<target name="compiledeps" depends="compile-common">
 	</target>
@@ -33,7 +33,13 @@
 			<fileset dir="../common/build/classes" includes="com/oddlabs/matchmaking/**/*class"/>
 			<fileset dir="../common/build/classes" includes="com/oddlabs/registration/**/*class"/>
 			<fileset dir="${build}/classes" includes="com/oddlabs/matchserver/**/*class"/>
-			<fileset dir="${commonstatic}" includes="public_reg_key"/>
+			<fileset dir="../common/static" includes="public_reg_key"/>
+		</jar>
+	</target>
+
+	<target name="regservice" depends="compile">
+		<jar destfile="${build}/regservice.jar">
+			<fileset dir="../common/build/classes" includes="com/oddlabs/registration/**/*class"/>
 		</jar>
 	</target>
 

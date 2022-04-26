@@ -11,7 +11,7 @@ public strictfp interface MatchmakingServerInterface {
 	
 	public final static int MATCHMAKING_SERVER_PORT = 33214;
 
-	public final static int MAX_PLAYERS = 6;
+	public final static int MAX_PLAYERS = 8;
 	public final static int MIN_PLAYERS = 1;
 	public final static int MIN_ROOM_NAME_LENGTH = 1;
 	public final static int MAX_ROOM_NAME_LENGTH = 20;

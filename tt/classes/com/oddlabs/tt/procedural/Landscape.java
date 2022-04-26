@@ -110,6 +110,11 @@ public final strictfp class Landscape {
 				height_scale = 64;
 				access_threshold = 0.025f;
 				break;
+			case 2048:
+				size_multiplier = 81;
+				height_scale = 64;
+				access_threshold = 0.025f;
+				break;
 			default:
 				size_multiplier = 0;
 				assert false : "illegal meters_per_world";
@@ -846,12 +851,14 @@ public final strictfp class Landscape {
 		shadow.channelBrightest(iron.copy().multiply(0.5f));
 		if (DEBUG) iron.toLayer().saveAsPNG("supplies_iron_placed");
 
-		if (DEBUG) {
+		/* Team Penguin */
+		//if (DEBUG) {
 			System.out.println("Number of trees placed: " + trees.count(1f));
 			System.out.println("Number of palmtrees placed: " + palmtrees.count(1f));
 			System.out.println("Number of rocks placed: " + rock.count(1f));
 			System.out.println("Number of iron ore placed: " + iron.count(1f));
-		}
+		//}
+		/* End Penguin */
 		
 		// place extra supplies around starting locations
 		int num_rock = 2;

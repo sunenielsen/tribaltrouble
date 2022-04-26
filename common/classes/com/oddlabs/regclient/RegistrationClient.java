@@ -10,6 +10,7 @@ import com.oddlabs.registration.*;
 import com.oddlabs.net.TaskThread;
 import com.oddlabs.event.Deterministic;
 import com.oddlabs.http.HttpRequestParameters;
+import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 
 public strictfp class RegistrationClient {
 	public final static int KEY_FORMAT_EXCEPTION = 1;
@@ -68,12 +69,17 @@ public strictfp class RegistrationClient {
 				try {
 					SignedObject signed_obj = (SignedObject)obj;
 					PublicKey public_key = RegistrationKey.loadPublicKey();
+					/* Team Penguin */
+					System.out.println("registration_info: " + ReflectionToStringBuilder.toString(signed_obj.getObject()));
+					// Comment the next line to enable any old registration file.
 					if (RegistrationKey.verify(public_key, signed_obj)) {
 						signed_registration_key = signed_obj;
 						registration_info = (RegistrationInfo)signed_registration_key.getObject();
 						if (registration_listener != null)
 							registration_listener.registrationCompleted();
 					}
+					// Comment the '}' character above to enable any old registration file.
+					/* End Penguin */
 				} catch (Exception e) {
 					failed(e);
 				}

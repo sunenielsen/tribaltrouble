@@ -163,7 +163,7 @@ public final strictfp class KeyManager {
 
 		System.out.print(pass_prompt);
 		System.out.flush();
-loop:   while (true) {
+		loop:   while (true) {
 			switch (c = in.read()) {
 				case -1: 
 				case '\n':

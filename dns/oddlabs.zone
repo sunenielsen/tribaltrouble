@@ -1,0 +1,17 @@
+$ORIGIN oddlabs.com.
+$TTL 1W
+@       IN      SOA     localhost. root.localhost.  (
+                                      2008122601 ; Serial
+                                      28800      ; Refresh
+                                      14400      ; Retry
+                                      604800     ; Expire - 1 week
+                                      86400 )    ; Minimum
+	IN      NS      localhost.
+	IN	MX  10  localhost.
+	IN	A	127.0.0.1
+
+registration	IN	A	127.0.0.1
+matchmaking	IN	A	127.0.0.1
+bugreport	IN	A	127.0.0.1
+router		IN	A	127.0.0.1
+update		IN	A	127.0.0.1

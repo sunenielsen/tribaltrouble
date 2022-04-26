@@ -50,7 +50,7 @@ public final strictfp class DBInterface {
 			}
 		} catch (SQLException e) {
 			MatchmakingServer.getLogger().throwing(DBInterface.class.getName(), "getRegKeyUsername", e);
-			throw new IllegalArgumentException("key " + reg_key + " not i DB");
+			throw new IllegalArgumentException("key " + reg_key + " not in DB");
 		}
 	}
 	
@@ -77,7 +77,10 @@ public final strictfp class DBInterface {
 
 	public final static void createUser(Login login, LoginDetails login_details, String reg_key) {
 		try {
-			PreparedStatement stmt = DBUtils.createStatement("UPDATE registrations R SET username = ?, email = ?, password = ? WHERE R.reg_key = ? AND R.username IS NULL AND R.password IS NULL AND R.email IS NULL");
+			/* Team Penguin */
+			PreparedStatement stmt = DBUtils.createStatement("UPDATE registrations R SET username = ?, email = ?, password = ? WHERE R.reg_key = ? AND COALESCE(R.username, R.password, R.email) = ''");
+			//System.out.println("Add new user: UPDATE registrations R SET username = '" + login.getUsername() + "', email = '" + login_details.getEmail() + "', password = '" + CryptUtils.digest(login.getPasswordDigest()) + "' WHERE R.reg_key = '" + reg_key + "' AND COALESCE(R.username, R.password, R.email) = '';");
+			/* End Penguin */
 			try {
 				stmt.setString(1, login.getUsername());
 				stmt.setString(2, login_details.getEmail());
@@ -259,8 +262,8 @@ public final strictfp class DBInterface {
 
 	public final static void saveGameReport(int game_id, int tick, int[] team_score) {
 		try {
-			PreparedStatement stmt = DBUtils.createStatement("INSERT INTO game_reports (game_id, tick, team1, team2, team3, team4, team5, team6) " + 
-					"VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+			PreparedStatement stmt = DBUtils.createStatement("INSERT INTO game_reports (game_id, tick, team1, team2, team3, team4, team5, team6, team7, team8) " + 
+					"VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 			try {
 				stmt.setInt(1, game_id);
 				stmt.setInt(2, tick);
@@ -270,6 +273,8 @@ public final strictfp class DBInterface {
 				stmt.setInt(6, team_score[3]);
 				stmt.setInt(7, team_score[4]);
 				stmt.setInt(8, team_score[5]);
+				stmt.setInt(9, team_score[6]);
+				stmt.setInt(10, team_score[7]);
 				int row_count = stmt.executeUpdate();
 				assert row_count == 1;
 			} finally {

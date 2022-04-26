@@ -10,7 +10,7 @@
 	<property name="tools" value="../tools"/>
 	<property name="nativelib" value="../common/lib/native"/>
 	<property name="commonstatic" value="../common/static"/>
-	<property name="java_source_version" value="1.4"/>
+	<property name="java_source_version" value="1.7"/>
 
 	<target name="init">
 		<tstamp/>
@@ -114,7 +114,7 @@
 			<jvmarg value="-ea"/>
 			<jvmarg value="-Djava.library.path=${nativelib}"/>
 			<jvmarg value="-Dorg.lwjgl.util.Debug=true"/>
-			<jvmarg value="-Xmx80000000"/>
+			<jvmarg value="-Xmx400m"/>
 			<!--<jvmarg value="-Djavax.net.debug=ssl,handshake,trustmanager"/>-->
 			<!--    <jvmarg value="-Dorg.lwjgl.opengl.Window.undecorated=true"/>-->
 		</java>

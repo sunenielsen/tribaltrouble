@@ -8,6 +8,7 @@ public final strictfp class Game implements Serializable {
 	public final static int SIZE_SMALL = 0;
 	public final static int SIZE_MEDIUM = 1;
 	public final static int SIZE_LARGE = 2;
+	public final static int SIZE_HUGE = 3;
 
 	public final static int TERRAIN_TYPE_NATIVE = 0;
 	public final static int TERRAIN_TYPE_VIKING = 1;

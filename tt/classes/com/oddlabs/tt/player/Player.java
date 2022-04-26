@@ -41,11 +41,13 @@ public final strictfp class Player implements PlayerInterface {
 	public final static int DEFAULT_MAX_UNIT_COUNT = 250;
 
 	public static final float[][] COLORS = {{1f, .75f, 0f, 1f},
-											{0f, .5f, 1f, 1f},
-											{1f, 0f, .25f, 1f},
-											{0f, 1f, .75f, 1f},
-											{.75f, 0f, 1f, 1f},
-											{.75f, 1f, 0f, 1f}};
+						{0f, .5f, 1f, 1f},
+						{1f, 0f, .25f, 1f},
+						{0f, 1f, .75f, 1f},
+						{.75f, 0f, 1f, 1f},
+						{.75f, 1f, 0f, 1f},
+						{0f, .4f, 0f, 1f},
+						{1f, .6f, .8f, 1f}};
 	
 	private final World world;
 	private final PlayerInfo player_info;

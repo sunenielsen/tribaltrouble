@@ -1,8 +1,11 @@
 package com.oddlabs.svnutil;
 
-import org.tmatesoft.svn.core.*;
-import org.tmatesoft.svn.core.wc.*;
-import org.tmatesoft.svn.core.io.*;
+import org.tmatesoft.svn.core.SVNException;
+import org.tmatesoft.svn.core.wc.ISVNStatusHandler;
+import org.tmatesoft.svn.core.wc.SVNStatus;
+import org.tmatesoft.svn.core.wc.SVNClientManager;
+import org.tmatesoft.svn.core.wc.SVNStatusClient;
+import org.tmatesoft.svn.core.wc.SVNStatusType;
 
 import java.io.*;
 

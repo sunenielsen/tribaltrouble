@@ -15,7 +15,10 @@ import com.oddlabs.tt.util.Target;
 import com.oddlabs.tt.viewer.WorldViewer;
 
 public final strictfp class GameCamera extends Camera {
-	public final static int SCROLL_BUFFER = 5;
+	/* Team Penguin - When not full screen, make finding the edges easier */
+	//public final static int SCROLL_BUFFER = 5;
+	public final static int SCROLL_BUFFER = 10;
+	/* End Penguin */
 	private final static float INIT_DISTANCE = 50;
 	private final static float ANGLE_DELTA = (float)(StrictMath.PI/2);
 	public final static float MAX_Z = 100f;
@@ -426,12 +429,12 @@ public final strictfp class GameCamera extends Camera {
 			return;
 		}
 
-		if (LocalInput.isKeyDown(Keyboard.KEY_HOME) || LocalInput.isKeyDown(Keyboard.KEY_NUMPAD8))
+		if (LocalInput.isKeyDown(Keyboard.KEY_HOME) || LocalInput.isKeyDown(Keyboard.KEY_NUMPAD8) || LocalInput.isKeyDown(Keyboard.KEY_LBRACKET))
 			pitch_up = true;
 		else
 			pitch_up = false;
 
-		if (LocalInput.isKeyDown(Keyboard.KEY_END) || LocalInput.isKeyDown(Keyboard.KEY_NUMPAD2))
+		if (LocalInput.isKeyDown(Keyboard.KEY_END) || LocalInput.isKeyDown(Keyboard.KEY_NUMPAD2) || LocalInput.isKeyDown(Keyboard.KEY_RBRACKET))
 			pitch_down = true;
 		else
 			pitch_down = false;

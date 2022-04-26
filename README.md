@@ -1,3 +1,22 @@
+## Team Penguin's progress:
+
+- [x] Matchmaking, Routing and Registration.
+- [x] Game play with (8) Players on a Huge Island.
+- [x] Gentoo Ebuild created: [games-misc/tribaltrouble](portage/PORTAGE.md)
+- [x] Windows package with Huge/8 Team support: [Tribal_Trouble.zip](wbin/Tribal_Trouble.zip)
+- [Instructions](wbin/TT.md)
+
+### Server setup documentation
+
+- [DNS](dns/DNS.md)
+- [MySQL](mysql/MYSQL.md)
+- [Registration](registration-files/REGISTRATION.md)
+- [Apache Tomcat 6](apache-tomcat/TOMCAT.md)
+
+![Huge Island](docs/horde.jpg)
+*The Horde is attacking*
+
+
 Tribal Trouble
 ==============
 Tribal Trouble is a realtime strategy game released by Oddlabs in 2004. In 2014 the source was released under GPL2 license, and can be found in this repository.
@@ -10,13 +29,13 @@ Binaries
 --------
 If you are simply looking for a working binary version of the game, you can find the latest released installers here:
 
-- [Windows](binaries/TribalTroubleSetup.exe)
-- [Mac](binaries/TribalTrouble.dmg)
-- [Linux](binaries/TribalTroubleSetup.sh)
+- [Windows](https://github.com/sunenielsen/tribaltrouble/blob/master/binaries/TribalTroubleSetup.exe)
+- [Mac](https://github.com/sunenielsen/tribaltrouble/blob/master/binaries/TribalTrouble.dmg)
+- [Linux](https://github.com/sunenielsen/tribaltrouble/blob/master/binaries/TribalTroubleSetup.sh)
 
 Please note that the multiplayer server referenced in these builds, is no longer available.
 
-You can register the binaries by putting the registration file in the binaries folder into this folder:
+You can register the binaries by putting the [registration](https://github.com/sunenielsen/tribaltrouble/blob/master/binaries/registration) file into this folder:
 - Windows XP: `C:\Documents and Settings\Username\TribalTrouble\`
 - Windows Vista or newer: `C:\Users\Username\TribalTrouble\`
 - Mac OS X: `Library/Application Support/TribalTrouble/`

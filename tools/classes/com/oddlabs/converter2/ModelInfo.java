@@ -3,7 +3,9 @@ package com.oddlabs.converter2;
 import java.util.Map;
 
 public final strictfp class ModelInfo {
-	public final short[] indices;
+	/* Team Penguin */
+	public final int[] indices;
+	/* End Penguin */
 	public final float[] normals;
 	public final float[] vertices;
 	public final float[] colors;
@@ -13,7 +15,9 @@ public final strictfp class ModelInfo {
 	public final float[][] skin_weights;
 //	public final String tex_name;
 
-	public ModelInfo(/*String tex_name, */short[] indices, float[] vertices, float[] normals, float[] colors, float[] texcoords, float[] texcoords2, byte[][] skin_names, float[][] skin_weights) {
+	/* Team Penguin */
+	public ModelInfo(/*String tex_name, */int[] indices, float[] vertices, float[] normals, float[] colors, float[] texcoords, float[] texcoords2, byte[][] skin_names, float[][] skin_weights) {
+	/* End Penguin */
 		this.normals = normals;
 		this.vertices = vertices;
 		this.indices = indices;

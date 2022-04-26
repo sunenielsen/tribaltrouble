@@ -7,7 +7,9 @@ import java.io.*;
 public final strictfp class SpriteInfo2 implements Serializable {
 	private final static long serialVersionUID = 1;
 
-	private final short[] indices;
+	/* Team Penguin */
+	private final int[] indices;
+	/* End Penguin */
 	private final ShortCompressedFloatArray vertices;
 	private final ByteCompressedFloatArray normals;
 	private final ShortCompressedFloatArray texcoords;
@@ -17,7 +19,9 @@ public final strictfp class SpriteInfo2 implements Serializable {
 	private final String[][] textures;
 	private final float[] clear_color;
 
-	public SpriteInfo2(String[][] textures, short[] indices, float[] vertices, float[] normals, float[] texcoords, float[] texcoords2, byte[][] skin_names, float[][] skin_weights, float[] clear_color) {
+	/* Team Penguin */
+	public SpriteInfo2(String[][] textures, int[] indices, float[] vertices, float[] normals, float[] texcoords, float[] texcoords2, byte[][] skin_names, float[][] skin_weights, float[] clear_color) {
+	/* End Penguin */
 		this.textures = textures;
 		this.indices = indices;
 		this.vertices = new ShortCompressedFloatArray(vertices, 3);
@@ -32,7 +36,9 @@ public final strictfp class SpriteInfo2 implements Serializable {
 		this.clear_color = clear_color;
 	}
 
-	public final short[] getIndices() {
+	/* Team Penguin */
+	public final int[] getIndices() {
+	/* End Penguin */
 		return indices;
 	}
 

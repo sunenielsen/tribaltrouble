@@ -6,7 +6,7 @@ import com.oddlabs.geometry.*;
 import org.lwjgl.util.vector.Matrix4f;
 import org.lwjgl.util.vector.Vector4f;
 import java.util.Map;
-import java.nio.ShortBuffer;
+import java.nio.IntBuffer;
 import java.nio.FloatBuffer;
 
 public final strictfp class Optimizer {
@@ -56,7 +56,9 @@ public final strictfp class Optimizer {
 	}
 
 	protected final static ModelInfo optimize(/*String tex_name, */int num_vertices, float[] vertices, float[] normals, float[] colors, float[] uvs, float[] uvs2, byte[][] skin_names, float[][] skin_weights) {
-		short[] indices = new short[num_vertices];
+		/* Team Penguin */
+		int[] indices = new int[num_vertices];
+		/* End Penguin */
 		float[] r_vertices = new float[vertices.length];
 		float[] r_colors = new float[colors.length];
 		float[] r_normals = new float[normals.length];
@@ -88,10 +90,12 @@ public final strictfp class Optimizer {
 				copyFloats(i, index, 2, uvs2, r_uvs2);
 				copyObjects(i, index, 1, skin_names, r_skin_names);
 				copyObjects(i, index, 1, skin_weights, r_skin_weights);
-				indices[i] = (short)index;
+				/* Team Penguin */
+				indices[i] = index;
 				index++;
 			} else {
-				indices[i] = (short)j;
+				indices[i] = j;
+				/* End Penguin */
 			}
 		}
 		r_vertices = stripArray(index*3, r_vertices);
@@ -109,7 +113,9 @@ public final strictfp class Optimizer {
 				using_texture_coords2 = true;
 		if (!using_texture_coords2)
 			r_uvs2 = null;
-		ShortBuffer index_buffer = ShortBuffer.wrap(indices);
+		/* Team Penguin */
+		IntBuffer index_buffer = IntBuffer.wrap(indices);
+		/* End Penguin */
 		IndexListOptimizer.optimize(index_buffer);
 		return new ModelInfo(/*tex_name,*/ indices, r_vertices, r_normals, r_colors, r_uvs, r_uvs2, r_skin_names, r_skin_weights);
 	}

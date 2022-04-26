@@ -1,10 +1,9 @@
 #!/bin/bash
 
-SENDMAIL=/usr/sbin/sendmail
-SENDTO=all@oddlabs.com
-ERRORMAIL=./error_mail
+if [[ ! -d logs ]]
+then
+	mkdir logs
+fi
 
-until java -Djava.security.manager -Djava.security.policy=matchmaker.policy -server -ea -cp matchmaking.jar:mysql.jar:commons-pool-1.2.jar:commons-dbcp-1.2.1.jar:commons-collections-3.1.jar com.oddlabs.matchserver.MatchmakingServer; do
-echo "Service crashed, sending report";
-cat $ERRORMAIL | $SENDMAIL -oi $SENDTO; done
+java -Djava.security.manager -Djava.security.policy=matchmaker.policy -server -ea -cp ../common/lib/java/mysql.jar:../common/lib/java/commons-pool-1.6.jar:../common/lib/java/commons-dbcp-1.4.jar:./build/matchmaking.jar com.oddlabs.matchserver.MatchmakingServer
 

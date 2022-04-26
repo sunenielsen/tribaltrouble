@@ -46,12 +46,12 @@ public final class GraphServlet extends HttpServlet {
 	} 
 	
 	private final int[][] getGameData(Connection conn, int game_id) throws SQLException {
-		PreparedStatement stmt = conn.prepareStatement("SELECT tick, team1, team2, team3, team4, team5, team6 FROM game_reports WHERE game_id = ?");
+		PreparedStatement stmt = conn.prepareStatement("SELECT tick, team1, team2, team3, team4, team5, team6, team7, team8 FROM game_reports WHERE game_id = ?");
 		stmt.setInt(1, game_id);
 		ResultSet result = stmt.executeQuery();
 		ArrayList list = new ArrayList();
 		while (result.next()) {
-			list.add(new int[]{result.getInt("tick"), result.getInt("team1"), result.getInt("team2"), result.getInt("team3"), result.getInt("team4"), result.getInt("team5"), result.getInt("team6")});
+			list.add(new int[]{result.getInt("tick"), result.getInt("team1"), result.getInt("team2"), result.getInt("team3"), result.getInt("team4"), result.getInt("team5"), result.getInt("team6"), result.getInt("team7"), result.getInt("team8")});
 		}
 		int[][] array = new int[list.size()][];
 		for (int i = 0; i < array.length; i++) {

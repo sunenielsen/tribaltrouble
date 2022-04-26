@@ -1,8 +1,8 @@
 #!/bin/bash
 
-SENDMAIL=/usr/sbin/sendmail
-SENDTO=all@oddlabs.com
-ERRORMAIL=./error_mail
+if [[ ! -d logs ]]
+then
+	mkdir logs
+fi
 
-until java -Djava.security.manager -Djava.security.policy=router.policy -server -ea -cp router.jar com.oddlabs.routerserver.RouterServer; do echo "Service crashed, sending report";
-cat $ERRORMAIL | $SENDMAIL -oi $SENDTO; done
+java -Djava.security.manager -Djava.security.policy=router.policy -server -ea -cp ./build/router.jar com.oddlabs.routerserver.RouterServer
