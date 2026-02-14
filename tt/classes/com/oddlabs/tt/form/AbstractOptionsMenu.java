@@ -186,6 +186,19 @@ public abstract strictfp class AbstractOptionsMenu extends Form {
         cb_aggressive_units.place();
         group_aggressive_units.compileCanvas();
 
+        // Show compass
+        Group group_show_compass = new Group();
+        general.addChild(group_show_compass);
+        CheckBox cb_show_compass =
+                new CheckBox(
+                        Settings.getSettings().show_compass,
+                        Utils.getBundleString(bundle, "show_compass"),
+                        Utils.getBundleString(bundle, "show_compass_tip"));
+        cb_show_compass.addCheckBoxListener(new CBShowCompass());
+        group_show_compass.addChild(cb_show_compass);
+        cb_show_compass.place();
+        group_show_compass.compileCanvas();
+
         // gfx detail
         Group group_detail = new Group();
 
@@ -369,6 +382,7 @@ public abstract strictfp class AbstractOptionsMenu extends Form {
         group_tooltip.place(group_mapmode, BOTTOM_LEFT);
         group_invert_camera.place(group_tooltip, BOTTOM_LEFT);
         group_aggressive_units.place(group_invert_camera, BOTTOM_LEFT);
+        group_show_compass.place(group_aggressive_units, BOTTOM_LEFT);
 
         // TODO: Can we just determine if they're online or not in a game? I don't think it will
         // matter
@@ -376,7 +390,7 @@ public abstract strictfp class AbstractOptionsMenu extends Form {
         // If you're in a game you might be online
         if (!(this instanceof InGameOptionsMenu)) {
             Group network_settings_group = CreateNetworkSettingsGroup();
-            network_settings_group.place(group_aggressive_units, BOTTOM_LEFT);
+            network_settings_group.place(group_show_compass, BOTTOM_LEFT);
             general.addChild(network_settings_group);
         }
         general.compileCanvas();
@@ -734,6 +748,13 @@ public abstract strictfp class AbstractOptionsMenu extends Form {
 
         public final void checked(boolean marked) {
             Settings.getSettings().aggressive_units = marked;
+        }
+    }
+
+    private final strictfp class CBShowCompass implements CheckBoxListener {
+
+        public final void checked(boolean marked) {
+            Settings.getSettings().show_compass = marked;
         }
     }
 
