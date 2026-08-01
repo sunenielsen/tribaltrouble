@@ -33,11 +33,20 @@ jobs:
       - name: Require API_VERSION bump when wire interfaces change
         run: |
           LAST_API_BUMP=$(git log -1 --format=%H -G"API_VERSION =" -- common/src/main/java/com/oddlabs/util/Compatibility.java)
-          if [ -z "$LAST_API_BUMP" ]; then
+          # An empty commit with [api-compat-ack] in its message records that a maintainer
+          # reviewed the interface changes and judged them wire compatible.
+          LAST_ACK=$(git log -1 --format=%H --grep='\[api-compat-ack\]')
+          ANCHOR=$LAST_API_BUMP
+          if [ -n "$LAST_ACK" ]; then
+            if [ -z "$ANCHOR" ] || git merge-base --is-ancestor "$ANCHOR" "$LAST_ACK"; then
+              ANCHOR=$LAST_ACK
+            fi
+          fi
+          if [ -z "$ANCHOR" ]; then
             echo "Could not locate last API_VERSION bump; skipping check"
             exit 0
           fi
-          echo "Last API_VERSION bump: $LAST_API_BUMP"
+          echo "Anchor (last API_VERSION bump or [api-compat-ack]): $ANCHOR"
 
           INTERFACE_FILES=(
             common/src/main/java/com/oddlabs/matchmaking/MatchmakingServerInterface.java
@@ -51,14 +60,14 @@ jobs:
 
           failed=0
           for f in "${INTERFACE_FILES[@]}"; do
-            if ! git diff --quiet "$LAST_API_BUMP" HEAD -- "$f"; then
-              echo "::error file=$f::Wire-protocol interface changed since last API_VERSION bump. Bump API_VERSION in common/src/main/java/com/oddlabs/util/Compatibility.java"
+            if ! git diff --quiet "$ANCHOR" HEAD -- "$f"; then
+              echo "::error file=$f::Wire-protocol interface changed since last API_VERSION bump. Bump API_VERSION in common/src/main/java/com/oddlabs/util/Compatibility.java, or if the change is wire compatible have a maintainer add an empty commit with [api-compat-ack] in the message"
               failed=1
             fi
           done
 
           if [ $failed -eq 0 ]; then
-            echo "OK: no tracked interface changed since last API_VERSION bump"
+            echo "OK: no tracked interface changed since anchor"
           fi
           exit $failed
 

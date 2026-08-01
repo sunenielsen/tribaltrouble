@@ -37,7 +37,8 @@
                 flag_en,
                 flag_de,
                 flag_es,
-                flag_it
+                flag_it,
+                flag_pt
                 )>
         <!ATTLIST gui texture CDATA #REQUIRED>
         <!ELEMENT normal    (quad)>
@@ -170,6 +171,7 @@
         <!ELEMENT flag_de                (quad)>
         <!ELEMENT flag_es                (quad)>
         <!ELEMENT flag_it                (quad)>
+        <!ELEMENT flag_pt                (quad)>
         ]>
 
 <gui texture="/textures/gui/gui">
@@ -1784,4 +1786,7 @@
     <flag_it>
         <quad left="162" top="238" right="180" bottom="256"/>
     </flag_it>
+    <flag_pt>
+        <quad left="180" top="238" right="198" bottom="256"/>
+    </flag_pt>
 </gui>

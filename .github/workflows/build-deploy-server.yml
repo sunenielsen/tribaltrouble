@@ -31,6 +31,20 @@ on:
         default: test
 
 jobs:
+  # Ungated on purpose: build-deploy waits on the 'release' environment approval,
+  # and GitHub shows dispatch inputs nowhere in the UI. This surfaces them on the
+  # run summary so the reviewer can check what was entered before approving.
+  show-inputs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Show dispatch inputs
+        run: |
+          {
+            echo "## Dispatch inputs"
+            echo "- ref: \`${{ inputs.ref }}\`"
+            echo "- target: \`${{ inputs.target }}\`"
+          } >> "$GITHUB_STEP_SUMMARY"
+
   build-deploy:
     runs-on: ubuntu-latest
     environment: release

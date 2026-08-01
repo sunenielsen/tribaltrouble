@@ -49,22 +49,22 @@ public class LanguagePanel extends Panel {
         }
 
         Row<Locale, IconLabel> selectedLanguage = null;
+        String[][] languages = Languages.getLanguages();
+        IconQuad[] flags = Languages.getFlags();
+        for (int i = 0; i < languages.length; i++) {
+            IconLabel label = new IconLabel(flags[i], new Label(languages[i][1],
+                    Skin.getSkin().getMultiColumnComboBoxData().font()));
+            Row<Locale, IconLabel> row = new Row<>(new IconLabel[]{label}, Locale.of(languages[i][0]));
+            language_list_box.addRow(row);
+            if (languages[i][0].equals(Settings.getSettings().language))
+                selectedLanguage = row;
+        }
         IconLabel label = new IconLabel(Skin.getSkin().getFlagDefault(), new Label(AbstractOptionsMenu.i18n(
                 "system_default"), Skin.getSkin().getMultiColumnComboBoxData().font()));
         Row<Locale, IconLabel> row = new Row<>(List.of(label), Renderer.getRenderer().getDefaultLocale());
         language_list_box.addRow(row);
         if (Settings.getSettings().language.equals("default"))
             selectedLanguage = row;
-        String[][] languages = Languages.getLanguages();
-        IconQuad[] flags = Languages.getFlags();
-        for (int i = 0; i < languages.length; i++) {
-            label = new IconLabel(flags[i], new Label(languages[i][1],
-                    Skin.getSkin().getMultiColumnComboBoxData().font()));
-            row = new Row<>(new IconLabel[]{label}, Locale.of(languages[i][0]));
-            language_list_box.addRow(row);
-            if (languages[i][0].equals(Settings.getSettings().language))
-                selectedLanguage = row;
-        }
 
         language_list_box.selectRow(selectedLanguage);
         language_list_box.addRowListener(new RowListener<>() {

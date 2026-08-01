@@ -27,7 +27,13 @@ Everything below assumes you're working from `main` with the changes ready to sh
 The release tag is `v<MAJOR>.<MINOR>.<PATCH>-<API>` (see [Versioning](#versioning)).
 
 - **New minor or major release** (e.g., `2.0` → `2.1`): edit `version = "..."` in the root `build.gradle.kts`. PATCH resets to `0` automatically.
-- **API/protocol change**: bump `API_VERSION` in `common/src/main/java/com/oddlabs/util/Compatibility.java`. The `api-guard` CI job will fail your build if you changed a wire-protocol interface without bumping this.
+- **API/protocol change**: bump `API_VERSION` in `common/src/main/java/com/oddlabs/util/Compatibility.java`. The `api-guard` CI job will fail your build if you changed a wire-protocol interface without bumping this. If the interface change is wire compatible (e.g., an addition old clients never call) and doesn't warrant a bump, a maintainer can instead record that decision with an empty ack commit:
+
+  ```bash
+  git commit --allow-empty -m "<why the change is compatible> [api-compat-ack]"
+  ```
+
+  The guard anchors on the newer of the last `API_VERSION` bump and the last `[api-compat-ack]` commit, so the ack clears the check for that change and everything before it. Any interface edit pushed after the ack fails the check again and needs a fresh review. A regular merge carries the ack into `main`'s history; a squash merge drops it, so in that case push the ack commit directly to `main` after merging.
 - **Patch release**: no edit needed. PATCH is auto-computed from commit count since the last bump.
 
 ### 2. Merge `main` → `release` and push
@@ -133,5 +139,5 @@ Create under **Settings → Environments → release** with required reviewers s
 
 - **Workflows**: `.github/workflows/gradle.yml`, `.github/workflows/promote-release.yml`
 - **Build version logic**: `build.gradle.kts` (root, computes BuildInfo) + `version` job in `gradle.yml`
-- **API guard**: tracked wire-protocol interfaces are listed in the `api-guard` job's `INTERFACE_FILES` array
+- **API guard**: tracked wire-protocol interfaces are listed in the `api-guard` job's `INTERFACE_FILES` array; compatible changes can be acknowledged without a bump via `[api-compat-ack]` commits (see [Cutting a release](#1-bump-version-metadata-if-needed))
 - **Website homepage** (download links pointing at the stable URLs): upstream `Tribal-Trouble/tribaltrouble` → branch `new_main` → `website/index.html`

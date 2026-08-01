@@ -54,6 +54,7 @@ public final class Skin {
     private final @NonNull IconQuad flag_de;
     private final @NonNull IconQuad flag_es;
     private final @NonNull IconQuad flag_it;
+    private final @NonNull IconQuad flag_pt;
 
     public static @NonNull Skin getSkin() {
         return SKIN;
@@ -95,6 +96,7 @@ public final class Skin {
         flag_de = getNamedIconQuad(root, "flag_de", texture);
         flag_es = getNamedIconQuad(root, "flag_es", texture);
         flag_it = getNamedIconQuad(root, "flag_it", texture);
+        flag_pt = getNamedIconQuad(root, "flag_pt", texture);
     }
 
     private @NonNull Horizontal getHorizontal(@NonNull Node n, @NonNull Texture texture) {
@@ -514,5 +516,9 @@ public final class Skin {
 
     public @NonNull IconQuad getFlagIt() {
         return flag_it;
+    }
+
+    public @NonNull IconQuad getFlagPt() {
+        return flag_pt;
     }
 }
