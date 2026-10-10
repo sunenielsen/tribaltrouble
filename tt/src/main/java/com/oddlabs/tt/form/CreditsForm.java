@@ -30,8 +30,8 @@ public final class CreditsForm extends Form {
         addChild(head_label);
         head_label.place();
 
-        PanelGroup panel_group = new PanelGroup(createAboutPanel(bundle), createCreditsPanel(bundle), createThanksPanel(
-                bundle));
+        PanelGroup panel_group = new PanelGroup(createAboutPanel(bundle), createCreditsPanel(bundle),
+                createContributorsPanel(bundle), createThanksPanel(bundle));
         addChild(panel_group);
         panel_group.place(head_label, BOTTOM_LEFT);
 
@@ -76,6 +76,28 @@ public final class CreditsForm extends Form {
         credits_box.place();
         credits.compileCanvas();
         return credits;
+    }
+
+    private static @NonNull Panel createContributorsPanel(@NonNull ResourceBundle bundle) {
+        Panel contributors = new Panel(i18n("contributors"));
+        TextBox contributors_box = new TextBox(400, 300, Skin.getSkin().getEditFont(), 100000);
+        contributors.addChild(contributors_box);
+        contributors_box.append(i18n("contributors_text") + "\n");
+        contributors_box.append("\n");
+        contributors_box.append(i18n("programming") + "\n");
+        contributors_box.append("Ryan Linehan (RcubDev)\n");
+        contributors_box.append("bondolo\n");
+        contributors_box.append("Omar Mokhtar\n");
+        contributors_box.append("Pyprohly\n");
+        contributors_box.append("Xzf\n");
+        contributors_box.append("Rafal Okuniewski\n");
+        contributors_box.append("\n");
+        contributors_box.append(i18n("translations") + "\n");
+        contributors_box.append("Daniel Araújo Nacarini (Piratax10)\n");
+        contributors_box.append("Rafal Okuniewski");
+        contributors_box.place();
+        contributors.compileCanvas();
+        return contributors;
     }
 
     private static @NonNull Panel createThanksPanel(@NonNull ResourceBundle bundle) {
