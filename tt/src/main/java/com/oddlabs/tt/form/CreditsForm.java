@@ -48,7 +48,7 @@ public final class CreditsForm extends Form {
         TextBox about_box = new TextBox(400, 300, Skin.getSkin().getEditFont(), 100000);
         about.addChild(about_box);
         about_box.append(BuildInfo.FULL_VERSION + "\n\n");
-        String about_text = i18n("about_text", Integer.toString(Renderer.getLocalInput().getRevision()));
+        String about_text = i18n("about_notice", Integer.toString(Renderer.getLocalInput().getRevision()));
         about_box.append(about_text);
 
         about_box.place();
