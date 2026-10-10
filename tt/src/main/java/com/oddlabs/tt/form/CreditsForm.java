@@ -95,6 +95,9 @@ public final class CreditsForm extends Form {
         contributors_box.append("Xzf\n");
         contributors_box.append("Rafal Okuniewski\n");
         contributors_box.append("\n");
+        contributors_box.append(i18n("3d_artwork_and_animation") + "\n");
+        contributors_box.append("Chaz Willets\n");
+        contributors_box.append("\n");
         contributors_box.append(i18n("translations") + "\n");
         contributors_box.append("Daniel Araújo Nacarini (Piratax10)\n");
         contributors_box.append("Rafal Okuniewski");
