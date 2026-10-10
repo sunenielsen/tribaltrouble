@@ -105,7 +105,8 @@ public final class CreditsForm extends Form {
         contributors_box.append("Rafal Okuniewski\n");
         contributors_box.append("\n");
         contributors_box.append(i18n("community") + "\n");
-        contributors_box.append("Ian Andrew Moore (Dapianokid)");
+        contributors_box.append("Ian Andrew Moore (Dapianokid)\n");
+        contributors_box.append("Ryan Linehan (RcubDev)");
         contributors_box.place();
         contributors.compileCanvas();
         return contributors;
