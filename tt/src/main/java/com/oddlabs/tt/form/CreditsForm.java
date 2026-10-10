@@ -83,7 +83,7 @@ public final class CreditsForm extends Form {
         TextBox thanks_box = new TextBox(400, 300, Skin.getSkin().getEditFont(), 100000);
         thanks.addChild(thanks_box);
         thanks_box.append(i18n("thanks") + "\n");
-        thanks_box.append(i18n("oddlabs_thanks") + "\n");
+        thanks_box.append(i18n("original_thanks") + "\n");
         thanks_box.append("\n");
         thanks_box.append("Caspian Rychlik-Prince\n");
         thanks_box.append("Brian Matzon\n");
