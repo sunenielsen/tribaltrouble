@@ -89,6 +89,7 @@ public final class CreditsForm extends Form {
         contributors_box.append("bondolo\n");
         contributors_box.append("Omar Mokhtar\n");
         contributors_box.append("Merikrotti\n");
+        contributors_box.append("Maxime Michon (Maxenor)\n");
         contributors_box.append("Pyprohly\n");
         contributors_box.append("Xzf\n");
         contributors_box.append("Rafal Okuniewski\n");
