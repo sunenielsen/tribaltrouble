@@ -27,7 +27,7 @@ public final class RepairController extends Controller {
 
     @Override
     public @NonNull String getKey() {
-        return super.getKey() + building.hashCode();
+        return super.getKey() + "@" + building.getGridX() + "," + building.getGridY();
     }
 
     @Override

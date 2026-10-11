@@ -672,7 +672,7 @@ public final class Player implements PlayerInterface {
 
     public @NonNull Selectable<?> @NonNull [] @NonNull [] classifyUnits() {
         Map<String, List<Selectable<?>>> map = units.getSet().stream().collect(Collectors.groupingBy(
-                u -> u.getPrimaryController().getKey()));
+                u -> u.getPrimaryController().getKey(), LinkedHashMap::new, Collectors.toList()));
         return map.values().stream().map(list -> list.toArray(Selectable[]::new)).toArray(Selectable[][]::new);
     }
 
