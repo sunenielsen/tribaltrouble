@@ -581,7 +581,7 @@ public final class ShipHR {
                     row.seat(unit);
                     unit2row.put(unit, row);
                     ShipAllocation alloc = row.getAllocation(unit);
-                    if (alloc.getRole() == ShipAllocation.FIGHTING) {
+                    if (alloc.getRole() == ShipAllocation.FIGHTING && !unit.isChieftain()) {
                         unit.increaseRange(WARRIOR_INCREASE);
                     }
                     return alloc;
@@ -725,14 +725,10 @@ public final class ShipHR {
     public Unit exitChieftain() {
         if (hasChieftain()) {
             Unit unit = chieftainRow.allUnits().get(0);
-            ShipAllocation alloc = chieftainRow.getAllocation(unit);
             chieftainRow.exit(unit);
             unit2row.remove(unit);
             unit.setReference(null);
             unit.unmount();
-            if (alloc.getRole() == ShipAllocation.FIGHTING) {
-                unit.increaseRange(-WARRIOR_INCREASE);
-            }
             return unit;
         }
         return null;
