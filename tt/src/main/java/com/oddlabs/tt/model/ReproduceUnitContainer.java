@@ -66,7 +66,7 @@ public final class ReproduceUnitContainer extends UnitContainer {
                 && getTotalSupplies() != getMaxSupplyCount())
                 || chieftain_container.isTraining()) {
             float units = Math.max(building.getUnitContainer().getNumSupplies(), .5f);
-            unit_reproduction += ((1f / 11f) * Math.pow(units, 1f / 3f)) * t;
+            unit_reproduction += ((1f / 11f) * StrictMath.pow(units, 1f / 3f)) * t;
             while (unit_reproduction >= 1f) {
                 unit_reproduction -= 1f;
                 if (chieftain_container.isTraining()) {
