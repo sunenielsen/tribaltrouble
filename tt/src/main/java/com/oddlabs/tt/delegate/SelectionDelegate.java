@@ -117,7 +117,7 @@ public final class SelectionDelegate extends ControllableCameraDelegate {
     }
 
     // Who is being observed, centered at the top with the name in the player's color; the keys stacked in the top
-    // right corner, one per line.
+    // left corner, one per line.
     private void refreshSpectator() {
         SpectatorView view = getViewer().getSpectatorView();
         if (view == null)
@@ -148,7 +148,7 @@ public final class SelectionDelegate extends ControllableCameraDelegate {
         for (String text : lines) {
             Label line = new Label(text, Skin.getSkin().getEditFont());
             y -= line.getHeight();
-            showSpectatorLabel(line, width - SPECTATOR_MARGIN - line.getWidth(), y);
+            showSpectatorLabel(line, SPECTATOR_MARGIN, y);
         }
     }
 

@@ -240,6 +240,7 @@ public final class ActionButtonPanel extends GUIObject implements Animated {
             ship_button.addMouseClickListener((_, _, _, _) -> pushDelegate(new PlacingDelegate(viewer,
                     camera.getState(),
                     Race.BUILDING_SHIP)));
+            ship_button.setIconDisabler(() -> !player.canBuild(Race.BUILDING_SHIP));
         }
 
         gather_repair_button.place();

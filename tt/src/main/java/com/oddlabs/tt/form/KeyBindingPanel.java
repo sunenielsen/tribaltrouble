@@ -40,7 +40,7 @@ import static com.oddlabs.tt.gui.Placement.BOTTOM_LEFT;
 import static com.oddlabs.tt.gui.Placement.RIGHT_MID;
 
 public class KeyBindingPanel extends Panel {
-    private static final int COL_ACTION_WIDTH = 200;
+    private static final int COL_ACTION_WIDTH = 300;
     private static final int COL_BINDINGS_WIDTH = 300;
     private static final Vector4f CONFLICT_COLOR = new Vector4f(1.0f, 0.3f, 0.3f, 1.0f);
     private static final Vector4f HEADER_COLOR = new Vector4f(0.9f, 0.75f, 0.4f, 1.0f);

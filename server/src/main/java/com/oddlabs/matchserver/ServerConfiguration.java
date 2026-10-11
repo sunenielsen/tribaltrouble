@@ -3,7 +3,7 @@ package com.oddlabs.matchserver;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import discord4j.core.object.reaction.ReactionEmoji;
+import discord4j.core.object.emoji.Emoji;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -141,7 +141,7 @@ public final class ServerConfiguration {
 
         if (val == -1) {
             logger.info("Interpreting emoji id as codepoint: " + emojiId);
-            emojiId = ReactionEmoji.codepoints(emojiId).getRaw();
+            emojiId = Emoji.codepoints(emojiId).getRaw();
         }
         return emojiId;
     }

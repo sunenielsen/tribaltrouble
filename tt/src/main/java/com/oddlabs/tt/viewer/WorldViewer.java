@@ -58,6 +58,7 @@ import org.jspecify.annotations.NonNull;
 import org.jspecify.annotations.Nullable;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.ResourceBundle;
 import java.util.stream.Collectors;
 
@@ -332,40 +333,39 @@ public final class WorldViewer implements Animated, AutoCloseable {
         } else {
             player.setPreferredGamespeed(initial_gamespeed);
             boolean archipelago = world_params.getMapSize() == Game.SIZE_ARCHIPELAGO;
-            Ship ship = null;
+            List<Ship> ships = null;
             if (archipelago) {
                 int x = UnitGrid.toGridCoordinate(starting_location[0]);
                 int y = UnitGrid.toGridCoordinate(starting_location[1]);
-                ship = new Ship(player, player.getRace().getBuildingTemplate(Race.BUILDING_SHIP), x, y);
-                ship.instantBuild();
+                ships = Ship.newStartingShips(player, x, y, unit_info.numPeonsAndWarriors());
             }
             int i = 0;
             for (int j = 0; j < unit_info.numPeons(); j++, i++) {
                 Unit unit = new Unit(player, starting_location[2 * i], starting_location[2 * i + 1], null,
                         player.getRace().getUnitTemplate(Race.UNIT_PEON));
-                if (ship != null) {
-                    ship.getUnitContainer().enter(unit);
+                if (ships != null) {
+                    Ship.board(ships, unit);
                 }
             }
             for (int j = 0; j < unit_info.numRockWarriors(); j++, i++) {
                 Unit unit = new Unit(player, starting_location[2 * i], starting_location[2 * i + 1], null,
                         player.getRace().getUnitTemplate(Race.UNIT_WARRIOR_ROCK));
-                if (ship != null) {
-                    ship.getUnitContainer().enter(unit);
+                if (ships != null) {
+                    Ship.board(ships, unit);
                 }
             }
             for (int j = 0; j < unit_info.numIronWarriors(); j++, i++) {
                 Unit unit = new Unit(player, starting_location[2 * i], starting_location[2 * i + 1], null,
                         player.getRace().getUnitTemplate(Race.UNIT_WARRIOR_IRON));
-                if (ship != null) {
-                    ship.getUnitContainer().enter(unit);
+                if (ships != null) {
+                    Ship.board(ships, unit);
                 }
             }
             for (int j = 0; j < unit_info.numRubberWarriors(); j++, i++) {
                 Unit unit = new Unit(player, starting_location[2 * i], starting_location[2 * i + 1], null,
                         player.getRace().getUnitTemplate(Race.UNIT_WARRIOR_RUBBER));
-                if (ship != null) {
-                    ship.getUnitContainer().enter(unit);
+                if (ships != null) {
+                    Ship.board(ships, unit);
                 }
             }
             if (unit_info.hasChieftain()) {

@@ -5,10 +5,13 @@ import com.oddlabs.matchserver.discord.commands.BannedWordsCommand;
 import com.oddlabs.matchserver.discord.commands.DiscordCommand;
 import com.oddlabs.matchserver.discord.commands.KickCommand;
 import com.oddlabs.matchserver.discord.commands.LeaderboardsCommand;
+import com.oddlabs.matchserver.discord.commands.MatchesCommand;
 import com.oddlabs.matchserver.discord.commands.MatchupCommand;
 import com.oddlabs.matchserver.discord.commands.OnlineCommand;
+import com.oddlabs.matchserver.discord.commands.ProfileCommand;
 import com.oddlabs.matchserver.discord.commands.RankCommand;
 import com.oddlabs.matchserver.discord.commands.RegisterProfileToDiscordUserCommand;
+import com.oddlabs.matchserver.discord.commands.StreaksCommand;
 import com.oddlabs.matchserver.discord.commands.UnbanCommand;
 import com.oddlabs.matchserver.discord.commands.WhoIsCommand;
 
@@ -22,6 +25,8 @@ import discord4j.core.object.entity.channel.Channel;
 import discord4j.core.object.entity.channel.TextChannel;
 import discord4j.discordjson.json.ApplicationCommandData;
 import discord4j.discordjson.json.ApplicationCommandRequest;
+import discord4j.gateway.intent.Intent;
+import discord4j.gateway.intent.IntentSet;
 
 import reactor.core.Disposable;
 import reactor.core.publisher.Mono;
@@ -59,7 +64,11 @@ public class DiscordBotService {
         this.serverId = serverId;
         DiscordClient client = DiscordClient.create(token);
 
-        Mono<Void> login = client.withGateway(
+        // Gateway v10 sends message text only to bots that ask for it; the chatroom relay needs it.
+        var gateway_bootstrap = client.gateway().setEnabledIntents(IntentSet.nonPrivileged().or(IntentSet.of(
+                Intent.MESSAGE_CONTENT)));
+
+        Mono<Void> login = gateway_bootstrap.withGateway(
                 (GatewayDiscordClient gateway) -> {
                     this.gateway = gateway;
                     // Extra discord things that can be done
@@ -70,7 +79,10 @@ public class DiscordBotService {
                     commands.add(new RegisterProfileToDiscordUserCommand());
                     commands.add(new WhoIsCommand());
                     commands.add(new OnlineCommand());
+                    commands.add(new MatchesCommand());
                     commands.add(new RankCommand());
+                    commands.add(new ProfileCommand());
+                    commands.add(new StreaksCommand());
                     commands.add(new KickCommand());
                     commands.add(new BanCommand());
                     commands.add(new UnbanCommand());

@@ -13,4 +13,8 @@ public record UnitInfo(boolean hasQuarters,
     public UnitInfo() {
         this(false, false, 0, false, 0, 0, 0, 0);
     }
+
+    public int numPeonsAndWarriors() {
+        return numPeons + numRockWarriors + numIronWarriors + numRubberWarriors;
+    }
 }

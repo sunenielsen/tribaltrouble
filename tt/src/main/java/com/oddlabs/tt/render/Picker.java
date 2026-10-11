@@ -135,13 +135,14 @@ public final class Picker implements Updatable<TimerAnimation> {
             PlayerInterface player_interface,
             int x,
             int y) {
-        setupPicking(camera, x, y, PICK_SIZE, PICK_SIZE);
+        float scale = getScale();
+        setupPicking(camera, x * scale, y * scale, PICK_SIZE, PICK_SIZE);
         pickObjects();
         Target target = getNearestPick(element_pick_list, Target.class);
         Selectable[] selection = selected_army.filter(Abilities.SAIL);
         if (target instanceof Unit || target instanceof Building) {
             player_interface.setSailingTarget(selection, target);
-        } else if (nearestLandscape(x, y)) {
+        } else if (nearestLandscape(Math.round(x * scale), Math.round(y * scale))) {
             UnitGrid grid = local_player.getWorld().getUnitGrid();
             int grid_x = UnitGrid.toGridCoordinate(patch_hit_x);
             int grid_y = UnitGrid.toGridCoordinate(patch_hit_y);

@@ -68,10 +68,14 @@ public final class AdvancedSettingsForm extends Form {
     private final @NonNull Label value_max_buildings;
     private final @Nullable CheckBox cb_ships;
     private final @NonNull Label label_warning;
+    private final boolean force_ships;
+    private boolean ships_choice;
 
-    public AdvancedSettingsForm(@NonNull Values current, boolean show_ships, @NonNull Listener listener) {
+    public AdvancedSettingsForm(@NonNull Values current, boolean show_ships, boolean force_ships,
+            @NonNull Listener listener) {
         super(i18n("caption"));
         this.listener = listener;
+        this.force_ships = force_ships;
 
         Label label_max_units = new Label(i18n("max_units"), Skin.getSkin().getEditFont(), LABEL_WIDTH);
         slider_max_units = new Slider(SLIDER_LENGTH, MIN_MAX_UNITS / MAX_UNITS_STEP, MAX_MAX_UNITS / MAX_UNITS_STEP,
@@ -86,6 +90,9 @@ public final class AdvancedSettingsForm extends Form {
                 Game.DEFAULT_MAX_BUILDING_COUNT);
         value_max_buildings = new Label("", Skin.getSkin().getEditFont(), VALUE_WIDTH);
         cb_ships = show_ships ? new CheckBox(current.ships(), i18n("ships"), i18n("ships_tip")) : null;
+        if (cb_ships != null && force_ships) {
+            cb_ships.setDisabled(true);
+        }
         label_warning = new Label("", Skin.getSkin().getEditFont(), WARNING_WIDTH);
 
         slider_max_units.addValueListener(_ -> update());
@@ -154,16 +161,19 @@ public final class AdvancedSettingsForm extends Form {
     }
 
     private @NonNull Values currentValues() {
+        // While the map forces boats the box is only showing that, so the player's own setting is kept instead.
+        boolean ships = force_ships ? ships_choice : cb_ships != null && cb_ships.isMarked();
         return new Values(slider_max_units.getValue() * MAX_UNITS_STEP, slider_starting_units.getValue(),
-                slider_max_buildings.getValue(), cb_ships != null && cb_ships.isMarked());
+                slider_max_buildings.getValue(), ships);
     }
 
     private void setValues(@NonNull Values values) {
         slider_max_units.setValue(values.maxUnits() / MAX_UNITS_STEP);
         slider_starting_units.setValue(values.startingUnits());
         slider_max_buildings.setValue(values.maxBuildings());
+        ships_choice = values.ships();
         if (cb_ships != null) {
-            cb_ships.setMarked(values.ships());
+            cb_ships.setMarked(force_ships || values.ships());
         }
         update();
     }

@@ -141,7 +141,7 @@ dependencies {
     implementation("commons-dbcp:commons-dbcp:1.2.1")
     implementation("commons-collections:commons-collections:3.1")
     implementation("com.mysql:mysql-connector-j:9.3.0")
-    implementation("com.discord4j:discord4j-core:3.2.6")
+    implementation("com.discord4j:discord4j-core:3.3.3")
     implementation("com.fasterxml.jackson.core:jackson-databind:2.18.3")
     implementation("com.pocketcombats:openskill:1.1")
 }

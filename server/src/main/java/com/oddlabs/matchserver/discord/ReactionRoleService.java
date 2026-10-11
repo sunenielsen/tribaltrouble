@@ -8,7 +8,7 @@ import discord4j.core.event.domain.message.ReactionAddEvent;
 import discord4j.core.event.domain.message.ReactionRemoveEvent;
 import discord4j.core.object.entity.Guild;
 import discord4j.core.object.entity.Member;
-import discord4j.core.object.reaction.ReactionEmoji;
+import discord4j.core.object.emoji.Emoji;
 
 import reactor.core.publisher.Mono;
 
@@ -54,7 +54,7 @@ public class ReactionRoleService {
 
     private Mono<Void> processReaction(
             Snowflake userId,
-            ReactionEmoji emoji,
+            Emoji emoji,
             Snowflake guildId,
             Snowflake eventMessageId,
             boolean adding) {
@@ -131,7 +131,7 @@ public class ReactionRoleService {
                         });
     }
 
-    private String getEmojiIdentifier(ReactionEmoji emoji) {
+    private String getEmojiIdentifier(Emoji emoji) {
         return emoji.asCustomEmoji().map(customEmoji -> customEmoji.getId().asString()).orElse(
                 emoji.asUnicodeEmoji().map(unicode -> unicode.getRaw()).orElse(""));
     }

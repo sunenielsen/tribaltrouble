@@ -242,6 +242,8 @@ public final class PeerHub implements Animated, RouterHandler {
         }
         server_millis = millis;
         int event_tick = millisToTickCeil(millis);
+        if (spectatorController != null && spectatorController.holdLiveEvent(peer, event_tick, event))
+            return;
         peer.addEvent(event_tick, event);
         if (!is_spectator && isFirstActivePeer() && Network.getMatchmakingClient().isConnected()) {
             PeerHubSpectatorController.sendCommandEvent(event_tick, client_id, event);

@@ -30,8 +30,8 @@ public final class CreditsForm extends Form {
         addChild(head_label);
         head_label.place();
 
-        PanelGroup panel_group = new PanelGroup(createAboutPanel(bundle), createCreditsPanel(bundle), createThanksPanel(
-                bundle));
+        PanelGroup panel_group = new PanelGroup(createAboutPanel(bundle), createCreditsPanel(bundle),
+                createContributorsPanel(bundle), createThanksPanel(bundle));
         addChild(panel_group);
         panel_group.place(head_label, BOTTOM_LEFT);
 
@@ -48,7 +48,7 @@ public final class CreditsForm extends Form {
         TextBox about_box = new TextBox(400, 300, Skin.getSkin().getEditFont(), 100000);
         about.addChild(about_box);
         about_box.append(BuildInfo.FULL_VERSION + "\n\n");
-        String about_text = i18n("about_text", Integer.toString(Renderer.getLocalInput().getRevision()));
+        String about_text = i18n("about_notice", Integer.toString(Renderer.getLocalInput().getRevision()));
         about_box.append(about_text);
 
         about_box.place();
@@ -78,12 +78,46 @@ public final class CreditsForm extends Form {
         return credits;
     }
 
+    private static @NonNull Panel createContributorsPanel(@NonNull ResourceBundle bundle) {
+        Panel contributors = new Panel(i18n("contributors"));
+        TextBox contributors_box = new TextBox(400, 300, Skin.getSkin().getEditFont(), 100000);
+        contributors.addChild(contributors_box);
+        contributors_box.append(i18n("contributors_text") + "\n");
+        contributors_box.append("\n");
+        contributors_box.append(i18n("programming") + "\n");
+        contributors_box.append("Ryan Linehan (RcubDev)\n");
+        contributors_box.append("bondolo\n");
+        contributors_box.append("Omar Mokhtar\n");
+        contributors_box.append("Merikrotti\n");
+        contributors_box.append("Ian Andrew Moore (Dapianokid)\n");
+        contributors_box.append("Maxime Michon (Maxenor)\n");
+        contributors_box.append("Pyprohly\n");
+        contributors_box.append("TimmyTonkaBuilder\n");
+        contributors_box.append("Xzf\n");
+        contributors_box.append("Rafal Okuniewski\n");
+        contributors_box.append("\n");
+        contributors_box.append(i18n("3d_artwork_and_animation") + "\n");
+        contributors_box.append("Chaz Willets\n");
+        contributors_box.append("Camersteph\n");
+        contributors_box.append("\n");
+        contributors_box.append(i18n("translations") + "\n");
+        contributors_box.append("Daniel Araújo Nacarini (Piratax10)\n");
+        contributors_box.append("Rafal Okuniewski\n");
+        contributors_box.append("\n");
+        contributors_box.append(i18n("community") + "\n");
+        contributors_box.append("Ian Andrew Moore (Dapianokid)\n");
+        contributors_box.append("Ryan Linehan (RcubDev)");
+        contributors_box.place();
+        contributors.compileCanvas();
+        return contributors;
+    }
+
     private static @NonNull Panel createThanksPanel(@NonNull ResourceBundle bundle) {
         Panel thanks = new Panel(i18n("thanks_to"));
         TextBox thanks_box = new TextBox(400, 300, Skin.getSkin().getEditFont(), 100000);
         thanks.addChild(thanks_box);
         thanks_box.append(i18n("thanks") + "\n");
-        thanks_box.append(i18n("oddlabs_thanks") + "\n");
+        thanks_box.append(i18n("original_thanks") + "\n");
         thanks_box.append("\n");
         thanks_box.append("Caspian Rychlik-Prince\n");
         thanks_box.append("Brian Matzon\n");

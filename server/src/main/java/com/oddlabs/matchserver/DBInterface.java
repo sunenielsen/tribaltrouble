@@ -6,7 +6,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.jspecify.annotations.Nullable;
 import org.jspecify.annotations.NullMarked;
@@ -432,6 +434,28 @@ public final class DBInterface {
                 return new int[]{0, 0}; // Player not found, return defaults
             }
         }
+    }
+
+    /**
+     * Nicks with a streak above zero mapped to that streak, longest first.
+     */
+    public static Map<String, Integer> getStreakLeaders(boolean current, int count) {
+        String column = current ? "current_win_streak" : "best_win_streak";
+        try (Connection conn = DBUtils.createDatabaseConnection(); PreparedStatement stmt = conn.prepareStatement(
+                "SELECT nick, " + column + " AS streak FROM profiles WHERE " + column + " > 0 ORDER BY " + column + " DESC, nick LIMIT ?")) {
+            stmt.setInt(1, count);
+            try (ResultSet result = stmt.executeQuery()) {
+                Map<String, Integer> leaders = new LinkedHashMap<>();
+                while (result.next()) {
+                    leaders.put(result.getString("nick").trim(), result.getInt("streak"));
+                }
+                return leaders;
+            }
+        } catch (SQLException e) {
+            System.out.println("Exception: " + e);
+            MatchmakingServer.getLogger().throwing(DBInterface.class.getName(), "getStreakLeaders", e);
+        }
+        return new LinkedHashMap<>();
     }
 
     public static void increaseLosses(String nick) {
@@ -1201,5 +1225,61 @@ public final class DBInterface {
             MatchmakingServer.getLogger().throwing(DBInterface.class.getName(), "getOnlineProfiles", e);
         }
         return new String[0];
+    }
+
+    /**
+     * Only games an online profile is still in count, since a server restart or abandoned game
+     * can leave the games row at started.
+     */
+    public static List<GameDataModel> getLiveGames() {
+        try (Connection conn = DBUtils.createDatabaseConnection(); PreparedStatement stmt = conn.prepareStatement(
+                "SELECT G.id, G.name, G.rated, G.time_start, GP.nick, GP.race, GP.team FROM games G INNER JOIN" + " game_players GP ON GP.game_id = G.id WHERE G.status = ? AND G.id IN (SELECT game_id FROM" + " online_profiles) ORDER BY G.time_start, G.id, GP.team")) {
+            stmt.setString(1, "started");
+            try (ResultSet result = stmt.executeQuery()) {
+                Map<Integer, GameDataModel> games = new LinkedHashMap<>();
+                while (result.next()) {
+                    int id = result.getInt("id");
+                    GameDataModel game = games.get(id);
+                    if (game == null) {
+                        game = new GameDataModel();
+                        game.setId(id);
+                        game.setName(result.getString("name"));
+                        game.setRated(result.getString("rated"));
+                        game.setTimeStart(result.getTimestamp("time_start"));
+                        games.put(id, game);
+                    }
+                    game.getPlayers().add(
+                            new GamePlayerModel(
+                                    result.getString("nick"), result.getString("race"), result.getInt("team")));
+                }
+                return new ArrayList<>(games.values());
+            }
+        } catch (SQLException e) {
+            System.out.println("Exception: " + e);
+            MatchmakingServer.getLogger().throwing(DBInterface.class.getName(), "getLiveGames", e);
+        }
+        return new ArrayList<>();
+    }
+
+    /**
+     * Games played per race, most played first.
+     */
+    public static Map<Integer, Integer> getRaceGameCounts(String nick) {
+        try (Connection conn = DBUtils.createDatabaseConnection(); PreparedStatement stmt = conn.prepareStatement(
+                // Older games stored the race as N or V instead of its number.
+                "SELECT CASE race WHEN 'N' THEN '0' WHEN 'V' THEN '1' ELSE race END AS race_id, COUNT(*) AS games FROM game_players WHERE nick = ? GROUP BY race_id ORDER BY games DESC")) {
+            stmt.setString(1, nick);
+            try (ResultSet result = stmt.executeQuery()) {
+                Map<Integer, Integer> counts = new LinkedHashMap<>();
+                while (result.next()) {
+                    counts.put(result.getInt("race_id"), result.getInt("games"));
+                }
+                return counts;
+            }
+        } catch (SQLException e) {
+            System.out.println("Exception: " + e);
+            MatchmakingServer.getLogger().throwing(DBInterface.class.getName(), "getRaceGameCounts", e);
+        }
+        return new LinkedHashMap<>();
     }
 }

@@ -370,7 +370,9 @@ public final class TerrainMenu extends Group {
         button_mapcode.addMouseClickListener(new MapcodeListener());
         button_advanced = new HorizButton(i18n("advanced"), 130);
         button_advanced.addMouseClickListener((_, _, _, _) -> gui_root.addModalForm(new AdvancedSettingsForm(
-                advanced_settings, Globals.SHIPS_ENABLED, this::applyAdvancedSettings)));
+                advanced_settings, Globals.SHIPS_ENABLED,
+                Globals.SHIPS_ENABLED && ARCHIPELAGO[pulldown_size.getChosenItemIndex()],
+                this::applyAdvancedSettings)));
 
         addChild(button_advanced);
 

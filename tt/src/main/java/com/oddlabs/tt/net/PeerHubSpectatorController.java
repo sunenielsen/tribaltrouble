@@ -6,6 +6,9 @@ import java.io.ByteArrayInputStream;
 import java.io.DataInputStream;
 import java.io.IOException;
 import java.nio.ByteBuffer;
+import java.util.ArrayList;
+import java.util.HexFormat;
+import java.util.List;
 
 /**
  * Manages spectator-specific state for PeerHub: catch-up, fast-forward,
@@ -19,6 +22,8 @@ final class PeerHubSpectatorController {
     private final PeerHub hub;
     private boolean catchingUp;
     private int catchUpTargetTick;
+    private final List<HeldEvent> heldEvents = new ArrayList<>();
+    private boolean logApplied;
 
     static PeerHubSpectatorController getInstance() {
         return instance;
@@ -58,8 +63,17 @@ final class PeerHubSpectatorController {
         return true;
     }
 
+    // A live event queued ahead of the log's older events would block them, since a peer only runs its head event.
+    boolean holdLiveEvent(Peer peer, int tick, ARMIEvent event) {
+        if (logApplied) return false;
+        heldEvents.add(new HeldEvent(peer, tick, event));
+        return true;
+    }
+
     void fastForward(byte[] eventLogData, int targetTick) {
         int eventCount = 0;
+        int firstHeldTick = heldEvents.isEmpty() ? Integer.MAX_VALUE : heldEvents.getFirst().tick();
+        List<String> loggedSinceHeld = new ArrayList<>();
         if (eventLogData != null && eventLogData.length > 0) {
             DataInputStream dis = new DataInputStream(new ByteArrayInputStream(eventLogData));
             try {
@@ -76,12 +90,20 @@ final class PeerHubSpectatorController {
                     if (peer != null) {
                         peer.addEvent(tick, event);
                         eventCount++;
+                        if (tick >= firstHeldTick)
+                            loggedSinceHeld.add(key(tick, clientId, data));
                     }
                 }
             } catch (IOException e) {
                 IO.println("Error reading event log: " + e);
             }
         }
+        for (HeldEvent held : heldEvents) {
+            if (!loggedSinceHeld.remove(key(held.tick(), held.peer().getPeerIndex(), bytes(held.event()))))
+                held.peer().addEvent(held.tick(), held.event());
+        }
+        heldEvents.clear();
+        logApplied = true;
         this.catchUpTargetTick = targetTick;
         this.catchingUp = true;
         IO.println("Spectator catching up to tick " + targetTick + " (" + eventCount + " events queued)");
@@ -92,9 +114,20 @@ final class PeerHubSpectatorController {
      * Called by the first active peer when receiving game state events.
      */
     static void sendCommandEvent(int tick, int clientId, ARMIEvent event) {
-        short eventSize = event.getEventSize();
-        ByteBuffer buf = ByteBuffer.allocate(eventSize);
+        Network.getMatchmakingClient().getInterface().updateCommandEvent(tick, clientId, event.getEventSize(),
+                bytes(event));
+    }
+
+    private static byte[] bytes(ARMIEvent event) {
+        ByteBuffer buf = ByteBuffer.allocate(event.getEventSize());
         event.write(buf);
-        Network.getMatchmakingClient().getInterface().updateCommandEvent(tick, clientId, eventSize, buf.array());
+        return buf.array();
+    }
+
+    private static String key(int tick, int clientId, byte[] data) {
+        return tick + ":" + clientId + ":" + HexFormat.of().formatHex(data);
+    }
+
+    private record HeldEvent(Peer peer, int tick, ARMIEvent event) {
     }
 }

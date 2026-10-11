@@ -26,6 +26,7 @@ import com.oddlabs.tt.util.Target;
 import org.jspecify.annotations.NonNull;
 import org.jspecify.annotations.Nullable;
 
+import java.util.List;
 import java.util.Random;
 
 public abstract class AI implements Animated {
@@ -65,32 +66,32 @@ public abstract class AI implements Animated {
             int grid_start_x = UnitGrid.toGridCoordinate(owner.getStartX());
             int grid_start_y = UnitGrid.toGridCoordinate(owner.getStartY());
             if (isArchipelago()) {
-                Ship ship = new Ship(owner, owner.getRace().getBuildingTemplate(Race.BUILDING_SHIP), grid_start_x,
-                        grid_start_y);
-                ship.instantBuild();
+                List<Ship> ships = Ship.newStartingShips(owner, grid_start_x, grid_start_y,
+                        unit_info.numPeonsAndWarriors());
+                Ship ship = ships.get(0);
                 for (int i = 0; i < unit_info.numPeons(); i++) {
                     Unit unit = new Unit(owner, ship.getPositionX(), ship.getPositionY(), null,
                             owner.getRace().getUnitTemplate(
                                     Race.UNIT_PEON));
-                    ship.getUnitContainer().enter(unit);
+                    Ship.board(ships, unit);
                 }
                 for (int i = 0; i < unit_info.numRockWarriors(); i++) {
                     Unit unit = new Unit(owner, ship.getPositionX(), ship.getPositionY(), null,
                             owner.getRace().getUnitTemplate(
                                     Race.UNIT_WARRIOR_ROCK));
-                    ship.getUnitContainer().enter(unit);
+                    Ship.board(ships, unit);
                 }
                 for (int i = 0; i < unit_info.numIronWarriors(); i++) {
                     Unit unit = new Unit(owner, ship.getPositionX(), ship.getPositionY(), null,
                             owner.getRace().getUnitTemplate(
                                     Race.UNIT_WARRIOR_IRON));
-                    ship.getUnitContainer().enter(unit);
+                    Ship.board(ships, unit);
                 }
                 for (int i = 0; i < unit_info.numRubberWarriors(); i++) {
                     Unit unit = new Unit(owner, ship.getPositionX(), ship.getPositionY(), null,
                             owner.getRace().getUnitTemplate(
                                     Race.UNIT_WARRIOR_RUBBER));
-                    ship.getUnitContainer().enter(unit);
+                    Ship.board(ships, unit);
                 }
                 found_island = false;
             } else {

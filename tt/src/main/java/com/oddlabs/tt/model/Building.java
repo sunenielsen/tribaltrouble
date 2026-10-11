@@ -6,6 +6,7 @@ import com.oddlabs.tt.model.weapon.RockAxeWeapon;
 import com.oddlabs.tt.model.weapon.RubberAxeWeapon;
 import com.oddlabs.tt.model.weapon.ThrowingWeapon;
 import com.oddlabs.tt.pathfinder.Occupant;
+import com.oddlabs.tt.pathfinder.UnitGrid;
 import com.oddlabs.tt.player.Player;
 import com.oddlabs.tt.util.Target;
 import org.jspecify.annotations.NonNull;
@@ -87,6 +88,12 @@ public abstract class Building extends Selectable<BuildingTemplate> implements O
 
     public Building getEntrance() {
         return this;
+    }
+
+    public final boolean hasExitCell() {
+        Building entrance = getEntrance();
+        return getUnitGrid().findGridTargets(UnitGrid.toGridCoordinate(entrance.getPositionX()),
+                UnitGrid.toGridCoordinate(entrance.getPositionY()), 1, true, entrance.getIslandId())[0] != null;
     }
 
     public Building getBase() {

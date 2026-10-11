@@ -1,7 +1,6 @@
 package com.oddlabs.tt.landscape;
 
 import com.oddlabs.matchmaking.Game;
-import com.oddlabs.tt.global.Globals;
 import org.jspecify.annotations.NonNull;
 
 import java.io.Serial;
@@ -78,7 +77,7 @@ public final class WorldParameters implements Serializable {
         private int initial_game_speed;
         private int map_size = Game.SIZE_NONE;
         private int max_building_count = Game.DEFAULT_MAX_BUILDING_COUNT;
-        private boolean ships = Globals.SHIPS_ENABLED;
+        private boolean ships;
 
         private Builder() {
         }

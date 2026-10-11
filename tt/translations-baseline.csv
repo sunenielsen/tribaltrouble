@@ -79,7 +79,7 @@ form/AdvancedSettingsForm,max_units,Max units:,Maks. enheder:,Maximale Einheiten
 form/AdvancedSettingsForm,starting_units,Starting units:,Startenheder:,Ausgangseinheiten:,Unidades iniciales:,Unità di avviamento:,Unidades iniciais:
 form/AdvancedSettingsForm,max_buildings,Max buildings:,Maks. bygninger:,Max-Gebäude:,Edificios máximos:,Edifici massimi:,Número máximo de edifícios:
 form/AdvancedSettingsForm,ships,Boats,Både,Boote,barcos,Barche,Barcos
-form/AdvancedSettingsForm,ships_tip,Allow harbours and ships in this game (always on for Archipelago),Tillad havne og skibe i dette spil (altid aktivt for Øgruppen),Häfen und Schiffe in diesem Spiel zulassen (für Archipel immer aktiviert),Permitir puertos y barcos en este juego (siempre activado para Archipiélago),Consenti la presenza di porti e navi in ​​questo gioco (sempre attivo per Archipelago),Permitir portos e navios neste jogo (sempre ativado para Archipelago)
+form/AdvancedSettingsForm,ships_tip,Allow ships in this game,Tillad havne og skibe i dette spil (altid aktivt for Øgruppen),Häfen und Schiffe in diesem Spiel zulassen (für Archipel immer aktiviert),Permitir puertos y barcos en este juego (siempre activado para Archipiélago),Consenti la presenza di porti e navi in ​​questo gioco (sempre attivo per Archipelago),Permitir portos e navios neste jogo (sempre ativado para Archipelago)
 form/AdvancedSettingsForm,reset_defaults,Reset to defaults,Nulstil til standardindstillinger,Auf Standardeinstellungen zurücksetzen,Restablecer valores predeterminados,Ripristina le impostazioni predefinite,Restaurar padrões de fábrica
 form/AdvancedSettingsForm,performance_warning,Values above the defaults can degrade performance.,Værdier over standardværdierne kan forringe ydeevnen.,Werte oberhalb der Standardeinstellungen können die Leistung beeinträchtigen.,Los valores superiores a los predeterminados pueden degradar el rendimiento.,Valori superiori a quelli predefiniti possono compromettere le prestazioni.,Valores acima dos padrões podem degradar o desempenho.
 form/BugReportConfirmForm,confirm_report,"The game will quit now, and the next time you start it, you will be prompted to fill out a bug report form. Continue?","Spillet afsluttes nu, og næste gang du starter, vil du blive bedt om at udfylde en fejlrapport. Fortsæt?","Das Spiel wird nun beendet. Beim nächsten Start werden Sie aufgefordert, einen Fehlerbericht auszufüllen. Möchten Sie fortfahren?","El juego terminará ahora, y la próxima vez que lo arranques se te pedirá que rellenes un informe de error. ¿Continuar?","Il gioco terminerà ora, e al prossimo avvio, ti verrà richiesto di compilare un rapporto di errore. Continuare?","O jogo vai fechar agora, da próxima vez que você rodar o jogo, será pedido para você preencher um formulário de relatório de bug. Continuar?"
@@ -440,6 +440,7 @@ form/OptionsMenu,action.TRAIN_PEON_DEC,Train Peon (-1),Tog Peon (-1),Zugbegleite
 form/OptionsMenu,action.TRAIN_PEON_BATCH,Train Peon (+10),Tog Peon (+10),Zugbote (+10),Peón de tren (+10),Treno Peone (+10),Treinar Peão (+10)
 form/OptionsMenu,action.TRAIN_PEON_BATCH_DEC,Train Peon (-10),Tog Peon (-10),Zugbegleiter (-10),Peón de tren (-10),Treno Peone (-10),Treinar Peão (-10)
 form/OptionsMenu,action.TRAIN_CHIEFTAIN,Train Chieftain,Træn Høvding,Häuptling Ausbilden,Entrenar Jefe,Addestra Capo,Treinar Chefe
+form/OptionsMenu,action.DEPLOY_CHIEFTAIN,Chieftain,Høvding,Häuptling,Jefe,Capo,Chefe
 form/OptionsMenu,action.MAGIC_1,Magic 1,Magi 1,Magie 1,Magia 1,Magia 1,Magia 1
 form/OptionsMenu,action.MAGIC_2,Magic 2,Magi 2,Magie 2,Magia 2,Magia 2,Magia 2
 form/OptionsMenu,action.GAME_SPEED_UP,Increase Game Speed,Forøg Spilhastighed,Spielgeschwindigkeit Erhöhen,Aumentar Velocidad Juego,Aumenta Velocità Gioco,Aumentar Velocidade da Partida
@@ -765,6 +766,7 @@ gui/ActionButtonPanel,deploy_peon_tip,Peon,Arbejder,Knecht,Peón,Peone,Peão
 gui/ActionButtonPanel,deploy_rock_tip,Rock Warrior,Stenkriger,Steinkrieger,Guerrero piedra,Guerriero di roccia,Guerreiro de Pedra
 gui/ActionButtonPanel,deploy_iron_tip,Iron Warrior,Jernkriger,Eisenkrieger,Guerrero hierro,Guerriero di ferro,Guerreiro de Ferro
 gui/ActionButtonPanel,deploy_chicken_tip,Chicken Warrior,Kyllingekriger,Hühnchenkrieger,Guerrero pollo,Guerriero di pollo,Guerreiro de Galinha
+gui/ActionButtonPanel,deploy_chieftain_tip,Chieftain,Høvding,Häuptling,Jefe tribal,Capo Tribù,Chefe
 gui/ActionButtonPanel,transport_tree_tip,Wood,Træ,Holz,Madera,Legno,Madeira
 gui/ActionButtonPanel,transport_rock_tip,Rock,Sten,Stein,Piedra,Roccia,Pedra
 gui/ActionButtonPanel,transport_iron_tip,Iron,Jern,Eisen,Hierro,Ferro,Ferro

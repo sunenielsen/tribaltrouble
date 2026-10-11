@@ -23,8 +23,8 @@ buildscript {
     dependencies { classpath("org.apache.commons:commons-csv:1.14.0") }
 }
 
-val locales = listOf("da", "de", "es", "it", "pt")
-val localeNames = listOf("Danish", "German", "Spanish", "Italian", "Portuguese")
+val locales = listOf("da", "de", "es", "it", "pt", "pl")
+val localeNames = listOf("Danish", "German", "Spanish", "Italian", "Portuguese", "Polish")
 val csvHeader = listOf("File", "Key", "English") + localeNames
 val resourceRoot = file("src/main/resources")
 val bundleRoot = resourceRoot.resolve("com/oddlabs/tt")

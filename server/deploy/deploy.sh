@@ -65,13 +65,41 @@ ln -sfn "$DEST" "$CURRENT"
 
 restart_services() { sudo systemctl restart matchmaker router; }
 
+in_unit() { grep -Eq '/(matchmaker|router)\.service$' "/proc/$1/cgroup" 2>/dev/null; }
+
+# Servers or restart-loop launch scripts running outside our units (a hand-started
+# pre-systemd install) hold or retake the ports; launchers go first so nothing respawns.
+stop_strays() {
+  local pattern pid stopped=""
+  for pattern in '^(/usr)?/bin/(ba)?sh ([^ ]*/)?(router|matchmaker)$' \
+                 'com\.oddlabs\.(routerserver\.RouterServer|matchserver\.MatchmakingServer)'; do
+    for pid in $(pgrep -f -- "$pattern"); do
+      in_unit "$pid" && continue
+      echo "!! Stopping stray $pid: $(ps -o args= -p "$pid" | cut -c1-100)"
+      sudo kill "$pid" 2>/dev/null || true
+      stopped="$stopped $pid"
+    done
+  done
+  for pid in $stopped; do
+    timeout 10 tail --pid="$pid" -f /dev/null || sudo kill -9 "$pid" 2>/dev/null || true
+  done
+}
+
+# An open port is not enough: it must be our unit listening on it.
+serves() {
+  local pid
+  pid="$(sudo ss -ltnpH "sport = :$1" | grep -o 'pid=[0-9]*' | head -1 | cut -d= -f2)"
+  [ -n "$pid" ] && in_unit "$pid"
+}
+
 is_healthy() {
   systemctl is-active --quiet matchmaker || return 1
   systemctl is-active --quiet router     || return 1
-  for port in "$MATCHMAKER_PORT" "$ROUTER_PORT"; do
-    timeout 3 bash -c "cat < /dev/null > /dev/tcp/127.0.0.1/$port" 2>/dev/null || return 1
-  done
+  serves "$MATCHMAKER_PORT" || return 1
+  serves "$ROUTER_PORT"
 }
+
+stop_strays
 
 echo ">> Restarting services on $TAG"
 restart_services
@@ -86,6 +114,7 @@ done
 # --- 6. Roll back if the new version is not healthy --------------------------
 if [ "$healthy" -ne 1 ]; then
   echo "!! Health check FAILED for $TAG"
+  sudo ss -ltnp "( sport = :$MATCHMAKER_PORT or sport = :$ROUTER_PORT )" || true
   if [ -n "$PREV" ] && [ -d "$PREV" ]; then
     echo "!! Rolling back to $(basename "$PREV")"
     ln -sfn "$PREV" "$CURRENT"
