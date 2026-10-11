@@ -165,11 +165,11 @@ public class Ship extends Building implements Movable {
         int best_gap = 0;
         double best_gap_dx = 0.0f;
         double best_gap_dy = 0.0f;
-        double delta = Math.toRadians(360.0f / samples);
+        double delta = StrictMath.toRadians(360.0f / samples);
         for (int i = 0; i < samples; i++) {
             double angle = delta * i;
-            double cos = Math.cos(angle);
-            double sin = Math.sin(angle);
+            double cos = StrictMath.cos(angle);
+            double sin = StrictMath.sin(angle);
             int weight_a = 0;
             int weight_b = 0;
             for (int tmpy = y0; tmpy < y1; tmpy++) {

@@ -30,6 +30,8 @@ public interface PlayerInterface {
 
     void trainChieftain(@NonNull Building building, boolean start);
 
+    void deployChieftainFromShip(@NonNull Building building);
+
     void placeBuilding(Selectable<?> @NonNull [] selection, int template_id, int placing_grid_x, int placing_grid_y);
 
     void setRallyPoint(@NonNull Building building, @NonNull Target target);

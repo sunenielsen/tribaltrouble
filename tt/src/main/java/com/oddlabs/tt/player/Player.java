@@ -18,6 +18,7 @@ import com.oddlabs.tt.model.RockSupply;
 import com.oddlabs.tt.model.RubberSupply;
 import com.oddlabs.tt.model.Selectable;
 import com.oddlabs.tt.model.Supply;
+import com.oddlabs.tt.model.Ship;
 import com.oddlabs.tt.model.SupplyContainer;
 import com.oddlabs.tt.model.Unit;
 import com.oddlabs.tt.model.behaviour.GatherController;
@@ -31,6 +32,7 @@ import org.jspecify.annotations.NonNull;
 import org.jspecify.annotations.Nullable;
 
 import java.util.Arrays;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Predicate;
@@ -536,6 +538,12 @@ public final class Player implements PlayerInterface {
     }
 
     @Override
+    public void deployChieftainFromShip(@NonNull Building building) {
+        if (isValid(building) && building instanceof Ship ship)
+            ship.deployChieftain();
+    }
+
+    @Override
     public void placeBuilding(Selectable<?> @NonNull [] selection, int template_id, int placing_grid_x,
             int placing_grid_y) {
         Building building = getRace().getBuildingTemplate(template_id).create(this, placing_grid_x, placing_grid_y);
@@ -664,7 +672,7 @@ public final class Player implements PlayerInterface {
 
     public @NonNull Selectable<?> @NonNull [] @NonNull [] classifyUnits() {
         Map<String, List<Selectable<?>>> map = units.getSet().stream().collect(Collectors.groupingBy(
-                u -> u.getPrimaryController().getKey()));
+                u -> u.getPrimaryController().getKey(), LinkedHashMap::new, Collectors.toList()));
         return map.values().stream().map(list -> list.toArray(Selectable[]::new)).toArray(Selectable[][]::new);
     }
 

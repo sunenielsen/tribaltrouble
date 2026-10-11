@@ -18,6 +18,7 @@ import java.util.List;
 import java.util.Map;
 
 public final class ShipHR {
+    private static final float WARRIOR_INCREASE = 10f;
 
     private final boolean vikings;
 
@@ -141,6 +142,9 @@ public final class ShipHR {
         }
 
         public boolean canFit(Unit unit) {
+            if (unit.isChieftain()) {
+                return false;
+            }
             float size = unitSize(unit);
             return total - used > size;
         }
@@ -421,6 +425,7 @@ public final class ShipHR {
             if (unit != null) {
                 unit.drown();
             }
+            unit = null;
         }
 
         public ShipAllocation getAllocation(Unit unit) {
@@ -576,8 +581,8 @@ public final class ShipHR {
                     row.seat(unit);
                     unit2row.put(unit, row);
                     ShipAllocation alloc = row.getAllocation(unit);
-                    if (alloc.getRole() == ShipAllocation.FIGHTING) {
-                        unit.increaseRange(10f);
+                    if (alloc.getRole() == ShipAllocation.FIGHTING && !unit.isChieftain()) {
+                        unit.increaseRange(WARRIOR_INCREASE);
                     }
                     return alloc;
                 }
@@ -615,7 +620,7 @@ public final class ShipHR {
                     unit.setReference(null);
                     unit.unmount();
                     if (alloc.getRole() == ShipAllocation.FIGHTING) {
-                        unit.increaseRange(-8f);
+                        unit.increaseRange(-WARRIOR_INCREASE);
                     }
                     return unit;
                 }

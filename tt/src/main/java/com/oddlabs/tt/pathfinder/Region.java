@@ -49,6 +49,10 @@ public final class Region extends Node {
         return current_node;
     }
 
+    public boolean isNeighbour(@NonNull Region r) {
+        return neighbours.contains(r);
+    }
+
     public static void link(@Nullable Region r1, @Nullable Region r2) {
         if (r1 == null || r2 == null || r1 == r2 || r1.neighbours.contains(r2))
             return;

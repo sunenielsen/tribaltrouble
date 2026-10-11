@@ -30,7 +30,7 @@ public abstract class Controller {
     }
 
     public @NonNull String getKey() {
-        return Integer.toString(getClass().hashCode());
+        return getClass().getName();
     }
 
     public abstract void decide();
