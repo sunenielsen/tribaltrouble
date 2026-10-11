@@ -19,7 +19,7 @@ public final class Compatibility {
      * methods of PlayerInterface or PeerHubInterface, whose sorted order numbers
      * the game events. Needs no server deploy and locks nobody out.
      */
-    public static final int SIM_VERSION = 1006;
+    public static final int SIM_VERSION = 2007;
 
     /** Sim version assumed for clients that predate sim version reporting. */
     public static final int SIM_LEGACY = 0;
