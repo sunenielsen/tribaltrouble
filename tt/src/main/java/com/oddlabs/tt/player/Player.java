@@ -18,6 +18,7 @@ import com.oddlabs.tt.model.RockSupply;
 import com.oddlabs.tt.model.RubberSupply;
 import com.oddlabs.tt.model.Selectable;
 import com.oddlabs.tt.model.Supply;
+import com.oddlabs.tt.model.Ship;
 import com.oddlabs.tt.model.SupplyContainer;
 import com.oddlabs.tt.model.Unit;
 import com.oddlabs.tt.model.behaviour.GatherController;
@@ -31,6 +32,7 @@ import org.jspecify.annotations.NonNull;
 import org.jspecify.annotations.Nullable;
 
 import java.util.Arrays;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Predicate;
@@ -533,6 +535,12 @@ public final class Player implements PlayerInterface {
     public void trainChieftain(@NonNull Building building, boolean start) {
         if (isValid(building))
             building.trainChieftain(start);
+    }
+
+    @Override
+    public void deployChieftainFromShip(@NonNull Building building) {
+        if (isValid(building) && building instanceof Ship ship)
+            ship.deployChieftain();
     }
 
     @Override

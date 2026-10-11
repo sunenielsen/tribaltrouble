@@ -47,6 +47,10 @@ public final class NoOpPlayerInterface implements PlayerInterface {
     }
 
     @Override
+    public void deployChieftainFromShip(@NonNull Building building) {
+    }
+
+    @Override
     public void placeBuilding(Selectable<?> @NonNull [] selection, int template_id, int placing_grid_x,
             int placing_grid_y) {
     }
