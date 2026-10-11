@@ -160,7 +160,13 @@ public final class RegionBuilder {
         if (grid_x < 0 || grid_y < 0 || grid_x >= grid_size || grid_y >= grid_size)
             return;
         Region neighbour_region = unit_grid.getRegion(grid_x, grid_y, UnitGrid.SEA);
-        Region.link(neighbour_region, region);
+        if (neighbour_region == null || neighbour_region == region || neighbour_region.isNeighbour(region))
+            return;
+        ShipTrajectoryPoint p0 = new ShipTrajectoryPoint(region.getGridX(), region.getGridY());
+        ShipTrajectoryPoint p1 = new ShipTrajectoryPoint(neighbour_region.getGridX(), neighbour_region.getGridY());
+        if (!ShipTrajectory.checkLandCollision(unit_grid, p0, p1)) {
+            Region.link(neighbour_region, region);
+        }
     }
 
     private static void updateRegionNeighboursWater(@NonNull UnitGrid unit_grid, int grid_x, int grid_y,
