@@ -11,7 +11,7 @@ plugins {
 
 allprojects {
     group = "com.oddlabs.tribaltrouble"
-    version = "2.0"
+    version = "2.1"
 }
 
 subprojects {
