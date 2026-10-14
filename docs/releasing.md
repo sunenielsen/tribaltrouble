@@ -82,7 +82,7 @@ Find the build matching the tag you promoted, change its branch from `prerelease
 
 ### 6. Stamp the changelog
 
-On `main`, rename `## [Unreleased]` in `CHANGELOG.md` to the promoted version and date, for example `## [2.0.14] - 2026-10-15`, add a matching link at the bottom of the file, and start an empty `## [Unreleased]` above it. Until this is done the next release would repeat the same notes.
+On `main`, rename `## [Unreleased]` in `CHANGELOG.md` to the promoted version and date, for example `## [2.1.1] - 2026-10-15`, add a matching link at the bottom of the file, and start an empty `## [Unreleased]` above it. Until this is done the next release would repeat the same notes.
 
 ## Rolling back
 

@@ -10,7 +10,7 @@ release notes are taken from the Unreleased section when a release is cut.
 
 ## [Unreleased]
 
-Everything since the original Oddlabs source was released on 2014-09-01.
+Everything since the original Oddlabs source was released on 2014-09-01. Builds before 2.1 were prereleases and are not listed separately.
 
 ### Added
 
