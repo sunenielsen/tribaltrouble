@@ -22,7 +22,6 @@ Everything since the original Oddlabs source was released on 2014-09-01.
 - Archipelago map type where everyone starts at sea, with an AI that attacks by ship and lands invasions.
 - Advanced game settings: max units, starting units, max buildings and a boats toggle.
 - Game presets that save and load your favorite setups, with a roster tab in the create game screen.
-- OpenSkill skill rating with a leaderboard and your own rank.
 - Word-based map codes.
 - Lobby countdown before the game starts and closable player slots.
 - Enormous islands.
@@ -44,8 +43,9 @@ Everything since the original Oddlabs source was released on 2014-09-01.
 - Engine: LWJGL 3, JOML, OpenGL 4.1 core profile with shaders, uniform buffers and hardware instancing.
 - Build: GitHub Actions builds for Windows, Linux AppImage and both Mac architectures, with Steam, itch.io, GitHub Releases and website publishing.
 - Build: Keep a Changelog file bundled into the game and used for GitHub release notes.
-- Server: ported database layer with migrations, Steam Web API stats, web spectator streaming and OpenSkill storage.
+- Server: ported database layer with migrations, Steam Web API stats, web spectator streaming.
 - Server: simulation version reported at login so mismatched clients are kept apart in the game list.
+- Server: OpenSkill skill rating is computed and stored after every game. The leaderboard stays hidden until it is ready for players.
 
 ### Changed
 
