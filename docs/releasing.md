@@ -26,7 +26,7 @@ Everything below assumes you're working from `main` with the changes ready to sh
 
 The release tag is `v<MAJOR>.<MINOR>.<PATCH>-<API>.<SIM>` (see [Versioning](#versioning)).
 
-- **Changelog**: make sure everything shipping is listed under `## [Unreleased]` in `CHANGELOG.md` (format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/)). The `github-release` job uses that section as the GitHub Release notes and the game shows it under Patch notes on the main menu. When the section is empty the job falls back to GitHub's generated notes.
+- **Changelog**: make sure everything shipping is listed under `## [Unreleased]` in `CHANGELOG.md` (format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/)). The `github-release` job uses that section as the GitHub Release notes and the game shows it under Patch notes in Options and opens it once after each update. When the section is empty the job falls back to GitHub's generated notes.
 - **New minor or major release** (e.g., `2.0` → `2.1`): edit `version = "..."` in the root `build.gradle.kts`. PATCH resets to `0` automatically.
 - **API/protocol change**: bump `API_VERSION` in `common/src/main/java/com/oddlabs/util/Compatibility.java`. The `api-guard` CI job will fail your build if you changed a wire-protocol interface without bumping this. If the interface change is wire compatible and doesn't warrant a bump, a maintainer can instead record that decision with an empty ack commit. (ARMI dispatches by index into the interface's methods sorted by name, so an added method is only compatible if its name sorts after every method ever shipped in that interface; anything else shifts old clients' indices and needs the bump.)
 

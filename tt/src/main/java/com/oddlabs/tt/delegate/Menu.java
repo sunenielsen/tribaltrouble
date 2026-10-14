@@ -6,7 +6,6 @@ import com.oddlabs.net.NetworkSelector;
 import com.oddlabs.tt.camera.Camera;
 import com.oddlabs.tt.form.ConnectingForm;
 import com.oddlabs.tt.form.OptionsMenu;
-import com.oddlabs.tt.form.PatchNotesForm;
 import com.oddlabs.tt.form.QuitForm;
 import com.oddlabs.tt.form.SelectGameMenu;
 import com.oddlabs.tt.gui.FocusDirection;
@@ -130,12 +129,6 @@ public abstract class Menu extends CameraDelegate<Camera> {
         MenuButton options = new MenuButton(i18n("options"), COLOR_NORMAL, COLOR_ACTIVE);
         options.addMouseClickListener((_, _, _, _) -> setMenuCentered(factory.create()));
         addChild(options);
-    }
-
-    final void addPatchNotesButton() {
-        MenuButton patch_notes = new MenuButton(i18n("patch_notes"), COLOR_NORMAL, COLOR_ACTIVE);
-        patch_notes.addMouseClickListener((_, _, _, _) -> setMenuCentered(new PatchNotesForm()));
-        addChild(patch_notes);
     }
 
     final void addExitButton() {
