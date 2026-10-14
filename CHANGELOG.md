@@ -4,6 +4,7 @@ All notable changes to Tribal Trouble: Resurrected are documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project uses the versioning described in [docs/releasing.md](docs/releasing.md).
+Entries are written in English only and are not translated.
 Write entries for players first and put engine, build and server work last.
 The game shows this file under Patch notes in Options and opens it once after
 an update. GitHub release notes are taken from the Unreleased section when a
