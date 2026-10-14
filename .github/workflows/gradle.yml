@@ -450,9 +450,18 @@ jobs:
           git tag -a "$TAG" -m "Release $TAG"
           git push origin "$TAG"
 
+          # Release notes come from the Unreleased section of CHANGELOG.md; fall back to generated notes when it is empty.
+          NOTES_FILE="$RUNNER_TEMP/release-notes.md"
+          awk '/^## \[Unreleased\]/ { found = 1; next } /^## \[/ || /^\[[^]]+\]: / { found = 0 } found' CHANGELOG.md > "$NOTES_FILE"
+          if grep -q '[^[:space:]]' "$NOTES_FILE"; then
+            NOTES=(--notes-file "$NOTES_FILE")
+          else
+            NOTES=(--generate-notes)
+          fi
+
           gh release create "$TAG" \
             --title "$TAG" \
-            --generate-notes \
+            "${NOTES[@]}" \
             --target "${{ github.ref_name }}" \
             --prerelease \
             dist/*

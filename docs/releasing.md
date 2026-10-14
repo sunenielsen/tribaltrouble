@@ -15,17 +15,18 @@ Splitting the two lets you sit on a prerelease for as long as you want (a day, a
 |---|---|---|
 | **Steam** | Build uploaded to `prerelease` branch | _Manual via partner dashboard_ (moves it to `default`) |
 | **itch.io** | `windows-prerelease`, `linux-prerelease`, `osx-arm64-prerelease`, `osx-x86-prerelease` channels | `windows`, `linux`, `osx-arm64`, `osx-x86` channels |
-| **GitHub Releases** | New release tagged `v<VER>`, marked `--prerelease` | `--prerelease=false`, `--latest` set |
+| **GitHub Releases** | New release tagged `v<VER>`, marked `--prerelease`, notes from the `[Unreleased]` section of `CHANGELOG.md` | `--prerelease=false`, `--latest` set |
 | **tribaltrouble.org** | `/prerelease/{windows,linux,mac-arm64,mac-x86}.zip` | `/{windows,linux,mac-arm64,mac-x86}.zip` (the homepage URLs) |
 
 ## Cutting a release
 
 Everything below assumes you're working from `main` with the changes ready to ship.
 
-### 1. Bump version metadata if needed
+### 1. Update the changelog and version metadata
 
 The release tag is `v<MAJOR>.<MINOR>.<PATCH>-<API>.<SIM>` (see [Versioning](#versioning)).
 
+- **Changelog**: make sure everything shipping is listed under `## [Unreleased]` in `CHANGELOG.md` (format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/)). The `github-release` job uses that section as the GitHub Release notes and the game shows it under Patch notes on the main menu. When the section is empty the job falls back to GitHub's generated notes.
 - **New minor or major release** (e.g., `2.0` → `2.1`): edit `version = "..."` in the root `build.gradle.kts`. PATCH resets to `0` automatically.
 - **API/protocol change**: bump `API_VERSION` in `common/src/main/java/com/oddlabs/util/Compatibility.java`. The `api-guard` CI job will fail your build if you changed a wire-protocol interface without bumping this. If the interface change is wire compatible and doesn't warrant a bump, a maintainer can instead record that decision with an empty ack commit. (ARMI dispatches by index into the interface's methods sorted by name, so an added method is only compatible if its name sorts after every method ever shipped in that interface; anything else shifts old clients' indices and needs the bump.)
 
@@ -78,6 +79,10 @@ CI can push to Steam but **cannot** move a build to the `default` branch (Valve 
 - **Demo**: <https://partner.steamgames.com/apps/builds/3945722>
 
 Find the build matching the tag you promoted, change its branch from `prerelease` to `default`, and save. Players on the default branch will get the update on next launch.
+
+### 6. Stamp the changelog
+
+On `main`, rename `## [Unreleased]` in `CHANGELOG.md` to the promoted version and date, for example `## [2.0.14] - 2026-10-15`, add a matching link at the bottom of the file, and start an empty `## [Unreleased]` above it. Until this is done the next release would repeat the same notes.
 
 ## Rolling back
 
