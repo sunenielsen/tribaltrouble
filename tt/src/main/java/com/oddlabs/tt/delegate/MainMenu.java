@@ -65,6 +65,8 @@ public final class MainMenu extends Menu {
 
         addDefaultOptionsButton();
 
+        addPatchNotesButton();
+
         addExitButton();
 
         if (Network.getMatchmakingClient().isConnected()) {
