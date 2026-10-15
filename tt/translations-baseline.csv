@@ -347,7 +347,7 @@ form/OptionsMenu,gamespeed,Game speed:,Hastighed:,Spielgeschwindigkeit:,Velocida
 form/OptionsMenu,report_bug,Report bug,Rapporter fejl,Fehler melden,Informe de Error,Rapporto di errore,Reportar bug,Zgłoś błąd
 form/OptionsMenu,close,Close,Luk,Schließen,Cerrar,Chiudi,Fechar,Zamknij
 form/OptionsMenu,about,About...,Om...,Info ...,Acerca de...,Informazioni...,Sobre...,O nas...
-form/OptionsMenu,patch_notes,Patch notes...,,,,,,
+form/OptionsMenu,patch_notes,Patch notes...,Programrettelsesnoter...,Patchnotes...,Notas del parche...,Note sulla patch...,Notas de atualização...,Informacje o poprawkach...
 form/OptionsMenu,change_next_run,The graphic detail change will take effect the next time you start the game.,Den grafiske detaljegrad vil blive indstillet næste gang du starter spillet.,Die Änderungen der Grafikdetails werden beim nächsten Starten des Spiels wirksam.,Los cambios en el detalle gráfico se aplicarán la próxima vez que entres en el juego.,Il cambio dettaglio grafico avrà effetto al prossimo avvio del gioco.,A mudança no detalhe gráfico vai ter efeito na próxima vez que você iniciar o jogo.,Zmiana ustawień graficznych zacznie obowiązywać przy następnym uruchomieniu gry.
 form/OptionsMenu,language_caption,Language,Sprog,Sprache,Idioma,Lingua,Língua,Język
 form/OptionsMenu,language_label,Language,Sprog,Sprache,Idioma,Lingua,Língua,Język
@@ -540,8 +540,8 @@ form/OptionsMenu,category.magic,Magic,Magi,Magie,Magia,Magia,Magia,Czary
 form/OptionsMenu,category.game,Game,Spil,Spiel,Juego,Gioco,Jogo,Gra
 form/OptionsMenu,category.cheats,Cheats,Snydekoder,Cheats,Trucos,Trucchi,Trapaça,Kody
 form/OptionsMenu,category.debug,Debug,Fejlfinding,Debuggen,Depurar,Debug,Depurar,Debugowanie
-form/PatchNotesForm,patch_notes,Patch notes,,,,,,
-form/PatchNotesForm,unavailable,Patch notes are not included in this build.,,,,,,
+form/PatchNotesForm,patch_notes,Patch notes,Programrettelsesnoter,Patch-Hinweise,Notas del parche,Patch Masters,Notas de atualização,Informacje o poprawkach
+form/PatchNotesForm,unavailable,Patch notes are not included in this build.,Patchnoter er ikke inkluderet i denne build.,Die Patchnotes sind in diesem Build nicht enthalten.,Las notas de la actualización no están incluidas en esta versión.,Le note sulla patch non sono incluse in questa build.,As notas de atualização não estão incluídas nesta versão.,Informacje o poprawkach nie są zawarte w tej wersji.
 form/PrivateMessageForm,private_message_caption,Private message,Privat besked,Private Nachricht,Mensaje privado,Messaggio privato,Mensagem privada,Prywatna wiadomość
 form/PrivateMessageForm,to,To {0}:,Til {0}:,an {0}:,Para {0}:,A {0}:,Para {0}:,Do {0}:
 form/ProfilesForm,profiles_caption,Profiles,Profiler,Profile,Perfiles,Profili,Perfis,Profile
