@@ -12,6 +12,8 @@ release is cut.
 
 ## [Unreleased]
 
+## [2.1.96] - 2026-10-15
+
 Everything since the original Oddlabs source was released on 2014-09-01. Builds before 2.1 were prereleases and are not listed separately.
 
 ### Added
@@ -79,4 +81,5 @@ Everything since the original Oddlabs source was released on 2014-09-01. Builds 
 - The server guards against malformed client data.
 - Steam auth tickets are validated through the Steam Web API.
 
-[Unreleased]: https://github.com/Tribal-Trouble/tribaltrouble/commits/main
+[Unreleased]: https://github.com/Tribal-Trouble/tribaltrouble/compare/v2.1.96-103.1009...main
+[2.1.96]: https://github.com/Tribal-Trouble/tribaltrouble/releases/tag/v2.1.96-103.1009
