@@ -72,6 +72,7 @@ val generateBuildInfo by tasks.registering {
             package com.oddlabs.util;
 
             public final class BuildInfo {
+                public static final String BASE_VERSION = "$baseVersion";
                 public static final String VERSION = "$effectiveVersion";
                 public static final String FULL_VERSION = "v" + VERSION + "-" + Compatibility.API_VERSION + "." + Compatibility.SIM_VERSION;
                 private BuildInfo() {}

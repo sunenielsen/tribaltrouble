@@ -7,7 +7,7 @@ and this project uses the versioning described in [docs/releasing.md](docs/relea
 Entries are written in English only and are not translated.
 Write entries for players first and put engine, build and server work last.
 The game shows this file under Patch notes in Options and opens it once after
-an update. GitHub release notes are taken from the Unreleased section when a
+a new major or minor version. GitHub release notes are taken from the Unreleased section when a
 release is cut.
 
 ## [Unreleased]
@@ -39,7 +39,7 @@ Everything since the original Oddlabs source was released on 2014-09-01. Builds 
 - OpenAL effects, forest reverb and a headphone mode using HRTF, with a classic audio toggle.
 - Brazilian Portuguese translation. Translations are maintained in a shared sheet by community translators.
 - Contributors tab in the credits, GPL notice in the About tab, and Discord and GitHub buttons on the main menu.
-- Patch notes window in Options that shows this changelog and opens once after each update.
+- Patch notes window in Options that shows this changelog and opens once after each new major or minor version.
 - Banned word filter on player names and chat, with Discord moderation commands.
 - Discord bot that bridges lobby chat, posts game embeds and answers /matches, /profile and /streaks.
 - Engine: LWJGL 3, JOML, OpenGL 4.1 core profile with shaders, uniform buffers and hardware instancing.
