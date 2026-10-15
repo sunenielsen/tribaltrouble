@@ -15,6 +15,7 @@ import com.oddlabs.tt.camera.MenuCamera;
 import com.oddlabs.tt.delegate.MainMenu;
 import com.oddlabs.tt.event.LocalEventQueue;
 import com.oddlabs.tt.form.MessageForm;
+import com.oddlabs.tt.form.PatchNotesForm;
 import com.oddlabs.tt.form.ProgressForm;
 import com.oddlabs.tt.form.WarningForm;
 import com.oddlabs.tt.global.Globals;
@@ -734,6 +735,11 @@ public final class Renderer implements AutoCloseable {
         Renderer.getRenderer().setMusicPath("/music/menu.ogg", 0f);
         MainMenu main_menu = new MainMenu(network, gui_root, new MenuCamera(world, manager));
         gui_root.pushDelegate(main_menu);
+        if (first_progress && !BuildInfo.BASE_VERSION.equals(Settings.getSettings().patch_notes_seen_version)) {
+            Settings.getSettings().patch_notes_seen_version = BuildInfo.BASE_VERSION;
+            Settings.getSettings().save();
+            gui_root.addModalForm(new PatchNotesForm());
+        }
         if (first_progress && Settings.getSettings().warning_no_sound && !Renderer.getLocalInput().audioIsCreated()) {
             ResourceBundle bundle = ResourceBundle.getBundle(Renderer.class.getName());
             gui_root.addModalForm(new WarningForm(i18n("sound_not_available_caption"), i18n(

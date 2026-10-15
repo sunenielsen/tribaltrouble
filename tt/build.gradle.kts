@@ -63,6 +63,7 @@ val revision = tasks.register("revision") {
 
 tasks.processResources {
     inputs.files(revision)
+    from(rootProject.file("CHANGELOG.md")) { into("com/oddlabs/tt/form") }
 }
 
 tasks.run.configure {
