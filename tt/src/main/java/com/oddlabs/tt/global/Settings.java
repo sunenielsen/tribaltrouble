@@ -4,6 +4,7 @@ import com.oddlabs.matchmaking.Game;
 import com.oddlabs.matchmaking.MatchmakingServerInterface;
 import com.oddlabs.tt.event.LocalEventQueue;
 import com.oddlabs.tt.render.Renderer;
+import com.oddlabs.util.BuildInfo;
 import com.oddlabs.util.Color;
 import org.joml.Vector4f;
 import org.joml.Vector4fc;
@@ -33,6 +34,7 @@ public final class Settings implements Serializable {
 
     // event logging
     private static final Logger logger = Logger.getLogger(Settings.class.getName());
+    private static final String PATCH_NOTES_SEEN_KEY = "patch_notes_seen_" + BuildInfo.BASE_VERSION;
     public transient @NonNull Path last_event_log_dir = Path.of("");
     public int last_revision = -1;
     public boolean crashed = false;
@@ -97,7 +99,7 @@ public final class Settings implements Serializable {
     public boolean first_run = true;
 
     public boolean warning_no_sound = true;
-    public String patch_notes_seen = "";
+    public boolean patch_notes_seen = false;
 
     public boolean hide_multiplayer = false;
 
@@ -248,7 +250,7 @@ public final class Settings implements Serializable {
         setProperty(props, "ui_scale", ui_scale, defaults.ui_scale);
         setProperty(props, "first_run", first_run, defaults.first_run);
         setProperty(props, "warning_no_sound", warning_no_sound, defaults.warning_no_sound);
-        setProperty(props, "patch_notes_seen", patch_notes_seen, defaults.patch_notes_seen);
+        setProperty(props, PATCH_NOTES_SEEN_KEY, patch_notes_seen, defaults.patch_notes_seen);
         setProperty(props, "domain_name", domain_name, defaults.domain_name);
 
         setProperty(props, "cvd_mode", cvd_mode, defaults.cvd_mode);
@@ -321,7 +323,7 @@ public final class Settings implements Serializable {
         ui_scale = getFloat(props, "ui_scale", ui_scale);
         first_run = getBoolean(props, "first_run", first_run);
         warning_no_sound = getBoolean(props, "warning_no_sound", warning_no_sound);
-        patch_notes_seen = props.getProperty("patch_notes_seen", patch_notes_seen);
+        patch_notes_seen = getBoolean(props, PATCH_NOTES_SEEN_KEY, patch_notes_seen);
         domain_name = props.getProperty("domain_name", domain_name);
 
         cvd_mode = getInt(props, "cvd_mode", cvd_mode);
