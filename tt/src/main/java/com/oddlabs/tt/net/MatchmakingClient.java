@@ -8,6 +8,7 @@ import com.oddlabs.matchmaking.MatchmakingServerInterface;
 import com.oddlabs.matchmaking.MatchmakingServerLoginInterface;
 import com.oddlabs.matchmaking.Profile;
 import com.oddlabs.matchmaking.TunnelAddress;
+import com.oddlabs.event.Deterministic;
 import com.oddlabs.net.ARMIEvent;
 import com.oddlabs.net.ARMIInterfaceMethods;
 import com.oddlabs.net.AbstractConnection;
@@ -17,6 +18,7 @@ import com.oddlabs.net.HostSequenceID;
 import com.oddlabs.net.IllegalARMIEventException;
 import com.oddlabs.net.NetworkSelector;
 import com.oddlabs.net.SecureConnection;
+import com.oddlabs.tt.event.LocalEventQueue;
 import com.oddlabs.tt.form.ChatErrorForm;
 import com.oddlabs.tt.global.Settings;
 import com.oddlabs.tt.form.InfoForm;
@@ -515,23 +517,28 @@ public final class MatchmakingClient implements MatchmakingClientInterface, Conn
         matchmaking_login_interface.setSimVersion(com.oddlabs.util.Compatibility.SIM_VERSION);
 
         if (steamLogin) {
+            Deterministic deterministic = LocalEventQueue.getQueue().getDeterministic();
             SteamManager steam = SteamManager.getInstance();
-            if (steam == null) {
+            if (!SteamManager.isAvailable()) {
                 loginError(MatchmakingClientInterface.USER_ERROR_NO_SUCH_USER);
                 return;
             }
-            if (!steam.awaitWebApiTicket(3000)) {
+            if (!deterministic.log(steam != null && steam.awaitWebApiTicket(3000))) {
                 handleError(new IOException("Steam Web API ticket not ready — Steam may not be running properly"));
                 return;
             }
-            long accountId = steam.getAccountID();
-            String personaName = steam.getPersonaName();
-            byte[] authTicket = steam.getWebApiTicket();
-            if (authTicket == null) {
+            long accountId = deterministic.log(steam != null ? steam.getAccountID() : 0L);
+            String personaName = deterministic.log(steam != null ? steam.getPersonaName() : null);
+            int appId = deterministic.log(steam != null ? steam.getAppID() : 0);
+            byte[] authTicket = steam != null ? steam.getWebApiTicket() : null;
+            if (!deterministic.log(authTicket != null)) {
                 handleError(new IOException("Steam Web API ticket was null after awaiting"));
                 return;
             }
-            matchmaking_login_interface.loginWithSteam(accountId, personaName, authTicket, steam.getAppID(), revision);
+            int ticketLength = deterministic.log(authTicket != null ? authTicket.length : 0);
+            if (authTicket == null)
+                authTicket = new byte[ticketLength];
+            matchmaking_login_interface.loginWithSteam(accountId, personaName, authTicket, appId, revision);
         } else if (!Renderer.isRegistered()) {
             matchmaking_login_interface.loginAsGuest(revision);
         } else if (login_details != null) {

@@ -102,6 +102,9 @@ public final class Renderer implements AutoCloseable {
 
     private final LocalInput localInput = new LocalInput(window);
 
+    private int display_width = -1;
+    private int display_height = -1;
+
     private @Nullable Cheat cheat = new Cheat();
 
     public static float getFPS() {
@@ -130,6 +133,41 @@ public final class Renderer implements AutoCloseable {
 
     public @NonNull Window getWindow() {
         return window;
+    }
+
+    public int getDisplayWidth() {
+        return display_width;
+    }
+
+    public int getDisplayHeight() {
+        return display_height;
+    }
+
+    public void syncDisplaySize(@Nullable GUI gui) {
+        Deterministic deterministic = LocalEventQueue.getQueue().getDeterministic();
+        int width = window.getWidth();
+        int height = window.getHeight();
+        boolean changed = width > 0 && height > 0 && (width != display_width || height != display_height);
+        if (!deterministic.log(changed))
+            return;
+        display_width = deterministic.log(width);
+        display_height = deterministic.log(height);
+        if (deterministic.isPlayback())
+            matchWindowToDisplaySize();
+        if (gui != null)
+            gui.getGUIRoot().displayChanged(display_width, display_height);
+    }
+
+    private void matchWindowToDisplaySize() {
+        if (window.getWidth() == display_width && window.getHeight() == display_height)
+            return;
+        float scale_x = (float) window.getWidth() / Math.max(1, window.getLogicalWidth());
+        float scale_y = (float) window.getHeight() / Math.max(1, window.getLogicalHeight());
+        int logical_width = Math.round(display_width / scale_x);
+        int logical_height = Math.round(display_height / scale_y);
+        logger.info("Resizing replay window to the recorded " + display_width + "x" + display_height);
+        window.restore();
+        window.create(new SerializableDisplayMode(logical_width, logical_height, 32, 60), false);
     }
 
     public static @NonNull Renderer getRenderer() {
@@ -495,7 +533,7 @@ public final class Renderer implements AutoCloseable {
         GamePaths paths = setupPaths();
         Path game_dir = paths.dataDir();
         logger.info("********** Running tt **********");
-        logger.info("version: " + BuildInfo.FULL_VERSION);
+        logger.info("version: " + BuildInfo.DESCRIPTION);
         logger.info("game dir: " + game_dir);
         logger.info("logs dir: " + paths.logDir());
         boolean eventload = false;
@@ -537,6 +575,7 @@ public final class Renderer implements AutoCloseable {
             // Only use when anal debugging
 //			ChecksumLogger.initLogging();
             LocalEventQueue.getQueue().loadEvents(last_event_log_path, zipped);
+            SteamManager.detach();
         }
 
         Path event_logs_dir = paths.logDir();
@@ -546,6 +585,13 @@ public final class Renderer implements AutoCloseable {
             LocalEventQueue.getQueue().setEventsLogged(event_log_dir.resolve(com.oddlabs.util.Utils.EVENT_LOG));
         }
         Deterministic deterministic = LocalEventQueue.getQueue().getDeterministic();
+        String recorded_build = deterministic.log(BuildInfo.DESCRIPTION);
+        if (deterministic.isPlayback()) {
+            logger.info("Event log recorded with " + recorded_build);
+            if (!recorded_build.equals(BuildInfo.DESCRIPTION) || BuildInfo.GIT_DIRTY)
+                logger.warning(
+                        "Replaying with " + BuildInfo.DESCRIPTION + "; the replay may diverge unless the code matches the recording");
+        }
         game_dir = deterministic.log(game_dir);
         event_log_dir = deterministic.log(event_log_dir);
         settings = deterministic.log(settings);
@@ -570,6 +616,7 @@ public final class Renderer implements AutoCloseable {
             // Let it propagate
             throw new IllegalStateException("Failed initializing natives", e);
         }
+        syncDisplaySize(null);
 
         if (!settings.inDeveloperMode() && !deterministic.isPlayback())
             deleteOldLogs(last_event_log_dir.toFile(), event_log_dir.toFile(), event_logs_dir.toFile());
@@ -621,7 +668,9 @@ public final class Renderer implements AutoCloseable {
                         Settings.getSettings().view_height = window.getLogicalHeight();
                         GL11.glViewport(0, 0, width, height);
                         initGL();
-                        gui.getGUIRoot().displayChanged(width, height);
+                        if (deterministic.isPlayback() && (width != display_width || height != display_height))
+                            logger.warning(
+                                    "Replay window is " + width + "x" + height + " but the recording was " + display_width + "x" + display_height + "; output is scaled to fit");
                     }
                     display(gui);
                     if (first_frame) {
@@ -684,7 +733,7 @@ public final class Renderer implements AutoCloseable {
                 consoleHandler.setFormatter(new SimpleFormatter());
                 rootLogger.addHandler(consoleHandler);
             }
-            logger.info("version: " + BuildInfo.FULL_VERSION);
+            logger.info("version: " + BuildInfo.DESCRIPTION);
         } catch (IOException e) {
             logger.log(Level.WARNING, "Failed to setup file logging", e);
         }

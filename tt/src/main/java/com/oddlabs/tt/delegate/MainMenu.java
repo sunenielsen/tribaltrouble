@@ -48,7 +48,7 @@ public final class MainMenu extends Menu {
                     new SelectGameMenu(getNetwork(), getGUIRoot(), MainMenu.this);
                 } else {
                     Network.getMatchmakingClient().close();
-                    if (Settings.getSettings().isOfficialServer() && SteamManager.getInstance() != null) {
+                    if (Settings.getSettings().isOfficialServer() && SteamManager.isAvailable()) {
                         new MatchmakingConnectingForm(getNetwork(), getGUIRoot(), null, MainMenu.this, true);
                     } else {
                         new LoginForm(getNetwork(), getGUIRoot(), MainMenu.this);

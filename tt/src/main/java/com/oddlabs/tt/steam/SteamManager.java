@@ -15,6 +15,7 @@ import com.codedisaster.steamworks.SteamUserStats;
 import com.codedisaster.steamworks.SteamUserStatsCallback;
 import com.codedisaster.steamworks.SteamUtils;
 import com.codedisaster.steamworks.SteamUtilsCallback;
+import com.oddlabs.tt.event.LocalEventQueue;
 import org.jspecify.annotations.Nullable;
 
 import java.time.Duration;
@@ -49,6 +50,10 @@ public final class SteamManager implements SteamUserCallback, SteamFriendsCallba
 
     public static @Nullable SteamManager getInstance() {
         return instance;
+    }
+
+    public static boolean isAvailable() {
+        return LocalEventQueue.getQueue().getDeterministic().log(instance != null);
     }
 
     public static boolean init() {
@@ -124,7 +129,7 @@ public final class SteamManager implements SteamUserCallback, SteamFriendsCallba
         }
     }
 
-    public static void shutdown() {
+    public static void detach() {
         if (instance != null) {
             instance.cancelAuthTicket();
             instance.steamUserStats.dispose();
@@ -133,6 +138,10 @@ public final class SteamManager implements SteamUserCallback, SteamFriendsCallba
             instance.steamUtils.dispose();
             instance = null;
         }
+    }
+
+    public static void shutdown() {
+        detach();
         SteamAPI.shutdown();
     }
 

@@ -164,6 +164,7 @@ public final class AnimationManager {
             while (execution_time >= ANIMATION_MILLISECONDS_PER_TICK && !Renderer.isFinished()) {
                 network.tick();
 
+                Renderer.getRenderer().syncDisplaySize(gui);
                 Renderer.getLocalInput().poll(gui.getGUIRoot());
                 if (deterministic.log(Renderer.getRenderer().getWindow().isOpen()
                         && Renderer.getRenderer().getWindow().isCloseRequested())) {

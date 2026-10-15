@@ -577,8 +577,8 @@ public final class Picker implements Updatable<TimerAnimation> {
     private void setupPicking(@NonNull CameraState camera, float x_center, float y_center, int width, int height) {
         proj.identity();
         viewport.clear();
-        var window = Renderer.getRenderer().getWindow();
-        viewport.put(0).put(0).put(window.getWidth()).put(window.getHeight());
+        var renderer = Renderer.getRenderer();
+        viewport.put(0).put(0).put(renderer.getDisplayWidth()).put(renderer.getDisplayHeight());
         viewport.flip();
 
         if (width > 0 && height > 0) {

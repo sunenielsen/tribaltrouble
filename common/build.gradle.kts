@@ -32,37 +32,30 @@ val generateBuildInfo by tasks.registering {
     outputs.upToDateWhen { false }  // git history changes between commits; always recompute
 
     doLast {
+        fun git(vararg args: String): String {
+            val process = ProcessBuilder("git", *args)
+                .directory(gitDir)
+                .redirectErrorStream(true)
+                .start()
+            val output = process.inputStream.bufferedReader().readText().trim()
+            check(process.waitFor() == 0) { "git ${args.joinToString(" ")} failed: $output" }
+            return output
+        }
+
         // Regex avoids passing literal " chars through ProcessBuilder (Windows quoting issue).
         // `.` matches the surrounding quote chars in: version = "2.0"
         val versionPattern = "version = ." + baseVersion.replace(".", "\\.") + "."
         val patch = runCatching {
-            val anchor = ProcessBuilder(
-                "git", "log", "--format=%H",
-                "-G", versionPattern,
-                "--", "build.gradle.kts"
-            )
-                .directory(gitDir)
-                .redirectErrorStream(true)
-                .start()
-                .inputStream.bufferedReader()
-                .readText()
-                .trim()
+            val anchor = git("log", "--format=%H", "-G", versionPattern, "--", "build.gradle.kts")
                 .lineSequence()
                 .firstOrNull()
                 .orEmpty()
-            if (anchor.isEmpty()) {
-                "0"
-            } else {
-                ProcessBuilder("git", "rev-list", "--count", "$anchor..HEAD")
-                    .directory(gitDir)
-                    .redirectErrorStream(true)
-                    .start()
-                    .inputStream.bufferedReader()
-                    .readText()
-                    .trim()
-                    .ifEmpty { "0" }
-            }
+            if (anchor.isEmpty()) "0" else git("rev-list", "--count", "$anchor..HEAD").ifEmpty { "0" }
         }.getOrDefault("0")
+
+        val commit = runCatching { git("rev-parse", "--short=12", "HEAD") }.getOrDefault("unknown")
+        val dirty = runCatching { git("status", "--porcelain", "--untracked-files=no").isNotEmpty() }
+            .getOrDefault(false)
 
         val effectiveVersion = "$baseVersion.$patch"
         val packageDir = outputDir.get().asFile.resolve("com/oddlabs/util")
@@ -75,6 +68,9 @@ val generateBuildInfo by tasks.registering {
                 public static final String BASE_VERSION = "$baseVersion";
                 public static final String VERSION = "$effectiveVersion";
                 public static final String FULL_VERSION = "v" + VERSION + "-" + Compatibility.API_VERSION + "." + Compatibility.SIM_VERSION;
+                public static final String GIT_COMMIT = "$commit";
+                public static final boolean GIT_DIRTY = $dirty;
+                public static final String DESCRIPTION = FULL_VERSION + " (" + GIT_COMMIT + (GIT_DIRTY ? "-dirty" : "") + ")";
                 private BuildInfo() {}
             }
 

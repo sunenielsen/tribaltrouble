@@ -97,8 +97,8 @@ public class GraphicsPanel extends Panel {
             updateScaleLabel();
         });
 
-        slider_ui_scale.addReleaseListener(() -> gui_root.displayChanged(Renderer.getRenderer().getWindow().getWidth(),
-                Renderer.getRenderer().getWindow().getHeight())
+        slider_ui_scale.addReleaseListener(() -> gui_root.displayChanged(Renderer.getRenderer().getDisplayWidth(),
+                Renderer.getRenderer().getDisplayHeight())
         );
 
         label_ui_scale.place();
@@ -198,8 +198,8 @@ public class GraphicsPanel extends Panel {
     }
 
     public void updateScaleLabel() {
-        int w = Renderer.getRenderer().getWindow().getWidth();
-        int h = Renderer.getRenderer().getWindow().getHeight();
+        int w = Renderer.getRenderer().getDisplayWidth();
+        int h = Renderer.getRenderer().getDisplayHeight();
 
         float scale = GUIRoot.calculateEffectiveScale(w, h);
         label_pct.setText(String.format("%d%%", (int) (scale * 100)));

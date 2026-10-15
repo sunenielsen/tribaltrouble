@@ -5,6 +5,7 @@ import com.oddlabs.tt.audio.AudioFile;
 import com.oddlabs.tt.audio.AudioManager;
 import com.oddlabs.tt.audio.AudioParameters;
 import com.oddlabs.tt.audio.AudioPlayer;
+import com.oddlabs.tt.event.LocalEventQueue;
 import com.oddlabs.tt.font.Index;
 import com.oddlabs.tt.font.TextLineRenderer;
 import com.oddlabs.tt.guievent.EnterListener;
@@ -492,7 +493,7 @@ public class EditLine extends TextField implements Clipped {
     }
 
     private void copyToClipboard() {
-        if (!hasSelection()) return;
+        if (!hasSelection() || LocalEventQueue.getQueue().getDeterministic().isPlayback()) return;
         try {
             String selectedText = getContents().substring(
                     Math.min(selectionStart, selectionEnd),
@@ -505,26 +506,32 @@ public class EditLine extends TextField implements Clipped {
     }
 
     private void pasteFromClipboard() {
+        String text = LocalEventQueue.getQueue().getDeterministic().log(readClipboard());
+        if (text == null || text.isEmpty()) return;
+
+        for (char c : text.toCharArray()) {
+            if (!isAllowed(c)) return;
+        }
+
+        deleteSelection();
+
+        String contents = getContents();
+        int insertPos = index;
+        String newContent = contents.substring(0, insertPos) + text + contents.substring(insertPos);
+        if (max_chars != -1 && newContent.length() > max_chars) return;
+        set(newContent);
+        index = Math.min(insertPos + text.length(), newContent.length());
+        correctOffsetX();
+    }
+
+    private static @Nullable String readClipboard() {
+        if (LocalEventQueue.getQueue().getDeterministic().isPlayback()) return null;
         try {
             Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
-            String text = (String) clipboard.getData(DataFlavor.stringFlavor);
-            if (text == null || text.isEmpty()) return;
-
-            for (char c : text.toCharArray()) {
-                if (!isAllowed(c)) return;
-            }
-
-            deleteSelection();
-
-            String contents = getContents();
-            int insertPos = index;
-            String newContent = contents.substring(0, insertPos) + text + contents.substring(insertPos);
-            if (max_chars != -1 && newContent.length() > max_chars) return;
-            set(newContent);
-            index = Math.min(insertPos + text.length(), newContent.length());
-            correctOffsetX();
+            return (String) clipboard.getData(DataFlavor.stringFlavor);
         } catch (Exception e) {
             System.err.println("Error accessing clipboard: " + e.getMessage());
+            return null;
         }
     }
 
