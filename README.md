@@ -170,7 +170,7 @@ For the full step-by-step, versioning logic, required secrets, and rollback proc
 
 `CHANGELOG.md` follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). When a PR changes something a player or server operator would notice, add a line under `## [Unreleased]` in the matching section: `Added`, `Changed`, `Deprecated`, `Removed`, `Fixed` or `Security`. Write it for players, and put engine, build and server items last with an `Engine:`, `Build:` or `Server:` prefix.
 
-The game bundles the file and shows it under **Patch notes...** in Options, opening it once after each new major or minor version, and the release workflow uses the `[Unreleased]` section as the GitHub Release notes. After a release is promoted the section is renamed to that version and date; see [docs/releasing.md](./docs/releasing.md).
+The game bundles the file and shows it under **Patch notes...** in Options, opening it once after each new major or minor version, and the release workflow uses the `[Unreleased]` section as the GitHub Release notes. After each release CI opens a PR that renames the section to that version and date; see [docs/releasing.md](./docs/releasing.md).
 
 ## 🤝 Contributing
 

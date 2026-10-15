@@ -466,6 +466,53 @@ jobs:
             --prerelease \
             dist/*
 
+  changelog-cut:
+    if: (github.event_name == 'push' && github.ref == 'refs/heads/release') || github.event_name == 'workflow_dispatch'
+    needs: [ version, github-prerelease ]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Open a PR that stamps the Unreleased section with the released version
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ needs.version.outputs.full }}
+          REPO_URL: ${{ github.server_url }}/${{ github.repository }}
+        run: |
+          VERSION="${TAG#v}"
+          VERSION="${VERSION%%-*}"
+          DATE="$(date -u +%Y-%m-%d)"
+          BRANCH="changelog-cut-$VERSION"
+          export VERSION DATE
+
+          if ! awk '/^## \[Unreleased\]/ { found = 1; next } /^## \[/ || /^\[[^]]+\]: / { found = 0 } found' CHANGELOG.md | grep -q '[^[:space:]]'; then
+            echo "Unreleased section is empty; nothing to cut"
+            exit 0
+          fi
+          if [ "$(gh pr list --head "$BRANCH" --state open --json number --jq length)" != "0" ]; then
+            echo "PR for $BRANCH already open"
+            exit 0
+          fi
+
+          # Stamp the section and start an empty Unreleased above it; point the links at the new tag.
+          perl -0pi -e 's/^## \[Unreleased\]\r?\n/## [Unreleased]\n\n## [$ENV{VERSION}] - $ENV{DATE}\n/m' CHANGELOG.md
+          perl -0pi -e 's{^\[Unreleased\]: [^\r\n]*}{[Unreleased]: $ENV{REPO_URL}/compare/$ENV{TAG}...main\n[$ENV{VERSION}]: $ENV{REPO_URL}/releases/tag/$ENV{TAG}}m' CHANGELOG.md
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$BRANCH"
+          git commit -am "Cut changelog for $TAG"
+          git push origin "$BRANCH"
+          gh pr create --base main --head "$BRANCH" \
+            --title "Cut changelog for $TAG" \
+            --body "Renames the Unreleased section of CHANGELOG.md to $VERSION ($DATE) now that $TAG is published, and starts an empty Unreleased section for the next release."
+
   website-prerelease:
     if: github.ref == 'refs/heads/release' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
     needs: [ version, build-windows, build-linux, build-mac-arm64, build-mac-x86 ]

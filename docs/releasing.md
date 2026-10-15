@@ -80,9 +80,9 @@ CI can push to Steam but **cannot** move a build to the `default` branch (Valve 
 
 Find the build matching the tag you promoted, change its branch from `prerelease` to `default`, and save. Players on the default branch will get the update on next launch.
 
-### 6. Stamp the changelog
+### 6. Merge the changelog cut PR
 
-On `main`, rename `## [Unreleased]` in `CHANGELOG.md` to the promoted version and date, for example `## [2.1.1] - 2026-10-15`, add a matching link at the bottom of the file, and start an empty `## [Unreleased]` above it. Until this is done the next release would repeat the same notes.
+After the GitHub Release is created, the `changelog-cut` job opens a PR against `main` named `Cut changelog for <tag>`. It renames `## [Unreleased]` in `CHANGELOG.md` to the released version and date, for example `## [2.1.5] - 2026-10-15`, adds the matching link at the bottom and starts an empty `## [Unreleased]` above it. Merge it. Until it is merged the next release would repeat the same notes. The job skips when the section is empty or the PR is already open.
 
 ## Rolling back
 
