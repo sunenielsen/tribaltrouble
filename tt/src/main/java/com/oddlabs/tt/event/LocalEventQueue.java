@@ -7,6 +7,7 @@ import com.oddlabs.event.SaveDeterministic;
 import com.oddlabs.tt.animation.AnimationManager;
 import com.oddlabs.tt.util.StateChecksum;
 import org.jspecify.annotations.NonNull;
+import org.jspecify.annotations.Nullable;
 
 import java.nio.file.Path;
 import java.util.logging.Logger;
@@ -19,6 +20,8 @@ public final class LocalEventQueue implements AutoCloseable {
     private final AnimationManager manager = new AnimationManager();
     private final AnimationManager high_precision_manager = new AnimationManager();
     private @NonNull Deterministic deterministic = new NotDeterministic();
+    private @Nullable Path event_log_file;
+    private boolean closed;
     private float time = 0;
 
     public float getTime() {
@@ -36,9 +39,19 @@ public final class LocalEventQueue implements AutoCloseable {
     public void setEventsLogged(@NonNull Path log_file) {
         assert deterministic instanceof NotDeterministic;
         this.deterministic = new SaveDeterministic(log_file);
+        this.event_log_file = log_file;
     }
 
+    /** The event log this run is recording to, or null when not recording (e.g. during a replay). */
+    public @Nullable Path getEventLogFile() {
+        return event_log_file;
+    }
+
+    /** Ends the event log. Safe to call more than once, so the crash handler can make sure the log is complete. */
     public void close() {
+        if (closed)
+            return;
+        closed = true;
         logger.info("LocalEventQueue disposing...");
         logger.info("Ending deterministic log...");
         deterministic.endLog();

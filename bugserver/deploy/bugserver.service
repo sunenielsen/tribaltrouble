@@ -1,0 +1,23 @@
+[Unit]
+Description=Tribal Trouble bug report server
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=__SERVICE_USER__
+WorkingDirectory=/opt/bugserver/current
+ExecStart=/opt/bugserver/current/bin/bugserver
+Environment=BUGSERVER_BIND=127.0.0.1
+Environment=BUGSERVER_PORT=8091
+Environment=BUGSERVER_DIR=/var/bugreports
+Environment=JAVA_OPTS=-Xmx512m
+# Plane credentials and settings (BUGSERVER_PLANE_*), kept out of the unit. See README.md.
+EnvironmentFile=-/etc/bugserver.env
+Restart=always
+RestartSec=5
+# systemctl stop sends SIGTERM; the JVM exits 143 (128+15). Treat as clean.
+SuccessExitStatus=143
+
+[Install]
+WantedBy=multi-user.target

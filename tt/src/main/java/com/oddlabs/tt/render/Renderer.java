@@ -742,7 +742,7 @@ public final class Renderer implements AutoCloseable {
     private static void failedOpenGL(@NonNull Exception e) {
         try {
             logger.log(Level.SEVERE, "OpenGL Failure", e);
-            Main.fail(e);
+            Main.failFatal(e);
         } finally {
             Main.shutdown(1);
         }

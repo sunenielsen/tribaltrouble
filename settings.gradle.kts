@@ -16,4 +16,4 @@ pluginManagement {
     }
 }
 
-include("assets", "common", "tools", "tt", "server")
+include("assets", "common", "tools", "tt", "server", "bugserver")

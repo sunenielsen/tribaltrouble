@@ -1,11 +1,16 @@
 package com.oddlabs.tt;
 
+import com.oddlabs.tt.bugreport.BugReporter;
+import com.oddlabs.tt.event.LocalEventQueue;
 import com.oddlabs.tt.render.Renderer;
 import com.oddlabs.tt.steam.SteamManager;
 import com.oddlabs.tt.util.Utils;
 import org.jspecify.annotations.NonNull;
 import org.lwjgl.util.tinyfd.TinyFileDialogs;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -18,24 +23,72 @@ public final class Main {
         return Utils.getBundleString(bundle, key, args);
     }
 
+    /** Reports a failure the game keeps running after. */
     public static void fail(@NonNull Throwable t) {
+        fail(t, false);
+    }
+
+    /**
+     * Reports a failure the game exits after, offering to send a bug report. The event log is ended in the process,
+     * so the game must not keep running afterwards.
+     */
+    public static void failFatal(@NonNull Throwable t) {
+        fail(t, true);
+    }
+
+    private static void fail(@NonNull Throwable t, boolean fatal) {
         logger.log(Level.SEVERE, "Critical Failure", t);
 
         if (!Boolean.getBoolean("com.oddlabs.tt.developer")) {
-            while (t.getCause() != null) {
-                t = t.getCause();
+            Throwable root = t;
+            while (root.getCause() != null) {
+                root = root.getCause();
             }
             String error = i18n("error");
             String error_msg;
             try {
-                error_msg = i18n("error_message", t.toString());
+                error_msg = i18n("error_message", root.toString());
             } catch (IllegalArgumentException e) {
                 // Fallback if message formatting fails (e.g. quotes in exception message)
-                error_msg = "Error: " + t;
+                error_msg = "Error: " + root;
             }
             logger.log(Level.SEVERE, error + ": " + error_msg);
-            TinyFileDialogs.tinyfd_messageBox(error, error_msg.replace("\"", "\\\""), "ok", "error", 1);
+            // Replays are reproductions of an already reported run; don't report them again.
+            if (fatal && !LocalEventQueue.getQueue().getDeterministic().isPlayback()) {
+                if (messageBox(error, error_msg + "\n\n" + i18n("send_report"), "yesno", "error") == 1)
+                    sendReport(t);
+            } else {
+                messageBox(error, error_msg, "ok", "error");
+            }
         }
+    }
+
+    private static void sendReport(@NonNull Throwable t) {
+        LocalEventQueue queue = LocalEventQueue.getQueue();
+        Path event_log = queue.getEventLogFile();
+        try {
+            // Usually already ended by Renderer.cleanup(), but not when the crash happened during startup.
+            queue.close();
+        } catch (RuntimeException e) {
+            logger.log(Level.WARNING, "Could not end the event log", e);
+        }
+        if (event_log != null && !Files.isRegularFile(event_log))
+            event_log = null;
+        try {
+            String id = BugReporter.submit(t, event_log);
+            messageBox(i18n("report_sent_title"), i18n("report_sent", id), "ok", "info");
+        } catch (IOException | RuntimeException e) {
+            logger.log(Level.WARNING, "Could not send bug report", e);
+            messageBox(i18n("error"), i18n("report_failed"), "ok", "warning");
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+    }
+
+    /** @return 1 for ok/yes, 0 for cancel/no */
+    private static int messageBox(@NonNull String title, @NonNull String message, @NonNull String dialog_type,
+            @NonNull String icon_type) {
+        return TinyFileDialogs.tinyfd_messageBox(title, message.replace("\"", "\\\""), dialog_type, icon_type, 1);
     }
 
     public static void shutdown(int status) {
@@ -53,7 +106,7 @@ public final class Main {
             Renderer.getRenderer().run(args);
             status = 0;
         } catch (Throwable t) {
-            fail(t);
+            failFatal(t);
         } finally {
             shutdown(status);
         }
