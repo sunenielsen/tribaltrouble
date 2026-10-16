@@ -63,4 +63,6 @@ lowercase key without the prefix):
 | `BUGSERVER_DIR`              | `/var/bugreports` |
 | `BUGSERVER_PER_IP_HOURLY`    | `20`              |
 | `BUGSERVER_MIN_FREE_MB`      | `1024`            |
+| `BUGSERVER_THREADS`          | `3` (concurrent uploads; each can buffer ~100 MB of heap) |
+| `BUGSERVER_TRUSTED_PROXIES`  | none (loopback is always trusted); comma-separated addresses or CIDRs, e.g. a Docker network `172.18.0.0/16` when the reverse proxy runs in a container |
 | `BUGSERVER_PLANE_*`          | see `bugserver.env.template` |

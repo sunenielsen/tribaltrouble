@@ -16,6 +16,7 @@ import java.io.Reader;
 import java.io.Writer;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
+import java.net.UnknownHostException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -24,6 +25,7 @@ import java.time.Instant;
 import java.time.LocalDate;
 import java.time.ZoneOffset;
 import java.util.ArrayDeque;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Deque;
 import java.util.HashMap;
@@ -69,15 +71,19 @@ public final class BugReportServer {
     private final int per_ip_hourly;
     private final long min_free_bytes;
     private final PlaneClient plane;
+    /** Proxies besides loopback whose X-Real-IP / X-Forwarded-For headers are trusted. */
+    private final List<Cidr> trusted_proxies;
     /** Single thread, so a report is never filed twice concurrently. */
     private final ScheduledExecutorService plane_worker = Executors.newSingleThreadScheduledExecutor();
     private final Map<String, Deque<Long>> recent_reports = new HashMap<>();
 
-    private BugReportServer(Path reports_dir, int per_ip_hourly, long min_free_bytes, PlaneClient plane) {
+    private BugReportServer(Path reports_dir, int per_ip_hourly, long min_free_bytes, PlaneClient plane,
+            List<Cidr> trusted_proxies) {
         this.reports_dir = reports_dir;
         this.per_ip_hourly = per_ip_hourly;
         this.min_free_bytes = min_free_bytes;
         this.plane = plane;
+        this.trusted_proxies = trusted_proxies;
     }
 
     private static String config(String key, String default_value) {
@@ -109,14 +115,22 @@ public final class BugReportServer {
         Path dir = Path.of(config("dir", "/var/bugreports"));
         int per_ip_hourly = Integer.parseInt(config("per_ip_hourly", "20"));
         long min_free_bytes = Long.parseLong(config("min_free_mb", "1024")) * 1024 * 1024;
+        // Each request buffers up to MAX_REQUEST_BYTES plus the decoded event log, so this bounds heap use.
+        int threads = Integer.parseInt(config("threads", "3"));
+        List<Cidr> trusted_proxies = new ArrayList<>();
+        for (String spec : config("trusted_proxies", "").split(",")) {
+            if (!spec.isBlank())
+                trusted_proxies.add(Cidr.parse(spec.trim()));
+        }
 
         Files.createDirectories(dir);
-        BugReportServer handler = new BugReportServer(dir, per_ip_hourly, min_free_bytes, planeFromConfig());
+        BugReportServer handler = new BugReportServer(dir, per_ip_hourly, min_free_bytes, planeFromConfig(),
+                trusted_proxies);
 
         HttpServer server = HttpServer.create(new InetSocketAddress(bind, port), 0);
         server.createContext(BugReportProtocol.REPORT_PATH, handler::handleReport);
         server.createContext(BugReportProtocol.HEALTH_PATH, exchange -> respond(exchange, 200, "ok"));
-        server.setExecutor(Executors.newFixedThreadPool(8));
+        server.setExecutor(Executors.newFixedThreadPool(threads));
         server.start();
         if (handler.plane != null) {
             var _ = handler.plane_worker.scheduleWithFixedDelay(handler::fileUnfiledReports, 0, RETRY_MINUTES,
@@ -353,10 +367,10 @@ public final class BugReportServer {
         return true;
     }
 
-    /** Trusts X-Real-IP / X-Forwarded-For only when the request came through a local proxy. */
-    private static String clientAddress(HttpExchange exchange) {
+    /** Trusts X-Real-IP / X-Forwarded-For only when the request came through a local or trusted proxy. */
+    private String clientAddress(HttpExchange exchange) {
         InetAddress remote = exchange.getRemoteAddress().getAddress();
-        if (remote.isLoopbackAddress()) {
+        if (remote.isLoopbackAddress() || isTrustedProxy(remote)) {
             String real_ip = exchange.getRequestHeaders().getFirst("X-Real-IP");
             if (real_ip != null && !real_ip.isBlank())
                 return sanitize(real_ip);
@@ -367,6 +381,42 @@ public final class BugReportServer {
             }
         }
         return remote.getHostAddress();
+    }
+
+    private boolean isTrustedProxy(InetAddress address) {
+        byte[] bytes = address.getAddress();
+        for (Cidr cidr : trusted_proxies) {
+            if (cidr.contains(bytes))
+                return true;
+        }
+        return false;
+    }
+
+    /** An address range such as {@code 172.18.0.0/16}; a bare address is a single-host range. */
+    private record Cidr(byte[] network, int prefix_bits) {
+        static Cidr parse(String spec) throws UnknownHostException {
+            int slash = spec.indexOf('/');
+            byte[] network = InetAddress.getByName(slash < 0 ? spec : spec.substring(0, slash)).getAddress();
+            int prefix_bits = slash < 0 ? network.length * 8 : Integer.parseInt(spec.substring(slash + 1));
+            if (prefix_bits < 0 || prefix_bits > network.length * 8)
+                throw new IllegalArgumentException("Bad prefix length in " + spec);
+            return new Cidr(network, prefix_bits);
+        }
+
+        boolean contains(byte[] address) {
+            if (address.length != network.length)
+                return false;
+            int full_bytes = prefix_bits / 8;
+            for (int i = 0; i < full_bytes; i++) {
+                if (address[i] != network[i])
+                    return false;
+            }
+            int rest_bits = prefix_bits % 8;
+            if (rest_bits == 0)
+                return true;
+            int mask = 0xff << (8 - rest_bits);
+            return (address[full_bytes] & mask) == (network[full_bytes] & mask);
+        }
     }
 
     private static String sanitize(String value) {
