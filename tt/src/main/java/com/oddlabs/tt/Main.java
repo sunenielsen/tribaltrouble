@@ -88,7 +88,29 @@ public final class Main {
     /** @return 1 for ok/yes, 0 for cancel/no */
     private static int messageBox(@NonNull String title, @NonNull String message, @NonNull String dialog_type,
             @NonNull String icon_type) {
-        return TinyFileDialogs.tinyfd_messageBox(title, message.replace("\"", "\\\""), dialog_type, icon_type, 1);
+        return TinyFileDialogs.tinyfd_messageBox(withoutQuotes(title), withoutQuotes(message), dialog_type, icon_type,
+                1);
+    }
+
+    /**
+     * tinyfd refuses to show text containing ASCII quotes (it shows "INVALID MESSAGE WITH QUOTES" instead), so swap
+     * them for typographic ones.
+     */
+    private static @NonNull String withoutQuotes(@NonNull String text) {
+        StringBuilder result = new StringBuilder(text.length());
+        boolean open = true;
+        for (int i = 0; i < text.length(); i++) {
+            char c = text.charAt(i);
+            if (c == '"') {
+                result.append(open ? '“' : '”');
+                open = !open;
+            } else if (c == '\'') {
+                result.append('’');
+            } else {
+                result.append(c);
+            }
+        }
+        return result.toString();
     }
 
     public static void shutdown(int status) {
